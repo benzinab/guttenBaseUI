@@ -1,0 +1,30 @@
+<application>
+  <component name="ActionsLocalSummary">
+    <data>
+      <entry key="ActivateGuttenbaseToolWindow">
+        <ActionSummary times="1" last="1600259511889" />
+      </entry>
+      <entry key="EditorBackSpace">
+        <ActionSummary times="1" last="1600259524626" />
+      </entry>
+      <entry key="EditorDeleteToWordStart">
+        <ActionSummary times="5" last="1600259518483" />
+      </entry>
+      <entry key="ExternalSystem.AttachProject">
+        <ActionSummary times="2" last="1600259854893" />
+      </entry>
+      <entry key="ExternalSystem.ShowSettingsGroup">
+        <ActionSummary times="1" last="1600259852575" />
+      </entry>
+      <entry key="WelcomeScreen.CreateNewProject">
+        <ActionSummary times="1" last="1600251767949" />
+      </entry>
+      <entry key="WelcomeScreen.OpenProject">
+        <ActionSummary times="1" last="1600251773158" />
+      </entry>
+      <entry key="com.intellij.openapi.wm.impl.ToolWindowHeader$ShowOptionsAction">
+        <ActionSummary times="2" last="1600259637157" />
+      </entry>
+    </data>
+  </component>
+</application>

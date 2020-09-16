@@ -1,0 +1,25 @@
+<idea-plugin>
+    <id>de.akquinet.jboscc.guttenBasePlugin</id>
+    <name>GuttenBase</name>
+    <vendor email="benzinab@akquinet.com" url="http://www.akquinet.com">Akquinet</vendor>
+
+    <description>
+        An IntelliJ Plugin for the database migration library "GuttenBase".
+    </description>
+
+    <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow id="Guttenbase" secondary="true" icon="AllIcons.General.Modified" anchor="right"
+                    factoryClass="de.akquinet.jboscc.guttenBasePlugin.GuttenWindowFactory"/>
+    </extensions>
+
+    <actions>
+        <group id="GuttenBase.openTab" text="GuttenBase" description="GuttenBase Plugin">
+            <add-to-group group-id="MainMenu" anchor="last"/>
+            <action class="de.akquinet.jboscc.guttenBasePlugin.ShowAction" id="GuttenBase.Actions.ShowAction" text="migrate database"/>
+        </group>
+    </actions>
+</idea-plugin>
