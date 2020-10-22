@@ -3,7 +3,7 @@
   <change-notes>
       Add change notes here.&lt;br&gt;
       &lt;em&gt;most HTML tags may be used&lt;/em&gt;</change-notes>
-  <idea-version since-build="202.6948" until-build="202.*"/>
+  <idea-version since-build="202.7660" until-build="202.*"/>
   <id>de.akquinet.jboscc.guttenBasePlugin</id>
   <name>GuttenBase</name>
   <vendor email="benzinab@akquinet.com" url="http://www.akquinet.com">Akquinet</vendor>
@@ -15,9 +15,9 @@
     <toolWindow id="Guttenbase" secondary="true" icon="AllIcons.General.Modified" anchor="right" factoryClass="de.akquinet.jboscc.guttenBasePlugin.GuttenWindowFactory"/>
   </extensions>
   <actions>
-    <group id="GuttenBase.openTab" text="GuttenBase" description="GuttenBase Plugin">
-      <add-to-group group-id="MainMenu" anchor="last"/>
-      <action class="de.akquinet.jboscc.guttenBasePlugin.ShowAction" id="GuttenBase.Actions.ShowAction" text="migrate database"/>
+    <group id="GuttenBase.openTab" text="GuttenBase" description="GuttenBase plugin">
+      <add-to-group group-id="WindowMenu" anchor="last"/>
+      <action class="de.akquinet.jboscc.guttenBasePlugin.ShowAction" id="GuttenBase.Actions.ShowAction" text="Migrate Database"/>
     </group>
   </actions>
 </idea-plugin>

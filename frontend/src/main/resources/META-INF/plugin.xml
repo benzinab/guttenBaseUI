@@ -17,9 +17,9 @@
     </extensions>
 
     <actions>
-        <group id="GuttenBase.openTab" text="GuttenBase" description="GuttenBase Plugin">
-            <add-to-group group-id="MainMenu" anchor="last"/>
-            <action class="de.akquinet.jboscc.guttenBasePlugin.ShowAction" id="GuttenBase.Actions.ShowAction" text="migrate database"/>
+        <group id="GuttenBase.openTab" text="GuttenBase" description="GuttenBase plugin">
+            <add-to-group group-id="WindowMenu" anchor="last"/>
+            <action class="de.akquinet.jboscc.guttenBasePlugin.ShowAction" id="GuttenBase.Actions.ShowAction" text="Migrate Database"/>
         </group>
     </actions>
 </idea-plugin>

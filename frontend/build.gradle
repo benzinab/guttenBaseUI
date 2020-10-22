@@ -16,7 +16,9 @@ dependencies {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-    version '2020.2.1'
+    type = 'IU'
+    version '2020.2.3'
+    plugins 'com.intellij.database'
 }
 patchPluginXml {
     changeNotes """

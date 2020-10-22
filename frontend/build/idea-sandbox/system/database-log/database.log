@@ -1,0 +1,590 @@
+-- 2020-10-18 12:53:17 [testy2] [initialData.sql] [session id: 1427918555] connected
+-- [ --------------------------------------------------
+-- 2020-10-18 12:53:18 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636625] 
+select database() d, schema() s
+-- ] --------------------------------------------------
+-- 2020-10-18 12:53:18 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636625] results received
+-- 2020-10-18 12:53:18 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636625] finished - execution time: 14 ms, fetching time: 62 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-10-18 12:53:18 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636626] 
+select catalog_name from information_schema.catalogs
+-- ] --------------------------------------------------
+-- 2020-10-18 12:53:18 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636626] results received
+-- 2020-10-18 12:53:18 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636626] finished - execution time: 3 ms, fetching time: 26 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-10-18 12:53:18 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636627] 
+      select
+        schema_name,
+        is_default,
+        remarks
+      from information_schema.schemata
+    
+-- ] --------------------------------------------------
+-- 2020-10-18 12:53:18 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636627] results received
+-- 2020-10-18 12:53:18 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636627] finished - execution time: 4 ms, fetching time: 8 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-10-18 12:53:18 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636628] 
+      select
+        schema_name,
+        is_default,
+        remarks
+      from information_schema.schemata
+    
+-- ] --------------------------------------------------
+-- 2020-10-18 12:53:18 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636628] results received
+-- 2020-10-18 12:53:18 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636628] finished - execution time: 2 ms, fetching time: 4 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-10-18 12:53:18 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636629] 
+      select
+        schema_name,
+        is_default,
+        remarks
+      from information_schema.schemata
+    
+-- ] --------------------------------------------------
+-- 2020-10-18 12:53:18 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636629] results received
+-- 2020-10-18 12:53:18 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636629] finished - execution time: 3 ms, fetching time: 4 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-10-18 12:53:18 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636630] 
+select id, name, admin = 'true' as is_admin, remarks from information_schema.users where trim(name) != ''
+-- ] --------------------------------------------------
+-- 2020-10-18 12:53:18 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636630] results received
+-- 2020-10-18 12:53:18 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636630] finished - execution time: 2 ms, fetching time: 4 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-10-18 12:53:18 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636631] 
+select id, name, remarks from information_schema.roles
+-- ] --------------------------------------------------
+-- 2020-10-18 12:53:18 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636631] results received
+-- 2020-10-18 12:53:18 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636631] finished - execution time: 4 ms, fetching time: 7 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-10-18 12:53:18 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636632] 
+select name from information_schema.collations where name != ''
+-- ] --------------------------------------------------
+-- 2020-10-18 12:53:18 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636632] results received
+-- 2020-10-18 12:53:18 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636632] finished - execution time: 27 ms, fetching time: 4 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-10-18 12:53:18 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636633] 
+        select 
+            id, 
+            sequence_name,
+            current_value,
+            increment,
+            is_generated,
+            cache,
+            min_value,
+            max_value,
+            is_cycle,
+            remarks
+        from information_schema.sequences 
+        where sequence_schema = ?
+      
+-- ] --------------------------------------------------
+-- 2020-10-18 12:53:18 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636633] results received
+-- 2020-10-18 12:53:18 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636633] finished - execution time: 2 ms, fetching time: 2 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-10-18 12:53:18 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636634] 
+        select 
+            id, 
+            domain_name,
+            sql,
+            remarks
+        from information_schema.domains 
+        where domain_schema = ?
+      
+-- ] --------------------------------------------------
+-- 2020-10-18 12:53:18 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636634] results received
+-- 2020-10-18 12:53:18 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636634] finished - execution time: 2 ms, fetching time: 3 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-10-18 12:53:18 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636635] 
+        select
+          id,  
+          table_name,
+          table_type = 'VIEW' as is_view,
+          storage_type in ('LOCAL TEMPORARY', 'GLOBAL TEMPORARY') as is_temp,
+          sql,
+          remarks
+        from information_schema.tables
+        where table_schema = ?
+      
+-- ] --------------------------------------------------
+-- 2020-10-18 12:53:18 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636635] results received
+-- 2020-10-18 12:53:18 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636635] finished - execution time: 3 ms, fetching time: 5 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-10-18 12:53:18 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636636] 
+        select
+          table_name,
+          column_name,
+          ordinal_position,
+          type_name,
+          numeric_precision,
+          numeric_scale,
+          column_default,
+          is_nullable = 'YES' as is_nullable,
+          sequence_name,
+          check_constraint,
+          column_type,
+          remarks
+        from information_schema.columns
+        where table_schema = ?
+        order by table_name, ordinal_position
+      
+-- ] --------------------------------------------------
+-- 2020-10-18 12:53:18 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636636] results received
+-- 2020-10-18 12:53:18 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636636] finished - execution time: 8 ms, fetching time: 8 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-10-18 12:53:18 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636637] 
+      select 
+          id, 
+          table_name,
+          index_name,
+          non_unique,
+          is_generated,
+          sql,
+          remarks 
+      from information_schema.indexes 
+      where table_schema = ?
+      order by table_name
+    
+-- ] --------------------------------------------------
+-- 2020-10-18 12:53:19 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636637] results received
+-- 2020-10-18 12:53:19 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636637] finished - execution time: 2 ms, fetching time: 2 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-10-18 12:53:19 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636638] 
+        select 
+            id, 
+            column_name,
+            asc_or_desc = 'D' as is_desc
+        from information_schema.indexes 
+        where table_schema = ?
+        order by id, ordinal_position
+      
+-- ] --------------------------------------------------
+-- 2020-10-18 12:53:19 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636638] results received
+-- 2020-10-18 12:53:19 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636638] finished - execution time: 2 ms, fetching time: 2 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-10-18 12:53:19 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636639] 
+        select 
+            id, 
+            trigger_schema,
+            trigger_name,
+            table_name,
+            sql,
+            remarks 
+        from information_schema.triggers 
+        where table_schema = ?
+        order by table_name
+      
+-- ] --------------------------------------------------
+-- 2020-10-18 12:53:19 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636639] results received
+-- 2020-10-18 12:53:19 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636639] finished - execution time: 2 ms, fetching time: 2 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-10-18 12:53:19 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636640] 
+        select 
+            id,
+            constant_name,
+            data_type,
+            sql,
+            remarks
+        from information_schema.constants 
+        where constant_schema = ?
+      
+-- ] --------------------------------------------------
+-- 2020-10-18 12:53:19 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636640] results received
+-- 2020-10-18 12:53:19 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636640] finished - execution time: 2 ms, fetching time: 2 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-10-18 12:53:19 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636641] 
+        select 
+            table_name,
+            constraint_name,
+            constraint_type,
+            check_expression,
+            column_list,
+            remarks
+        from information_schema.constraints 
+        where table_schema = ?
+        order by table_name
+      
+-- ] --------------------------------------------------
+-- 2020-10-18 12:53:19 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636641] results received
+-- 2020-10-18 12:53:19 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636641] finished - execution time: 2 ms, fetching time: 2 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-10-18 12:53:19 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636642] 
+        select 
+            fktable_name,
+            fk_name,
+            pk_name,
+            pktable_schema,
+            pktable_name,
+            update_rule,
+            delete_rule
+        from information_schema.cross_references 
+        where fktable_schema = ? and ordinal_position = 1
+      
+-- ] --------------------------------------------------
+-- 2020-10-18 12:53:19 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636642] results received
+-- 2020-10-18 12:53:19 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636642] finished - execution time: 2 ms, fetching time: 2 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-10-18 12:53:19 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636643] 
+        select 
+            fktable_name,
+            fk_name,
+            pkcolumn_name            
+        from information_schema.cross_references 
+        where fktable_schema = ?
+        order by ordinal_position
+      
+-- ] --------------------------------------------------
+-- 2020-10-18 12:53:19 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636643] results received
+-- 2020-10-18 12:53:19 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636643] finished - execution time: 2 ms, fetching time: 1 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-10-18 12:53:19 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636644] 
+        select 
+            alias_name,
+            column_count,
+            java_class,
+            java_method,
+            source,
+            data_type != 0 as is_func,
+            remarks
+        from information_schema.function_aliases 
+        where alias_schema = ?
+      
+-- ] --------------------------------------------------
+-- 2020-10-18 12:53:19 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636644] results received
+-- 2020-10-18 12:53:19 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636644] finished - execution time: 1 ms, fetching time: 2 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-10-18 12:53:19 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636645] 
+        select 
+            alias_name,
+            column_count,
+            column_name,
+            pos,
+            type_name,
+            precision,
+            scale,
+            column_type
+        from information_schema.function_columns 
+        where alias_schema = ?
+        order by alias_name, column_count, pos
+      
+-- ] --------------------------------------------------
+-- 2020-10-18 12:53:19 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636645] results received
+-- 2020-10-18 12:53:19 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636645] finished - execution time: 1 ms, fetching time: 2 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-10-18 12:53:19 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636646] 
+        select 
+            id,
+            synonym_name,
+            synonym_for_schema,
+            synonym_for,
+            remarks
+        from information_schema.synonyms 
+        where synonym_schema = ?
+      
+-- ] --------------------------------------------------
+-- 2020-10-18 12:53:19 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636646] results received
+-- 2020-10-18 12:53:19 [testy2] [initialData.sql] [introspection] [session id: 1427918555] [statement id: 1918636646] finished - execution time: 2 ms, fetching time: 2 ms, total result sets count: 1
+-- 2020-10-18 12:53:19 [testy2] [initialData.sql] [session id: 1427918555] disconnected
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [session id: 1427918556] connected
+-- [ --------------------------------------------------
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636647] 
+select database() d, schema() s
+-- ] --------------------------------------------------
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636647] results received
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636647] finished - execution time: 9 ms, fetching time: 35 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636648] 
+select catalog_name from information_schema.catalogs
+-- ] --------------------------------------------------
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636648] results received
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636648] finished - execution time: 2 ms, fetching time: 11 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636649] 
+      select
+        schema_name,
+        is_default,
+        remarks
+      from information_schema.schemata
+    
+-- ] --------------------------------------------------
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636649] results received
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636649] finished - execution time: 3 ms, fetching time: 7 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636650] 
+      select
+        schema_name,
+        is_default,
+        remarks
+      from information_schema.schemata
+    
+-- ] --------------------------------------------------
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636650] results received
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636650] finished - execution time: 2 ms, fetching time: 4 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636651] 
+      select
+        schema_name,
+        is_default,
+        remarks
+      from information_schema.schemata
+    
+-- ] --------------------------------------------------
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636651] results received
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636651] finished - execution time: 2 ms, fetching time: 3 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636652] 
+select id, name, admin = 'true' as is_admin, remarks from information_schema.users where trim(name) != ''
+-- ] --------------------------------------------------
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636652] results received
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636652] finished - execution time: 2 ms, fetching time: 4 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636653] 
+select id, name, remarks from information_schema.roles
+-- ] --------------------------------------------------
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636653] results received
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636653] finished - execution time: 1 ms, fetching time: 5 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636654] 
+select name from information_schema.collations where name != ''
+-- ] --------------------------------------------------
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636654] results received
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636654] finished - execution time: 24 ms, fetching time: 5 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636655] 
+        select 
+            id, 
+            sequence_name,
+            current_value,
+            increment,
+            is_generated,
+            cache,
+            min_value,
+            max_value,
+            is_cycle,
+            remarks
+        from information_schema.sequences 
+        where sequence_schema = ?
+      
+-- ] --------------------------------------------------
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636655] results received
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636655] finished - execution time: 1 ms, fetching time: 2 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636656] 
+        select 
+            id, 
+            domain_name,
+            sql,
+            remarks
+        from information_schema.domains 
+        where domain_schema = ?
+      
+-- ] --------------------------------------------------
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636656] results received
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636656] finished - execution time: 2 ms, fetching time: 2 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636657] 
+        select
+          id,  
+          table_name,
+          table_type = 'VIEW' as is_view,
+          storage_type in ('LOCAL TEMPORARY', 'GLOBAL TEMPORARY') as is_temp,
+          sql,
+          remarks
+        from information_schema.tables
+        where table_schema = ?
+      
+-- ] --------------------------------------------------
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636657] results received
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636657] finished - execution time: 3 ms, fetching time: 4 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636658] 
+        select
+          table_name,
+          column_name,
+          ordinal_position,
+          type_name,
+          numeric_precision,
+          numeric_scale,
+          column_default,
+          is_nullable = 'YES' as is_nullable,
+          sequence_name,
+          check_constraint,
+          column_type,
+          remarks
+        from information_schema.columns
+        where table_schema = ?
+        order by table_name, ordinal_position
+      
+-- ] --------------------------------------------------
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636658] results received
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636658] finished - execution time: 8 ms, fetching time: 5 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636659] 
+      select 
+          id, 
+          table_name,
+          index_name,
+          non_unique,
+          is_generated,
+          sql,
+          remarks 
+      from information_schema.indexes 
+      where table_schema = ?
+      order by table_name
+    
+-- ] --------------------------------------------------
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636659] results received
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636659] finished - execution time: 1 ms, fetching time: 3 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636660] 
+        select 
+            id, 
+            column_name,
+            asc_or_desc = 'D' as is_desc
+        from information_schema.indexes 
+        where table_schema = ?
+        order by id, ordinal_position
+      
+-- ] --------------------------------------------------
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636660] results received
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636660] finished - execution time: 2 ms, fetching time: 2 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636661] 
+        select 
+            id, 
+            trigger_schema,
+            trigger_name,
+            table_name,
+            sql,
+            remarks 
+        from information_schema.triggers 
+        where table_schema = ?
+        order by table_name
+      
+-- ] --------------------------------------------------
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636661] results received
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636661] finished - execution time: 2 ms, fetching time: 2 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636662] 
+        select 
+            id,
+            constant_name,
+            data_type,
+            sql,
+            remarks
+        from information_schema.constants 
+        where constant_schema = ?
+      
+-- ] --------------------------------------------------
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636662] results received
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636662] finished - execution time: 2 ms, fetching time: 4 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636663] 
+        select 
+            table_name,
+            constraint_name,
+            constraint_type,
+            check_expression,
+            column_list,
+            remarks
+        from information_schema.constraints 
+        where table_schema = ?
+        order by table_name
+      
+-- ] --------------------------------------------------
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636663] results received
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636663] finished - execution time: 2 ms, fetching time: 2 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636664] 
+        select 
+            fktable_name,
+            fk_name,
+            pk_name,
+            pktable_schema,
+            pktable_name,
+            update_rule,
+            delete_rule
+        from information_schema.cross_references 
+        where fktable_schema = ? and ordinal_position = 1
+      
+-- ] --------------------------------------------------
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636664] results received
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636664] finished - execution time: 2 ms, fetching time: 1 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636665] 
+        select 
+            fktable_name,
+            fk_name,
+            pkcolumn_name            
+        from information_schema.cross_references 
+        where fktable_schema = ?
+        order by ordinal_position
+      
+-- ] --------------------------------------------------
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636665] results received
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636665] finished - execution time: 2 ms, fetching time: 1 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636666] 
+        select 
+            alias_name,
+            column_count,
+            java_class,
+            java_method,
+            source,
+            data_type != 0 as is_func,
+            remarks
+        from information_schema.function_aliases 
+        where alias_schema = ?
+      
+-- ] --------------------------------------------------
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636666] results received
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636666] finished - execution time: 1 ms, fetching time: 2 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636667] 
+        select 
+            alias_name,
+            column_count,
+            column_name,
+            pos,
+            type_name,
+            precision,
+            scale,
+            column_type
+        from information_schema.function_columns 
+        where alias_schema = ?
+        order by alias_name, column_count, pos
+      
+-- ] --------------------------------------------------
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636667] results received
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636667] finished - execution time: 2 ms, fetching time: 1 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636668] 
+        select 
+            id,
+            synonym_name,
+            synonym_for_schema,
+            synonym_for,
+            remarks
+        from information_schema.synonyms 
+        where synonym_schema = ?
+      
+-- ] --------------------------------------------------
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636668] results received
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [introspection] [session id: 1427918556] [statement id: 1918636668] finished - execution time: 2 ms, fetching time: 1 ms, total result sets count: 1
+-- 2020-10-18 12:53:23 [testy2] [initialData.sql [2]] [session id: 1427918556] disconnected
+-- 2020-10-18 12:53:34 [testy2] [initialData.sql] [session id: 1427918557] connected
+-- [ --------------------------------------------------
+-- 2020-10-18 12:53:34 [testy2] [initialData.sql] [data editor: TABLE_NAME [initialData.sql]] [session id: 1427918557] [statement id: 1918636669] 
+select database() d, schema() s
+-- ] --------------------------------------------------
+-- 2020-10-18 12:53:34 [testy2] [initialData.sql] [data editor: TABLE_NAME [initialData.sql]] [session id: 1427918557] [statement id: 1918636669] results received
+-- 2020-10-18 12:53:34 [testy2] [initialData.sql] [data editor: TABLE_NAME [initialData.sql]] [session id: 1427918557] [statement id: 1918636669] finished - execution time: 1 ms, fetching time: 5 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-10-18 12:53:34 [testy2] [initialData.sql] [data editor: TABLE_NAME [initialData.sql]] [session id: 1427918557] [statement id: 1918636670] 
+SELECT t.*
+FROM PUBLIC.TABLE_NAME t
+LIMIT 501
+-- ] --------------------------------------------------
+-- 2020-10-18 12:53:34 [testy2] [initialData.sql] [data editor: TABLE_NAME [initialData.sql]] [session id: 1427918557] [statement id: 1918636670] results received
+-- 2020-10-18 12:53:34 [testy2] [initialData.sql] [data editor: TABLE_NAME [initialData.sql]] [session id: 1427918557] [statement id: 1918636670] finished - execution time: 2 ms, fetching time: 114 ms, total result sets count: 1
+-- 2020-10-18 12:53:57 [testy2] [initialData.sql] [session id: 1427918557] disconnected
