@@ -1,3 +1,3 @@
 # guttenBaseUI
 
-This project is in work. The documentation will be added soon.
+This project is in progress. The documentation will be added soon.
