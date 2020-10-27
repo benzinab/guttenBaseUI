@@ -13,11 +13,29 @@
       <entry key="Console.Jdbc.ChooseSession">
         <ActionSummary times="6" last="1601916566893" />
       </entry>
+      <entry key="Console.TableResult.ShowDumpDialogAction">
+        <ActionSummary times="1" last="1603805848544" />
+      </entry>
+      <entry key="CopyReference">
+        <ActionSummary times="1" last="1603542779218" />
+      </entry>
       <entry key="DatabaseView.AddActionGroupPopup">
-        <ActionSummary times="8" last="1603018373388" />
+        <ActionSummary times="19" last="1603821464808" />
       </entry>
       <entry key="DatabaseView.AddDataSourceFromPath">
         <ActionSummary times="3" last="1603018374528" />
+      </entry>
+      <entry key="DatabaseView.AddSchemasAction">
+        <ActionSummary times="1" last="1603542786285" />
+      </entry>
+      <entry key="DatabaseView.AddSrcToFiles">
+        <ActionSummary times="1" last="1603542507170" />
+      </entry>
+      <entry key="DatabaseView.AssignColor">
+        <ActionSummary times="1" last="1603542791509" />
+      </entry>
+      <entry key="DatabaseView.CopyDdlAction">
+        <ActionSummary times="1" last="1603542514550" />
       </entry>
       <entry key="DatabaseView.DropAction">
         <ActionSummary times="2" last="1603018293479" />
@@ -35,7 +53,7 @@
         <ActionSummary times="1" last="1601916473520" />
       </entry>
       <entry key="EditorDeleteToWordStart">
-        <ActionSummary times="10" last="1600333643250" />
+        <ActionSummary times="14" last="1603542437234" />
       </entry>
       <entry key="EditorPaste">
         <ActionSummary times="1" last="1601916475166" />
@@ -49,8 +67,17 @@
       <entry key="ExternalSystem.ShowSettingsGroup">
         <ActionSummary times="1" last="1600259852575" />
       </entry>
+      <entry key="FindUsages">
+        <ActionSummary times="1" last="1603542781607" />
+      </entry>
       <entry key="GotoAction">
         <ActionSummary times="1" last="1600333928856" />
+      </entry>
+      <entry key="RenameElement">
+        <ActionSummary times="2" last="1603541683780" />
+      </entry>
+      <entry key="ShowSettings">
+        <ActionSummary times="1" last="1603546244052" />
       </entry>
       <entry key="WelcomeScreen.CreateNewProject">
         <ActionSummary times="1" last="1600251767949" />
@@ -58,11 +85,20 @@
       <entry key="WelcomeScreen.OpenProject">
         <ActionSummary times="1" last="1600251773158" />
       </entry>
+      <entry key="com.intellij.database.actions.RunExtensionScriptActionGroup$RunScriptAction">
+        <ActionSummary times="1" last="1603542518968" />
+      </entry>
       <entry key="com.intellij.database.dataSource.LocalDataSourceManager$2">
-        <ActionSummary times="3" last="1603018284224" />
+        <ActionSummary times="13" last="1603821466098" />
+      </entry>
+      <entry key="com.intellij.database.dataSource.url.ui.ParamEditorBase$FMChooseAction">
+        <ActionSummary times="2" last="1603546016930" />
       </entry>
       <entry key="com.intellij.ide.actions.ToolWindowViewModeAction">
         <ActionSummary times="4" last="1601546488299" />
+      </entry>
+      <entry key="com.intellij.openapi.actionSystem.impl.ChameleonAction">
+        <ActionSummary times="12" last="1603732708663" />
       </entry>
       <entry key="com.intellij.openapi.fileEditor.impl.tabActions.CloseTab">
         <ActionSummary times="4" last="1603380448889" />
@@ -71,7 +107,7 @@
         <ActionSummary times="1" last="1600333950254" />
       </entry>
       <entry key="com.intellij.openapi.ui.DialogWrapper$5">
-        <ActionSummary times="4" last="1603382570166" />
+        <ActionSummary times="5" last="1603384963316" />
       </entry>
       <entry key="com.intellij.openapi.ui.impl.DialogWrapperPeerImpl$AnCancelAction">
         <ActionSummary times="1" last="1601916702994" />

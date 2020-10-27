@@ -11,13 +11,15 @@
         An IntelliJ Plugin for the database migration library "GuttenBase".
     </description>
   <depends>com.intellij.modules.platform</depends>
+  <depends>com.intellij.database</depends>
   <extensions defaultExtensionNs="com.intellij">
-    <toolWindow id="Guttenbase" secondary="true" icon="AllIcons.General.Modified" anchor="right" factoryClass="de.akquinet.jboscc.guttenBasePlugin.GuttenWindowFactory"/>
+    <toolWindow id="Guttenbase" secondary="true" icon="AllIcons.General.Modified" anchor="right" factoryClass="de.akquinet.jbosscc.guttenBasePlugin.GuttenWindowFactory"/>
   </extensions>
+  <extensionPoints/>
   <actions>
-    <group id="GuttenBase.openTab" text="GuttenBase" description="GuttenBase plugin">
-      <add-to-group group-id="WindowMenu" anchor="last"/>
-      <action class="de.akquinet.jboscc.guttenBasePlugin.ShowAction" id="GuttenBase.Actions.ShowAction" text="Migrate Database"/>
+    <group id="GuttenBase.database.action1" text="GuttenBase" description="GuttenBase plugin">
+      <add-to-group group-id="DatabaseViewPopupMenu" anchor="last"/>
+      <action class="de.akquinet.jbosscc.guttenBasePlugin.ShowAction" id="GuttenBase.Actions.ShowAction" text="Migrate Database"/>
     </group>
   </actions>
 </idea-plugin>

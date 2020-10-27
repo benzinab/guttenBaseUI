@@ -12,6 +12,7 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
+    implementation group: 'de.akquinet.jbosscc.guttenbase', name: 'GuttenBase', version: '2.0.0'
 }
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
