@@ -10,6 +10,36 @@
         <item name="initialData.sql" type="feb32156:DbDataSourceImpl" />
         <item name="INITIALDATA.SQL: database" type="2aa06773:H2ImplModel$Database" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="initialData.sql" type="feb32156:DbDataSourceImpl" />
+        <item name="INITIALDATA.SQL: database" type="2aa06773:H2ImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="initialData.sql" type="feb32156:DbDataSourceImpl" />
+        <item name="INITIALDATA.SQL: database" type="2aa06773:H2ImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="PUBLIC: schema" type="7f85d983:H2ImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="initialData.sql" type="feb32156:DbDataSourceImpl" />
+        <item name="INITIALDATA.SQL: database" type="2aa06773:H2ImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="PUBLIC: schema" type="7f85d983:H2ImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="initialData.sql" type="feb32156:DbDataSourceImpl" />
+        <item name="INITIALDATA.SQL: database" type="2aa06773:H2ImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="PUBLIC: schema" type="7f85d983:H2ImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="TABLE_NAME: table" type="818c1b4a:H2ImplModel$Table" />
+      </path>
     </expand>
     <select />
   </component>
@@ -27,17 +57,17 @@
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" />
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane" />
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15436000" />
+    <option name="totallyTimeSpent" value="21343000" />
   </component>
   <component name="ToolWindowManager">
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.4053156" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.44117647" />
       <window_info id="Structure" order="1" side_tool="true" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Commit" order="3" />
@@ -58,10 +88,10 @@
       <window_info anchor="bottom" id="Terminal" order="13" />
       <window_info anchor="bottom" id="Services" order="14" show_stripe_button="false" />
       <window_info anchor="bottom" id="Build" order="15" />
-      <window_info anchor="right" x="875" y="190" width="512" height="397" id="Guttenbase" order="0" sideWeight="0.5005429" weight="0.3028793" />
+      <window_info anchor="right" x="875" y="190" width="512" height="397" id="Guttenbase" order="0" sideWeight="0.5005429" weight="0.3246393" />
       <window_info anchor="right" id="Ant" order="1" weight="0.32977587" />
       <window_info anchor="right" id="Gradle" order="2" sideWeight="0.49945712" weight="0.26748058" />
-      <window_info anchor="right" id="Database" order="3" sideWeight="0.49945712" visible="true" weight="0.53488374" />
+      <window_info anchor="right" id="Database" order="3" sideWeight="0.49945712" visible="true" weight="0.54162043" />
       <window_info anchor="right" id="Layout Validation" order="4" />
     </layout>
   </component>

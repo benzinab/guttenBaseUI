@@ -20,7 +20,7 @@
         <ActionSummary times="1" last="1603542779218" />
       </entry>
       <entry key="DatabaseView.AddActionGroupPopup">
-        <ActionSummary times="19" last="1603821464808" />
+        <ActionSummary times="22" last="1604161879401" />
       </entry>
       <entry key="DatabaseView.AddDataSourceFromPath">
         <ActionSummary times="3" last="1603018374528" />
@@ -73,11 +73,17 @@
       <entry key="GotoAction">
         <ActionSummary times="1" last="1600333928856" />
       </entry>
+      <entry key="ModifyObject">
+        <ActionSummary times="3" last="1604162506272" />
+      </entry>
+      <entry key="QuickJavaDoc">
+        <ActionSummary times="1" last="1604161910406" />
+      </entry>
       <entry key="RenameElement">
-        <ActionSummary times="2" last="1603541683780" />
+        <ActionSummary times="3" last="1604162448893" />
       </entry>
       <entry key="ShowSettings">
-        <ActionSummary times="1" last="1603546244052" />
+        <ActionSummary times="2" last="1603841076487" />
       </entry>
       <entry key="WelcomeScreen.CreateNewProject">
         <ActionSummary times="1" last="1600251767949" />
@@ -110,7 +116,7 @@
         <ActionSummary times="5" last="1603384963316" />
       </entry>
       <entry key="com.intellij.openapi.ui.impl.DialogWrapperPeerImpl$AnCancelAction">
-        <ActionSummary times="1" last="1601916702994" />
+        <ActionSummary times="2" last="1604163379945" />
       </entry>
       <entry key="com.intellij.openapi.wm.impl.ToolWindowHeader$HideAction">
         <ActionSummary times="8" last="1603018245404" />
