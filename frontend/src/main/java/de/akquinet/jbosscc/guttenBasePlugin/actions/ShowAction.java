@@ -8,6 +8,8 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.ui.ComponentUtil;
 import de.akquinet.jbosscc.guttenBasePlugin.ui.GBFrame;
+import de.akquinet.jbosscc.guttenbase.connector.impl.URLConnectorInfo;
+import de.akquinet.jbosscc.guttenbase.connector.impl.URLConnectorInfoImpl;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
@@ -34,6 +36,8 @@ public class ShowAction extends AnAction {
         DbDataSource dbDataSource = (DbDataSource) o;
         DbPsiFacade facade = DbPsiFacade.getInstance(Objects.requireNonNull(e.getProject()));
         List<DbDataSource> dataSources = facade.getDataSources();
+        // create connection + create repository
+        URLConnectorInfo connectorInfo = new URLConnectorInfoImpl(dbDataSource.getConnectionConfig().get)
         JFrame frame = new GBFrame(dataSources, dbDataSource.getName());
         frame.setAlwaysOnTop(true);
         frame.setVisible(true);
