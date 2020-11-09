@@ -7,7 +7,7 @@ import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowFactory;
 import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentFactory;
-import de.akquinet.jbosscc.guttenBasePlugin.ui.GBFrame;
+import de.akquinet.jbosscc.guttenBasePlugin.ui.ConfigurationView;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -22,9 +22,9 @@ public class GuttenWindowFactory implements ToolWindowFactory {
     public void createToolWindowContent(@NotNull Project project, @NotNull ToolWindow toolWindow) {
         DbPsiFacade facade = DbPsiFacade.getInstance(project);
         List<DbDataSource> dataSources = facade.getDataSources();
-        GBFrame GBFrame = new GBFrame(dataSources, null);
+        ConfigurationView ConfigurationView = new ConfigurationView(dataSources, null);
         ContentFactory contentFactory = ContentFactory.SERVICE.getInstance();
-        Content content = contentFactory.createContent(GBFrame.getContent(), "", false);
+        Content content = contentFactory.createContent(ConfigurationView.getContent(), "", false);
         toolWindow.getContentManager().addContent(content);
     }
 
