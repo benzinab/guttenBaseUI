@@ -14,6 +14,14 @@ public class MigrationData {
 
     private DatabaseType databaseType;
 
+    public MigrationData(String url, String user, String password, String driverClass, DatabaseType databaseType) {
+        this.url = url;
+        this.user = user;
+        this.password = password;
+        this.driverClass = driverClass;
+        this.databaseType = databaseType;
+    }
+
     public String getUrl() {
         return url;
     }

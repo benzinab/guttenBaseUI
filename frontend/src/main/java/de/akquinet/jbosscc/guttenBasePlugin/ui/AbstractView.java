@@ -1,20 +1,15 @@
 package de.akquinet.jbosscc.guttenBasePlugin.ui;
 
-import com.intellij.database.psi.DbDataSource;
-
 import javax.swing.*;
-import java.awt.*;
-import java.util.List;
+import java.awt.event.WindowEvent;
 
-public class AbstractView extends JFrame {
+public class AbstractView {
 
-    public AbstractView(JPanel content) {
-        super();
-        setSize(600, 700);
-        content.setMaximumSize(content.getPreferredSize());
-        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        setLocation(dim.width / 2 - getSize().width / 2, dim.height / 2 - getSize().height / 2);
-        setTitle("Migrate Database");
-        setContentPane(content);
+    public AbstractView() {
+    }
+
+    public void close(JPanel content) {
+        JFrame parent = (JFrame) SwingUtilities.getWindowAncestor(content);
+        parent.dispatchEvent(new WindowEvent(parent, WindowEvent.WINDOW_CLOSING));
     }
 }

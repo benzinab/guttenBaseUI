@@ -12,7 +12,10 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
-    implementation group: 'de.akquinet.jbosscc.guttenbase', name: 'GuttenBase', version: '2.0.0'
+    implementation "de.akquinet.jbosscc.guttenbase:GuttenBase:2.0.0"
+    compile "com.microsoft.sqlserver:mssql-jdbc:6.1.0.jre7"
+    compile "mysql:mysql-connector-java:8.0.21"
+    compile "org.postgresql:postgresql:42.2.5"
 }
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/

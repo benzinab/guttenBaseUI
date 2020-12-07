@@ -1,0 +1,146 @@
+{
+  "appInfo" : {
+    "build" : "202.7660.26",
+    "buildDate" : "Tue, 6 Oct 2020 10:32:37 +0200",
+    "productCode" : "IU",
+    "generated" : "Mon, 7 Dec 2020 00:59:54 +0100",
+    "os" : "Linux 5.4.0-51-generic",
+    "runtime" : "JetBrains s.r.o. 11.0.8 11.0.8+10-b944.34"
+  },
+  "runtimeInfo" : {
+    "maxMemory" : 536870912,
+    "numberOfProcessors" : 8,
+    "maxNumberOfIndexingThreads" : 4,
+    "maxSizeOfFileForIntelliSense" : 2560000,
+    "maxSizeOfFileForContentLoading" : 20971520
+  },
+  "projectIndexingHistory" : {
+    "projectName" : "testy2",
+    "numberOfFileProviders" : 2,
+    "totalNumberOfFiles" : 7,
+    "times" : {
+      "indexingTime" : "3 s 115 ms",
+      "scanFilesTime" : "2 s 781 ms",
+      "pushPropertiesTime" : "183 ms",
+      "indexExtensionsTime" : "4 ms",
+      "pushPropertiesStart" : "Mon, 7 Dec 2020 00:59:50 +0100",
+      "pushPropertiesEnd" : "Mon, 7 Dec 2020 00:59:51 +0100",
+      "scanFilesStart" : "Mon, 7 Dec 2020 00:59:51 +0100",
+      "scanFilesEnd" : "Mon, 7 Dec 2020 00:59:53 +0100",
+      "indexExtensionsStart" : "Mon, 7 Dec 2020 00:59:51 +0100",
+      "indexExtensionsEnd" : "Mon, 7 Dec 2020 00:59:51 +0100",
+      "indexingStart" : "Mon, 7 Dec 2020 00:59:50 +0100",
+      "indexingEnd" : "Mon, 7 Dec 2020 00:59:54 +0100"
+    },
+    "numberOfIndexingThreads" : 4,
+    "totalStatsPerFileType" : [ {
+      "fileType" : "SQL",
+      "partOfTotalIndexingTime" : "100.0%",
+      "partOfTotalContentLoadingTime" : "18.5%",
+      "totalNumberOfFiles" : 5,
+      "totalFilesSize" : "0 B",
+      "indexingSpeed" : "0 B/s",
+      "biggestContributors" : [ {
+        "providerName" : "com.intellij.ide.scratch.ScratchFileServiceImpl$IndexSetContributor@10a7aef3",
+        "numberOfFiles" : 5,
+        "totalFilesSize" : "0 B",
+        "partOfTotalIndexingTimeOfThisFileType" : "100.0%"
+      } ]
+    }, {
+      "fileType" : "XML",
+      "partOfTotalIndexingTime" : "< 1%",
+      "partOfTotalContentLoadingTime" : "81.5%",
+      "totalNumberOfFiles" : 2,
+      "totalFilesSize" : "18.79 kB",
+      "indexingSpeed" : "340.46 MB/s",
+      "biggestContributors" : [ {
+        "providerName" : "Module 'testy2'",
+        "numberOfFiles" : 2,
+        "totalFilesSize" : "18.79 kB",
+        "partOfTotalIndexingTimeOfThisFileType" : "100.0%"
+      } ]
+    } ],
+    "totalStatsPerIndexer" : [ {
+      "indexId" : "Stubs",
+      "partOfTotalIndexingTime" : "57.0%",
+      "totalNumberOfFiles" : 5,
+      "totalFilesSize" : "0 B",
+      "indexingSpeed" : "0 B/s"
+    }, {
+      "indexId" : "TodoIndex",
+      "partOfTotalIndexingTime" : "25.5%",
+      "totalNumberOfFiles" : 5,
+      "totalFilesSize" : "0 B",
+      "indexingSpeed" : "0 B/s"
+    }, {
+      "indexId" : "IdIndex",
+      "partOfTotalIndexingTime" : "13.6%",
+      "totalNumberOfFiles" : 5,
+      "totalFilesSize" : "0 B",
+      "indexingSpeed" : "0 B/s"
+    }, {
+      "indexId" : "Trigram.Index",
+      "partOfTotalIndexingTime" : "3.9%",
+      "totalNumberOfFiles" : 5,
+      "totalFilesSize" : "0 B",
+      "indexingSpeed" : "0 B/s"
+    }, {
+      "indexId" : "filetypes",
+      "partOfTotalIndexingTime" : "< 1%",
+      "totalNumberOfFiles" : 2,
+      "totalFilesSize" : "18.79 kB",
+      "indexingSpeed" : "582.46 MB/s"
+    }, {
+      "indexId" : "FilenameIndex",
+      "partOfTotalIndexingTime" : "< 1%",
+      "totalNumberOfFiles" : 2,
+      "totalFilesSize" : "18.79 kB",
+      "indexingSpeed" : "819.43 MB/s"
+    } ],
+    "fileProviderStatistics" : [ {
+      "providerName" : "com.intellij.ide.scratch.ScratchFileServiceImpl$IndexSetContributor@10a7aef3",
+      "totalNumberOfFiles" : 5,
+      "totalIndexingTime" : "85 ms",
+      "statsPerFileType" : [ {
+        "fileType" : "SQL",
+        "numberOfFiles" : 5,
+        "totalFilesSize" : "0 B",
+        "partOfTotalIndexingTime" : "100.0%",
+        "partOfTotalContentLoadingTime" : "100.0%"
+      } ],
+      "statsPerIndexer" : [ {
+        "indexId" : "Stubs",
+        "partOfTotalIndexingTime" : "57.0%"
+      }, {
+        "indexId" : "TodoIndex",
+        "partOfTotalIndexingTime" : "25.5%"
+      }, {
+        "indexId" : "IdIndex",
+        "partOfTotalIndexingTime" : "13.6%"
+      }, {
+        "indexId" : "Trigram.Index",
+        "partOfTotalIndexingTime" : "3.9%"
+      } ],
+      "fastIndexers" : [ ]
+    }, {
+      "providerName" : "Module 'testy2'",
+      "totalNumberOfFiles" : 2,
+      "totalIndexingTime" : "30 ms",
+      "statsPerFileType" : [ {
+        "fileType" : "XML",
+        "numberOfFiles" : 2,
+        "totalFilesSize" : "18.79 kB",
+        "partOfTotalIndexingTime" : "100.0%",
+        "partOfTotalContentLoadingTime" : "100.0%"
+      } ],
+      "statsPerIndexer" : [ {
+        "indexId" : "filetypes",
+        "partOfTotalIndexingTime" : "58.5%"
+      }, {
+        "indexId" : "FilenameIndex",
+        "partOfTotalIndexingTime" : "41.5%"
+      } ],
+      "fastIndexers" : [ ]
+    } ]
+  }
+}
