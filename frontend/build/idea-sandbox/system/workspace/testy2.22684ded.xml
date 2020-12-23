@@ -186,10 +186,13 @@
       <profile-state>
         <expanded-state>
           <State />
+          <State>
+            <id>Angular</id>
+          </State>
         </expanded-state>
         <selected-state>
           <State>
-            <id>Android</id>
+            <id>AngularCliAddDependency</id>
           </State>
         </selected-state>
       </profile-state>

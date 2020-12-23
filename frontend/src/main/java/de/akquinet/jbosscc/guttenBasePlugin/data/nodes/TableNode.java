@@ -16,8 +16,4 @@ public class TableNode extends MyDataNode {
         return tableMetaData;
     }
 
-    @Override
-    public String toString() {
-        return tableMetaData.getTableName() + " (" + tableMetaData.getColumnCount() + ")";
-    }
 }

@@ -7357,3 +7357,316 @@ LIMIT 501
 -- ] --------------------------------------------------
 -- 2020-12-07 01:56:01 [testy2] [MySQL1@localhost] [data editor: table_name [MySQL1@localhost]] [session id: 212793527] [statement id: 136315517] results received
 -- 2020-12-07 01:56:01 [testy2] [MySQL1@localhost] [data editor: table_name [MySQL1@localhost]] [session id: 212793527] [statement id: 136315517] finished - execution time: 4 ms, fetching time: 125 ms, total result sets count: 1
+-- 2020-12-07 08:01:48 [testy2] [MySQL1@localhost] [session id: 1332607587] connected
+-- [ --------------------------------------------------
+-- 2020-12-07 08:01:48 [testy2] [MySQL1@localhost] [data editor: table_name [MySQL1@localhost]] [session id: 1332607587] [statement id: 2050393769] 
+use test
+-- ] --------------------------------------------------
+-- 2020-12-07 08:01:49 [testy2] [MySQL1@localhost] [data editor: table_name [MySQL1@localhost]] [session id: 1332607587] [statement id: 2050393769] finished - execution time: 8 ms
+-- [ --------------------------------------------------
+-- 2020-12-07 08:01:49 [testy2] [MySQL1@localhost] [data editor: table_name [MySQL1@localhost]] [session id: 1332607587] [statement id: 2050393770] 
+select database()
+-- ] --------------------------------------------------
+-- 2020-12-07 08:01:49 [testy2] [MySQL1@localhost] [data editor: table_name [MySQL1@localhost]] [session id: 1332607587] [statement id: 2050393770] results received
+-- 2020-12-07 08:01:49 [testy2] [MySQL1@localhost] [data editor: table_name [MySQL1@localhost]] [session id: 1332607587] [statement id: 2050393770] finished - execution time: 41 ms, fetching time: 22 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-12-07 08:01:49 [testy2] [MySQL1@localhost] [data editor: table_name [MySQL1@localhost]] [session id: 1332607587] [statement id: 2050393771] 
+SELECT t.*
+FROM test.table_name t
+LIMIT 501
+-- ] --------------------------------------------------
+-- 2020-12-07 08:01:49 [testy2] [MySQL1@localhost] [data editor: table_name [MySQL1@localhost]] [session id: 1332607587] [statement id: 2050393771] results received
+-- 2020-12-07 08:01:49 [testy2] [MySQL1@localhost] [data editor: table_name [MySQL1@localhost]] [session id: 1332607587] [statement id: 2050393771] finished - execution time: 9 ms, fetching time: 153 ms, total result sets count: 1
+-- 2020-12-23 03:35:30 [testy2] [MySQL1@localhost] [session id: 484973312] connected
+-- [ --------------------------------------------------
+-- 2020-12-23 03:35:30 [testy2] [MySQL1@localhost] [refactoring] [session id: 484973312] [statement id: 1317652103] 
+use test
+-- ] --------------------------------------------------
+-- 2020-12-23 03:35:30 [testy2] [MySQL1@localhost] [refactoring] [session id: 484973312] [statement id: 1317652103] finished - execution time: 4 ms
+-- [ --------------------------------------------------
+-- 2020-12-23 03:35:30 [testy2] [MySQL1@localhost] [refactoring] [session id: 484973312] [statement id: 1317652104] 
+drop table table_name
+-- ] --------------------------------------------------
+-- 2020-12-23 03:35:30 [testy2] [MySQL1@localhost] [refactoring] [session id: 484973312] [statement id: 1317652104] finished - execution time: 11 ms
+-- [ --------------------------------------------------
+-- 2020-12-23 03:35:30 [testy2] [MySQL1@localhost] [refactoring] [session id: 484973312] [statement id: 1317652105] 
+drop table table_name2
+-- ] --------------------------------------------------
+-- 2020-12-23 03:35:30 [testy2] [MySQL1@localhost] [refactoring] [session id: 484973312] [statement id: 1317652105] finished - execution time: 10 ms
+-- 2020-12-23 03:35:30 [testy2] [MySQL1@localhost] [session id: 484973313] connected
+-- [ --------------------------------------------------
+-- 2020-12-23 03:35:30 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652106] 
+select database()
+-- ] --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652106] results received
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652106] finished - execution time: 25 ms, fetching time: 43 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652107] 
+select @@event_scheduler
+-- ] --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652107] results received
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652107] finished - execution time: 5 ms, fetching time: 16 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652108] 
+select @@default_storage_engine, @@default_tmp_storage_engine
+-- ] --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652108] results received
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652108] finished - execution time: 2 ms, fetching time: 3 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652109] 
+select table_name from information_schema.tables
+        where table_schema collate utf8_general_ci = 'information_schema'
+          and table_name collate utf8_general_ci = 'parameters'
+-- ] --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652109] results received
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652109] finished - execution time: 6 ms, fetching time: 2 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652110] 
+select @@default_storage_engine, @@default_tmp_storage_engine
+-- ] --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652110] results received
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652110] finished - execution time: 3 ms, fetching time: 2 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652111] 
+select table_name from information_schema.tables
+        where table_schema collate utf8_general_ci = 'information_schema'
+          and table_name collate utf8_general_ci = 'parameters'
+-- ] --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652111] results received
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652111] finished - execution time: 3 ms, fetching time: 2 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652112] 
+select @@GLOBAL.lower_case_table_names
+-- ] --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652112] results received
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652112] finished - execution time: 2 ms, fetching time: 5 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652113] 
+select schema_name, default_collation_name
+        from information_schema.schemata
+        order by if(schema() = schema_name, 1, 2), schema_name
+-- ] --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652113] results received
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652113] finished - execution time: 4 ms, fetching time: 8 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652114] 
+select collation_name, character_set_name,
+          is_default collate utf8_general_ci = 'Yes' as is_default
+        from information_schema.collations
+      
+-- ] --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652114] results received
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652114] finished - execution time: 6 ms, fetching time: 16 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652115] 
+select grantee from information_schema.user_privileges group by grantee
+-- ] --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652115] results received
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652115] finished - execution time: 2 ms, fetching time: 4 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652116] 
+show grants for 'debian-sys-maint'@'localhost'
+-- ] --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652116] results received
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652116] finished - execution time: 3 ms, fetching time: 2 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652117] 
+show grants for 'mysql.infoschema'@'localhost'
+-- ] --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652117] results received
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652117] finished - execution time: 2 ms, fetching time: 2 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652118] 
+show grants for 'mysql.session'@'localhost'
+-- ] --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652118] results received
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652118] finished - execution time: 3 ms, fetching time: 2 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652119] 
+show grants for 'mysql.sys'@'localhost'
+-- ] --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652119] results received
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652119] finished - execution time: 3 ms, fetching time: 2 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652120] 
+show grants for 'root'@'localhost'
+-- ] --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652120] results received
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652120] finished - execution time: 2 ms, fetching time: 4 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652121] 
+select @@default_storage_engine, @@default_tmp_storage_engine
+-- ] --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652121] results received
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652121] finished - execution time: 2 ms, fetching time: 2 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652122] 
+select table_name from information_schema.tables
+        where table_schema collate utf8_general_ci = 'information_schema'
+          and table_name collate utf8_general_ci = 'parameters'
+-- ] --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652122] results received
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652122] finished - execution time: 3 ms, fetching time: 3 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652123] 
+select table_name, table_type, table_comment, engine, table_collation
+        from information_schema.tables
+        where table_schema = ?
+      
+-- ] --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652123] results received
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652123] finished - execution time: 3 ms, fetching time: 2 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652124] 
+select
+        ordinal_position,
+        column_name,
+        column_type,
+        column_default,
+        generation_expression,
+        table_name,
+        column_comment,
+        is_nullable,
+        extra,
+        collation_name
+      from information_schema.columns
+      where table_schema = ?
+      order by table_name, ordinal_position
+      
+-- ] --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652124] results received
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652124] finished - execution time: 3 ms, fetching time: 2 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652125] 
+select
+          table_name,
+          index_name,
+          index_comment,
+          index_type,
+          non_unique,
+          column_name,
+          collation,
+          expression
+        from information_schema.statistics
+        where table_schema = ? and
+              index_schema = ? and
+              index_name collate utf8_general_ci <> 'PRIMARY'
+        order by
+          index_schema,
+          table_name,
+          index_name,
+          seq_in_index
+        
+-- ] --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652125] results received
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652125] finished - execution time: 4 ms, fetching time: 1 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652126] 
+select
+        c.constraint_name,
+        c.table_name,
+        c.constraint_type,
+        r.match_option,
+        r.update_rule,
+        r.delete_rule
+      from information_schema.table_constraints c
+        left join information_schema.referential_constraints r on
+            r.constraint_schema   = c.constraint_schema
+        and r.constraint_name     = c.constraint_name
+      where c.table_schema = ?
+    
+-- ] --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652126] results received
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652126] finished - execution time: 3 ms, fetching time: 2 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652127] 
+select
+        constraint_name,
+        table_name,
+        column_name,
+        referenced_table_schema,
+        referenced_table_name,
+        referenced_column_name
+      from information_schema.key_column_usage
+      where table_schema = ?
+      order by
+          table_name
+        , constraint_name
+        , ordinal_position
+    
+-- ] --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652127] results received
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652127] finished - execution time: 4 ms, fetching time: 1 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652128] 
+select
+          trigger_name,
+          event_object_table,
+          event_manipulation,
+          action_timing,
+          definer
+        from information_schema.triggers
+        where trigger_schema = ?
+      
+-- ] --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652128] results received
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652128] finished - execution time: 3 ms, fetching time: 2 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652129] 
+select
+          event_name,
+          event_comment,
+          definer,
+          event_type = 'RECURRING' recurring,
+          interval_value,
+          interval_field,
+          cast(coalesce(starts, execute_at) as char) starts,
+          cast(ends as char) ends,
+          status,
+          on_completion = 'PRESERVE' preserve,
+          last_executed
+        from information_schema.events
+        where event_schema = ?
+      
+-- ] --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652129] results received
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652129] finished - execution time: 4 ms, fetching time: 6 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652130] 
+select
+          routine_name,
+          routine_type,
+          routine_definition,
+          routine_comment,
+          dtd_identifier,
+          definer
+        from information_schema.routines
+        where routine_schema = ?
+      
+-- ] --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652130] results received
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652130] finished - execution time: 6 ms, fetching time: 1 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652131] 
+select specific_name,
+        ordinal_position,
+        parameter_name,
+        parameter_mode,
+        dtd_identifier
+      from information_schema.parameters
+      where specific_schema = ? and ordinal_position > 0
+      order by specific_name, ordinal_position
+      
+-- ] --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652131] results received
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652131] finished - execution time: 6 ms, fetching time: 1 ms, total result sets count: 1
+-- [ --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652132] 
+select table_name, view_definition, definer
+      from information_schema.views
+      where table_schema = ?
+      
+-- ] --------------------------------------------------
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652132] results received
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [introspection] [session id: 484973313] [statement id: 1317652132] finished - execution time: 3 ms, fetching time: 2 ms, total result sets count: 1
+-- 2020-12-23 03:35:31 [testy2] [MySQL1@localhost] [session id: 484973313] disconnected

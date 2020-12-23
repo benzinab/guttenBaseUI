@@ -32,7 +32,7 @@
         <ActionSummary times="1" last="1603542779218" />
       </entry>
       <entry key="DatabaseView.AddActionGroupPopup">
-        <ActionSummary times="46" last="1605140004182" />
+        <ActionSummary times="48" last="1607531165967" />
       </entry>
       <entry key="DatabaseView.AddDataSourceFromPath">
         <ActionSummary times="3" last="1603018374528" />
@@ -71,7 +71,7 @@
         <ActionSummary times="32" last="1607299531863" />
       </entry>
       <entry key="EditorBackSpace">
-        <ActionSummary times="142" last="1607299368277" />
+        <ActionSummary times="143" last="1607333655617" />
       </entry>
       <entry key="EditorChooseLookupItem">
         <ActionSummary times="12" last="1607299372427" />
@@ -148,11 +148,20 @@
       <entry key="RenameElement">
         <ActionSummary times="15" last="1605142811196" />
       </entry>
+      <entry key="Run">
+        <ActionSummary times="2" last="1607530361339" />
+      </entry>
       <entry key="SaveAll">
         <ActionSummary times="10" last="1605175077613" />
       </entry>
+      <entry key="SelectIn">
+        <ActionSummary times="1" last="1607553794835" />
+      </entry>
       <entry key="ShowSettings">
-        <ActionSummary times="2" last="1603841076487" />
+        <ActionSummary times="5" last="1607554172275" />
+      </entry>
+      <entry key="Stop">
+        <ActionSummary times="2" last="1607530365388" />
       </entry>
       <entry key="WelcomeScreen.CreateNewProject">
         <ActionSummary times="1" last="1600251767949" />
@@ -161,13 +170,13 @@
         <ActionSummary times="1" last="1600251773158" />
       </entry>
       <entry key="com.intellij.database.actions.DdlActions$CreateObject">
-        <ActionSummary times="15" last="1605175043514" />
+        <ActionSummary times="17" last="1607531163927" />
       </entry>
       <entry key="com.intellij.database.actions.RunExtensionScriptActionGroup$RunScriptAction">
         <ActionSummary times="1" last="1603542518968" />
       </entry>
       <entry key="com.intellij.database.dataSource.LocalDataSourceManager$2">
-        <ActionSummary times="32" last="1605140009965" />
+        <ActionSummary times="33" last="1607531169762" />
       </entry>
       <entry key="com.intellij.database.dataSource.url.ui.ParamEditorBase$FMChooseAction">
         <ActionSummary times="2" last="1603546016930" />
@@ -200,7 +209,10 @@
         <ActionSummary times="1" last="1605018235256" />
       </entry>
       <entry key="com.intellij.ui.CommonActionsPanel$AddButton">
-        <ActionSummary times="134" last="1605143598519" />
+        <ActionSummary times="144" last="1607553899791" />
+      </entry>
+      <entry key="com.intellij.ui.CommonActionsPanel$EditButton">
+        <ActionSummary times="4" last="1607531409570" />
       </entry>
       <entry key="editRunConfigurations">
         <ActionSummary times="4" last="1601916603259" />

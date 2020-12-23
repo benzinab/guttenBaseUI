@@ -13,9 +13,4 @@ public class ColumnNode extends MyDataNode {
     public ColumnMetaData getColumnMetaData() {
         return columnMetaData;
     }
-
-    @Override
-    public String toString() {
-        return columnMetaData.getColumnName();
-    }
 }

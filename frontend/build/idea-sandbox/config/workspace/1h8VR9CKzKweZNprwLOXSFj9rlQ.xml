@@ -27,78 +27,7 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="-1">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/619ccfe3-ba05-40e0-b798-06ab05629a12/console.sql">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/cf76ed41-f464-48a6-9aa8-74577ddbd36f/console.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/518e1cb2-8824-4d91-ae6f-8eada002b868/console.sql">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/1e8a7a36-4df2-40fc-a87e-f8a7497f6743/console.sql">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/8c79077a-f76c-47a7-a964-d409b7cb6e81/console.sql">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/76361e0b-b578-4054-b2de-193aa8c50d54/console.sql">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/e76c73da-2eb0-4a29-84dd-0e8d79678448/console.sql">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/e76c73da-2eb0-4a29-84dd-0e8d79678448/console_1.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="88" selection-start-column="88" selection-end-column="88" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="das://e76c73da-2eb0-4a29-84dd-0e8d79678448/database/database/schema/test/table/table_name">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state presentationMode="TABLE" sessionName="console_1" projectRestartId="fd86b77b-39c4-4aba-9162-6cb19a92a427" pageSize="500">
-              <filtering>
-                <filter text="" />
-              </filtering>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="das://1e8a7a36-4df2-40fc-a87e-f8a7497f6743/schema/test/table/table_name">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state presentationMode="TABLE" projectRestartId="fd86b77b-39c4-4aba-9162-6cb19a92a427" pageSize="500">
-              <filtering>
-                <filter text="" />
-              </filtering>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="-1" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -116,13 +45,13 @@
       </set>
     </option>
   </component>
-  <component name="ProjectFrameBounds" x="2030" y="0" width="1828" height="796" extendedState="6" />
+  <component name="ProjectFrameBounds" x="72" y="27" width="1848" height="1053" extendedState="6" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" />
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="ServiceViewManager">
@@ -138,7 +67,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="MSSQL: root" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@11c37df5" type="9fbbdea:ServiceModel$ServiceNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@80c91ce" type="9fbbdea:ServiceModel$ServiceNode" />
               </path>
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
@@ -147,7 +76,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="MySQL1@localhost: root" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@79fa708d" type="9fbbdea:ServiceModel$ServiceNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@3d94a186" type="9fbbdea:ServiceModel$ServiceNode" />
               </path>
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
@@ -156,7 +85,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="MySQL2: root" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@66e39f20" type="9fbbdea:ServiceModel$ServiceNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@51008e07" type="9fbbdea:ServiceModel$ServiceNode" />
               </path>
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
@@ -165,7 +94,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="PsqlDatabase2@localhost: root" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@4c5862fe" type="9fbbdea:ServiceModel$ServiceNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@5b62f70e" type="9fbbdea:ServiceModel$ServiceNode" />
               </path>
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
@@ -174,12 +103,12 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="PsqlDatabase@localhost: root" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@6832de56" type="9fbbdea:ServiceModel$ServiceNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@2059b7c" type="9fbbdea:ServiceModel$ServiceNode" />
               </path>
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="PsqlDatabase@localhost: root" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@69af90b6" type="9fbbdea:ServiceModel$ServiceNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@4c1ebd90" type="9fbbdea:ServiceModel$ServiceNode" />
               </path>
             </expand>
             <select />
@@ -189,11 +118,11 @@
     </option>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52390000" />
+    <option name="totallyTimeSpent" value="62226000" />
   </component>
   <component name="ToolWindowManager">
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16370699" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17258601" />
       <window_info id="Structure" order="1" side_tool="true" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Commit" order="3" />
@@ -201,7 +130,7 @@
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="2" />
-      <window_info anchor="bottom" id="Run" order="3" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.32899022" />
       <window_info anchor="bottom" id="TODO" order="4" />
       <window_info anchor="bottom" id="Endpoints" order="5" show_stripe_button="false" />
       <window_info anchor="bottom" id="Flow" order="6" />
@@ -212,12 +141,12 @@
       <window_info anchor="bottom" id="Debug" order="11" weight="0.4" />
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
       <window_info anchor="bottom" id="Terminal" order="13" />
-      <window_info anchor="bottom" id="Services" order="14" visible="true" weight="0.31012657" />
+      <window_info anchor="bottom" id="Services" order="14" weight="0.31921825" />
       <window_info anchor="bottom" id="Build" order="15" />
       <window_info anchor="right" x="875" y="190" width="512" height="397" id="Guttenbase" order="0" sideWeight="0.5005429" weight="0.37569368" />
       <window_info anchor="right" id="Ant" order="1" weight="0.32963374" />
       <window_info anchor="right" id="Gradle" order="2" sideWeight="0.49945712" weight="0.26748058" />
-      <window_info anchor="right" id="Database" order="3" sideWeight="0.49945712" visible="true" weight="0.26137626" />
+      <window_info anchor="right" id="Database" order="3" sideWeight="0.49945712" visible="true" weight="0.2774695" />
       <window_info anchor="right" id="Layout Validation" order="4" />
     </layout>
   </component>
@@ -280,9 +209,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/619ccfe3-ba05-40e0-b798-06ab05629a12/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/cf76ed41-f464-48a6-9aa8-74577ddbd36f/console.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
@@ -305,6 +231,15 @@
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/e76c73da-2eb0-4a29-84dd-0e8d79678448/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="das://e76c73da-2eb0-4a29-84dd-0e8d79678448/database/database/schema/test/table/table_name">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state presentationMode="TABLE" sessionName="console_1" projectRestartId="bf6281cd-1e1f-4a2f-81d0-6bd9ca255ad6" pageSize="500">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/e76c73da-2eb0-4a29-84dd-0e8d79678448/console_1.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -312,18 +247,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://e76c73da-2eb0-4a29-84dd-0e8d79678448/database/database/schema/test/table/table_name">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state presentationMode="TABLE" sessionName="console_1" projectRestartId="fd86b77b-39c4-4aba-9162-6cb19a92a427" pageSize="500">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/619ccfe3-ba05-40e0-b798-06ab05629a12/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="das://1e8a7a36-4df2-40fc-a87e-f8a7497f6743/schema/test/table/table_name">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state presentationMode="TABLE" projectRestartId="fd86b77b-39c4-4aba-9162-6cb19a92a427" pageSize="500">
+        <state presentationMode="TABLE" sessionName="test.table_name" projectRestartId="bf6281cd-1e1f-4a2f-81d0-6bd9ca255ad6" pageSize="500">
           <filtering>
             <filter text="" />
           </filtering>

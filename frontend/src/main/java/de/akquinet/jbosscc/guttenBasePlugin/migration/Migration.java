@@ -15,7 +15,6 @@ public class Migration {
     public static final String TARGET = "target";
 
     public static void migrate(ConnectorRepository connectorRepository) throws SQLException {
-
         new CopySchemaTool(connectorRepository).copySchema(SOURCE, TARGET);
         final SchemaCompatibilityIssues schemaCompatibilityIssues = new
                 SchemaComparatorTool(connectorRepository).check(SOURCE, TARGET);

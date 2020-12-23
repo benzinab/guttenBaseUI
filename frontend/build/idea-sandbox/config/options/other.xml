@@ -6,13 +6,14 @@
     <property name="FileTemplates.SelectedTemplate" value="HTML File" />
     <property name="UITheme.relaunch" value="true" />
     <property name="build.toolwindow.Sync.selection.state" value="com.intellij.build.BuildTreeConsoleView" />
+    <property name="build.toolwindow.run.selection.state" value="com.intellij.build.BuildTreeConsoleView" />
     <property name="com.intellij.database.actions.DdlActions$CreateObject$1.previewExpanded" value="true" />
     <property name="com.intellij.database.actions.DdlActions$DeleteProvider2$1.previewExpanded" value="true" />
     <property name="database.data.extractors.output.dir" value="" />
     <property name="defaultJdkConfigured" value="true" />
     <property name="evlsprt3.202" value="18" />
     <property name="file.chooser.recent.files" value="$USER_HOME$/repo/swp2-die-kammerj-ger/Kammerjaeger/src/main/resources&#10;/home/siraj/repo/swp2-die-kammerj-ger/Kammerjaeger/src/main/resources/initialData.sql&#10;/home/siraj/repo/guttenBasePlugin/testy2" />
-    <property name="file.gist.reindex.count" value="285" />
+    <property name="file.gist.reindex.count" value="329" />
     <property name="ide.memory.adjusted" value="true" />
     <property name="import_error_directory" value="$USER_HOME$" />
     <property name="import_write_errors" value="true" />

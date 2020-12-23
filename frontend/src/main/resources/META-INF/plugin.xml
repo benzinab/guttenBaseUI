@@ -14,7 +14,7 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <toolWindow id="Guttenbase" secondary="true" icon="AllIcons.General.Modified" anchor="right"
-                    factoryClass="de.akquinet.jbosscc.guttenBasePlugin.ui.extensions.GBWindowFactory"/>
+                    factoryClass="de.akquinet.jbosscc.guttenBasePlugin.extensions.GBWindowFactory"/>
     </extensions>
 
     <extensionPoints>
@@ -23,7 +23,7 @@
     <actions>
         <group id="GuttenBase.database.action1" text="GuttenBase" description="GuttenBase plugin">
             <add-to-group group-id="DatabaseViewPopupMenu" anchor="last" />
-            <action class="de.akquinet.jbosscc.guttenBasePlugin.ui.actions.ShowAction" id="GuttenBase.Actions.ShowAction" text="Migrate Database"/>
+            <action class="de.akquinet.jbosscc.guttenBasePlugin.actions.ShowMigrationAction" id="GuttenBase.Actions.ShowAction" text="Migrate Database"/>
         </group>
     </actions>
 </idea-plugin>

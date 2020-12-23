@@ -1,16 +1,16 @@
 <application>
   <component name="DimensionService">
-    <size key="GridCell.Tab.0.left.0.0.1920.1080" width="1291" height="266" />
-    <size key="GridCell.Tab.0.center.0.0.1920.1080" width="1291" height="266" />
-    <size key="GridCell.Tab.0.right.0.0.1920.1080" width="1291" height="266" />
-    <size key="GridCell.Tab.0.bottom.0.0.1920.1080" width="1291" height="266" />
+    <size key="GridCell.Tab.0.left.0.0.1920.1080" width="1802" height="275" />
+    <size key="GridCell.Tab.0.center.0.0.1920.1080" width="1802" height="275" />
+    <size key="GridCell.Tab.0.right.0.0.1920.1080" width="1802" height="275" />
+    <size key="GridCell.Tab.0.bottom.0.0.1920.1080" width="1802" height="275" />
     <size key="GridCell.Tab.0.left.1920.0.1920.1080" width="1240" height="266" />
     <size key="GridCell.Tab.0.center.1920.0.1920.1080" width="1240" height="266" />
     <size key="GridCell.Tab.0.right.1920.0.1920.1080" width="1240" height="266" />
     <size key="GridCell.Tab.0.bottom.1920.0.1920.1080" width="1240" height="266" />
   </component>
   <component name="WindowManager">
-    <frame x="198" y="195" width="1838" height="789" extendedState="6" />
+    <frame x="72" y="27" width="1848" height="1053" extendedState="6" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" order="0" />

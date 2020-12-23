@@ -1,6 +1,6 @@
 package de.akquinet.jbosscc.guttenBasePlugin.data.nodes;
 
-import de.akquinet.jbosscc.guttenBasePlugin.table.Action;
+import de.akquinet.jbosscc.guttenBasePlugin.ui.table.Action;
 
 import java.util.ArrayList;
 import java.util.List;
