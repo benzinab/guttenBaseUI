@@ -71,7 +71,7 @@
         <ActionSummary times="32" last="1607299531863" />
       </entry>
       <entry key="EditorBackSpace">
-        <ActionSummary times="143" last="1607333655617" />
+        <ActionSummary times="166" last="1608855226012" />
       </entry>
       <entry key="EditorChooseLookupItem">
         <ActionSummary times="12" last="1607299372427" />
@@ -86,7 +86,7 @@
         <ActionSummary times="2" last="1605009654294" />
       </entry>
       <entry key="EditorDeleteToWordStart">
-        <ActionSummary times="53" last="1607299369044" />
+        <ActionSummary times="54" last="1608855237337" />
       </entry>
       <entry key="EditorDown">
         <ActionSummary times="1" last="1607299342041" />
@@ -158,7 +158,7 @@
         <ActionSummary times="1" last="1607553794835" />
       </entry>
       <entry key="ShowSettings">
-        <ActionSummary times="5" last="1607554172275" />
+        <ActionSummary times="10" last="1608870015488" />
       </entry>
       <entry key="Stop">
         <ActionSummary times="2" last="1607530365388" />
@@ -168,6 +168,9 @@
       </entry>
       <entry key="WelcomeScreen.OpenProject">
         <ActionSummary times="1" last="1600251773158" />
+      </entry>
+      <entry key="com.intellij.codeInsight.template.impl.TemplateListPanel$11">
+        <ActionSummary times="1" last="1608740730069" />
       </entry>
       <entry key="com.intellij.database.actions.DdlActions$CreateObject">
         <ActionSummary times="17" last="1607531163927" />
@@ -184,6 +187,9 @@
       <entry key="com.intellij.ide.actions.ToolWindowViewModeAction">
         <ActionSummary times="4" last="1601546488299" />
       </entry>
+      <entry key="com.intellij.openapi.actionSystem.DefaultActionGroup">
+        <ActionSummary times="1" last="1608870053833" />
+      </entry>
       <entry key="com.intellij.openapi.actionSystem.impl.ChameleonAction">
         <ActionSummary times="12" last="1603732708663" />
       </entry>
@@ -191,7 +197,7 @@
         <ActionSummary times="4" last="1603380448889" />
       </entry>
       <entry key="com.intellij.openapi.project.DumbAwareAction$SimpleDumbAwareAction">
-        <ActionSummary times="1" last="1600333950254" />
+        <ActionSummary times="2" last="1608740698100" />
       </entry>
       <entry key="com.intellij.openapi.ui.DialogWrapper$5">
         <ActionSummary times="23" last="1605175075775" />
@@ -208,11 +214,17 @@
       <entry key="com.intellij.sql.database.SqlDataSourceManager$4">
         <ActionSummary times="1" last="1605018235256" />
       </entry>
+      <entry key="com.intellij.structuralsearch.inspection.StructuralSearchProfileActionProvider$AddInspectionAction">
+        <ActionSummary times="1" last="1608870054538" />
+      </entry>
       <entry key="com.intellij.ui.CommonActionsPanel$AddButton">
-        <ActionSummary times="144" last="1607553899791" />
+        <ActionSummary times="224" last="1608869877816" />
       </entry>
       <entry key="com.intellij.ui.CommonActionsPanel$EditButton">
-        <ActionSummary times="4" last="1607531409570" />
+        <ActionSummary times="58" last="1608869968664" />
+      </entry>
+      <entry key="com.intellij.ui.CommonActionsPanel$RemoveButton">
+        <ActionSummary times="6" last="1608833223226" />
       </entry>
       <entry key="editRunConfigurations">
         <ActionSummary times="4" last="1601916603259" />

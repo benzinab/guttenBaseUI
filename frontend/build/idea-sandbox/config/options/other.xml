@@ -25,7 +25,7 @@
     <property name="last_opened_file_path" value="$USER_HOME$/repo/guttenBasePlugin/testy2" />
     <property name="packagesearch.endpoint.url.fulltext" value="https://package-search.services.jetbrains.com/api/search/idea/fulltext" />
     <property name="packagesearch.endpoint.url.suggest" value="https://package-search.services.jetbrains.com/api/search/idea/suggest" />
-    <property name="packagesearch.status.updated.ts" value="1607299182756" />
+    <property name="packagesearch.status.updated.ts" value="1608740345321" />
     <property name="project.wizard.group" value="JAVA_MODULE" />
     <property name="seenTips" value="neue-NonSuspendingBreakpoints.html,neue-DeleteLine.html,neue-RemoveBreakpoint.html,neue-DiagramShowPopup.html,Kotlin_mix.html,neue-InspectCode.html,neue-Antivirus.html,neue-Emmet.html,neue-SecondSmartCompletionArrayMember.html" />
     <property name="shared.index.infrastructure.prop" value="4" />

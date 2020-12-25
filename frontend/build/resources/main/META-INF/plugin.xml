@@ -13,13 +13,15 @@
   <depends>com.intellij.modules.platform</depends>
   <depends>com.intellij.database</depends>
   <extensions defaultExtensionNs="com.intellij">
-    <toolWindow id="Guttenbase" secondary="true" icon="AllIcons.General.Modified" anchor="right" factoryClass="de.akquinet.jbosscc.guttenBasePlugin.extensions.GBWindowFactory"/>
+    <toolWindow id="Guttenbase" secondary="true" icon="AllIcons.General.Modified" anchor="right" factoryClass="de.akquinet.jbosscc.gbplugin.extensions.GBWindowFactory"/>
   </extensions>
   <extensionPoints/>
   <actions>
-    <group id="GuttenBase.database.action1" text="GuttenBase" description="GuttenBase plugin">
+    <group id="GuttenBase.actions" text="GuttenBase" description="GuttenBase plugin">
       <add-to-group group-id="DatabaseViewPopupMenu" anchor="last"/>
-      <action class="de.akquinet.jbosscc.guttenBasePlugin.actions.ShowMigrationAction" id="GuttenBase.Actions.ShowAction" text="Migrate Database"/>
+      <separator/>
+      <action class="de.akquinet.jbosscc.gbplugin.actions.OpenMigrationAction" id="GuttenBase.Actions.openMigration" text="Migrate Database"/>
+      <action class="de.akquinet.jbosscc.gbplugin.actions.OpenGBActionsAction" id="GuttenBase.Actions.openGBActions" text="Show Actions"/>
     </group>
   </actions>
 </idea-plugin>
