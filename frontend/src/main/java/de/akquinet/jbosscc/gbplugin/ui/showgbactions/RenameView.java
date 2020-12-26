@@ -1,6 +1,6 @@
-package de.akquinet.jbosscc.gbplugin.ui.gbactions;
+package de.akquinet.jbosscc.gbplugin.ui.showactions;
 
-import de.akquinet.jbosscc.gbplugin.data.Action;
+import de.akquinet.jbosscc.gbplugin.data.GBAction;
 import de.akquinet.jbosscc.gbplugin.data.ActionType;
 import de.akquinet.jbosscc.gbplugin.ui.common.AbstractView;
 
@@ -20,17 +20,17 @@ public class RenameView extends AbstractView {
     public RenameView(){
     }
 
-    public RenameView(Action action) {
-        sourceRegExpField.setText(action.getRegex());
-        targetField.setText(action.getReplace());
-        nameField.setText(action.getName());
+    public RenameView(GBAction GBAction) {
+        sourceRegExpField.setText(GBAction.getRegex());
+        targetField.setText(GBAction.getReplace());
+        nameField.setText(GBAction.getName());
     }
 
     public JPanel getContent() {
         return content;
     }
 
-    public Action getAction() {
-        return new Action(nameField.getText(), sourceRegExpField.getText(), ActionType.COLUMN_RENAME_ACTION);
+    public GBAction getAction() {
+        return new GBAction(nameField.getText(), sourceRegExpField.getText(), ActionType.COLUMN_RENAME_ACTION);
     }
 }

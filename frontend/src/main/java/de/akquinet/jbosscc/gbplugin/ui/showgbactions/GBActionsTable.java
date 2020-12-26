@@ -1,10 +1,10 @@
-package de.akquinet.jbosscc.gbplugin.ui.gbactions;
+package de.akquinet.jbosscc.gbplugin.ui.showactions;
 
 import com.intellij.ui.TableViewSpeedSearch;
 import com.intellij.ui.table.TableView;
 import com.intellij.util.ui.ColumnInfo;
 import com.intellij.util.ui.ListTableModel;
-import de.akquinet.jbosscc.gbplugin.data.Action;
+import de.akquinet.jbosscc.gbplugin.data.GBAction;
 import de.akquinet.jbosscc.gbplugin.data.ActionType;
 import org.jetbrains.annotations.NotNull;
 
@@ -13,9 +13,9 @@ import javax.swing.table.TableCellRenderer;
 import java.awt.*;
 import java.util.List;
 
-public class GBActionsTable extends TableView<Action> {
-    public GBActionsTable(List<Action> actions, ColumnInfo[] columnInfos){
-        super(new ListTableModel<>(columnInfos, actions, 0));
+public class GBActionsTable extends TableView<GBAction> {
+    public GBActionsTable(List<GBAction> GBActions, ColumnInfo[] columnInfos){
+        super(new ListTableModel<>(columnInfos, GBActions, 0));
         setAutoResizeMode(AUTO_RESIZE_ALL_COLUMNS);
         getColumnModel().getColumn(0).setCellRenderer(createDisplayNameCellRenderer());
         getColumnModel().getColumn(1).setCellRenderer(creatTypeCellRenderer());
@@ -23,6 +23,7 @@ public class GBActionsTable extends TableView<Action> {
         setShowGrid(false);
         setShowVerticalLines(false);
         setGridColor(getForeground());
+        setStriped(true);
 
         String maxName = "123456789 123456789";
 
@@ -32,7 +33,7 @@ public class GBActionsTable extends TableView<Action> {
 
         new TableViewSpeedSearch<>(this) {
             @Override
-            protected String getItemText(@NotNull Action element) {
+            protected String getItemText(@NotNull GBAction element) {
                 return element.getName();
             }
         };

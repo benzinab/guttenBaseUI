@@ -1,16 +1,14 @@
-package de.akquinet.jbosscc.gbplugin.ui.gbactions;
+package de.akquinet.jbosscc.gbplugin.ui.showactions;
 
 import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
-import com.intellij.openapi.project.DumbAwareAction;
-import com.intellij.openapi.ui.DialogBuilder;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.util.Comparing;
 import com.intellij.ui.*;
 import com.intellij.util.ui.ColumnInfo;
-import de.akquinet.jbosscc.gbplugin.data.Action;
+import de.akquinet.jbosscc.gbplugin.actions.CreateRenameAction;
+import de.akquinet.jbosscc.gbplugin.data.GBAction;
 import de.akquinet.jbosscc.gbplugin.data.ActionType;
 import org.jetbrains.annotations.Nullable;
 
@@ -25,11 +23,11 @@ public class GBActionsUI {
     private final GBActionsTable myGBActionsTable;
     private final List<AnAction> myAddActions = new ArrayList<>();
     private ToolbarDecorator decorator;
-    private List<Action> myActions;
+    private List<GBAction> myGBActions;
 
-    public GBActionsUI(List<Action> actions) {
-        myActions = actions;
-        myGBActionsTable = new GBActionsTable(actions, createInfoColumns());
+    public GBActionsUI(List<GBAction> GBActions) {
+        myGBActions = GBActions;
+        myGBActionsTable = new GBActionsTable(GBActions, createInfoColumns());
         decorator = ToolbarDecorator.createDecorator(myGBActionsTable);
         createActions(decorator);
 
@@ -46,10 +44,10 @@ public class GBActionsUI {
         return decorator.createPanel();
     }
     private void createActions(ToolbarDecorator decorator) {
-        myAddActions.add(new CreateRenameAction());
-        myAddActions.add(new CreateRenameAction());//TODO add other hints
-        myAddActions.add(new CreateRenameAction());
-        myAddActions.add(new CreateRenameAction());
+        myAddActions.add(new CreateRenameAction(myGBActionsTable, myGBActions));
+        myAddActions.add(new CreateRenameAction(myGBActionsTable, myGBActions));//TODO add other hints
+        myAddActions.add(new CreateRenameAction(myGBActionsTable, myGBActions));
+        myAddActions.add(new CreateRenameAction(myGBActionsTable, myGBActions));
         myAddActions.sort((o1, o2) -> Comparing.compare(o1.getTemplatePresentation().getText(), o2.getTemplatePresentation().getText()));
         decorator.disableUpDownActions();
         decorator.setAddActionUpdater(e -> !myAddActions.isEmpty());
@@ -75,11 +73,11 @@ public class GBActionsUI {
         }
         final int selectedRow = myGBActionsTable.getSelectedRow();
         if (selectedRow < 0) return;
-        final List<Action> selected = getSelectedActions();
-        for (Action action : selected) {
-            myActions.remove(action);
+        final List<GBAction> selected = getSelectedActions();
+        for (GBAction GBAction : selected) {
+            myGBActions.remove(GBAction);
         }
-        myGBActionsTable.getListTableModel().setItems(myActions);
+        myGBActionsTable.getListTableModel().setItems(myGBActions);
         final int index = Math.min(myGBActionsTable.getListTableModel().getRowCount() - 1, selectedRow);
         myGBActionsTable.getSelectionModel().setSelectionInterval(index, index);
         TableUtil.scrollSelectionToVisible(myGBActionsTable);
@@ -87,13 +85,13 @@ public class GBActionsUI {
 
     private void performEdit(AnActionButton e) {
         int row = myGBActionsTable.getSelectedRow();
-        Action action = myGBActionsTable.getItems().get(myGBActionsTable.convertRowIndexToModel(row));
-        new CreateRenameAction(action).actionPerformed(null);
+        GBAction GBAction = myGBActionsTable.getItems().get(myGBActionsTable.convertRowIndexToModel(row));
+        new CreateRenameAction(myGBActionsTable, myGBActions, GBAction).actionPerformed(null);
 
     }
 
-    private List<Action> getSelectedActions() {
-        List<Action> toRemove = new ArrayList<>();
+    private List<GBAction> getSelectedActions() {
+        List<GBAction> toRemove = new ArrayList<>();
         for (int row : myGBActionsTable.getSelectedRows()) {
             toRemove.add(myGBActionsTable.getItems().get(myGBActionsTable.convertRowIndexToModel(row)));
         }
@@ -102,65 +100,22 @@ public class GBActionsUI {
 
 
     public ColumnInfo[] createInfoColumns() {
-        final ColumnInfo[] columnInfos = {new ColumnInfo<Action, String>("Name") {
+        final ColumnInfo[] columnInfos = {new ColumnInfo<GBAction, String>("Name") {
             @Override
-            public @Nullable String valueOf(Action action) {
+            public @Nullable String valueOf(GBAction action) {
                 return action.getName();
             }
-        }, new ColumnInfo< Action, ActionType>(("Type")) {
+        }, new ColumnInfo<GBAction, ActionType>(("Type")) {
             @Override
-            public ActionType valueOf(final Action action) {
+            public ActionType valueOf(final GBAction action) {
                 return action.getActionType();
             }
         }};
         return columnInfos;
     }
 
-    private class CreateRenameAction extends DumbAwareAction {
-        Action action;
-        CreateRenameAction() {
-            super("Rename Action");
-        }
-        CreateRenameAction(Action action) {
-            super("Rename Action");
-            this.action = action;
-        }
-
-        @Override
-        public void actionPerformed(AnActionEvent e) {
-            RenameView renameView = action == null ? new RenameView() : new RenameView(action);
-            DialogBuilder builder = new DialogBuilder();
-            builder.setCenterPanel(renameView.getContent());
-            builder.setTitle("Create Rename Action");
-            builder.showModal(true);
-            if (builder.getDialogWrapper().isOK()) {
-                Action newAction = renameView.getAction();
-                if (action != null) {
-                    myActions.set(myActions.indexOf(action), newAction);
-                    myGBActionsTable.getListTableModel().setItems(myActions);
-                    return;
-                }
-                for (Action act : myActions) {
-                    if (act.getName().equals(newAction.getName())) {
-                        int confirmed = Messages.showConfirmationDialog(renameView.getContent(), "This action already exists. " +
-                                "Do you want to replace it?","Replace Confirmation", "Replace", "Cancel");
-                        if (confirmed == 1) {
-                            return;
-                        }
-                        myActions.set(myActions.indexOf(act), newAction);
-                        myGBActionsTable.getListTableModel().setItems(myActions);
-                        return;
-                    }
-                }
-                myGBActionsTable.getListTableModel().setItems(myActions);
-                myActions.add(newAction);
-            }
-
-        }
-    }
-
-    public List<Action> getActions() {
-        return myActions;
+    public List<GBAction> getActions() {
+        return myGBActions;
     }
 
 

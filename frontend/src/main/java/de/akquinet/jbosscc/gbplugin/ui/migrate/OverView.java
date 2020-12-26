@@ -1,21 +1,16 @@
 package de.akquinet.jbosscc.gbplugin.ui.migration;
 
 import com.intellij.database.psi.DbDataSource;
-import com.intellij.icons.AllIcons;
 import com.intellij.openapi.ui.Messages;
 import de.akquinet.jbosscc.gbplugin.data.nodes.ColumnNode;
 import de.akquinet.jbosscc.gbplugin.data.nodes.DatabaseNode;
 import de.akquinet.jbosscc.gbplugin.data.nodes.MyDataNode;
 import de.akquinet.jbosscc.gbplugin.data.nodes.TableNode;
-import de.akquinet.jbosscc.gbplugin.ui.common.table.MyAbstractTreeTableModel;
-import de.akquinet.jbosscc.gbplugin.ui.common.table.MyDataModel;
-import de.akquinet.jbosscc.gbplugin.ui.common.table.MyTreeTable;
 import de.akquinet.jbosscc.gbplugin.ui.common.AbstractView;
 import de.akquinet.jbosscc.guttenbase.meta.DatabaseMetaData;
 import de.akquinet.jbosscc.guttenbase.repository.ConnectorRepository;
 
 import javax.swing.*;
-import javax.swing.table.DefaultTableCellRenderer;
 import java.awt.*;
 import java.sql.SQLException;
 import java.util.List;
@@ -27,7 +22,7 @@ public class OverView extends AbstractView {
     private JButton nextButton;
     private JButton cancelButton;
     private JButton backButton;
-    private MyTreeTable myTreeTable1;
+    private OverviewTreeTable myTreeTable1;
 
     private final List<DbDataSource> dataSources;
     private final ConnectorRepository connectorRepository;
@@ -79,25 +74,8 @@ public class OverView extends AbstractView {
                 finalRoot.addNode(tableNode);
             });
 
-        MyAbstractTreeTableModel treeTableModel = new MyDataModel(root);
-        myTreeTable1 = new MyTreeTable(treeTableModel);
-        designTable();
-    }
-
-    private void designTable() {
-        // set max width.
-        myTreeTable1.getColumnModel().getColumn(1).setMaxWidth(90);
-        myTreeTable1.getColumnModel().getColumn(2).setMaxWidth(200);
-        myTreeTable1.getColumnModel().getColumn(3).setMaxWidth(90);
-
-        //set column horizontal alignment.
-        DefaultTableCellRenderer rightRenderer = new DefaultTableCellRenderer();
-        rightRenderer.setHorizontalAlignment(JLabel.CENTER);
-        myTreeTable1.getColumnModel().getColumn(1).setCellRenderer(rightRenderer);
-        myTreeTable1.getColumnModel().getColumn(2).setCellRenderer(rightRenderer);
-
-        UIManager.put("Tree.leafIcon", AllIcons.Nodes.DataColumn);
-
+        OverviewTreeTableModel treeTableModel = new OverviewTreeTableModel(root);
+        myTreeTable1 = new OverviewTreeTable(treeTableModel);
     }
 
     private void createUIComponents() {

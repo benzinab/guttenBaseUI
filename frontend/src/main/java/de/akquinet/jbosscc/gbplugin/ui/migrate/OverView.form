@@ -38,7 +38,7 @@
                 </properties>
                 <border type="empty"/>
                 <children>
-                  <component id="7d810" class="de.akquinet.jbosscc.gbplugin.ui.common.table.MyTreeTable" binding="myTreeTable1" custom-create="true" default-binding="true">
+                  <component id="7d810" class="de.akquinet.jbosscc.gbplugin.ui.migration.OverviewTreeTable" binding="myTreeTable1" custom-create="true" default-binding="true">
                     <constraints/>
                     <properties>
                       <gridColor color="-12828863"/>
