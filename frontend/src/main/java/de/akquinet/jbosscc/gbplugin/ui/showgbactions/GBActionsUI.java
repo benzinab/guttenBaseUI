@@ -1,4 +1,4 @@
-package de.akquinet.jbosscc.gbplugin.ui.showactions;
+package de.akquinet.jbosscc.gbplugin.ui.showgbactions;
 
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
@@ -7,9 +7,10 @@ import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.util.Comparing;
 import com.intellij.ui.*;
 import com.intellij.util.ui.ColumnInfo;
-import de.akquinet.jbosscc.gbplugin.actions.CreateRenameAction;
+import de.akquinet.jbosscc.gbplugin.actions.OpenRenameAction;
 import de.akquinet.jbosscc.gbplugin.data.GBAction;
-import de.akquinet.jbosscc.gbplugin.data.ActionType;
+import de.akquinet.jbosscc.gbplugin.data.GBActionType;
+import de.akquinet.jbosscc.gbplugin.data.RenameGBAction;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
@@ -25,9 +26,9 @@ public class GBActionsUI {
     private ToolbarDecorator decorator;
     private List<GBAction> myGBActions;
 
-    public GBActionsUI(List<GBAction> GBActions) {
-        myGBActions = GBActions;
-        myGBActionsTable = new GBActionsTable(GBActions, createInfoColumns());
+    public GBActionsUI(List<GBAction> gbActions) {
+        myGBActions = gbActions;
+        myGBActionsTable = new GBActionsTable(gbActions, createInfoColumns());
         decorator = ToolbarDecorator.createDecorator(myGBActionsTable);
         createActions(decorator);
 
@@ -44,10 +45,8 @@ public class GBActionsUI {
         return decorator.createPanel();
     }
     private void createActions(ToolbarDecorator decorator) {
-        myAddActions.add(new CreateRenameAction(myGBActionsTable, myGBActions));
-        myAddActions.add(new CreateRenameAction(myGBActionsTable, myGBActions));//TODO add other hints
-        myAddActions.add(new CreateRenameAction(myGBActionsTable, myGBActions));
-        myAddActions.add(new CreateRenameAction(myGBActionsTable, myGBActions));
+        myAddActions.add(new OpenRenameAction(myGBActionsTable, myGBActions));
+        myAddActions.add(new OpenRenameAction(myGBActionsTable, myGBActions));//TODO add other hints
         myAddActions.sort((o1, o2) -> Comparing.compare(o1.getTemplatePresentation().getText(), o2.getTemplatePresentation().getText()));
         decorator.disableUpDownActions();
         decorator.setAddActionUpdater(e -> !myAddActions.isEmpty());
@@ -85,8 +84,8 @@ public class GBActionsUI {
 
     private void performEdit(AnActionButton e) {
         int row = myGBActionsTable.getSelectedRow();
-        GBAction GBAction = myGBActionsTable.getItems().get(myGBActionsTable.convertRowIndexToModel(row));
-        new CreateRenameAction(myGBActionsTable, myGBActions, GBAction).actionPerformed(null);
+        RenameGBAction GBAction = (RenameGBAction) myGBActionsTable.getItems().get(myGBActionsTable.convertRowIndexToModel(row));
+        new OpenRenameAction(myGBActionsTable, myGBActions, GBAction).actionPerformed(null);
 
     }
 
@@ -105,10 +104,10 @@ public class GBActionsUI {
             public @Nullable String valueOf(GBAction action) {
                 return action.getName();
             }
-        }, new ColumnInfo<GBAction, ActionType>(("Type")) {
+        }, new ColumnInfo<GBAction, GBActionType>(("Type")) {
             @Override
-            public ActionType valueOf(final GBAction action) {
-                return action.getActionType();
+            public GBActionType valueOf(final GBAction action) {
+                return action.getGBActionType();
             }
         }};
         return columnInfos;

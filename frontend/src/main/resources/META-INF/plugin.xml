@@ -21,7 +21,7 @@
     </extensionPoints>
 
     <actions>
-        <group id="GuttenBase.actions" text="GuttenBase" description="GuttenBase plugin">
+        <group id="GuttenBase.GBActions" text="GuttenBase" description="GuttenBase plugin">
             <add-to-group group-id="DatabaseViewPopupMenu" anchor="last" />
             <separator/>
             <action class="de.akquinet.jbosscc.gbplugin.actions.OpenMigrationAction" id="GuttenBase.Actions.openMigration" text="Migrate Database"/>

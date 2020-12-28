@@ -1,4 +1,4 @@
-package de.akquinet.jbosscc.gbplugin.ui.showactions;
+package de.akquinet.jbosscc.gbplugin.ui.showgbactions;
 
 import com.intellij.openapi.ui.Messages;
 import de.akquinet.jbosscc.gbplugin.data.GBAction;
@@ -11,22 +11,22 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ActionsView extends AbstractView {
+public class GBActionsView extends AbstractView {
     private JPanel content;
     private JButton cancelButton;
     private JButton saveButton;
     private JScrollPane scrollPane1;
     private JPanel actionsPanel;
-    private List<GBAction> GBActions;
+    private List<GBAction> gbActions;
 
-    public ActionsView() {
+    public GBActionsView() {
         saveButton.addActionListener(e -> save());
         cancelButton.addActionListener(e -> close(content));
     }
 
     public void save() {
         try {
-            String path = GsonHelper.exportJSON(GBActions, "actions.json");
+            String path = GsonHelper.exportJSON(gbActions, "actions.json");
             Messages.showInfoMessage("Actions are successfully saved in: " + path, "File Saved!");
         } catch (IOException e) {
             e.printStackTrace();
@@ -38,11 +38,12 @@ public class ActionsView extends AbstractView {
 
     private void createUIComponents() {
         try {
-            GBActions = GsonHelper.importJSON("actions.json");
+            gbActions = GsonHelper.importJSON("actions.json");
+
         } catch (FileNotFoundException e) {
-            GBActions = new ArrayList<>();
+            gbActions = new ArrayList<>();
         }
-        actionsPanel = new GBActionsUI(GBActions).getPanel();
+        actionsPanel = new GBActionsUI(gbActions).getPanel();
     }
 
     public JPanel getContent() {

@@ -71,7 +71,7 @@
         <ActionSummary times="32" last="1607299531863" />
       </entry>
       <entry key="EditorBackSpace">
-        <ActionSummary times="166" last="1608855226012" />
+        <ActionSummary times="210" last="1609025020660" />
       </entry>
       <entry key="EditorChooseLookupItem">
         <ActionSummary times="12" last="1607299372427" />
@@ -86,7 +86,7 @@
         <ActionSummary times="2" last="1605009654294" />
       </entry>
       <entry key="EditorDeleteToWordStart">
-        <ActionSummary times="54" last="1608855237337" />
+        <ActionSummary times="62" last="1609014009582" />
       </entry>
       <entry key="EditorDown">
         <ActionSummary times="1" last="1607299342041" />
@@ -98,7 +98,7 @@
         <ActionSummary times="1" last="1605108444434" />
       </entry>
       <entry key="EditorNextWord">
-        <ActionSummary times="1" last="1605009960340" />
+        <ActionSummary times="2" last="1609025021339" />
       </entry>
       <entry key="EditorPaste">
         <ActionSummary times="24" last="1605142628190" />
@@ -158,7 +158,7 @@
         <ActionSummary times="1" last="1607553794835" />
       </entry>
       <entry key="ShowSettings">
-        <ActionSummary times="10" last="1608870015488" />
+        <ActionSummary times="12" last="1608942921526" />
       </entry>
       <entry key="Stop">
         <ActionSummary times="2" last="1607530365388" />
@@ -218,13 +218,13 @@
         <ActionSummary times="1" last="1608870054538" />
       </entry>
       <entry key="com.intellij.ui.CommonActionsPanel$AddButton">
-        <ActionSummary times="224" last="1608869877816" />
+        <ActionSummary times="248" last="1608942840804" />
       </entry>
       <entry key="com.intellij.ui.CommonActionsPanel$EditButton">
-        <ActionSummary times="58" last="1608869968664" />
+        <ActionSummary times="68" last="1609025032762" />
       </entry>
       <entry key="com.intellij.ui.CommonActionsPanel$RemoveButton">
-        <ActionSummary times="6" last="1608833223226" />
+        <ActionSummary times="22" last="1609014115335" />
       </entry>
       <entry key="editRunConfigurations">
         <ActionSummary times="4" last="1601916603259" />

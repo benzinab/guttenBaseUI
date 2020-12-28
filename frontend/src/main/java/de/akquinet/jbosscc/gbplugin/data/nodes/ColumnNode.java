@@ -6,7 +6,7 @@ public class ColumnNode extends MyDataNode {
 
     private final ColumnMetaData columnMetaData;
     public ColumnNode(ColumnMetaData columnMetaData) {
-        super(columnMetaData.getColumnName(), null, null, Boolean.FALSE, null);
+        super(columnMetaData.getColumnName(), null, null, Boolean.FALSE, "COLUMN_RENAME_ACTION", null);
         this.columnMetaData = columnMetaData;
     }
 

@@ -1,10 +1,13 @@
 package de.akquinet.jbosscc.gbplugin.data;
 
+import de.akquinet.jbosscc.gbplugin.data.nodes.MyDataNode;
+import de.akquinet.jbosscc.guttenbase.repository.ConnectorRepository;
+
 /**
  * Represents a configuration step for the  migration
  * applied on the database elements to migrate.
  */
-public class Action {
+public abstract class GBAction {
 
     /**
      * The name of the action.
@@ -12,48 +15,38 @@ public class Action {
     private String name;
 
     /**
-     * The regular expression of the action.
+     * Explains the Action.
      */
-    private String regex;
+    private String description;
 
     /**
-     * the source name of the action.
+     * The source database element of the action
      */
-    private String replace;
+    private MyDataNode source;
 
     /**
      * The type of the action.
      */
-    private ActionType actionType;
+    private GBActionType gbActionType;
 
-    public Action(String name, String regExp, ActionType type) {
+
+    public GBAction(String name, GBActionType gbActionType) {
         this.name = name;
-        this.regex = regExp;
-        this.actionType = type;
+        this.gbActionType = gbActionType;
     }
 
-    public String getRegex() {
-        return regex;
+    public GBAction(String name, GBActionType gbActionType, String description) {
+        this.name = name;
+        this.description = description;
+        this.gbActionType = gbActionType;
     }
 
-    public void setRegex(String regex) {
-        this.regex = regex;
+    public boolean matches(MyDataNode node) {
+        return false;
     }
 
-    public String getReplace() {
-        return replace;
-    }
+    public void execute(ConnectorRepository repository) {
 
-    public void setReplace(String replace) {
-        this.replace = replace;
-    }
-
-    public ActionType getActionType() {
-        return actionType;
-    }
-
-    public void setActionType(ActionType actionType) {
-        this.actionType = actionType;
     }
 
     public String getName() {
@@ -62,5 +55,29 @@ public class Action {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public MyDataNode getSource() {
+        return source;
+    }
+
+    public void setSource(MyDataNode source) {
+        this.source = source;
+    }
+
+    public GBActionType getGBActionType() {
+        return gbActionType;
+    }
+
+    public void setGBActionType(GBActionType GBActionType) {
+        this.gbActionType = GBActionType;
     }
 }

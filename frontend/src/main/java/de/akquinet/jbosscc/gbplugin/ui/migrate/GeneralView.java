@@ -1,11 +1,13 @@
-package de.akquinet.jbosscc.gbplugin.ui.migration;
+package de.akquinet.jbosscc.gbplugin.ui.migrate;
 
 import com.intellij.database.model.RawConnectionConfig;
 import com.intellij.database.psi.DbDataSource;
 import com.intellij.database.util.DasUtil;
 import com.intellij.openapi.ui.ComboBox;
 import com.intellij.openapi.ui.Messages;
+import de.akquinet.jbosscc.gbplugin.helper.Migration;
 import de.akquinet.jbosscc.gbplugin.ui.common.AbstractView;
+import de.akquinet.jbosscc.gbplugin.ui.migrate.overview.OverView;
 import de.akquinet.jbosscc.guttenbase.connector.DatabaseType;
 import de.akquinet.jbosscc.guttenbase.connector.impl.URLConnectorInfoImpl;
 import de.akquinet.jbosscc.guttenbase.repository.ConnectorRepository;
@@ -109,7 +111,8 @@ public class GeneralView extends AbstractView {
             connectorRepository.addConnectionInfo(TARGET, targetConnectorInfo);
 
         //go to configuration
-        OverView overView = new OverView(connectorRepository, dataSources);
+        Migration migration = new Migration(connectorRepository);
+        OverView overView = new OverView(migration, dataSources);
         if (isDialog()){
             JFrame parent = (JFrame) SwingUtilities.getWindowAncestor(this.content);
             Container contentPane = parent.getContentPane();

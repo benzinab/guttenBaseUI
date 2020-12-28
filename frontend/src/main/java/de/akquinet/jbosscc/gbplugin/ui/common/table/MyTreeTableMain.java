@@ -44,23 +44,23 @@ public class MyTreeTableMain extends JFrame {
 
     private static MyDataNode createDataStructure() {
         java.util.List<MyDataNode> children1 = new ArrayList<MyDataNode>();
-        children1.add(new MyDataNode( "name1", 50, null, Boolean.FALSE,null));
-        children1.add(new MyDataNode( "name2", 50, null, Boolean.TRUE,null));
-        children1.add(new MyDataNode( "name3", 50, null, Boolean.TRUE,null));
+        children1.add(new MyDataNode( "name1", 50, null, Boolean.FALSE, "type", null));
+        children1.add(new MyDataNode( "name2", 50, null, Boolean.TRUE, "type", null));
+        children1.add(new MyDataNode( "name3", 50, null, Boolean.TRUE, "type", null));
 
         java.util.List<MyDataNode> children2 = new ArrayList<MyDataNode>();
-        children2.add(new MyDataNode( "name1", 50, null, Boolean.TRUE,children1));
+        children2.add(new MyDataNode( "name1", 50, null, Boolean.TRUE, "type", children1));
 
         List<MyDataNode> rootNodes = new ArrayList<MyDataNode>();
-        rootNodes.add(new MyDataNode( "rootnode1", 50, null, Boolean.FALSE,children1));
-        rootNodes.add(new MyDataNode( "rootnode1", 50, null, Boolean.TRUE,children1));
-        rootNodes.add(new MyDataNode( "rootnode1", 50, null, Boolean.TRUE,children1));
-        rootNodes.add(new MyDataNode( "rootnode1", 50, null, Boolean.FALSE,children1));
-        rootNodes.add(new MyDataNode( "rootnode1", 50, null, Boolean.TRUE,children2));
-        rootNodes.add(new MyDataNode( "rootnode1", 50, null, Boolean.FALSE,children2));
-        rootNodes.add(new MyDataNode( "rootnode1", 50, null, Boolean.TRUE,children2));
-        rootNodes.add(new MyDataNode( "rootnode1", 50, null, Boolean.TRUE,children2));
-        MyDataNode root = new MyDataNode( "root", 50, null, Boolean.FALSE,rootNodes);
+        rootNodes.add(new MyDataNode( "rootnode1", 50, null, Boolean.FALSE, "type", children1));
+        rootNodes.add(new MyDataNode( "rootnode1", 50, null, Boolean.TRUE, "type", children1));
+        rootNodes.add(new MyDataNode( "rootnode1", 50, null, Boolean.TRUE, "type", children1));
+        rootNodes.add(new MyDataNode( "rootnode1", 50, null, Boolean.FALSE, "type", children1));
+        rootNodes.add(new MyDataNode( "rootnode1", 50, null, Boolean.TRUE, "type", children2));
+        rootNodes.add(new MyDataNode( "rootnode1", 50, null, Boolean.FALSE, "type", children2));
+        rootNodes.add(new MyDataNode( "rootnode1", 50, null, Boolean.TRUE, "type", children2));
+        rootNodes.add(new MyDataNode( "rootnode1", 50, null, Boolean.TRUE, "type", children2));
+        MyDataNode root = new MyDataNode( "root", 50, null, Boolean.FALSE, "type", rootNodes);
 
         return root;
     }

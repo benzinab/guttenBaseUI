@@ -8,7 +8,7 @@ public class TableNode extends MyDataNode {
     private final TableMetaData tableMetaData;
 
     public TableNode(TableMetaData tableMetaData) {
-        super(tableMetaData.getTableName(), tableMetaData.getColumnCount(), null, Boolean.FALSE, null);
+        super(tableMetaData.getTableName(), tableMetaData.getColumnCount(), null, Boolean.FALSE, "type", null);
         this.tableMetaData = tableMetaData;
     }
 

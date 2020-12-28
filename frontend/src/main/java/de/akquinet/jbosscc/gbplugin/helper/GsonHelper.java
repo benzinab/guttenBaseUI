@@ -2,28 +2,42 @@ package de.akquinet.jbosscc.gbplugin.helper;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
-import de.akquinet.jbosscc.gbplugin.data.Action;
+import de.akquinet.jbosscc.gbplugin.data.GBAction;
+import de.akquinet.jbosscc.gbplugin.data.GBActionType;
+import de.akquinet.jbosscc.gbplugin.data.GBActionsJSON;
+import de.akquinet.jbosscc.gbplugin.data.RenameGBAction;
 
 import java.io.*;
 import java.util.List;
 
 public class GsonHelper {
-    public static String exportJSON(List<Action> actions, String fileName) throws IOException {
-        Gson gson = new GsonBuilder().create();
-        String actionsString = gson.toJson(actions, new TypeToken<List<Action>>(){}.getType());
-        FileWriter file = new FileWriter(fileName, false);
+    public static String exportJSON(List<GBAction> gbActions, String fileName) throws IOException {
+        gbActions.forEach(gbAction -> System.out.println(gbAction.getName() + gbAction.getGBActionType()));
+        Gson gson = GsonHelper.initGson();
+        GBActionsJSON gbActionsJSON = new GBActionsJSON(gbActions);
+        String actionsString = gson.toJson(gbActionsJSON, GBActionsJSON.class);
+        FileWriter file = new FileWriter(fileName, false); //replace file
         file.write(actionsString);
         file.flush();
-        String path = new File(fileName).getAbsolutePath();
-        return path;
+        return new File(fileName).getAbsolutePath();
     }
 
-    public static List<Action> importJSON(String fileName) throws FileNotFoundException {
-        Gson gson = new Gson();
+    public static List<GBAction> importJSON(String fileName) throws FileNotFoundException {
+        Gson gson = GsonHelper.initGson();
         JsonReader reader = new JsonReader(new FileReader(fileName));
-        return gson.fromJson(reader, new TypeToken<List<Action>>(){}.getType());
+        GBActionsJSON gbActionsJSON =  gson.fromJson(reader, GBActionsJSON.class);
+        gbActionsJSON.getGbActions().forEach(gbAction -> System.out.println(gbAction.getName() + gbAction.getGBActionType()));
+        return gbActionsJSON.getGbActions();
+
+    }
+
+    public static Gson initGson() {
+        RuntimeTypeAdapterFactory<GBAction> actionFactory = RuntimeTypeAdapterFactory.of(GBAction.class, "type")
+                .registerSubtype(RenameGBAction.class, GBActionType.COLUMN_RENAME_ACTION.name());
+        return new GsonBuilder()
+                .registerTypeAdapterFactory(actionFactory)
+                .create();
 
     }
 }

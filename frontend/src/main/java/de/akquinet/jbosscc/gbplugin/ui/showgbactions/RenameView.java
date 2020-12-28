@@ -1,7 +1,7 @@
-package de.akquinet.jbosscc.gbplugin.ui.showactions;
+package de.akquinet.jbosscc.gbplugin.ui.showgbactions;
 
-import de.akquinet.jbosscc.gbplugin.data.GBAction;
-import de.akquinet.jbosscc.gbplugin.data.ActionType;
+import de.akquinet.jbosscc.gbplugin.data.RenameGBAction;
+import de.akquinet.jbosscc.gbplugin.data.nodes.RenameType;
 import de.akquinet.jbosscc.gbplugin.ui.common.AbstractView;
 
 import javax.swing.*;
@@ -20,8 +20,8 @@ public class RenameView extends AbstractView {
     public RenameView(){
     }
 
-    public RenameView(GBAction GBAction) {
-        sourceRegExpField.setText(GBAction.getRegex());
+    public RenameView(RenameGBAction GBAction) {
+        sourceRegExpField.setText(GBAction.getRegExp());
         targetField.setText(GBAction.getReplace());
         nameField.setText(GBAction.getName());
     }
@@ -30,7 +30,7 @@ public class RenameView extends AbstractView {
         return content;
     }
 
-    public GBAction getAction() {
-        return new GBAction(nameField.getText(), sourceRegExpField.getText(), ActionType.COLUMN_RENAME_ACTION);
+    public RenameGBAction getAction() {
+        return new RenameGBAction(nameField.getText(), sourceRegExpField.getText(), targetField.getText(), RenameType.ADD_SUFFIX);
     }
 }
