@@ -1,13 +1,14 @@
 package de.akquinet.jbosscc.gbplugin.ui.migrate.overview;
 
-import com.intellij.database.psi.DbDataSource;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.ui.DumbAwareActionButton;
 import com.intellij.ui.SimpleTextAttributes;
 import com.intellij.ui.ToolbarDecorator;
 import com.intellij.util.PlatformIcons;
+import com.intellij.util.ui.ColumnInfo;
 import de.akquinet.jbosscc.gbplugin.data.GBAction;
+import de.akquinet.jbosscc.gbplugin.data.RenameGBAction;
 import de.akquinet.jbosscc.gbplugin.data.nodes.ColumnNode;
 import de.akquinet.jbosscc.gbplugin.data.nodes.DatabaseNode;
 import de.akquinet.jbosscc.gbplugin.data.nodes.MyDataNode;
@@ -18,6 +19,7 @@ import de.akquinet.jbosscc.gbplugin.ui.common.AbstractView;
 import de.akquinet.jbosscc.gbplugin.ui.migrate.resultview.ResultView;
 import de.akquinet.jbosscc.guttenbase.meta.DatabaseMetaData;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 import java.awt.*;
@@ -35,20 +37,14 @@ public class OverView extends AbstractView {
     private JButton backButton;
     private JPanel tableContainer;
     private OverviewTreeTable overviewTreeTable;
-    private ToolbarDecorator decorator;
-    private JPanel myRoot;
-    private JLabel myCountLabel;
 
-    private final List<DbDataSource> dataSources;
     private Migration migration;
-    private DatabaseMetaData metaData;
     private List<GBAction> myGBActions;
 
     public static final String SOURCE = "source";
     public static final String TARGET = "target";
 
-    public OverView(Migration migration, List<DbDataSource> dataSources) {
-        this.dataSources = dataSources;
+    public OverView(Migration migration) {
         this.migration = migration;
 
         //action listeners
@@ -79,8 +75,9 @@ public class OverView extends AbstractView {
     }
 
     public void fillData() {
+        DatabaseMetaData metaData;
         try {
-            this.metaData = migration.getConnectorRepository().getDatabaseMetaData("source");
+            metaData = migration.getConnectorRepository().getDatabaseMetaData("source");
         } catch (SQLException throwables) {
             throwables.printStackTrace();
             Messages.showErrorDialog(throwables.getMessage(), "Error!");
@@ -101,15 +98,15 @@ public class OverView extends AbstractView {
                 finalRoot.addNode(tableNode);
             });
 
-        OverviewTreeTableModel treeTableModel = new OverviewTreeTableModel(root);
+        OverviewTreeTableModel treeTableModel = new OverviewTreeTableModel(root, createInfoColumns());
         overviewTreeTable = new OverviewTreeTable(treeTableModel);
 
-        decorator = ToolbarDecorator.createDecorator(overviewTreeTable);
+        ToolbarDecorator decorator = ToolbarDecorator.createDecorator(overviewTreeTable);
         createActions(decorator);
 
-        myRoot = new JPanel(new BorderLayout());
+        JPanel myRoot = new JPanel(new BorderLayout());
         myRoot.add(decorator.createPanel(), BorderLayout.CENTER);
-        myCountLabel = new JLabel();
+        JLabel myCountLabel = new JLabel();
         myCountLabel.setHorizontalAlignment(SwingConstants.RIGHT);
         myCountLabel.setForeground(SimpleTextAttributes.GRAYED_ITALIC_ATTRIBUTES.getFgColor());
         myRoot.add(myCountLabel, BorderLayout.SOUTH);
@@ -130,6 +127,27 @@ public class OverView extends AbstractView {
         });
 
     }
+
+    public ColumnInfo[] createInfoColumns() {
+        final ColumnInfo[] columnInfos = {new ColumnInfo<MyDataNode, MyDataNode>("Name") {
+            @Override
+            public @Nullable MyDataNode valueOf(MyDataNode node) {
+                return node;
+            }
+        }, new ColumnInfo<MyDataNode, String>(("Type")) {
+            @Override
+            public String valueOf(final MyDataNode node) {
+                return node.getType();
+            }
+        }, new ColumnInfo<MyDataNode, Integer>(("Type")) {
+            @Override
+            public Integer valueOf(final MyDataNode node) {
+                return node.getSize();
+            }
+        }};
+        return columnInfos;
+    }
+
 
     private void createUIComponents() {
         fillData();
@@ -163,7 +181,7 @@ public class OverView extends AbstractView {
                 return;
             }
             gbAction.setSource(node);
-            migration.addGBAction(gbAction);
+            migration.addGBAction(new RenameGBAction((RenameGBAction) gbAction, node));
         }
 
         @Override
@@ -176,8 +194,14 @@ public class OverView extends AbstractView {
                 return false;
             }
             int row = overviewTreeTable.getSelectedRow();
-            String type = (String) overviewTreeTable.getValueAt(row, 1);
-            return gbAction.getGBActionType() != null && type != null && gbAction.getGBActionType().toString() == type;
+            //todo switch cases: type (column/table/database)
+            if (overviewTreeTable.getValueAt(row, 0) instanceof ColumnNode) {
+                ColumnNode node = (ColumnNode) overviewTreeTable.getValueAt(row, 0);
+                return gbAction.matches(node);
+            }
+            return false;
         }
     }
+
+
 }

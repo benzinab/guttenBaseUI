@@ -15,6 +15,7 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -37,19 +38,32 @@ public class ResultView extends AbstractView {
         this.migration = migration;
         backButton.addActionListener(e -> backTo(content, "2"));
         cancelButton.addActionListener(e -> close(content));
-        submitButton.addActionListener(e -> submit());
+        submitButton.addActionListener(e -> submit(e));
 
 
     }
 
-    public void submit() {
+    public void submit(ActionEvent e) {
+        migration.getGbActions().forEach(gbAction -> System.out.println(gbAction.getName() + " " + gbAction.getSource().getName()));
+
         try {
             migration.migrate();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
-            Messages.showErrorDialog(throwables.getMessage(), "Error!");
-            return;
         }
+
+        //DataContext dataContext = DataManager.getInstance().getDataContext();
+        //Project project = (Project) dataContext.getData(DataConstants.PROJECT);
+        //ProgressManager.getInstance().run(new Task.Backgroundable(project, "Migration progress") {
+        //    @Override
+        //    public void run(@NotNull ProgressIndicator indicator) {
+        //        indicator.setFraction(0.1);
+        //        indicator.setText("Migrating is starting.");
+        //        indicator.setFraction(0.9);
+        //        indicator.setText("Migrating has been successfully done.");
+        //          //
+        //    }
+        //});
         close(content);
     }
 

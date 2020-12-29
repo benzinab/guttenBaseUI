@@ -1,29 +1,26 @@
 package de.akquinet.jbosscc.gbplugin.ui.migrate.overview;
 
+import com.intellij.ui.treeStructure.treetable.ListTreeTableModelOnColumns;
 import com.intellij.ui.treeStructure.treetable.TreeTable;
 import com.intellij.ui.treeStructure.treetable.TreeTableModel;
 import com.intellij.ui.treeStructure.treetable.TreeTableTree;
+import com.intellij.util.ui.ColumnInfo;
 import de.akquinet.jbosscc.gbplugin.data.nodes.MyDataNode;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
-import javax.swing.tree.DefaultTreeModel;
-import javax.swing.tree.TreeNode;
 
-public class OverviewTreeTableModel extends DefaultTreeModel implements TreeTableModel {
+public class OverviewTreeTableModel extends ListTreeTableModelOnColumns implements TreeTableModel {
     public static String[] columnNames = {"Name", "Type", "Size"};
     public final int TREE_COLUMN = 0;
     public final int TYPE_COLUMN = 1;
     public final int SIZE_COLUMN = 2;
     private TreeTable myTreeTable;
 
-    public OverviewTreeTableModel(MyDataNode root) {
-        super(root);
+    public OverviewTreeTableModel(MyDataNode root, ColumnInfo[] columnInfos) {
+        super(root, columnInfos);
     }
 
-    public OverviewTreeTableModel(TreeNode root, boolean asksAllowsChildren) {
-        super(root, asksAllowsChildren);
-    }
 
     @Override
     public int getColumnCount() {

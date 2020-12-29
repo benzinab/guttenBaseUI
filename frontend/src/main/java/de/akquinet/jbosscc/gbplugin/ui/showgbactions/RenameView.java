@@ -31,6 +31,6 @@ public class RenameView extends AbstractView {
     }
 
     public RenameGBAction getAction() {
-        return new RenameGBAction(nameField.getText(), sourceRegExpField.getText(), targetField.getText(), RenameType.ADD_SUFFIX);
+        return new RenameGBAction(nameField.getText(), sourceRegExpField.getText(), targetField.getText(), RenameType.REPLACE);
     }
 }

@@ -8,7 +8,7 @@
         <ActionSummary times="16" last="1605175045207" />
       </entry>
       <entry key="$Undo">
-        <ActionSummary times="4" last="1605018381655" />
+        <ActionSummary times="5" last="1609170185115" />
       </entry>
       <entry key="ActivateGuttenbaseToolWindow">
         <ActionSummary times="2" last="1600332854767" />
@@ -59,7 +59,7 @@
         <ActionSummary times="12" last="1605143587644" />
       </entry>
       <entry key="DatabaseView.DropAction">
-        <ActionSummary times="24" last="1605175075148" />
+        <ActionSummary times="29" last="1609204404969" />
       </entry>
       <entry key="DatabaseView.ForceRefresh">
         <ActionSummary times="1" last="1605019749255" />
@@ -67,17 +67,20 @@
       <entry key="DatabaseView.ImportDataSources">
         <ActionSummary times="1" last="1603018367272" />
       </entry>
+      <entry key="DatabaseView.PropertiesAction">
+        <ActionSummary times="1" last="1609194374268" />
+      </entry>
       <entry key="DatabaseView.Refresh">
-        <ActionSummary times="32" last="1607299531863" />
+        <ActionSummary times="37" last="1609204419442" />
       </entry>
       <entry key="EditorBackSpace">
-        <ActionSummary times="210" last="1609025020660" />
+        <ActionSummary times="228" last="1609203490117" />
       </entry>
       <entry key="EditorChooseLookupItem">
         <ActionSummary times="12" last="1607299372427" />
       </entry>
       <entry key="EditorCopy">
-        <ActionSummary times="9" last="1605142577235" />
+        <ActionSummary times="10" last="1609170133706" />
       </entry>
       <entry key="EditorCut">
         <ActionSummary times="1" last="1605107486272" />
@@ -85,8 +88,11 @@
       <entry key="EditorDelete">
         <ActionSummary times="2" last="1605009654294" />
       </entry>
+      <entry key="EditorDeleteToWordEnd">
+        <ActionSummary times="1" last="1609203480565" />
+      </entry>
       <entry key="EditorDeleteToWordStart">
-        <ActionSummary times="62" last="1609014009582" />
+        <ActionSummary times="69" last="1609203250358" />
       </entry>
       <entry key="EditorDown">
         <ActionSummary times="1" last="1607299342041" />
@@ -101,7 +107,7 @@
         <ActionSummary times="2" last="1609025021339" />
       </entry>
       <entry key="EditorPaste">
-        <ActionSummary times="24" last="1605142628190" />
+        <ActionSummary times="27" last="1609170183428" />
       </entry>
       <entry key="EditorPasteFromX11">
         <ActionSummary times="2" last="1605131182785" />
@@ -152,13 +158,13 @@
         <ActionSummary times="2" last="1607530361339" />
       </entry>
       <entry key="SaveAll">
-        <ActionSummary times="10" last="1605175077613" />
+        <ActionSummary times="11" last="1609173827436" />
       </entry>
       <entry key="SelectIn">
         <ActionSummary times="1" last="1607553794835" />
       </entry>
       <entry key="ShowSettings">
-        <ActionSummary times="12" last="1608942921526" />
+        <ActionSummary times="18" last="1609204461683" />
       </entry>
       <entry key="Stop">
         <ActionSummary times="2" last="1607530365388" />
@@ -200,7 +206,7 @@
         <ActionSummary times="2" last="1608740698100" />
       </entry>
       <entry key="com.intellij.openapi.ui.DialogWrapper$5">
-        <ActionSummary times="23" last="1605175075775" />
+        <ActionSummary times="28" last="1609204406105" />
       </entry>
       <entry key="com.intellij.openapi.ui.impl.DialogWrapperPeerImpl$AnCancelAction">
         <ActionSummary times="2" last="1604163379945" />
@@ -218,13 +224,13 @@
         <ActionSummary times="1" last="1608870054538" />
       </entry>
       <entry key="com.intellij.ui.CommonActionsPanel$AddButton">
-        <ActionSummary times="248" last="1608942840804" />
+        <ActionSummary times="264" last="1609179044572" />
       </entry>
       <entry key="com.intellij.ui.CommonActionsPanel$EditButton">
-        <ActionSummary times="68" last="1609025032762" />
+        <ActionSummary times="92" last="1609203464435" />
       </entry>
       <entry key="com.intellij.ui.CommonActionsPanel$RemoveButton">
-        <ActionSummary times="22" last="1609014115335" />
+        <ActionSummary times="26" last="1609170355175" />
       </entry>
       <entry key="editRunConfigurations">
         <ActionSummary times="4" last="1601916603259" />

@@ -1,7 +1,7 @@
 package de.akquinet.jbosscc.gbplugin.data;
 
 import de.akquinet.jbosscc.gbplugin.data.nodes.MyDataNode;
-import de.akquinet.jbosscc.guttenbase.repository.ConnectorRepository;
+import de.akquinet.jbosscc.gbplugin.mappers.ColumnRenameMapper;
 
 /**
  * Represents a configuration step for the  migration
@@ -41,11 +41,18 @@ public abstract class GBAction {
         this.gbActionType = gbActionType;
     }
 
+    public GBAction(GBAction gbAction, MyDataNode node) {
+        this.name = gbAction.getName();
+        this.description = gbAction.getDescription();
+        this.gbActionType = gbAction.getGBActionType();
+        this.source = node;
+    }
+
     public boolean matches(MyDataNode node) {
         return false;
     }
 
-    public void execute(ConnectorRepository repository) {
+    public void execute(ColumnRenameMapper renameMapper) {
 
     }
 

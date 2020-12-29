@@ -3,9 +3,6 @@ package de.akquinet.jbosscc.gbplugin.data;
 import de.akquinet.jbosscc.gbplugin.data.nodes.MyDataNode;
 import de.akquinet.jbosscc.gbplugin.data.nodes.RenameType;
 import de.akquinet.jbosscc.gbplugin.mappers.ColumnRenameMapper;
-import de.akquinet.jbosscc.guttenbase.hints.ColumnMapperHint;
-import de.akquinet.jbosscc.guttenbase.mapping.ColumnMapper;
-import de.akquinet.jbosscc.guttenbase.repository.ConnectorRepository;
 
 public class RenameGBAction extends GBAction{
 
@@ -30,20 +27,20 @@ public class RenameGBAction extends GBAction{
         this.renameType = renameType;
     }
 
-    @Override
-    public boolean matches(MyDataNode node){
-        return true;
+    public RenameGBAction(RenameGBAction gbAction, MyDataNode node) {
+        super(gbAction, node);
+        regExp = gbAction.getRegExp();
+        replace = gbAction.getReplace();
     }
 
     @Override
-    public void execute(ConnectorRepository repository) {
-        repository.addConnectorHint("target", new ColumnMapperHint() {
-            @Override
-            public ColumnMapper getValue() {
-                return new ColumnRenameMapper()
-                        .addReplacement(getSource().getName(), replace);
-            }
-        });
+    public boolean matches(MyDataNode node){
+        return node.getName().matches(regExp);
+    }
+
+    @Override
+    public void execute(ColumnRenameMapper renameMapper) {
+        renameMapper.addReplacement(getSource().getName(), replace);
     }
 
     public String getRegExp() {

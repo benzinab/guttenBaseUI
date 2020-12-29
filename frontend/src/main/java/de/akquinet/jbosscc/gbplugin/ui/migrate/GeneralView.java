@@ -112,7 +112,7 @@ public class GeneralView extends AbstractView {
 
         //go to configuration
         Migration migration = new Migration(connectorRepository);
-        OverView overView = new OverView(migration, dataSources);
+        OverView overView = new OverView(migration);
         if (isDialog()){
             JFrame parent = (JFrame) SwingUtilities.getWindowAncestor(this.content);
             Container contentPane = parent.getContentPane();
