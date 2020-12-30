@@ -1,7 +1,7 @@
 package de.akquinet.jbosscc.gbplugin.data;
 
 import de.akquinet.jbosscc.gbplugin.data.nodes.MyDataNode;
-import de.akquinet.jbosscc.gbplugin.mappers.ColumnRenameMapper;
+import de.akquinet.jbosscc.gbplugin.mappers.Mapper;
 
 /**
  * Represents a configuration step for the  migration
@@ -52,7 +52,7 @@ public abstract class GBAction {
         return false;
     }
 
-    public void execute(ColumnRenameMapper renameMapper) {
+    public void execute(Mapper renameMapper) {
 
     }
 

@@ -16,7 +16,6 @@ public class OverviewTreeTable extends TreeTableView {
     public OverviewTreeTable(OverviewTreeTableModel treeTableModel) {
         super(treeTableModel);
 
-        setRowHeight(20);//FIXME
         setTreeCellRenderer(new MyTreeCellRenderer());
         setRootVisible(true);
 
@@ -26,18 +25,24 @@ public class OverviewTreeTable extends TreeTableView {
         TableColumn typeColumn = getColumnModel().getColumn(treeTableModel.TYPE_COLUMN);
         TableColumn sizeColumn = getColumnModel().getColumn(treeTableModel.SIZE_COLUMN);
 
-        UIManager.put("Tree.leafIcon", AllIcons.Nodes.DataColumn);
-
-
         String maxName = "123456789 123456789";
 
         int preferred = (int)(new JLabel(maxName, SwingConstants.LEFT).getPreferredSize().width * 1.1);
-        getColumnModel().getColumn(0).setMinWidth(preferred);
-        getColumnModel().getColumn(0).setPreferredWidth(preferred);
+        getColumnModel().getColumn(treeTableModel.TREE_COLUMN).setMinWidth(preferred);
+        getColumnModel().getColumn(treeTableModel.TREE_COLUMN).setPreferredWidth(preferred);
 
         new TreeTableSpeedSearch(this);
 
 
+    }
+
+    private static Component setLabelColors(final Component label, final JTable table, final boolean isSelected, final int row) {
+        if (label instanceof JComponent) {
+            ((JComponent)label).setOpaque(true);
+        }
+        label.setForeground(isSelected ? table.getSelectionForeground() : table.getForeground());
+        label.setBackground(isSelected ? table.getSelectionBackground() : table.getBackground());
+        return label;
     }
 
 
@@ -50,7 +55,6 @@ public class OverviewTreeTable extends TreeTableView {
             setForeground(getSelectionForeground());
             }
             else {
-                final Color bg = tree.getBackground();
                 setBackground(tree.getBackground());
                 setForeground(tree.getForeground());
             }
@@ -70,6 +74,5 @@ public class OverviewTreeTable extends TreeTableView {
             return label;
         }
     }
-
 
 }

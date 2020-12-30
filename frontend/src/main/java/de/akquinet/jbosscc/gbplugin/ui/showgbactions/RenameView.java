@@ -1,5 +1,6 @@
 package de.akquinet.jbosscc.gbplugin.ui.showgbactions;
 
+import com.intellij.openapi.ui.ComboBoxWithWidePopup;
 import de.akquinet.jbosscc.gbplugin.data.RenameGBAction;
 import de.akquinet.jbosscc.gbplugin.data.nodes.RenameType;
 import de.akquinet.jbosscc.gbplugin.ui.common.AbstractView;
@@ -12,7 +13,7 @@ public class RenameView extends AbstractView {
     private JPanel sourcePanel;
     private JPanel targetPanel;
     private JComboBox comboBox1;
-    private JComboBox comboBox2;
+    private JComboBox renameTypeBox;
     private JTextField sourceRegExpField;
     private JTextField targetField;
     private JTextField nameField;
@@ -20,10 +21,11 @@ public class RenameView extends AbstractView {
     public RenameView(){
     }
 
-    public RenameView(RenameGBAction GBAction) {
-        sourceRegExpField.setText(GBAction.getRegExp());
-        targetField.setText(GBAction.getReplace());
-        nameField.setText(GBAction.getName());
+    public RenameView(RenameGBAction gbAction) {
+        sourceRegExpField.setText(gbAction.getRegExp());
+        targetField.setText(gbAction.getReplace());
+        nameField.setText(gbAction.getName());
+        renameTypeBox.setSelectedItem(gbAction.getRenameType());
     }
 
     public JPanel getContent() {
@@ -31,6 +33,11 @@ public class RenameView extends AbstractView {
     }
 
     public RenameGBAction getAction() {
-        return new RenameGBAction(nameField.getText(), sourceRegExpField.getText(), targetField.getText(), RenameType.REPLACE);
+        System.out.println(renameTypeBox.getSelectedItem());
+        return new RenameGBAction(nameField.getText(), sourceRegExpField.getText(), targetField.getText(), (RenameType) renameTypeBox.getSelectedItem());
+    }
+
+    private void createUIComponents() {
+        renameTypeBox = new ComboBoxWithWidePopup<>(RenameType.values());
     }
 }

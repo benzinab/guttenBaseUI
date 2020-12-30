@@ -50,6 +50,8 @@ public class ResultView extends AbstractView {
             migration.migrate();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
+            Messages.showErrorDialog(throwables.getMessage(), "Error!");
+            return;
         }
 
         //DataContext dataContext = DataManager.getInstance().getDataContext();

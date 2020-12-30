@@ -1,11 +1,17 @@
 <application>
   <component name="ActionsLocalSummary">
     <data>
+      <entry key="$Copy">
+        <ActionSummary times="1" last="1609257364689" />
+      </entry>
+      <entry key="$Paste">
+        <ActionSummary times="1" last="1609257367542" />
+      </entry>
       <entry key="$Redo">
         <ActionSummary times="1" last="1605018386092" />
       </entry>
       <entry key="$SelectAll">
-        <ActionSummary times="16" last="1605175045207" />
+        <ActionSummary times="17" last="1609267361335" />
       </entry>
       <entry key="$Undo">
         <ActionSummary times="5" last="1609170185115" />
@@ -29,10 +35,10 @@
         <ActionSummary times="1" last="1603805848544" />
       </entry>
       <entry key="CopyReference">
-        <ActionSummary times="1" last="1603542779218" />
+        <ActionSummary times="2" last="1609257397719" />
       </entry>
       <entry key="DatabaseView.AddActionGroupPopup">
-        <ActionSummary times="48" last="1607531165967" />
+        <ActionSummary times="49" last="1609261048370" />
       </entry>
       <entry key="DatabaseView.AddDataSourceFromPath">
         <ActionSummary times="3" last="1603018374528" />
@@ -59,28 +65,31 @@
         <ActionSummary times="12" last="1605143587644" />
       </entry>
       <entry key="DatabaseView.DropAction">
-        <ActionSummary times="29" last="1609204404969" />
+        <ActionSummary times="48" last="1609268474730" />
       </entry>
       <entry key="DatabaseView.ForceRefresh">
         <ActionSummary times="1" last="1605019749255" />
       </entry>
+      <entry key="DatabaseView.Import">
+        <ActionSummary times="6" last="1609261522968" />
+      </entry>
       <entry key="DatabaseView.ImportDataSources">
-        <ActionSummary times="1" last="1603018367272" />
+        <ActionSummary times="2" last="1609261053845" />
       </entry>
       <entry key="DatabaseView.PropertiesAction">
         <ActionSummary times="1" last="1609194374268" />
       </entry>
       <entry key="DatabaseView.Refresh">
-        <ActionSummary times="37" last="1609204419442" />
+        <ActionSummary times="62" last="1609268448854" />
       </entry>
       <entry key="EditorBackSpace">
-        <ActionSummary times="228" last="1609203490117" />
+        <ActionSummary times="261" last="1609268227665" />
       </entry>
       <entry key="EditorChooseLookupItem">
         <ActionSummary times="12" last="1607299372427" />
       </entry>
       <entry key="EditorCopy">
-        <ActionSummary times="10" last="1609170133706" />
+        <ActionSummary times="12" last="1609268013114" />
       </entry>
       <entry key="EditorCut">
         <ActionSummary times="1" last="1605107486272" />
@@ -92,7 +101,7 @@
         <ActionSummary times="1" last="1609203480565" />
       </entry>
       <entry key="EditorDeleteToWordStart">
-        <ActionSummary times="69" last="1609203250358" />
+        <ActionSummary times="77" last="1609268029911" />
       </entry>
       <entry key="EditorDown">
         <ActionSummary times="1" last="1607299342041" />
@@ -104,10 +113,10 @@
         <ActionSummary times="1" last="1605108444434" />
       </entry>
       <entry key="EditorNextWord">
-        <ActionSummary times="2" last="1609025021339" />
+        <ActionSummary times="3" last="1609268228235" />
       </entry>
       <entry key="EditorPaste">
-        <ActionSummary times="27" last="1609170183428" />
+        <ActionSummary times="30" last="1609268081803" />
       </entry>
       <entry key="EditorPasteFromX11">
         <ActionSummary times="2" last="1605131182785" />
@@ -119,7 +128,7 @@
         <ActionSummary times="2" last="1605107482983" />
       </entry>
       <entry key="EditorRight">
-        <ActionSummary times="6" last="1605142813791" />
+        <ActionSummary times="7" last="1609261554636" />
       </entry>
       <entry key="EditorSelectWord">
         <ActionSummary times="1" last="1603380440132" />
@@ -152,7 +161,7 @@
         <ActionSummary times="1" last="1604161910406" />
       </entry>
       <entry key="RenameElement">
-        <ActionSummary times="15" last="1605142811196" />
+        <ActionSummary times="19" last="1609261553676" />
       </entry>
       <entry key="Run">
         <ActionSummary times="2" last="1607530361339" />
@@ -185,7 +194,7 @@
         <ActionSummary times="1" last="1603542518968" />
       </entry>
       <entry key="com.intellij.database.dataSource.LocalDataSourceManager$2">
-        <ActionSummary times="33" last="1607531169762" />
+        <ActionSummary times="34" last="1609261076728" />
       </entry>
       <entry key="com.intellij.database.dataSource.url.ui.ParamEditorBase$FMChooseAction">
         <ActionSummary times="2" last="1603546016930" />
@@ -206,7 +215,7 @@
         <ActionSummary times="2" last="1608740698100" />
       </entry>
       <entry key="com.intellij.openapi.ui.DialogWrapper$5">
-        <ActionSummary times="28" last="1609204406105" />
+        <ActionSummary times="45" last="1609268475281" />
       </entry>
       <entry key="com.intellij.openapi.ui.impl.DialogWrapperPeerImpl$AnCancelAction">
         <ActionSummary times="2" last="1604163379945" />
@@ -223,14 +232,17 @@
       <entry key="com.intellij.structuralsearch.inspection.StructuralSearchProfileActionProvider$AddInspectionAction">
         <ActionSummary times="1" last="1608870054538" />
       </entry>
+      <entry key="com.intellij.ui.CommonActionsPanel$1">
+        <ActionSummary times="1" last="1609264923159" />
+      </entry>
       <entry key="com.intellij.ui.CommonActionsPanel$AddButton">
-        <ActionSummary times="264" last="1609179044572" />
+        <ActionSummary times="284" last="1609268275590" />
       </entry>
       <entry key="com.intellij.ui.CommonActionsPanel$EditButton">
-        <ActionSummary times="92" last="1609203464435" />
+        <ActionSummary times="106" last="1609268246943" />
       </entry>
       <entry key="com.intellij.ui.CommonActionsPanel$RemoveButton">
-        <ActionSummary times="26" last="1609170355175" />
+        <ActionSummary times="42" last="1609285813974" />
       </entry>
       <entry key="editRunConfigurations">
         <ActionSummary times="4" last="1601916603259" />

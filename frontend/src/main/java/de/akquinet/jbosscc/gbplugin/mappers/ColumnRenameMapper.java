@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ColumnRenameMapper implements ColumnMapper {
+public class ColumnRenameMapper extends Mapper implements ColumnMapper {
     private final Map<String, String> replacementsColumns = new HashMap<>();
     @Override
     public ColumnMapperResult map(ColumnMetaData source, TableMetaData targetTableMetaData) throws SQLException {
@@ -17,7 +17,7 @@ public class ColumnRenameMapper implements ColumnMapper {
         final String defaultColumnName = source.getColumnName();
 
         final String columnName = replacementsColumns.containsKey(defaultColumnName)?
-                replacementsColumns.get(defaultColumnName): defaultColumnName;
+                "test": defaultColumnName;
 
         final ColumnMetaData columnMetaData2 = targetTableMetaData.getColumnMetaData(columnName);
         return new ColumnMapperResult(Arrays.asList(columnMetaData2));
@@ -25,7 +25,9 @@ public class ColumnRenameMapper implements ColumnMapper {
 
     @Override
     public String mapColumnName(ColumnMetaData source, TableMetaData targetTableMetaData) throws SQLException {
-
+        if (source == null) {
+            return "ERROR";
+        }
         String result = source.getColumnName();
         final String columnName = replacementsColumns.get(result);
 
@@ -35,6 +37,7 @@ public class ColumnRenameMapper implements ColumnMapper {
             return columnName;
     }
 
+    @Override
     public ColumnRenameMapper addReplacement(final String sourceColumn, final String targetColumn) {
         replacementsColumns.put(sourceColumn, targetColumn);
         return this;

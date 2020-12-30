@@ -9,7 +9,7 @@ public class DatabaseNode extends MyDataNode {
     private final DatabaseMetaData databaseMetaData;
 
     public DatabaseNode(DatabaseMetaData databaseMetaData) throws SQLException {
-        super(databaseMetaData.getDatabaseMetaData().getDatabaseProductName(), databaseMetaData.getTableMetaData().size(), null, Boolean.FALSE, "type", null);
+        super(databaseMetaData.getDatabaseMetaData().getDatabaseProductName(), databaseMetaData.getTableMetaData().size(), null, Boolean.FALSE, "", null);
         this.databaseMetaData = databaseMetaData;
     }
 

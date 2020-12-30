@@ -1,0 +1,122 @@
+{
+  "appInfo" : {
+    "build" : "202.7660.26",
+    "buildDate" : "Tue, 6 Oct 2020 10:32:25 +0200",
+    "productCode" : "IU",
+    "generated" : "Wed, 30 Dec 2020 00:40:39 +0100",
+    "os" : "Linux 5.4.0-58-generic",
+    "runtime" : "JetBrains s.r.o. 11.0.8 11.0.8+10-b944.34"
+  },
+  "runtimeInfo" : {
+    "maxMemory" : 536870912,
+    "numberOfProcessors" : 8,
+    "maxNumberOfIndexingThreads" : 4,
+    "maxSizeOfFileForIntelliSense" : 2560000,
+    "maxSizeOfFileForContentLoading" : 20971520
+  },
+  "projectIndexingHistory" : {
+    "projectName" : "testy2",
+    "numberOfFileProviders" : 1,
+    "totalNumberOfFiles" : 5,
+    "times" : {
+      "indexingTime" : "2 s 114 ms",
+      "scanFilesTime" : "1 s 879 ms",
+      "pushPropertiesTime" : "142 ms",
+      "indexExtensionsTime" : "< 1 ms",
+      "pushPropertiesStart" : "Wed, 30 Dec 2020 00:40:37 +0100",
+      "pushPropertiesEnd" : "Wed, 30 Dec 2020 00:40:37 +0100",
+      "scanFilesStart" : "Wed, 30 Dec 2020 00:40:37 +0100",
+      "scanFilesEnd" : "Wed, 30 Dec 2020 00:40:39 +0100",
+      "indexExtensionsStart" : "Wed, 30 Dec 2020 00:40:37 +0100",
+      "indexExtensionsEnd" : "Wed, 30 Dec 2020 00:40:37 +0100",
+      "indexingStart" : "Wed, 30 Dec 2020 00:40:37 +0100",
+      "indexingEnd" : "Wed, 30 Dec 2020 00:40:39 +0100"
+    },
+    "numberOfIndexingThreads" : 4,
+    "totalStatsPerFileType" : [ {
+      "fileType" : "XML",
+      "partOfTotalIndexingTime" : "53.0%",
+      "partOfTotalContentLoadingTime" : "92.2%",
+      "totalNumberOfFiles" : 3,
+      "totalFilesSize" : "190.92 kB",
+      "indexingSpeed" : "2.63 GB/s",
+      "biggestContributors" : [ {
+        "providerName" : "Module 'testy2'",
+        "numberOfFiles" : 3,
+        "totalFilesSize" : "190.92 kB",
+        "partOfTotalIndexingTimeOfThisFileType" : "100.0%"
+      } ]
+    }, {
+      "fileType" : "ARCHIVE",
+      "partOfTotalIndexingTime" : "24.0%",
+      "partOfTotalContentLoadingTime" : "3.9%",
+      "totalNumberOfFiles" : 1,
+      "totalFilesSize" : "147.62 kB",
+      "indexingSpeed" : "4.49 GB/s",
+      "biggestContributors" : [ {
+        "providerName" : "Module 'testy2'",
+        "numberOfFiles" : 1,
+        "totalFilesSize" : "147.62 kB",
+        "partOfTotalIndexingTimeOfThisFileType" : "100.0%"
+      } ]
+    }, {
+      "fileType" : "PLAIN_TEXT",
+      "partOfTotalIndexingTime" : "23.1%",
+      "partOfTotalContentLoadingTime" : "3.9%",
+      "totalNumberOfFiles" : 1,
+      "totalFilesSize" : "48 B",
+      "indexingSpeed" : "1.52 MB/s",
+      "biggestContributors" : [ {
+        "providerName" : "Module 'testy2'",
+        "numberOfFiles" : 1,
+        "totalFilesSize" : "48 B",
+        "partOfTotalIndexingTimeOfThisFileType" : "100.0%"
+      } ]
+    } ],
+    "totalStatsPerIndexer" : [ {
+      "indexId" : "filetypes",
+      "partOfTotalIndexingTime" : "54.1%",
+      "totalNumberOfFiles" : 5,
+      "totalFilesSize" : "338.58 kB",
+      "indexingSpeed" : "4.56 GB/s"
+    }, {
+      "indexId" : "FilenameIndex",
+      "partOfTotalIndexingTime" : "45.9%",
+      "totalNumberOfFiles" : 5,
+      "totalFilesSize" : "338.58 kB",
+      "indexingSpeed" : "5.38 GB/s"
+    } ],
+    "fileProviderStatistics" : [ {
+      "providerName" : "Module 'testy2'",
+      "totalNumberOfFiles" : 5,
+      "totalIndexingTime" : "58 ms",
+      "statsPerFileType" : [ {
+        "fileType" : "XML",
+        "numberOfFiles" : 3,
+        "totalFilesSize" : "190.92 kB",
+        "partOfTotalIndexingTime" : "53.0%",
+        "partOfTotalContentLoadingTime" : "92.2%"
+      }, {
+        "fileType" : "ARCHIVE",
+        "numberOfFiles" : 1,
+        "totalFilesSize" : "147.62 kB",
+        "partOfTotalIndexingTime" : "24.0%",
+        "partOfTotalContentLoadingTime" : "3.9%"
+      }, {
+        "fileType" : "PLAIN_TEXT",
+        "numberOfFiles" : 1,
+        "totalFilesSize" : "48 B",
+        "partOfTotalIndexingTime" : "23.1%",
+        "partOfTotalContentLoadingTime" : "3.9%"
+      } ],
+      "statsPerIndexer" : [ {
+        "indexId" : "filetypes",
+        "partOfTotalIndexingTime" : "54.1%"
+      }, {
+        "indexId" : "FilenameIndex",
+        "partOfTotalIndexingTime" : "45.9%"
+      } ],
+      "fastIndexers" : [ ]
+    } ]
+  }
+}

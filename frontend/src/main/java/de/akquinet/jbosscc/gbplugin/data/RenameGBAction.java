@@ -2,7 +2,7 @@ package de.akquinet.jbosscc.gbplugin.data;
 
 import de.akquinet.jbosscc.gbplugin.data.nodes.MyDataNode;
 import de.akquinet.jbosscc.gbplugin.data.nodes.RenameType;
-import de.akquinet.jbosscc.gbplugin.mappers.ColumnRenameMapper;
+import de.akquinet.jbosscc.gbplugin.mappers.Mapper;
 
 public class RenameGBAction extends GBAction{
 
@@ -14,14 +14,14 @@ public class RenameGBAction extends GBAction{
 
 
     public RenameGBAction(String name, String regExp, String replace, RenameType renameType) {
-        super(name, GBActionType.COLUMN_RENAME_ACTION);
+        super(name, GBActionType.RENAME_ACTION);
         this.regExp = regExp;
         this.replace = replace;
         this.renameType = renameType;
     }
 
     public RenameGBAction(String name, String description, String regExp, String replace, RenameType renameType) {
-        super(name, GBActionType.COLUMN_RENAME_ACTION, description);
+        super(name, GBActionType.RENAME_ACTION, description);
         this.regExp = regExp;
         this.replace = replace;
         this.renameType = renameType;
@@ -31,6 +31,7 @@ public class RenameGBAction extends GBAction{
         super(gbAction, node);
         regExp = gbAction.getRegExp();
         replace = gbAction.getReplace();
+        renameType = gbAction.getRenameType();
     }
 
     @Override
@@ -39,9 +40,22 @@ public class RenameGBAction extends GBAction{
     }
 
     @Override
-    public void execute(ColumnRenameMapper renameMapper) {
-        renameMapper.addReplacement(getSource().getName(), replace);
+    public void execute(Mapper mapper) {
+        String result = replace;
+        if (renameType != null) {
+            switch (renameType) {
+            case REPLACE:
+                break;
+            case ADD_PREFIX:
+                result += getSource().getName();
+                break;
+            case ADD_SUFFIX:
+                result = getSource().getName() + replace;
+            }
+        }
+        mapper.addReplacement(getSource().getName(), result);
     }
+
 
     public String getRegExp() {
         return regExp;

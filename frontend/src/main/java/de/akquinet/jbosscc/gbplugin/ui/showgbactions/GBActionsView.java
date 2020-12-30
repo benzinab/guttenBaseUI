@@ -25,15 +25,16 @@ public class GBActionsView extends AbstractView {
     }
 
     public void save() {
+        String path;
         try {
-            String path = GsonHelper.exportJSON(gbActions, "actions.json");
-            Messages.showInfoMessage("Actions are successfully saved in: " + path, "File Saved!");
+            path = GsonHelper.exportJSON(gbActions, "actions.json");
         } catch (IOException e) {
             e.printStackTrace();
             Messages.showErrorDialog(e.getMessage(), "Error While Saving Actions!");
             return;
         }
         close(content);
+        Messages.showInfoMessage("Actions are successfully saved in: " + path, "File Saved!");
     }
 
     private void createUIComponents() {

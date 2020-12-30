@@ -5,12 +5,23 @@ import de.akquinet.jbosscc.guttenbase.meta.ColumnMetaData;
 public class ColumnNode extends MyDataNode {
 
     private final ColumnMetaData columnMetaData;
+    private String type;
     public ColumnNode(ColumnMetaData columnMetaData) {
         super(columnMetaData.getColumnName(), null, null, Boolean.FALSE, "COLUMN_RENAME_ACTION", null);
         this.columnMetaData = columnMetaData;
+        type = columnMetaData.getColumnTypeName();
     }
 
     public ColumnMetaData getColumnMetaData() {
         return columnMetaData;
+    }
+
+    @Override
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

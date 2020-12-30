@@ -10,15 +10,51 @@
         <item name="MySQL1@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL1@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="test: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="PsqlDatabase@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="PsqlDatabase@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="PsqlDatabase@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="database: database" type="162271b6:PgImplModel$Database" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="PsqlDatabase@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="database: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="PsqlDatabase@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="database: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="test: schema" type="983ebcf7:PgImplModel$Schema" />
+      </path>
     </expand>
     <select />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="-1">
-      <file pinned="false" current-in-tab="true">
-        <entry file="das://e76c73da-2eb0-4a29-84dd-0e8d79678448/database/database/schema/test/table/table_name">
+      <file pinned="false" current-in-tab="false">
+        <entry file="das://e76c73da-2eb0-4a29-84dd-0e8d79678448/database/database/schema/pg_catalog/table/pg_aggregate">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state presentationMode="TABLE" sessionName="console_1" projectRestartId="150754bc-5b7e-4266-851c-ea88f2327ac2" pageSize="500">
+            <state presentationMode="TABLE" projectRestartId="87b9a798-4b2c-4c0d-ad38-e6ececc1fe44" pageSize="500">
               <filtering>
                 <filter text="" />
               </filtering>
@@ -27,9 +63,42 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="das://e76c73da-2eb0-4a29-84dd-0e8d79678448/database/database/schema/test/table/table_name2">
+        <entry file="das://e76c73da-2eb0-4a29-84dd-0e8d79678448/database/database/schema/pg_catalog/table/pg_publication_rel">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state presentationMode="TABLE" projectRestartId="150754bc-5b7e-4266-851c-ea88f2327ac2" pageSize="500">
+            <state presentationMode="TABLE" projectRestartId="87b9a798-4b2c-4c0d-ad38-e6ececc1fe44" pageSize="500">
+              <filtering>
+                <filter text="" />
+              </filtering>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="das://e76c73da-2eb0-4a29-84dd-0e8d79678448/database/database/schema/pg_catalog/table/pg_user_mapping">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state presentationMode="TABLE" projectRestartId="87b9a798-4b2c-4c0d-ad38-e6ececc1fe44" pageSize="500">
+              <filtering>
+                <filter text="" />
+              </filtering>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="das://e76c73da-2eb0-4a29-84dd-0e8d79678448/database/database/schema/pg_catalog/table/pg_type">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state presentationMode="TABLE" projectRestartId="87b9a798-4b2c-4c0d-ad38-e6ececc1fe44" pageSize="500">
+              <filtering>
+                <filter text="" />
+              </filtering>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="das://e76c73da-2eb0-4a29-84dd-0e8d79678448/database/database/schema/pg_catalog/table/pg_ts_template">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state presentationMode="TABLE" projectRestartId="87b9a798-4b2c-4c0d-ad38-e6ececc1fe44" pageSize="500">
               <filtering>
                 <filter text="" />
               </filtering>
@@ -55,12 +124,12 @@
       </set>
     </option>
   </component>
-  <component name="ProjectFrameBounds" x="1760" y="0" width="1652" height="952" extendedState="6" />
+  <component name="ProjectFrameBounds" x="72" y="27" width="1848" height="1053" extendedState="6" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" />
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane" />
     </panes>
   </component>
@@ -128,11 +197,12 @@
     </option>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80973000" />
+    <option name="totallyTimeSpent" value="87344000" />
   </component>
   <component name="ToolWindowManager">
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2529349" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3146504" />
       <window_info id="Structure" order="1" side_tool="true" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Commit" order="3" />
@@ -156,7 +226,7 @@
       <window_info anchor="right" x="875" y="190" width="512" height="397" id="Guttenbase" order="0" sideWeight="0.5005429" weight="0.37569368" />
       <window_info anchor="right" id="Ant" order="1" weight="0.32963374" />
       <window_info anchor="right" id="Gradle" order="2" sideWeight="0.49945712" weight="0.26748058" />
-      <window_info anchor="right" id="Database" order="3" sideWeight="0.49945712" visible="true" weight="0.37726787" />
+      <window_info anchor="right" id="Database" order="3" sideWeight="0.49945712" visible="true" weight="0.4711432" />
       <window_info anchor="right" id="Layout Validation" order="4" />
     </layout>
   </component>
@@ -242,9 +312,9 @@
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/619ccfe3-ba05-40e0-b798-06ab05629a12/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="das://1e8a7a36-4df2-40fc-a87e-f8a7497f6743/schema/test/table/table_name2">
+    <entry file="das://e76c73da-2eb0-4a29-84dd-0e8d79678448/database/database/schema/test/table/table_name">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state presentationMode="TABLE" sessionName="table_name2" projectRestartId="db531865-399b-4ab7-b8a6-5e5b09c19267" pageSize="500">
+        <state presentationMode="TABLE" sessionName="console_1" projectRestartId="4c60e740-d43a-4f05-a835-14211005ee10" pageSize="500">
           <filtering>
             <filter text="" />
           </filtering>
@@ -253,7 +323,97 @@
     </entry>
     <entry file="das://e76c73da-2eb0-4a29-84dd-0e8d79678448/database/database/schema/test/table/table_name2">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state presentationMode="TABLE" projectRestartId="150754bc-5b7e-4266-851c-ea88f2327ac2" pageSize="500">
+        <state presentationMode="TABLE" projectRestartId="4c60e740-d43a-4f05-a835-14211005ee10" pageSize="500">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://e76c73da-2eb0-4a29-84dd-0e8d79678448/database/database/schema/test/table/pg_type">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state presentationMode="TABLE" projectRestartId="19eb30b6-d60f-4d77-9b4a-b1d00b811070" pageSize="500">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://e76c73da-2eb0-4a29-84dd-0e8d79678448/database/database/schema/test/table/3055">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state presentationMode="TABLE" projectRestartId="19eb30b6-d60f-4d77-9b4a-b1d00b811070" pageSize="500">
+          <filtering>
+            <filter text="" />
+          </filtering>
+          <column-attributes>
+            <column name="ctid" enabled="false" position="-1" />
+          </column-attributes>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://e76c73da-2eb0-4a29-84dd-0e8d79678448/database/database/schema/test/table/3057">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state presentationMode="TABLE" projectRestartId="19eb30b6-d60f-4d77-9b4a-b1d00b811070" pageSize="500">
+          <filtering>
+            <filter text="" />
+          </filtering>
+          <column-attributes>
+            <column name="ctid" enabled="false" position="-1" />
+          </column-attributes>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://e76c73da-2eb0-4a29-84dd-0e8d79678448/database/database/schema/test/table/extern">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state presentationMode="TABLE" projectRestartId="19eb30b6-d60f-4d77-9b4a-b1d00b811070" pageSize="500">
+          <filtering>
+            <filter text="" />
+          </filtering>
+          <column-attributes>
+            <column name="ctid" enabled="false" position="-1" />
+          </column-attributes>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://1e8a7a36-4df2-40fc-a87e-f8a7497f6743/schema/test/table/extern2">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state presentationMode="TABLE" projectRestartId="9803a9b2-913a-492f-9303-105c75420101" pageSize="500">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://e76c73da-2eb0-4a29-84dd-0e8d79678448/database/database/schema/pg_catalog/table/pg_aggregate">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state presentationMode="TABLE" projectRestartId="87b9a798-4b2c-4c0d-ad38-e6ececc1fe44" pageSize="500">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://e76c73da-2eb0-4a29-84dd-0e8d79678448/database/database/schema/pg_catalog/table/pg_publication_rel">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state presentationMode="TABLE" projectRestartId="87b9a798-4b2c-4c0d-ad38-e6ececc1fe44" pageSize="500">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://e76c73da-2eb0-4a29-84dd-0e8d79678448/database/database/schema/pg_catalog/table/pg_user_mapping">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state presentationMode="TABLE" projectRestartId="87b9a798-4b2c-4c0d-ad38-e6ececc1fe44" pageSize="500">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://1e8a7a36-4df2-40fc-a87e-f8a7497f6743/schema/test/table/table_name2">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state presentationMode="TABLE" projectRestartId="87b9a798-4b2c-4c0d-ad38-e6ececc1fe44" pageSize="500">
           <filtering>
             <filter text="" />
           </filtering>
@@ -262,16 +422,34 @@
     </entry>
     <entry file="das://1e8a7a36-4df2-40fc-a87e-f8a7497f6743/schema/test/table/table_name">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state presentationMode="TABLE" projectRestartId="150754bc-5b7e-4266-851c-ea88f2327ac2" pageSize="500">
+        <state presentationMode="TABLE" projectRestartId="87b9a798-4b2c-4c0d-ad38-e6ececc1fe44" pageSize="500">
           <filtering>
             <filter text="" />
           </filtering>
         </state>
       </provider>
     </entry>
-    <entry file="das://e76c73da-2eb0-4a29-84dd-0e8d79678448/database/database/schema/test/table/table_name">
+    <entry file="das://e76c73da-2eb0-4a29-84dd-0e8d79678448/database/database/schema/pg_catalog/table/pg_ts_template">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state presentationMode="TABLE" sessionName="console_1" projectRestartId="150754bc-5b7e-4266-851c-ea88f2327ac2" pageSize="500">
+        <state presentationMode="TABLE" projectRestartId="87b9a798-4b2c-4c0d-ad38-e6ececc1fe44" pageSize="500">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://1e8a7a36-4df2-40fc-a87e-f8a7497f6743/schema/test/table/extern1">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state presentationMode="TABLE" projectRestartId="87b9a798-4b2c-4c0d-ad38-e6ececc1fe44" pageSize="500">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://e76c73da-2eb0-4a29-84dd-0e8d79678448/database/database/schema/pg_catalog/table/pg_type">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state presentationMode="TABLE" projectRestartId="87b9a798-4b2c-4c0d-ad38-e6ececc1fe44" pageSize="500">
           <filtering>
             <filter text="" />
           </filtering>
