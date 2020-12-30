@@ -1,4 +1,4 @@
-package de.akquinet.jbosscc.gbplugin.data;
+package de.akquinet.jbosscc.gbplugin.data.gbactions;
 
 public enum RenameType {
     ADD_SUFFIX,
