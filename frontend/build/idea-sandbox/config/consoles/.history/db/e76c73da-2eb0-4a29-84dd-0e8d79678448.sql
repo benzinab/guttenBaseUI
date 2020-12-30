@@ -1,1 +1,0 @@
-INSERT INTO test.table_name (column_1, column_2, column_3, column_4) VALUES (1, 2, 3, 4);

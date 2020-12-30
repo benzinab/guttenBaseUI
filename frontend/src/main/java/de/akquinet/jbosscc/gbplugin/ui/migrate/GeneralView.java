@@ -48,8 +48,6 @@ public class GeneralView extends AbstractView {
     private final List<DbDataSource> dataSources;
     private final String currentDataSource;
     private boolean isDialog;
-
-
     public static final String SOURCE = "source";
     public static final String TARGET = "target";
 
