@@ -3,7 +3,7 @@ package de.akquinet.jbosscc.gbplugin.actions;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.ui.DumbAwareActionButton;
 import com.intellij.util.PlatformIcons;
-import de.akquinet.jbosscc.gbplugin.data.GBAction;
+import de.akquinet.jbosscc.gbplugin.data.gbactions.GBAction;
 import de.akquinet.jbosscc.gbplugin.helper.Migration;
 import org.jetbrains.annotations.NotNull;
 

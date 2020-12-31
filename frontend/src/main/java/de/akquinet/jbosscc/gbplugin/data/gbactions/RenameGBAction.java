@@ -1,8 +1,8 @@
-package de.akquinet.jbosscc.gbplugin.data;
+package de.akquinet.jbosscc.gbplugin.data.gbactions;
 
 import de.akquinet.jbosscc.gbplugin.data.nodes.MyDataNode;
 import de.akquinet.jbosscc.gbplugin.data.nodes.RenameType;
-import de.akquinet.jbosscc.gbplugin.mappers.Mapper;
+import de.akquinet.jbosscc.gbplugin.mapping.Mapper;
 
 public class RenameGBAction extends GBAction{
 
@@ -12,16 +12,18 @@ public class RenameGBAction extends GBAction{
 
     private RenameType renameType;
 
+    private Mapper mapper;
+
 
     public RenameGBAction(String name, String regExp, String replace, RenameType renameType) {
-        super(name, GBActionType.RENAME_ACTION);
+        super(name, GBActionType.RENAME);
         this.regExp = regExp;
         this.replace = replace;
         this.renameType = renameType;
     }
 
     public RenameGBAction(String name, String description, String regExp, String replace, RenameType renameType) {
-        super(name, GBActionType.RENAME_ACTION, description);
+        super(name, GBActionType.RENAME, description);
         this.regExp = regExp;
         this.replace = replace;
         this.renameType = renameType;
@@ -40,7 +42,7 @@ public class RenameGBAction extends GBAction{
     }
 
     @Override
-    public void execute(Mapper mapper) {
+    public void execute() {
         String result = replace;
         if (renameType != null) {
             switch (renameType) {
@@ -55,7 +57,6 @@ public class RenameGBAction extends GBAction{
         }
         mapper.addReplacement(getSource().getName(), result);
     }
-
 
     public String getRegExp() {
         return regExp;
@@ -79,5 +80,9 @@ public class RenameGBAction extends GBAction{
 
     public void setRenameType(RenameType renameType) {
         this.renameType = renameType;
+    }
+
+    public void setMapper(Mapper mapper) {
+        this.mapper = mapper;
     }
 }

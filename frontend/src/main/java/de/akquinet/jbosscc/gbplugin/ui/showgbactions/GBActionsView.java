@@ -1,7 +1,7 @@
 package de.akquinet.jbosscc.gbplugin.ui.showgbactions;
 
 import com.intellij.openapi.ui.Messages;
-import de.akquinet.jbosscc.gbplugin.data.GBAction;
+import de.akquinet.jbosscc.gbplugin.data.gbactions.GBAction;
 import de.akquinet.jbosscc.gbplugin.helper.GsonHelper;
 import de.akquinet.jbosscc.gbplugin.ui.common.AbstractView;
 

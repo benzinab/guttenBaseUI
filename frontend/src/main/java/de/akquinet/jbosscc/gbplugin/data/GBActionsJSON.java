@@ -1,5 +1,7 @@
 package de.akquinet.jbosscc.gbplugin.data;
 
+import de.akquinet.jbosscc.gbplugin.data.gbactions.GBAction;
+
 import java.util.List;
 
 public class GBActionsJSON {

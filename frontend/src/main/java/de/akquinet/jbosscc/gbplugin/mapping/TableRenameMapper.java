@@ -1,4 +1,4 @@
-package de.akquinet.jbosscc.gbplugin.mappers;
+package de.akquinet.jbosscc.gbplugin.mapping;
 
 import de.akquinet.jbosscc.guttenbase.hints.CaseConversionMode;
 import de.akquinet.jbosscc.guttenbase.mapping.TableMapper;

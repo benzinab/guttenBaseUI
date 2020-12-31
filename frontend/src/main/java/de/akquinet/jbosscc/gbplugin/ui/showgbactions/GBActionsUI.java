@@ -7,10 +7,12 @@ import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.util.Comparing;
 import com.intellij.ui.*;
 import com.intellij.util.ui.ColumnInfo;
+import de.akquinet.jbosscc.gbplugin.actions.OpenChangeTypeAction;
 import de.akquinet.jbosscc.gbplugin.actions.OpenRenameAction;
-import de.akquinet.jbosscc.gbplugin.data.GBAction;
-import de.akquinet.jbosscc.gbplugin.data.GBActionType;
-import de.akquinet.jbosscc.gbplugin.data.RenameGBAction;
+import de.akquinet.jbosscc.gbplugin.data.gbactions.ChangeTypeGBAction;
+import de.akquinet.jbosscc.gbplugin.data.gbactions.GBAction;
+import de.akquinet.jbosscc.gbplugin.data.gbactions.GBActionType;
+import de.akquinet.jbosscc.gbplugin.data.gbactions.RenameGBAction;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
@@ -46,7 +48,8 @@ public class GBActionsUI {
     }
     private void createActions(ToolbarDecorator decorator) {
         myAddActions.add(new OpenRenameAction(myGBActionsTable, myGBActions));
-        myAddActions.add(new OpenRenameAction(myGBActionsTable, myGBActions));//TODO add other hints
+        myAddActions.add(new OpenChangeTypeAction(myGBActionsTable, myGBActions));
+        //TODO add other hints
         myAddActions.sort((o1, o2) -> Comparing.compare(o1.getTemplatePresentation().getText(), o2.getTemplatePresentation().getText()));
         decorator.disableUpDownActions();
         decorator.setAddActionUpdater(e -> !myAddActions.isEmpty());
@@ -84,8 +87,15 @@ public class GBActionsUI {
 
     private void performEdit(AnActionButton e) {
         int row = myGBActionsTable.getSelectedRow();
-        RenameGBAction GBAction = (RenameGBAction) myGBActionsTable.getItems().get(myGBActionsTable.convertRowIndexToModel(row));
-        new OpenRenameAction(myGBActionsTable, myGBActions, GBAction).actionPerformed(null);
+        GBAction gbAction = myGBActionsTable.getItems().get(myGBActionsTable.convertRowIndexToModel(row));
+        switch (gbAction.getGBActionType()) {
+            case RENAME:
+            case RENAME_COLUMN:
+            case RENAME_TABLE:
+                new OpenRenameAction(myGBActionsTable, myGBActions, (RenameGBAction) gbAction).actionPerformed(null);
+            case CHANGE_COLUMN_TYPE:
+                new OpenChangeTypeAction(myGBActionsTable, myGBActions, (ChangeTypeGBAction) gbAction).actionPerformed(null);
+        }
 
     }
 

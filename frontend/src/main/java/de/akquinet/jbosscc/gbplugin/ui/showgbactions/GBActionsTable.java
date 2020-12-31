@@ -4,8 +4,8 @@ import com.intellij.ui.TableViewSpeedSearch;
 import com.intellij.ui.table.TableView;
 import com.intellij.util.ui.ColumnInfo;
 import com.intellij.util.ui.ListTableModel;
-import de.akquinet.jbosscc.gbplugin.data.GBAction;
-import de.akquinet.jbosscc.gbplugin.data.GBActionType;
+import de.akquinet.jbosscc.gbplugin.data.gbactions.GBAction;
+import de.akquinet.jbosscc.gbplugin.data.gbactions.GBActionType;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
@@ -17,7 +17,7 @@ public class GBActionsTable extends TableView<GBAction> {
     public GBActionsTable(List<GBAction> GBActions, ColumnInfo[] columnInfos){
         super(new ListTableModel<>(columnInfos, GBActions, 0));
         setAutoResizeMode(AUTO_RESIZE_ALL_COLUMNS);
-        getColumnModel().getColumn(1).setCellRenderer(createCellRenderer());
+        //getColumnModel().getColumn(1).setCellRenderer(createCellRenderer());
         getColumnModel().getColumn(0).setResizable(true);
         setShowGrid(false);
         setShowVerticalLines(false);

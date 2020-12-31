@@ -1,7 +1,6 @@
-package de.akquinet.jbosscc.gbplugin.data;
+package de.akquinet.jbosscc.gbplugin.data.gbactions;
 
 import de.akquinet.jbosscc.gbplugin.data.nodes.MyDataNode;
-import de.akquinet.jbosscc.gbplugin.mappers.Mapper;
 
 /**
  * Represents a configuration step for the  migration
@@ -52,9 +51,7 @@ public abstract class GBAction {
         return false;
     }
 
-    public void execute(Mapper renameMapper) {
-
-    }
+    public abstract void execute();
 
     public String getName() {
         return name;

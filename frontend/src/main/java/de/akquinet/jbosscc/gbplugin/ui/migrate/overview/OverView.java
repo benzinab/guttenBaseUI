@@ -7,9 +7,8 @@ import com.intellij.ui.SimpleTextAttributes;
 import com.intellij.ui.ToolbarDecorator;
 import com.intellij.util.PlatformIcons;
 import com.intellij.util.ui.ColumnInfo;
-import de.akquinet.jbosscc.gbplugin.data.GBAction;
-import de.akquinet.jbosscc.gbplugin.data.GBActionType;
-import de.akquinet.jbosscc.gbplugin.data.RenameGBAction;
+import de.akquinet.jbosscc.gbplugin.data.gbactions.GBAction;
+import de.akquinet.jbosscc.gbplugin.data.gbactions.GBActionType;
 import de.akquinet.jbosscc.gbplugin.data.nodes.ColumnNode;
 import de.akquinet.jbosscc.gbplugin.data.nodes.DatabaseNode;
 import de.akquinet.jbosscc.gbplugin.data.nodes.MyDataNode;
@@ -183,12 +182,13 @@ public class OverView extends AbstractView {
             }
             gbAction.setSource(node);
             if (node instanceof ColumnNode) {
-                gbAction.setGBActionType(GBActionType.COLUMN_RENAME_ACTION);
+                gbAction.setGBActionType(GBActionType.RENAME_COLUMN);
             }
             else if (node instanceof TableNode) {
-                gbAction.setGBActionType(GBActionType.TABLE_RENAME_ACTION);
+                gbAction.setGBActionType(GBActionType.RENAME_TABLE);
             }
-            migration.addGBAction(new RenameGBAction((RenameGBAction) gbAction, node));
+            gbAction.setSource(node);
+            migration.addGBAction(gbAction);
         }
 
         @Override
@@ -202,12 +202,8 @@ public class OverView extends AbstractView {
             }
             int row = overviewTreeTable.getSelectedRow();
             //todo switch cases: type (column/table/database)
-            if (overviewTreeTable.getValueAt(row, 0) instanceof ColumnNode) {
-                ColumnNode node = (ColumnNode) overviewTreeTable.getValueAt(row, 0);
-                return gbAction.matches(node);
-            }
-            else if (overviewTreeTable.getValueAt(row, 0) instanceof TableNode) {
-                TableNode node = (TableNode) overviewTreeTable.getValueAt(row, 0);
+            MyDataNode node = (MyDataNode) overviewTreeTable.getValueAt(row, 0);
+            if (node != null) {
                 return gbAction.matches(node);
             }
             return false;

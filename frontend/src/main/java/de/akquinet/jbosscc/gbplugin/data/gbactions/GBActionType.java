@@ -1,4 +1,4 @@
-package de.akquinet.jbosscc.gbplugin.data;
+package de.akquinet.jbosscc.gbplugin.data.gbactions;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -7,14 +7,18 @@ import com.google.gson.annotations.SerializedName;
  */
 public enum GBActionType {
 
-    @SerializedName("RENAME_ACTION")
-    RENAME_ACTION("Rename Action"),
+    @SerializedName("RENAME")
+    RENAME("Rename"),
 
-    @SerializedName("COLUMN_RENAME_ACTION")
-    COLUMN_RENAME_ACTION("Column Rename Action"),
+    @SerializedName("RENAME_COLUMN")
+    RENAME_COLUMN("Rename Column"),
 
-    @SerializedName("TABLE_RENAME_ACTION")
-    TABLE_RENAME_ACTION("Table Rename Action");
+    @SerializedName("TABLE_RENAME")
+    RENAME_TABLE("Rename Table"),
+
+    @SerializedName("CHANGE_COLUMN_TYPE_ACTION")
+    CHANGE_COLUMN_TYPE("Change Column Type");
+
 
     private final String name;
 
