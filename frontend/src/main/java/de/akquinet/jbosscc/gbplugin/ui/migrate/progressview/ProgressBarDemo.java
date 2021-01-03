@@ -88,7 +88,7 @@ public class ProgressBarDemo extends JPanel
 
         //Create the demo's UI.
 
-        progressBar = new JProgressBar(0, 100);
+        progressBar = new JProgressBar(10, 100);
         progressBar.setValue(0);
         progressBar.setStringPainted(true);
 

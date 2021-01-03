@@ -10,13 +10,15 @@ import de.akquinet.jbosscc.gbplugin.data.gbactions.GBAction;
 import de.akquinet.jbosscc.gbplugin.data.gbactions.GBActionType;
 import de.akquinet.jbosscc.gbplugin.helper.Migration;
 import de.akquinet.jbosscc.gbplugin.ui.common.AbstractView;
+import de.akquinet.jbosscc.gbplugin.ui.migrate.progressview.ProgressView;
 import de.akquinet.jbosscc.gbplugin.ui.showgbactions.GBActionsTable;
+import org.apache.log4j.BasicConfigurator;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
+import javax.swing.text.DefaultCaret;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,34 +41,38 @@ public class ResultView extends AbstractView {
         backButton.addActionListener(e -> backTo(content, "2"));
         cancelButton.addActionListener(e -> close(content));
         submitButton.addActionListener(e -> submit(e));
-
-
     }
 
     public void submit(ActionEvent e) {
-        migration.getGbActions().forEach(gbAction -> System.out.println(gbAction.getName() + " " + gbAction.getSource().getName()));
+        ////configure logger
+        BasicConfigurator.configure();
+        //Logger logger = Logger.getLogger(UIScriptExecutorProgressIndicator.class);
 
-        try {
-            migration.migrate();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-            Messages.showErrorDialog(throwables.getMessage(), "Error!");
-            return;
-        }
+        //text area
+        JTextArea textArea = new JTextArea(5, 20);
+        DefaultCaret caret = (DefaultCaret)textArea.getCaret();
+        caret.setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);
 
-        //DataContext dataContext = DataManager.getInstance().getDataContext();
-        //Project project = (Project) dataContext.getData(DataConstants.PROJECT);
-        //ProgressManager.getInstance().run(new Task.Backgroundable(project, "Migration progress") {
-        //    @Override
-        //    public void run(@NotNull ProgressIndicator indicator) {
-        //        indicator.setFraction(0.1);
-        //        indicator.setText("Migrating is starting.");
-        //        indicator.setFraction(0.9);
-        //        indicator.setText("Migrating has been successfully done.");
-        //          //
-        //    }
-        //});
-        close(content);
+        ////Logger
+        //LoggingAppender appender = new LoggingAppender(textArea);
+        //logger.addAppender(appender);
+        //logger.setLevel(Level.ALL);
+
+        //UI
+        ProgressView progressView = new ProgressView(textArea);
+        JFrame parent = (JFrame) SwingUtilities.getWindowAncestor(this.content);
+        Container contentPane = parent.getContentPane();
+        contentPane.add(progressView.getContent(), "4");
+        CardLayout cl = (CardLayout) (contentPane.getLayout());
+        cl.show(contentPane, "4");
+        SwingUtilities.updateComponentTreeUI(parent);
+
+        //migrate
+        migration.setProgressView(progressView);
+        Thread migrate = new Thread(migration);
+        migrate.setDaemon(true);
+        migration.start();
+
     }
 
     public ColumnInfo[] createInfoColumns() {

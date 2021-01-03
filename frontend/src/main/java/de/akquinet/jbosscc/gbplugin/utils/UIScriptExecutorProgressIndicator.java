@@ -1,82 +1,117 @@
 package de.akquinet.jbosscc.gbplugin.utils;
 
-import de.akquinet.jbosscc.guttenbase.utils.LoggingScriptExecutorProgressIndicator;
+import com.intellij.ui.JBColor;
+import de.akquinet.jbosscc.gbplugin.ui.migrate.progressview.ProgressView;
 import de.akquinet.jbosscc.guttenbase.utils.ScriptExecutorProgressIndicator;
 import de.akquinet.jbosscc.guttenbase.utils.TimingProgressIndicator;
+import de.akquinet.jbosscc.guttenbase.utils.Util;
 import org.apache.log4j.Logger;
 
-public class UIScriptExecutorProgressIndicator implements ScriptExecutorProgressIndicator{
+public class UIScriptExecutorProgressIndicator implements ScriptExecutorProgressIndicator
+{
+    private final ProgressView progressView;
+    private final TimingProgressIndicator _timingDelegate = new TimingProgressIndicator();
+    private final StringBuilder _text = new StringBuilder();
+    private static final Logger LOG = Logger.getLogger(UIScriptExecutorProgressIndicator.class);
 
-    private static final Logger LOG = Logger.getLogger(LoggingScriptExecutorProgressIndicator.class);
-
-    private final TimingProgressIndicator timingDelegate = new TimingProgressIndicator();
+    public UIScriptExecutorProgressIndicator(ProgressView progressView)
+    {
+        this.progressView = progressView;
+    }
 
     @Override
     public void initializeIndicator()
     {
+        _timingDelegate.initializeIndicator();
 
-        timingDelegate.initializeIndicator();
-
+        progressView.getTotalTimeElapsed().setText("");
+        progressView.getStatementTimeElapsed().setText("");
+        progressView.getStatus().setText("Initializing...");
     }
 
     @Override
-    public void startProcess(final int numberOfTables)
+    public void startProcess(final int totalNumberOfProcesses)
     {
-        timingDelegate.startProcess(numberOfTables);
+        _timingDelegate.startProcess(totalNumberOfProcesses);
+
+        progressView.getTotalBar().setValue(0);
+        progressView.getTotalBar().setMinimum(0);
+        progressView.getTotalBar().setMaximum(totalNumberOfProcesses);
+        progressView.getStatus().setText("Process starting...");
     }
 
     @Override
     public void startExecution()
     {
-        timingDelegate.startExecution();
+        _timingDelegate.startExecution();
     }
 
     @Override
-    public void endExecution(final int totalCopiedRows)
+    public void endExecution(final int numberOfItems)
     {
-        timingDelegate.endExecution(totalCopiedRows);
+        _timingDelegate.endExecution(numberOfItems);
+
+        updateTimers();
     }
 
     @Override
     public void endProcess()
     {
-        timingDelegate.endProcess();
+        _timingDelegate.endProcess();
+
+        progressView.getTotalBar().setValue(_timingDelegate.getItemCounter());
+        progressView.getStatus().setText("Process ending...");
+        updateTimers();
     }
 
     @Override
     public void warn(final String text)
     {
-        timingDelegate.warn(text);
+        _timingDelegate.warn(text);
+        _text.append("WARNING: ").append(text).append("\n");
+        updateMessages();
         LOG.warn(text);
     }
 
     @Override
     public void info(final String text)
     {
-        timingDelegate.info(text);
+        _timingDelegate.info(text);
+        _text.append("Info: ").append(text).append("\n");
+        updateMessages();
         LOG.info(text);
     }
 
     @Override
     public void debug(final String text)
     {
-        timingDelegate.debug(text);
+        _timingDelegate.debug(text);
+        _text.append("Debug: ").append(text).append("\n");
+        updateMessages();
         LOG.debug(text);
     }
 
     @Override
     public void finalizeIndicator()
     {
-        timingDelegate.finalizeIndicator();
+        _timingDelegate.finalizeIndicator();
+        progressView.getStatus().setText("Done!");
+        progressView.getStatus().setForeground(JBColor.GREEN);
     }
 
     @Override
-    public void updateTimers()
+    public final void updateTimers()
     {
-        throw new UnsupportedOperationException();
+        progressView.getTotalTimeElapsed().setText(Util.formatTime(_timingDelegate.getElapsedTotalTime()));
+        progressView.getStatementTimeElapsed().setText(Util.formatTime(_timingDelegate.getElapsedExecutionTime()));
+    }
+
+    private void updateMessages()
+    {
+        progressView.getLogArea().setText(_text.toString());
     }
 
     public TimingProgressIndicator getTimingDelegate() {
-        return timingDelegate;
+        return _timingDelegate;
     }
 }

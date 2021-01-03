@@ -93,6 +93,7 @@ public class GBActionsUI {
             case RENAME_COLUMN:
             case RENAME_TABLE:
                 new OpenRenameAction(myGBActionsTable, myGBActions, (RenameGBAction) gbAction).actionPerformed(null);
+                break;
             case CHANGE_COLUMN_TYPE:
                 new OpenChangeTypeAction(myGBActionsTable, myGBActions, (ChangeTypeGBAction) gbAction).actionPerformed(null);
         }

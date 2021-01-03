@@ -7,6 +7,7 @@ import com.intellij.ui.SimpleTextAttributes;
 import com.intellij.ui.ToolbarDecorator;
 import com.intellij.util.PlatformIcons;
 import com.intellij.util.ui.ColumnInfo;
+import de.akquinet.jbosscc.gbplugin.actions.OpenGBActionsAction;
 import de.akquinet.jbosscc.gbplugin.data.gbactions.GBAction;
 import de.akquinet.jbosscc.gbplugin.data.gbactions.GBActionType;
 import de.akquinet.jbosscc.gbplugin.data.nodes.ColumnNode;
@@ -23,6 +24,8 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -36,6 +39,7 @@ public class OverView extends AbstractView {
     private JButton cancelButton;
     private JButton backButton;
     private JPanel tableContainer;
+    private JButton plusButton;
     private OverviewTreeTable overviewTreeTable;
 
     private Migration migration;
@@ -62,6 +66,12 @@ public class OverView extends AbstractView {
             backTo(content, "1");
         });
 
+        plusButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new OpenGBActionsAction().actionPerformed(null);
+            }
+        });
     }
 
     public void next() {
@@ -114,13 +124,17 @@ public class OverView extends AbstractView {
         tableContainer = decorator.createPanel();
     }
 
-    private void createActions(ToolbarDecorator decorator) {
+    private void updateActions() {
         try {
             myGBActions = GsonHelper.importJSON("actions.json");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
             myGBActions = new ArrayList<>();
         }
+    }
+
+    private void createActions(ToolbarDecorator decorator) {
+        updateActions();
         myGBActions.forEach(gbAction -> {
             OverviewAddAction action = new OverviewAddAction(gbAction);
             decorator.addExtraAction(action);
