@@ -58,8 +58,8 @@ public abstract class OpenGBAction extends DumbAwareAction {
                     return;
                 }
             }
-            myGBActionsTable.getListTableModel().setItems(myGBActions);
             myGBActions.add(newGBAction);
+            myGBActionsTable.getListTableModel().setItems(myGBActions);
         }
 
     }

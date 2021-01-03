@@ -10,12 +10,12 @@ public class AbstractView {
     }
 
     public void close(JPanel content) {
-        JFrame parent = (JFrame) SwingUtilities.getWindowAncestor(content);
+        JDialog parent = (JDialog) SwingUtilities.getWindowAncestor(content);
         parent.dispatchEvent(new WindowEvent(parent, WindowEvent.WINDOW_CLOSING));
     }
 
     public void backTo(JPanel currentContent, String targetContent) {
-        JFrame parent = (JFrame) SwingUtilities.getWindowAncestor(currentContent);
+        JDialog parent = (JDialog) SwingUtilities.getWindowAncestor(currentContent);
         Container contentPane = parent.getContentPane();
         CardLayout cl = (CardLayout) (contentPane.getLayout());
         cl.show(contentPane, targetContent);

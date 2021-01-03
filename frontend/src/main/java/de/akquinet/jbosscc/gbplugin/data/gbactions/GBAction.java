@@ -6,7 +6,7 @@ import de.akquinet.jbosscc.gbplugin.data.nodes.MyDataNode;
  * Represents a configuration step for the  migration
  * applied on the database elements to migrate.
  */
-public abstract class GBAction {
+public abstract class GBAction implements Cloneable {
 
     /**
      * The name of the action.
@@ -52,6 +52,10 @@ public abstract class GBAction {
     }
 
     public abstract void execute();
+
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
 
     public String getName() {
         return name;

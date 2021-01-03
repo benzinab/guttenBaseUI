@@ -3,11 +3,8 @@ package de.akquinet.jbosscc.gbplugin.helper;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonReader;
-import de.akquinet.jbosscc.gbplugin.data.gbactions.ChangeTypeGBAction;
-import de.akquinet.jbosscc.gbplugin.data.gbactions.GBAction;
-import de.akquinet.jbosscc.gbplugin.data.gbactions.GBActionType;
+import de.akquinet.jbosscc.gbplugin.data.gbactions.*;
 import de.akquinet.jbosscc.gbplugin.data.GBActionsJSON;
-import de.akquinet.jbosscc.gbplugin.data.gbactions.RenameGBAction;
 
 import java.io.*;
 import java.util.List;
@@ -35,8 +32,10 @@ public class GsonHelper {
 
     public static Gson initGson() {
         RuntimeTypeAdapterFactory<GBAction> actionFactory = RuntimeTypeAdapterFactory.of(GBAction.class, "type")
-                .registerSubtype(RenameGBAction.class, GBActionType.RENAME_COLUMN.name())
-                .registerSubtype(ChangeTypeGBAction.class, GBActionType.CHANGE_COLUMN_TYPE.name());
+                .registerSubtype(RenameGBAction.class, GBActionType.RENAME.name())
+                .registerSubtype(ChangeTypeGBAction.class, GBActionType.CHANGE_COLUMN_TYPE.name())
+                .registerSubtype(ExcludeColumnGBAction.class, GBActionType.EXCLUDE_COLUMN.name())
+                .registerSubtype(ExcludeTableGBAction.class, GBActionType.EXCLUDE_TABLE.name());
         return new GsonBuilder()
                 .registerTypeAdapterFactory(actionFactory)
                 .create();

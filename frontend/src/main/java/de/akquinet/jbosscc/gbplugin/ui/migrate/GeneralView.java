@@ -112,7 +112,7 @@ public class GeneralView extends AbstractView {
         Migration migration = new Migration(connectorRepository);
         OverView overView = new OverView(migration);
         if (isDialog()){
-            JFrame parent = (JFrame) SwingUtilities.getWindowAncestor(this.content);
+            JDialog parent = (JDialog) SwingUtilities.getWindowAncestor(this.content);
             Container contentPane = parent.getContentPane();
             contentPane.add(overView.getContent(), "2");
             CardLayout cl = (CardLayout) (contentPane.getLayout());

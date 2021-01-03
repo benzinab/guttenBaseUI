@@ -7,7 +7,6 @@ import com.intellij.ui.TitledSeparator;
 import com.intellij.ui.ToolbarDecorator;
 import com.intellij.util.ui.ColumnInfo;
 import de.akquinet.jbosscc.gbplugin.data.gbactions.GBAction;
-import de.akquinet.jbosscc.gbplugin.data.gbactions.GBActionType;
 import de.akquinet.jbosscc.gbplugin.helper.Migration;
 import de.akquinet.jbosscc.gbplugin.ui.common.AbstractView;
 import de.akquinet.jbosscc.gbplugin.ui.migrate.progressview.ProgressView;
@@ -60,7 +59,7 @@ public class ResultView extends AbstractView {
 
         //UI
         ProgressView progressView = new ProgressView(textArea);
-        JFrame parent = (JFrame) SwingUtilities.getWindowAncestor(this.content);
+        JDialog parent = (JDialog) SwingUtilities.getWindowAncestor(this.content);
         Container contentPane = parent.getContentPane();
         contentPane.add(progressView.getContent(), "4");
         CardLayout cl = (CardLayout) (contentPane.getLayout());
@@ -86,10 +85,10 @@ public class ResultView extends AbstractView {
             public String valueOf(final GBAction action) {
                 return action.getSource().getName();
             }
-        }, new ColumnInfo<GBAction, GBActionType>(("Type")) {
+        }, new ColumnInfo<GBAction, String>(("Type")) {
             @Override
-            public GBActionType valueOf(final GBAction action) {
-                return action.getGBActionType();
+            public String valueOf(final GBAction action) {
+                return action.getGBActionType().getName();
             }
         }};
         return columnInfos;
@@ -106,7 +105,7 @@ public class ResultView extends AbstractView {
     }
 
     private void performRemove(AnActionButton e) {
-        int confirmed = Messages.showConfirmationDialog(myGBActionsTable, "Do you really want to delete this item?",
+        int confirmed = Messages.showConfirmationDialog(myGBActionsTable, "Do you really want to delete the selected item(s)?",
                 "Confirmation", "Delete", "Cancel");
         if (confirmed == 1) {
             return;

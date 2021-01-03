@@ -16,6 +16,12 @@ public enum GBActionType {
     @SerializedName("TABLE_RENAME")
     RENAME_TABLE("Rename Table"),
 
+    @SerializedName("EXCLUDE_COLUMN")
+    EXCLUDE_COLUMN("Exclude Column"),
+
+    @SerializedName("EXCLUDE_TABLE")
+    EXCLUDE_TABLE("Exclude Table"),
+
     @SerializedName("CHANGE_COLUMN_TYPE_ACTION")
     CHANGE_COLUMN_TYPE("Change Column Type");
 

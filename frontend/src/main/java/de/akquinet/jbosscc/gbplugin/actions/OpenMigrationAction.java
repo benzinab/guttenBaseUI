@@ -7,7 +7,7 @@ import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.ui.ComponentUtil;
-import de.akquinet.jbosscc.gbplugin.ui.common.ContainerFrame;
+import de.akquinet.jbosscc.gbplugin.ui.common.ContainerDialog;
 import de.akquinet.jbosscc.gbplugin.ui.migrate.GeneralView;
 import org.jetbrains.annotations.NotNull;
 
@@ -37,8 +37,6 @@ public class OpenMigrationAction extends AnAction {
         // create connection + create repository
         //URLConnectorInfo connectorInfo = new URLConnectorInfoImpl(dbDataSource.getConnectionConfig().get)
         GeneralView generalView = new GeneralView(dataSources, dbDataSource.getName());
-        ContainerFrame frame = new ContainerFrame(generalView.getContent(), "Migrate Database");
-        frame.setAlwaysOnTop(true);
-        frame.setVisible(true);
+        new ContainerDialog(generalView.getContent(), "Migrate Database");
     }
 }

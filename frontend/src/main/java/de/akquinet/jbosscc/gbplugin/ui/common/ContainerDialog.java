@@ -3,9 +3,9 @@ package de.akquinet.jbosscc.gbplugin.ui.common;
 import javax.swing.*;
 import java.awt.*;
 
-public class ContainerFrame extends JFrame {
+public class ContainerDialog extends JDialog {
 
-    public ContainerFrame(JPanel content, String title) {
+    public ContainerDialog(JPanel content, String title) {
         super();
         setSize(600, 700);
         content.setMaximumSize(content.getPreferredSize());
@@ -15,6 +15,8 @@ public class ContainerFrame extends JFrame {
 
         this.getContentPane().setLayout(new CardLayout());
         this.getContentPane().add(content, "1");
+        setModal(true);
+        setVisible(true);
     }
 
 }

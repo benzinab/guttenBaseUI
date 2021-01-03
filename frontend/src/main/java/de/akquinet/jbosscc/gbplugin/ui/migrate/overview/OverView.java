@@ -76,7 +76,7 @@ public class OverView extends AbstractView {
 
     public void next() {
             ResultView resultView = new ResultView(migration);
-            JFrame parent = (JFrame) SwingUtilities.getWindowAncestor(this.content);
+            JDialog parent = (JDialog) SwingUtilities.getWindowAncestor(this.content);
             Container contentPane = parent.getContentPane();
             contentPane.add(resultView.getContent(), "3");
             CardLayout cl = (CardLayout) (contentPane.getLayout());
@@ -183,26 +183,36 @@ public class OverView extends AbstractView {
 
         @Override
         public void actionPerformed(@NotNull AnActionEvent e) {
-            int row = overviewTreeTable.getSelectedRow();
-            MyDataNode node = (MyDataNode) overviewTreeTable.getValueAt(row, 0);
+            int[] rows = overviewTreeTable.getSelectedRows();
             int confirmed = Messages.showConfirmationDialog(overviewTreeTable,
-                    String.format("Do you really want to add the action %s to  %s", gbAction.getName(), node.getName()),
+                    String.format("Do you really want to add the action %s to  selected item(s)", gbAction.getName()),
                     "Confirmation",
                     "Add",
                     "Cancel"
-                    );
+            );
             if (confirmed == 1) {
                 return;
             }
-            gbAction.setSource(node);
-            if (node instanceof ColumnNode) {
-                gbAction.setGBActionType(GBActionType.RENAME_COLUMN);
+            for (int row : rows) {
+                MyDataNode node = (MyDataNode) overviewTreeTable.getValueAt(row, 0);
+                GBAction newGBAction;
+                try {
+                    // create a new instance of the action (otherwise the same object will be overwritten).
+                    newGBAction = (GBAction) gbAction.clone();
+                } catch (CloneNotSupportedException cloneNotSupportedException) {
+                    cloneNotSupportedException.printStackTrace();
+                    Messages.showErrorDialog(cloneNotSupportedException.getMessage(), "Error!");
+                    return;
+                }
+                newGBAction.setSource(node);
+                if (node instanceof ColumnNode && newGBAction.getGBActionType().equals(GBActionType.RENAME)) {
+                    newGBAction.setGBActionType(GBActionType.RENAME_COLUMN);
+                }
+                else if (node instanceof TableNode && newGBAction.getGBActionType().equals(GBActionType.RENAME)) {
+                    newGBAction.setGBActionType(GBActionType.RENAME_TABLE);
+                }
+                migration.addGBAction(newGBAction);
             }
-            else if (node instanceof TableNode) {
-                gbAction.setGBActionType(GBActionType.RENAME_TABLE);
-            }
-            gbAction.setSource(node);
-            migration.addGBAction(gbAction);
         }
 
         @Override
@@ -211,11 +221,16 @@ public class OverView extends AbstractView {
         }
 
         private boolean isEnabled(GBAction gbAction) {
-            if (overviewTreeTable.getSelectedRows().length>1) {
-                return false;
+            int[] rows = overviewTreeTable.getSelectedRows();
+            for (int row : rows) {
+                if (!singleCheck(row, gbAction)) {
+                    return false;
+                }
             }
-            int row = overviewTreeTable.getSelectedRow();
-            //todo switch cases: type (column/table/database)
+            return true;
+        }
+
+        private boolean singleCheck(int row, GBAction gbAction) {
             MyDataNode node = (MyDataNode) overviewTreeTable.getValueAt(row, 0);
             if (node != null) {
                 return gbAction.matches(node);

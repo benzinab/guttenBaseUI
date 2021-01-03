@@ -21,7 +21,7 @@ public class ChangeTypeGBAction extends GBAction{
         super(name, gbActionType, description);
     }
 
-    public ChangeTypeGBAction(GBAction gbAction, MyDataNode node, String sourceTypeName, String targetTypeName) {
+    public ChangeTypeGBAction(GBAction gbAction, MyDataNode node) {
         super(gbAction, node);
     }
 

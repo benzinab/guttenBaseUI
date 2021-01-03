@@ -21,7 +21,6 @@ public class OverviewAddAction extends DumbAwareActionButton {
     @Override
     public void actionPerformed(@NotNull AnActionEvent e) {
         migration.addGBAction(gbAction);
-        System.out.println(migration.getGbActions().size());
     }
 
     @Override
