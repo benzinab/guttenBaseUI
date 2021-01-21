@@ -1,4 +1,4 @@
-package de.akquinet.jbosscc.gbplugin.ui.migrate.progressview;
+package de.akquinet.jbosscc.gbplugin.ui.migration_views.progressview;
 
 import de.akquinet.jbosscc.gbplugin.ui.common.AbstractView;
 
@@ -19,10 +19,20 @@ public class ProgressView  extends AbstractView {
     private JLabel totalTimeElapsed;
     private JLabel status;
     private JTextArea appenderArea;
+    private boolean isBackEnabled;
 
     public ProgressView(JTextArea appenderArea) {
         this.appenderArea = appenderArea;
         OKButton.addActionListener(e -> close(content));
+        backButton.addActionListener(e -> backTo(content, "3"));
+    }
+
+    public void enableBack() {
+        backButton.setEnabled(true);
+    }
+
+    public void disableBack() {
+        backButton.setEnabled(false);
     }
 
     public JPanel getContent() {

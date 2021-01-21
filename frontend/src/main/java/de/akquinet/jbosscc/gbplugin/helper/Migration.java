@@ -1,5 +1,6 @@
 package de.akquinet.jbosscc.gbplugin.helper;
 
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.ui.Messages;
 import de.akquinet.jbosscc.gbplugin.data.gbactions.ChangeTypeGBAction;
 import de.akquinet.jbosscc.gbplugin.data.gbactions.GBAction;
@@ -9,7 +10,7 @@ import de.akquinet.jbosscc.gbplugin.data.nodes.ColumnNode;
 import de.akquinet.jbosscc.gbplugin.data.nodes.TableNode;
 import de.akquinet.jbosscc.gbplugin.mapping.ColumnRenameMapper;
 import de.akquinet.jbosscc.gbplugin.mapping.TableRenameMapper;
-import de.akquinet.jbosscc.gbplugin.ui.migrate.progressview.ProgressView;
+import de.akquinet.jbosscc.gbplugin.ui.migration_views.progressview.ProgressView;
 import de.akquinet.jbosscc.gbplugin.utils.UIScriptExecutorProgressIndicator;
 import de.akquinet.jbosscc.guttenbase.hints.*;
 import de.akquinet.jbosscc.guttenbase.hints.impl.DefaultRepositoryTableFilterHint;
@@ -38,7 +39,7 @@ public class Migration extends Thread {
     public static final String SOURCE = "source";
     public static final String TARGET = "target";
     private final String ERROR_TITLE = "Error!";
-    private List<GBAction> gbActions;
+    private final List<GBAction> gbActions;
     private final ColumnRenameMapper columnRenameMapper;
     private final TableRenameMapper tableRenameMapper;
     private final DefaultColumnTypeMapper columnTypeMapper;
@@ -55,35 +56,31 @@ public class Migration extends Thread {
         columnTypeMapper = new DefaultColumnTypeMapper();
     }
 
+    public Migration(Migration migration) {
+        this.connectorRepository = migration.getConnectorRepository();
+        this.columnTypeMapper = migration.getColumnTypeMapper();
+        this.columnRenameMapper = migration.getColumnRenameMapper();
+        this.tableRenameMapper = migration.getTableRenameMapper();
+        this.progressView = migration.getProgressView();
+        this.excludedColumns = migration.getExcludedColumns();
+        this.excludedTables = migration.getExcludedTables();
+        this.gbActions = migration.getGbActions();
+
+    }
+
     @Override
     public void run() {
         updateMappers();
         addConnectors();
-
-        //TimingProgressIndicator timeDelegate =  connectorRepository
-        //        .getConnectorHint(TARGET, UIScriptExecutorProgressIndicator.class)
-        //        .getValue()
-        //        .getTimingDelegate();
-        try {
+        try{
             new CopySchemaTool(connectorRepository).copySchema(SOURCE, TARGET);
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-            Messages.showErrorDialog(throwables.getMessage(), ERROR_TITLE);
-        }
-        checkCompatibilityIssues();
-        try {
-            new DefaultTableCopyTool(connectorRepository).copyTables(SOURCE,
-                    TARGET);
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-            Messages.showErrorDialog(throwables.getMessage(), ERROR_TITLE);
-        }
-        try {
-            new CheckEqualTableDataTool(connectorRepository).checkTableData(SOURCE,
-                    TARGET);
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-            Messages.showErrorDialog(throwables.getMessage(), ERROR_TITLE);
+            checkCompatibilityIssues();
+            new DefaultTableCopyTool(connectorRepository).copyTables(SOURCE, TARGET);
+            new CheckEqualTableDataTool(connectorRepository).checkTableData(SOURCE, TARGET);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            ApplicationManager.getApplication().invokeLater(() -> Messages.showErrorDialog(e.getMessage(), ERROR_TITLE));
+            progressView.enableBack();
         }
     }
 
@@ -154,22 +151,13 @@ public class Migration extends Thread {
         });
     }
 
-    private void checkCompatibilityIssues() {
+    private void checkCompatibilityIssues() throws SQLException {
         final SchemaCompatibilityIssues schemaCompatibilityIssues;
-        try {
-            schemaCompatibilityIssues = new
-                    SchemaComparatorTool(connectorRepository).check(SOURCE, TARGET);
-            if (schemaCompatibilityIssues.isSevere()) {
-                try {
-                    throw new SQLException(schemaCompatibilityIssues.toString());
-                } catch (SQLException throwables) {
-                    throwables.printStackTrace();
-                    Messages.showErrorDialog(throwables.getMessage(), ERROR_TITLE);
-                }
-            }
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-            Messages.showErrorDialog(throwables.getMessage(), ERROR_TITLE);
+        String ERROR_TITLE = "Error!";
+        schemaCompatibilityIssues = new
+                SchemaComparatorTool(connectorRepository).check(SOURCE, TARGET);
+        if (schemaCompatibilityIssues.isSevere()) {
+            throw new SQLException(schemaCompatibilityIssues.toString());
         }
     }
 
@@ -193,4 +181,31 @@ public class Migration extends Thread {
         this.progressView = progressView;
     }
 
+    public List<ColumnMetaData> getExcludedColumns() {
+        return excludedColumns;
+    }
+
+    public void setExcludedColumns(List<ColumnMetaData> excludedColumns) {
+        this.excludedColumns = excludedColumns;
+    }
+
+    public List<TableMetaData> getExcludedTables() {
+        return excludedTables;
+    }
+
+    public void setExcludedTables(List<TableMetaData> excludedTables) {
+        this.excludedTables = excludedTables;
+    }
+
+    public ColumnRenameMapper getColumnRenameMapper() {
+        return columnRenameMapper;
+    }
+
+    public TableRenameMapper getTableRenameMapper() {
+        return tableRenameMapper;
+    }
+
+    public DefaultColumnTypeMapper getColumnTypeMapper() {
+        return columnTypeMapper;
+    }
 }

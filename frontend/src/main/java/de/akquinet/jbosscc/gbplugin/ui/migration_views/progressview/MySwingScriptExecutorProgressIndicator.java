@@ -1,4 +1,4 @@
-package de.akquinet.jbosscc.gbplugin.ui.migrate.progressview;
+package de.akquinet.jbosscc.gbplugin.ui.migration_views.progressview;
 
 import de.akquinet.jbosscc.guttenbase.utils.*;
 

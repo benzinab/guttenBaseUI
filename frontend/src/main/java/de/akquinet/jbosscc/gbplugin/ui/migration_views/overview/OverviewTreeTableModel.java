@@ -1,4 +1,4 @@
-package de.akquinet.jbosscc.gbplugin.ui.migrate.overview;
+package de.akquinet.jbosscc.gbplugin.ui.migration_views.overview;
 
 import com.intellij.ui.treeStructure.treetable.ListTreeTableModelOnColumns;
 import com.intellij.ui.treeStructure.treetable.TreeTable;

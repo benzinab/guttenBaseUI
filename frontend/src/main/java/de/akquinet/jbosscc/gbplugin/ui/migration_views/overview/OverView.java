@@ -1,4 +1,4 @@
-package de.akquinet.jbosscc.gbplugin.ui.migrate.overview;
+package de.akquinet.jbosscc.gbplugin.ui.migration_views.overview;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.ui.Messages;
@@ -17,7 +17,7 @@ import de.akquinet.jbosscc.gbplugin.data.nodes.TableNode;
 import de.akquinet.jbosscc.gbplugin.helper.GsonHelper;
 import de.akquinet.jbosscc.gbplugin.helper.Migration;
 import de.akquinet.jbosscc.gbplugin.ui.common.AbstractView;
-import de.akquinet.jbosscc.gbplugin.ui.migrate.resultview.ResultView;
+import de.akquinet.jbosscc.gbplugin.ui.migration_views.resultview.ResultView;
 import de.akquinet.jbosscc.guttenbase.meta.DatabaseMetaData;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -91,6 +91,7 @@ public class OverView extends AbstractView {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
             Messages.showErrorDialog(throwables.getMessage(), "Error!");
+            backTo(content, "1");
             return;
         }
         MyDataNode root;
@@ -99,6 +100,7 @@ public class OverView extends AbstractView {
         } catch (SQLException throwables) {
             Messages.showErrorDialog("Cannot get database name!", "Error!");
             throwables.printStackTrace();
+            backTo(content, "1");
             return;
         }
         MyDataNode finalRoot = root;

@@ -1,13 +1,14 @@
-package de.akquinet.jbosscc.gbplugin.ui.migrate;
+package de.akquinet.jbosscc.gbplugin.ui.migration_views;
 
 import com.intellij.database.model.RawConnectionConfig;
 import com.intellij.database.psi.DbDataSource;
 import com.intellij.database.util.DasUtil;
 import com.intellij.openapi.ui.ComboBox;
 import com.intellij.openapi.ui.Messages;
+import de.akquinet.jbosscc.gbplugin.data.DatabaseTypeMatcher;
 import de.akquinet.jbosscc.gbplugin.helper.Migration;
 import de.akquinet.jbosscc.gbplugin.ui.common.AbstractView;
-import de.akquinet.jbosscc.gbplugin.ui.migrate.overview.OverView;
+import de.akquinet.jbosscc.gbplugin.ui.migration_views.overview.OverView;
 import de.akquinet.jbosscc.guttenbase.connector.DatabaseType;
 import de.akquinet.jbosscc.guttenbase.connector.impl.URLConnectorInfoImpl;
 import de.akquinet.jbosscc.guttenbase.repository.ConnectorRepository;
@@ -17,6 +18,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ItemEvent;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 public class GeneralView extends AbstractView {
@@ -28,42 +30,37 @@ public class GeneralView extends AbstractView {
     private JFormattedTextField sourceUserTextField;
     private JPasswordField sourcePasswordField;
     private JLabel sourceDatabaseLabel;
-    private JComboBox sourceDatabaseBox;
-    private JSeparator generalPanelSeperator;
+    private JComboBox<String> sourceDatabaseBox;
+    private JSeparator generalPanelSeparator;
     private JPanel targetPanel;
     private JLabel targetPasswordLabel;
     private JLabel targetUserLabel;
     private JLabel targetDatabaseTypeLabel;
     private JFormattedTextField targetUserTextField;
-    private JComboBox targetDatabaseBox;
+    private JComboBox<String> targetDatabaseBox;
     private JPasswordField targetPasswordField;
     private JButton cancelButton;
     private JButton nextButton;
     private JPanel content;
     private JLabel sourceSchemaLabel;
     private JLabel targetSchemaLabel;
-    private JComboBox sourceSchema;
-    private JComboBox targetSchema;
-
+    private JComboBox<String> sourceSchema;
+    private JComboBox<String> targetSchema;
+    private DatabaseTypeMatcher sourceType;
+    private DatabaseTypeMatcher targetType;
     private final List<DbDataSource> dataSources;
-    private final String currentDataSource;
     private boolean isDialog;
     public static final String SOURCE = "source";
     public static final String TARGET = "target";
 
-    private final String inputFieldError = "Please fill out all input fields!";
-
     public GeneralView(List<DbDataSource> dataSources, String currentDataSource) {
-        this.currentDataSource = currentDataSource;
         this.dataSources = dataSources;
         if (currentDataSource != null) {
             //select database from dbdatasource.
             sourceDatabaseBox.setSelectedItem(currentDataSource);
+            selectSchemasAndTypes(currentDataSource, sourceSchema, SOURCE);
+            selectSchemasAndTypes(Objects.requireNonNull(targetDatabaseBox.getSelectedItem()).toString(), targetSchema, TARGET);
             setDialog(true);
-        }
-        else  {
-            cancelButton.setEnabled(false);
-            setDialog(false);
         }
 
         nextButton.addActionListener(e -> {
@@ -73,35 +70,55 @@ public class GeneralView extends AbstractView {
         cancelButton.addActionListener(e -> close(content));
         sourceDatabaseBox.addItemListener(e -> {
             if (e.getStateChange() == ItemEvent.SELECTED) {
-                selectSchemas(e.getItem().toString(), sourceSchema);
+                selectSchemasAndTypes(e.getItem().toString(), sourceSchema, SOURCE);
             }
         });
         targetDatabaseBox.addItemListener(e -> {
             if (e.getStateChange() == ItemEvent.SELECTED) {
-                selectSchemas(e.getItem().toString(), targetSchema);
+                selectSchemasAndTypes(e.getItem().toString(), targetSchema, TARGET);
             }
         });
     }
 
-    public void selectSchemas(String item, JComboBox<String> box) {
+    public void selectSchemasAndTypes(String item, JComboBox<String> box, String connectorId) {
         box.removeAllItems();
         Optional<DbDataSource> optionalSource = dataSources.stream().filter(dbDataSource -> dbDataSource.getName().equals(item)).findAny();
-        optionalSource.ifPresent(source -> DasUtil.getSchemas(source).forEach(schema -> box.addItem(schema.getName())));
+        optionalSource.ifPresent(source -> {
+            DasUtil.getSchemas(source).forEach(schema -> box.addItem(schema.getName()));
+            DatabaseTypeMatcher type = DatabaseTypeMatcher.valueOf(source.getDelegate().getDbms().getName());
+            if (connectorId.equals(SOURCE)) {
+                sourceType = type;
+            } else {
+                targetType = type;
+            }
+        });
     }
 
     public void next() {
-            //check syntax
-            if (!isValidInput()) {
-                return;
-            }
-            DbDataSource currentDB = dataSources.stream().filter(source -> source.getName().equals(sourceDatabaseBox.getSelectedItem())).findAny().get();
-            RawConnectionConfig sourceConnectionConfig = currentDB.getConnectionConfig();
-            DbDataSource targetDB = dataSources.stream().filter(source -> source.getName().equals(targetDatabaseBox.getSelectedItem())).findAny().get();
-            RawConnectionConfig targetConnectionConfig = targetDB.getConnectionConfig();
-            URLConnectorInfoImpl sourceConnectorInfo = new URLConnectorInfoImpl(sourceConnectionConfig.getUrl(), sourceUserTextField.getText(),
-                    new String(sourcePasswordField.getPassword()), sourceConnectionConfig.getDriverClass(), sourceSchema.getSelectedItem().toString(), DatabaseType.POSTGRESQL);
-            URLConnectorInfoImpl targetConnectorInfo = new URLConnectorInfoImpl(targetConnectionConfig.getUrl(), targetUserTextField.getText(),
-                    new String(targetPasswordField.getPassword()), targetConnectionConfig.getDriverClass(), targetSchema.getSelectedItem().toString(), DatabaseType.MYSQL);
+        //check input
+        if (!isValidInput()) {
+            return;
+        }
+        Optional<DbDataSource> currentDB = dataSources.stream()
+                .filter(source -> source.getName().equals(sourceDatabaseBox.getSelectedItem()))
+                .findAny();
+        Optional<DbDataSource> targetDB = dataSources.stream()
+                .filter(source -> source.getName().equals(targetDatabaseBox.getSelectedItem()))
+                .findAny();
+        if ( currentDB.isPresent() || targetDB.isPresent()) {
+            Messages.showErrorDialog("Cannot find selected database item(s)!", "Error!");
+            return;
+        }
+            RawConnectionConfig sourceConnectionConfig = currentDB.get().getConnectionConfig();
+            RawConnectionConfig targetConnectionConfig = targetDB.get().getConnectionConfig();
+        assert sourceConnectionConfig != null;
+        URLConnectorInfoImpl sourceConnectorInfo = new URLConnectorInfoImpl(sourceConnectionConfig.getUrl(), sourceUserTextField.getText(),
+                    new String(sourcePasswordField.getPassword()), sourceConnectionConfig.getDriverClass(), Objects.requireNonNull(sourceSchema.getSelectedItem()).toString(),
+                    DatabaseType.valueOf(sourceType.getGbType()));
+        assert targetConnectionConfig != null;
+        URLConnectorInfoImpl targetConnectorInfo = new URLConnectorInfoImpl(targetConnectionConfig.getUrl(), targetUserTextField.getText(),
+                    new String(targetPasswordField.getPassword()), targetConnectionConfig.getDriverClass(), Objects.requireNonNull(targetSchema.getSelectedItem()).toString(),
+                    DatabaseType.valueOf(targetType.getGbType()));
 
             // create repo
             final ConnectorRepository connectorRepository = new ConnectorRepositoryImpl();
@@ -122,10 +139,11 @@ public class GeneralView extends AbstractView {
     }
 
     private boolean isValidInput() {
-        if (sourceDatabaseBox.getSelectedItem().equals("") || sourceSchema.getSelectedItem().equals("")
+        if (Objects.equals(sourceDatabaseBox.getSelectedItem(), "") || Objects.equals(sourceSchema.getSelectedItem(), "")
                 || sourceUserTextField.getText().equals("") || sourcePasswordField.getPassword().length == 0
-                || targetDatabaseBox.getSelectedItem().equals("") || targetSchema.getSelectedItem().equals("")
+                || Objects.equals(targetDatabaseBox.getSelectedItem(), "") || Objects.equals(targetSchema.getSelectedItem(), "")
                 || targetUserTextField.getText().equals("") || targetPasswordField.getPassword().length == 0) {
+            String inputFieldError = "Please fill out all input fields!";
             Messages.showErrorDialog(inputFieldError, "Error!");
             return false;
         }
@@ -133,10 +151,10 @@ public class GeneralView extends AbstractView {
     }
 
     private void createUIComponents() {
-        sourceDatabaseBox = new ComboBox<String>();
-        targetDatabaseBox = new ComboBox<String>();
-        sourceSchema = new ComboBox<String>();
-        targetSchema = new ComboBox<String>();
+        sourceDatabaseBox = new ComboBox<>();
+        targetDatabaseBox = new ComboBox<>();
+        sourceSchema = new ComboBox<>();
+        targetSchema = new ComboBox<>();
 
         dataSources.forEach(dataSource -> sourceDatabaseBox.addItem(dataSource.getName()));
         dataSources.forEach(dataSource -> targetDatabaseBox.addItem(dataSource.getName()));

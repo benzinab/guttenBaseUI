@@ -1,4 +1,4 @@
-package de.akquinet.jbosscc.gbplugin.ui.showgbactions;
+package de.akquinet.jbosscc.gbplugin.ui.actions_view;
 
 import de.akquinet.jbosscc.gbplugin.data.gbactions.GBAction;
 

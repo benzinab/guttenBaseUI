@@ -1,4 +1,4 @@
-package de.akquinet.jbosscc.gbplugin.ui.migrate.resultview;
+package de.akquinet.jbosscc.gbplugin.ui.migration_views.resultview;
 
 import com.intellij.openapi.ui.Messages;
 import com.intellij.ui.AnActionButton;
@@ -8,10 +8,9 @@ import com.intellij.ui.ToolbarDecorator;
 import com.intellij.util.ui.ColumnInfo;
 import de.akquinet.jbosscc.gbplugin.data.gbactions.GBAction;
 import de.akquinet.jbosscc.gbplugin.helper.Migration;
+import de.akquinet.jbosscc.gbplugin.ui.actions_view.GBActionsTable;
 import de.akquinet.jbosscc.gbplugin.ui.common.AbstractView;
-import de.akquinet.jbosscc.gbplugin.ui.migrate.progressview.ProgressView;
-import de.akquinet.jbosscc.gbplugin.ui.showgbactions.GBActionsTable;
-import org.apache.log4j.BasicConfigurator;
+import de.akquinet.jbosscc.gbplugin.ui.migration_views.progressview.ProgressView;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
@@ -43,19 +42,10 @@ public class ResultView extends AbstractView {
     }
 
     public void submit(ActionEvent e) {
-        ////configure logger
-        BasicConfigurator.configure();
-        //Logger logger = Logger.getLogger(UIScriptExecutorProgressIndicator.class);
-
         //text area
         JTextArea textArea = new JTextArea(5, 20);
         DefaultCaret caret = (DefaultCaret)textArea.getCaret();
         caret.setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);
-
-        ////Logger
-        //LoggingAppender appender = new LoggingAppender(textArea);
-        //logger.addAppender(appender);
-        //logger.setLevel(Level.ALL);
 
         //UI
         ProgressView progressView = new ProgressView(textArea);
@@ -70,7 +60,7 @@ public class ResultView extends AbstractView {
         migration.setProgressView(progressView);
         Thread migrate = new Thread(migration);
         migrate.setDaemon(true);
-        migration.start();
+        new Migration(migration).start();
 
     }
 

@@ -1,4 +1,4 @@
-package de.akquinet.jbosscc.gbplugin.ui.showgbactions;
+package de.akquinet.jbosscc.gbplugin.ui.actions_view;
 
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;

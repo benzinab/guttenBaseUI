@@ -5,7 +5,7 @@ import com.intellij.openapi.project.DumbAwareAction;
 import com.intellij.openapi.ui.Messages;
 import de.akquinet.jbosscc.gbplugin.data.gbactions.ExcludeTableGBAction;
 import de.akquinet.jbosscc.gbplugin.data.gbactions.GBAction;
-import de.akquinet.jbosscc.gbplugin.ui.showgbactions.GBActionsTable;
+import de.akquinet.jbosscc.gbplugin.ui.actions_view.GBActionsTable;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;

@@ -2,9 +2,9 @@ package de.akquinet.jbosscc.gbplugin.actions;
 
 import de.akquinet.jbosscc.gbplugin.data.gbactions.ChangeTypeGBAction;
 import de.akquinet.jbosscc.gbplugin.data.gbactions.GBAction;
-import de.akquinet.jbosscc.gbplugin.ui.showgbactions.ChangeTypeView;
-import de.akquinet.jbosscc.gbplugin.ui.showgbactions.GBActionsTable;
-import de.akquinet.jbosscc.gbplugin.ui.showgbactions.View;
+import de.akquinet.jbosscc.gbplugin.ui.actions_view.ChangeTypeView;
+import de.akquinet.jbosscc.gbplugin.ui.actions_view.GBActionsTable;
+import de.akquinet.jbosscc.gbplugin.ui.actions_view.View;
 
 import java.util.List;
 

@@ -8,7 +8,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.ui.ComponentUtil;
 import de.akquinet.jbosscc.gbplugin.ui.common.ContainerDialog;
-import de.akquinet.jbosscc.gbplugin.ui.migrate.GeneralView;
+import de.akquinet.jbosscc.gbplugin.ui.migration_views.GeneralView;
 import org.jetbrains.annotations.NotNull;
 
 import java.awt.*;

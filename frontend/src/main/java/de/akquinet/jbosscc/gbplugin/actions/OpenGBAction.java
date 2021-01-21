@@ -5,8 +5,8 @@ import com.intellij.openapi.project.DumbAwareAction;
 import com.intellij.openapi.ui.DialogBuilder;
 import com.intellij.openapi.ui.Messages;
 import de.akquinet.jbosscc.gbplugin.data.gbactions.GBAction;
-import de.akquinet.jbosscc.gbplugin.ui.showgbactions.GBActionsTable;
-import de.akquinet.jbosscc.gbplugin.ui.showgbactions.View;
+import de.akquinet.jbosscc.gbplugin.ui.actions_view.GBActionsTable;
+import de.akquinet.jbosscc.gbplugin.ui.actions_view.View;
 
 import java.util.List;
 
