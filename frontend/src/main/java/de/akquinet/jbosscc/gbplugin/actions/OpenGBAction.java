@@ -5,11 +5,15 @@ import com.intellij.openapi.project.DumbAwareAction;
 import com.intellij.openapi.ui.DialogBuilder;
 import com.intellij.openapi.ui.Messages;
 import de.akquinet.jbosscc.gbplugin.data.gbactions.GBAction;
-import de.akquinet.jbosscc.gbplugin.ui.actions_view.GBActionsTable;
-import de.akquinet.jbosscc.gbplugin.ui.actions_view.View;
+import de.akquinet.jbosscc.gbplugin.ui.gbactions.GBActionsTable;
+import de.akquinet.jbosscc.gbplugin.ui.gbactions.View;
 
 import java.util.List;
 
+/**
+ * Represents an abstract DumbAwareAction to open the gbAction dialog.
+ * @author siraj
+ */
 public abstract class OpenGBAction extends DumbAwareAction {
 
     private final GBActionsTable myGBActionsTable;

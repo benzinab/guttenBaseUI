@@ -3,6 +3,9 @@ package de.akquinet.jbosscc.gbplugin.data.nodes;
 
 import de.akquinet.jbosscc.guttenbase.meta.TableMetaData;
 
+/**
+ * @author siraj
+ */
 public class TableNode extends MyDataNode {
 
     private final TableMetaData tableMetaData;

@@ -1,4 +1,4 @@
-package de.akquinet.jbosscc.gbplugin.ui.migration_views;
+package de.akquinet.jbosscc.gbplugin.ui.migration;
 
 import com.intellij.database.model.RawConnectionConfig;
 import com.intellij.database.psi.DbDataSource;
@@ -8,7 +8,7 @@ import com.intellij.openapi.ui.Messages;
 import de.akquinet.jbosscc.gbplugin.data.DatabaseTypeMatcher;
 import de.akquinet.jbosscc.gbplugin.helper.Migration;
 import de.akquinet.jbosscc.gbplugin.ui.common.AbstractView;
-import de.akquinet.jbosscc.gbplugin.ui.migration_views.overview.OverView;
+import de.akquinet.jbosscc.gbplugin.ui.migration.overview.OverView;
 import de.akquinet.jbosscc.guttenbase.connector.DatabaseType;
 import de.akquinet.jbosscc.guttenbase.connector.impl.URLConnectorInfoImpl;
 import de.akquinet.jbosscc.guttenbase.repository.ConnectorRepository;
@@ -21,6 +21,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
+/**
+ * @author siraj
+ */
 public class GeneralView extends AbstractView {
     private JTabbedPane tabbedPane1;
     private JPanel generalPanel;
@@ -54,15 +57,14 @@ public class GeneralView extends AbstractView {
     public static final String TARGET = "target";
 
     public GeneralView(List<DbDataSource> dataSources, String currentDataSource) {
+        this(dataSources);
+        //select database from db datasource.
+        sourceDatabaseBox.setSelectedItem(currentDataSource);
+        selectSchemasAndTypes(currentDataSource, sourceSchema, SOURCE);
+        selectSchemasAndTypes(Objects.requireNonNull(targetDatabaseBox.getSelectedItem()).toString(), targetSchema, TARGET);
+    }
+    public GeneralView(List<DbDataSource> dataSources){
         this.dataSources = dataSources;
-        if (currentDataSource != null) {
-            //select database from dbdatasource.
-            sourceDatabaseBox.setSelectedItem(currentDataSource);
-            selectSchemasAndTypes(currentDataSource, sourceSchema, SOURCE);
-            selectSchemasAndTypes(Objects.requireNonNull(targetDatabaseBox.getSelectedItem()).toString(), targetSchema, TARGET);
-            setDialog(true);
-        }
-
         nextButton.addActionListener(e -> {
             System.out.println(sourceUserTextField.getText());
             next();
@@ -105,12 +107,12 @@ public class GeneralView extends AbstractView {
         Optional<DbDataSource> targetDB = dataSources.stream()
                 .filter(source -> source.getName().equals(targetDatabaseBox.getSelectedItem()))
                 .findAny();
-        if ( currentDB.isPresent() || targetDB.isPresent()) {
+        if ( currentDB.isEmpty() || targetDB.isEmpty()) {
             Messages.showErrorDialog("Cannot find selected database item(s)!", "Error!");
             return;
         }
-            RawConnectionConfig sourceConnectionConfig = currentDB.get().getConnectionConfig();
-            RawConnectionConfig targetConnectionConfig = targetDB.get().getConnectionConfig();
+        RawConnectionConfig sourceConnectionConfig = currentDB.get().getConnectionConfig();
+        RawConnectionConfig targetConnectionConfig = targetDB.get().getConnectionConfig();
         assert sourceConnectionConfig != null;
         URLConnectorInfoImpl sourceConnectorInfo = new URLConnectorInfoImpl(sourceConnectionConfig.getUrl(), sourceUserTextField.getText(),
                     new String(sourcePasswordField.getPassword()), sourceConnectionConfig.getDriverClass(), Objects.requireNonNull(sourceSchema.getSelectedItem()).toString(),
@@ -120,10 +122,10 @@ public class GeneralView extends AbstractView {
                     new String(targetPasswordField.getPassword()), targetConnectionConfig.getDriverClass(), Objects.requireNonNull(targetSchema.getSelectedItem()).toString(),
                     DatabaseType.valueOf(targetType.getGbType()));
 
-            // create repo
-            final ConnectorRepository connectorRepository = new ConnectorRepositoryImpl();
-            connectorRepository.addConnectionInfo(SOURCE, sourceConnectorInfo);
-            connectorRepository.addConnectionInfo(TARGET, targetConnectorInfo);
+        // create repo
+        final ConnectorRepository connectorRepository = new ConnectorRepositoryImpl();
+        connectorRepository.addConnectionInfo(SOURCE, sourceConnectorInfo);
+        connectorRepository.addConnectionInfo(TARGET, targetConnectorInfo);
 
         //go to configuration
         Migration migration = new Migration(connectorRepository);

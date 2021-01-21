@@ -4,6 +4,9 @@ import de.akquinet.jbosscc.gbplugin.data.nodes.MyDataNode;
 import de.akquinet.jbosscc.gbplugin.data.nodes.RenameType;
 import de.akquinet.jbosscc.gbplugin.mapping.Mapper;
 
+/**
+ * @author siraj
+ */
 public class RenameGBAction extends GBAction{
 
     private String regExp;

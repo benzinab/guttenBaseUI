@@ -7,6 +7,9 @@ import de.akquinet.jbosscc.gbplugin.data.gbactions.GBAction;
 import de.akquinet.jbosscc.gbplugin.helper.Migration;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * @author siraj
+ */
 public class OverviewAddAction extends DumbAwareActionButton {
 
     private final GBAction gbAction;

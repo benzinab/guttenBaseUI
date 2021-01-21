@@ -1,4 +1,4 @@
-package de.akquinet.jbosscc.gbplugin.ui.actions_view;
+package de.akquinet.jbosscc.gbplugin.ui.gbactions;
 
 import com.intellij.openapi.ui.ComboBoxWithWidePopup;
 import de.akquinet.jbosscc.gbplugin.data.gbactions.RenameGBAction;
@@ -6,6 +6,9 @@ import de.akquinet.jbosscc.gbplugin.data.nodes.RenameType;
 
 import javax.swing.*;
 
+/**
+ * @author siraj
+ */
 public class RenameView extends View {
     private JPanel content;
     private JPanel container;

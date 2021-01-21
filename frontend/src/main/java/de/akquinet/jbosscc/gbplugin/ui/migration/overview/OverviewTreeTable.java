@@ -1,4 +1,4 @@
-package de.akquinet.jbosscc.gbplugin.ui.migration_views.overview;
+package de.akquinet.jbosscc.gbplugin.ui.migration.overview;
 
 import com.intellij.icons.AllIcons;
 import com.intellij.ui.TreeTableSpeedSearch;
@@ -12,6 +12,9 @@ import javax.swing.table.TableColumn;
 import javax.swing.tree.DefaultTreeCellRenderer;
 import java.awt.*;
 
+/**
+ * @author siraj
+ */
 public class OverviewTreeTable extends TreeTableView {
     public OverviewTreeTable(OverviewTreeTableModel treeTableModel) {
         super(treeTableModel);

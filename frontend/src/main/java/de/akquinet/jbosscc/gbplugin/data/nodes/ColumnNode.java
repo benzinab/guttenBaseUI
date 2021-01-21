@@ -2,6 +2,9 @@ package de.akquinet.jbosscc.gbplugin.data.nodes;
 
 import de.akquinet.jbosscc.guttenbase.meta.ColumnMetaData;
 
+/**
+ * @author siraj
+ */
 public class ColumnNode extends MyDataNode {
 
     private final ColumnMetaData columnMetaData;

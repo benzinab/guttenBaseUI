@@ -6,6 +6,9 @@ import com.sun.istack.Nullable;
 
 import javax.swing.*;
 
+/**
+ * @author siraj
+ */
 public class Dialog extends DialogWrapper {
     private DbDataSource dbDataSource;
 

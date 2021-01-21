@@ -4,6 +4,9 @@ import de.akquinet.jbosscc.guttenbase.meta.DatabaseMetaData;
 
 import java.sql.SQLException;
 
+/**
+ * @author siraj
+ */
 public class DatabaseNode extends MyDataNode {
 
     private final DatabaseMetaData databaseMetaData;

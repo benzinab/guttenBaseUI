@@ -1,12 +1,16 @@
 package de.akquinet.jbosscc.gbplugin.utils;
 
 import com.intellij.ui.JBColor;
-import de.akquinet.jbosscc.gbplugin.ui.migration_views.progressview.ProgressView;
+import de.akquinet.jbosscc.gbplugin.ui.migration.ProgressView;
 import de.akquinet.jbosscc.guttenbase.utils.ScriptExecutorProgressIndicator;
 import de.akquinet.jbosscc.guttenbase.utils.TimingProgressIndicator;
 import de.akquinet.jbosscc.guttenbase.utils.Util;
 import org.apache.log4j.Logger;
 
+
+/**
+ * @author siraj
+ */
 public class UIScriptExecutorProgressIndicator implements ScriptExecutorProgressIndicator
 {
     private final ProgressView progressView;

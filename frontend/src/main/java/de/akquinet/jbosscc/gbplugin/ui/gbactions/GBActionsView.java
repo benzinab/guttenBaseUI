@@ -1,4 +1,4 @@
-package de.akquinet.jbosscc.gbplugin.ui.actions_view;
+package de.akquinet.jbosscc.gbplugin.ui.gbactions;
 
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -27,6 +27,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+
 
 public class GBActionsView extends AbstractView {
     private JPanel content;

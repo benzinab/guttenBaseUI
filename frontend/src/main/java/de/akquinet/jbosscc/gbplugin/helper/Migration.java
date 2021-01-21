@@ -10,7 +10,7 @@ import de.akquinet.jbosscc.gbplugin.data.nodes.ColumnNode;
 import de.akquinet.jbosscc.gbplugin.data.nodes.TableNode;
 import de.akquinet.jbosscc.gbplugin.mapping.ColumnRenameMapper;
 import de.akquinet.jbosscc.gbplugin.mapping.TableRenameMapper;
-import de.akquinet.jbosscc.gbplugin.ui.migration_views.progressview.ProgressView;
+import de.akquinet.jbosscc.gbplugin.ui.migration.ProgressView;
 import de.akquinet.jbosscc.gbplugin.utils.UIScriptExecutorProgressIndicator;
 import de.akquinet.jbosscc.guttenbase.hints.*;
 import de.akquinet.jbosscc.guttenbase.hints.impl.DefaultRepositoryTableFilterHint;
@@ -34,6 +34,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author siraj
+ */
 public class Migration extends Thread {
 
     public static final String SOURCE = "source";

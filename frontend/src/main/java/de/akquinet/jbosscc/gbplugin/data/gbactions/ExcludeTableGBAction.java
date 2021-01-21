@@ -3,6 +3,9 @@ package de.akquinet.jbosscc.gbplugin.data.gbactions;
 import de.akquinet.jbosscc.gbplugin.data.nodes.MyDataNode;
 import de.akquinet.jbosscc.gbplugin.data.nodes.TableNode;
 
+/**
+ * @author siraj
+ */
 public class ExcludeTableGBAction extends GBAction{
     public ExcludeTableGBAction() {
         super("Exclude Table", GBActionType.EXCLUDE_TABLE, "After applying this action to a column, " +

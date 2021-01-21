@@ -1,5 +1,8 @@
 package de.akquinet.jbosscc.gbplugin.data.nodes;
 
+/**
+ * @author siraj
+ */
 public enum RenameType {
     REPLACE("replace"),
     ADD_PREFIX("add prefix"),

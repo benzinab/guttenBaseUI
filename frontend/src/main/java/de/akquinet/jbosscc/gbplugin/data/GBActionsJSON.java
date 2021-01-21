@@ -4,6 +4,9 @@ import de.akquinet.jbosscc.gbplugin.data.gbactions.GBAction;
 
 import java.util.List;
 
+/**
+ * @author siraj
+ */
 public class GBActionsJSON {
 
     public GBActionsJSON(List<GBAction> gbActions) {

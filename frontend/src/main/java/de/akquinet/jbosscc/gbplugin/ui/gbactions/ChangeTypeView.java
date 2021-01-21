@@ -1,4 +1,4 @@
-package de.akquinet.jbosscc.gbplugin.ui.actions_view;
+package de.akquinet.jbosscc.gbplugin.ui.gbactions;
 
 import de.akquinet.jbosscc.gbplugin.data.gbactions.ChangeTypeGBAction;
 import de.akquinet.jbosscc.gbplugin.data.gbactions.GBAction;
@@ -6,6 +6,9 @@ import de.akquinet.jbosscc.gbplugin.data.gbactions.GBActionType;
 
 import javax.swing.*;
 
+/**
+ * @author siraj
+ */
 public class ChangeTypeView extends View {
     private JTextField actionNameField;
     private JPanel content;

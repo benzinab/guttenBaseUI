@@ -1,4 +1,4 @@
-package de.akquinet.jbosscc.gbplugin.ui.migration_views.overview;
+package de.akquinet.jbosscc.gbplugin.ui.migration.overview;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.ui.Messages;
@@ -17,7 +17,7 @@ import de.akquinet.jbosscc.gbplugin.data.nodes.TableNode;
 import de.akquinet.jbosscc.gbplugin.helper.GsonHelper;
 import de.akquinet.jbosscc.gbplugin.helper.Migration;
 import de.akquinet.jbosscc.gbplugin.ui.common.AbstractView;
-import de.akquinet.jbosscc.gbplugin.ui.migration_views.resultview.ResultView;
+import de.akquinet.jbosscc.gbplugin.ui.migration.resultview.ResultView;
 import de.akquinet.jbosscc.guttenbase.meta.DatabaseMetaData;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -31,6 +31,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author siraj
+ */
 public class OverView extends AbstractView {
 
     private JPanel content;

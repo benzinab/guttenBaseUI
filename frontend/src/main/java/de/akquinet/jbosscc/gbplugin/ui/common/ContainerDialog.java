@@ -3,6 +3,9 @@ package de.akquinet.jbosscc.gbplugin.ui.common;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * @author siraj
+ */
 public class ContainerDialog extends JDialog {
 
     public ContainerDialog(JPanel content, String title) {

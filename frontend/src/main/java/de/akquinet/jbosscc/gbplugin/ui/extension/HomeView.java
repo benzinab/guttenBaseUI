@@ -2,6 +2,9 @@ package de.akquinet.jbosscc.gbplugin.ui.extension;
 
 import javax.swing.*;
 
+/**
+ * @author siraj
+ */
 public class HomeView {
     private JPanel content;
     private JButton button1;

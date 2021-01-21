@@ -8,6 +8,9 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 
+/**
+ * @author siraj
+ */
 public class MyDataNode implements TreeNode {
 
     private final String name;

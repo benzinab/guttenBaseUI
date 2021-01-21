@@ -4,6 +4,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.WindowEvent;
 
+/**
+ * @author siraj
+ */
 public class AbstractView {
 
     public AbstractView() {

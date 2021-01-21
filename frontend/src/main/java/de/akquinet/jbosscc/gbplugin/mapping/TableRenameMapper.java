@@ -9,6 +9,9 @@ import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @author siraj
+ */
 public class TableRenameMapper extends Mapper implements TableMapper {
     private final Map<String, String> replacementsTables = new HashMap<>();
     private final CaseConversionMode _caseConversionMode;

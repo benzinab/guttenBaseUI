@@ -5,11 +5,16 @@ import com.intellij.openapi.project.DumbAwareAction;
 import com.intellij.openapi.ui.Messages;
 import de.akquinet.jbosscc.gbplugin.data.gbactions.ExcludeColumnGBAction;
 import de.akquinet.jbosscc.gbplugin.data.gbactions.GBAction;
-import de.akquinet.jbosscc.gbplugin.ui.actions_view.GBActionsTable;
+import de.akquinet.jbosscc.gbplugin.ui.gbactions.GBActionsTable;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
+/**
+ * Represents a DumbAwareAction to add a filter action the gbActionTable {@link GBActionsTable}.
+ *
+ * @author siraj
+ */
 public class AddExcludeColumnAction extends DumbAwareAction {
     private final GBActionsTable myGBActionsTable;
     private List<GBAction> myGBActions;

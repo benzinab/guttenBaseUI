@@ -4,6 +4,9 @@ import de.akquinet.jbosscc.gbplugin.data.nodes.MyDataNode;
 import de.akquinet.jbosscc.guttenbase.connector.DatabaseType;
 import de.akquinet.jbosscc.guttenbase.mapping.DefaultColumnTypeMapper;
 
+/**
+ * @author siraj
+ */
 public class ChangeTypeGBAction extends GBAction{
     private String sourceTypeName;
     private String targetTypeName;

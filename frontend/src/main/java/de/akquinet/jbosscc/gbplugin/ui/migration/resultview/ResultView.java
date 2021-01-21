@@ -1,4 +1,4 @@
-package de.akquinet.jbosscc.gbplugin.ui.migration_views.resultview;
+package de.akquinet.jbosscc.gbplugin.ui.migration.resultview;
 
 import com.intellij.openapi.ui.Messages;
 import com.intellij.ui.AnActionButton;
@@ -8,9 +8,9 @@ import com.intellij.ui.ToolbarDecorator;
 import com.intellij.util.ui.ColumnInfo;
 import de.akquinet.jbosscc.gbplugin.data.gbactions.GBAction;
 import de.akquinet.jbosscc.gbplugin.helper.Migration;
-import de.akquinet.jbosscc.gbplugin.ui.actions_view.GBActionsTable;
+import de.akquinet.jbosscc.gbplugin.ui.gbactions.GBActionsTable;
 import de.akquinet.jbosscc.gbplugin.ui.common.AbstractView;
-import de.akquinet.jbosscc.gbplugin.ui.migration_views.progressview.ProgressView;
+import de.akquinet.jbosscc.gbplugin.ui.migration.ProgressView;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
@@ -20,8 +20,11 @@ import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ResultView extends AbstractView {
 
+/**
+ * @author siraj
+ */
+public class ResultView extends AbstractView {
     private JPanel content;
     private JTabbedPane tabbedPane1;
     private JButton cancelButton;
@@ -38,7 +41,7 @@ public class ResultView extends AbstractView {
         this.migration = migration;
         backButton.addActionListener(e -> backTo(content, "2"));
         cancelButton.addActionListener(e -> close(content));
-        submitButton.addActionListener(e -> submit(e));
+        submitButton.addActionListener(this::submit);
     }
 
     public void submit(ActionEvent e) {

@@ -9,6 +9,9 @@ import de.akquinet.jbosscc.gbplugin.data.GBActionsJSON;
 import java.io.*;
 import java.util.List;
 
+/**
+ * @author siraj
+ */
 public class GsonHelper {
     public static String exportJSON(List<GBAction> gbActions, String fileName) throws IOException {
         gbActions.forEach(gbAction -> System.out.println(gbAction.getName() + gbAction.getGBActionType()));

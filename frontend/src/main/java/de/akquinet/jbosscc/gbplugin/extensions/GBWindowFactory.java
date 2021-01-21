@@ -7,13 +7,16 @@ import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowFactory;
 import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentFactory;
-import de.akquinet.jbosscc.gbplugin.ui.migration_views.GeneralView;
+import de.akquinet.jbosscc.gbplugin.ui.migration.GeneralView;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.List;
 
+/**
+ * @author siraj
+ */
 public class GBWindowFactory implements ToolWindowFactory {
     @Override
     public boolean isApplicable(@NotNull Project project) {

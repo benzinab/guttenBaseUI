@@ -1,4 +1,4 @@
-package de.akquinet.jbosscc.gbplugin.ui.migration_views.overview;
+package de.akquinet.jbosscc.gbplugin.ui.migration.overview;
 
 import com.intellij.ui.treeStructure.treetable.ListTreeTableModelOnColumns;
 import com.intellij.ui.treeStructure.treetable.TreeTable;
@@ -10,6 +10,9 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 
+/**
+ * @author siraj
+ */
 public class OverviewTreeTableModel extends ListTreeTableModelOnColumns implements TreeTableModel {
     public static String[] columnNames = {"Name", "Type", "Size"};
     public final int TREE_COLUMN = 0;

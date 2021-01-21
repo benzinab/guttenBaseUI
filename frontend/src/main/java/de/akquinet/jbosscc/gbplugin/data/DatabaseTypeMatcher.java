@@ -1,5 +1,8 @@
 package de.akquinet.jbosscc.gbplugin.data;
 
+/**
+ * @author siraj
+ */
 public enum DatabaseTypeMatcher {
     MSSQL("MSSQL"),
     MYSQL ("MYSQL"),

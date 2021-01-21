@@ -1,9 +1,12 @@
-package de.akquinet.jbosscc.gbplugin.ui.migration_views.progressview;
+package de.akquinet.jbosscc.gbplugin.ui.migration;
 
 import de.akquinet.jbosscc.gbplugin.ui.common.AbstractView;
 
 import javax.swing.*;
 
+/**
+ * @author siraj
+ */
 public class ProgressView  extends AbstractView {
     private JPanel content;
     private JProgressBar totalBar;

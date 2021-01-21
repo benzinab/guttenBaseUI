@@ -2,12 +2,15 @@ package de.akquinet.jbosscc.gbplugin.actions;
 
 import de.akquinet.jbosscc.gbplugin.data.gbactions.GBAction;
 import de.akquinet.jbosscc.gbplugin.data.gbactions.RenameGBAction;
-import de.akquinet.jbosscc.gbplugin.ui.actions_view.GBActionsTable;
-import de.akquinet.jbosscc.gbplugin.ui.actions_view.RenameView;
-import de.akquinet.jbosscc.gbplugin.ui.actions_view.View;
+import de.akquinet.jbosscc.gbplugin.ui.gbactions.GBActionsTable;
+import de.akquinet.jbosscc.gbplugin.ui.gbactions.RenameView;
+import de.akquinet.jbosscc.gbplugin.ui.gbactions.View;
 
 import java.util.List;
 
+/**
+ * @author siraj
+ */
 public class OpenRenameAction extends OpenGBAction {
 
     public OpenRenameAction(GBActionsTable myGBActionsTable, List<GBAction> myGBActions) {
