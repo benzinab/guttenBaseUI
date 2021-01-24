@@ -7,7 +7,7 @@ import com.intellij.ui.SimpleTextAttributes;
 import com.intellij.ui.ToolbarDecorator;
 import com.intellij.util.PlatformIcons;
 import com.intellij.util.ui.ColumnInfo;
-import de.akquinet.jbosscc.gbplugin.actions.OpenGBActionsAction;
+import de.akquinet.jbosscc.gbplugin.actions.pluginActions.OpenGBActionsAction;
 import de.akquinet.jbosscc.gbplugin.data.gbactions.GBAction;
 import de.akquinet.jbosscc.gbplugin.data.gbactions.GBActionType;
 import de.akquinet.jbosscc.gbplugin.data.nodes.ColumnNode;

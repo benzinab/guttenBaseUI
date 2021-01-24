@@ -1,4 +1,4 @@
-package de.akquinet.jbosscc.gbplugin.actions;
+package de.akquinet.jbosscc.gbplugin.actions.pluginActions;
 
 import com.intellij.database.psi.DbDataSource;
 import com.intellij.database.psi.DbPsiFacade;
@@ -20,10 +20,6 @@ import java.util.Objects;
  */
 public class OpenMigrationAction extends AnAction {
 
-    /**
-     *
-     * @param e
-     */
     @Override
     public void actionPerformed(@NotNull AnActionEvent e) {
         Component component = e.getData(PlatformDataKeys.CONTEXT_COMPONENT);
@@ -45,4 +41,10 @@ public class OpenMigrationAction extends AnAction {
         }
         new ContainerDialog(generalView.getContent(), "Migrate Database");
     }
+
+    @Override
+    public void update(@NotNull AnActionEvent e) {
+        super.update(e);
+    }
+
 }

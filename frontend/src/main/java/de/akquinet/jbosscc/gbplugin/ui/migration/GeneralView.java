@@ -61,7 +61,6 @@ public class GeneralView extends AbstractView {
         //select database from db datasource.
         sourceDatabaseBox.setSelectedItem(currentDataSource);
         selectSchemasAndTypes(currentDataSource, sourceSchema, SOURCE);
-        selectSchemasAndTypes(Objects.requireNonNull(targetDatabaseBox.getSelectedItem()).toString(), targetSchema, TARGET);
     }
     public GeneralView(List<DbDataSource> dataSources){
         this.dataSources = dataSources;
@@ -80,6 +79,8 @@ public class GeneralView extends AbstractView {
                 selectSchemasAndTypes(e.getItem().toString(), targetSchema, TARGET);
             }
         });
+        selectSchemasAndTypes(Objects.requireNonNull(sourceDatabaseBox.getSelectedItem()).toString(), sourceSchema, SOURCE);
+        selectSchemasAndTypes(Objects.requireNonNull(targetDatabaseBox.getSelectedItem()).toString(), targetSchema, TARGET);
     }
 
     public void selectSchemasAndTypes(String item, JComboBox<String> box, String connectorId) {
