@@ -52,7 +52,6 @@ public class GeneralView extends AbstractView {
     private DatabaseTypeMatcher sourceType;
     private DatabaseTypeMatcher targetType;
     private final List<DbDataSource> dataSources;
-    private boolean isDialog;
     public static final String SOURCE = "source";
     public static final String TARGET = "target";
 
@@ -131,14 +130,12 @@ public class GeneralView extends AbstractView {
         //go to configuration
         Migration migration = new Migration(connectorRepository);
         OverView overView = new OverView(migration);
-        if (isDialog()){
-            JDialog parent = (JDialog) SwingUtilities.getWindowAncestor(this.content);
-            Container contentPane = parent.getContentPane();
-            contentPane.add(overView.getContent(), "2");
-            CardLayout cl = (CardLayout) (contentPane.getLayout());
-            cl.show(contentPane, "2");
-            SwingUtilities.updateComponentTreeUI(parent);
-        }
+        JDialog parent = (JDialog) SwingUtilities.getWindowAncestor(this.content);
+        Container contentPane = parent.getContentPane();
+        contentPane.add(overView.getContent(), "2");
+        CardLayout cl = (CardLayout) (contentPane.getLayout());
+        cl.show(contentPane, "2");
+        SwingUtilities.updateComponentTreeUI(parent);
     }
 
     private boolean isValidInput() {
@@ -169,11 +166,4 @@ public class GeneralView extends AbstractView {
         return content;
     }
 
-    public boolean isDialog() {
-        return isDialog;
-    }
-
-    public void setDialog(boolean dialog) {
-        isDialog = dialog;
-    }
 }

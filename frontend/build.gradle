@@ -16,6 +16,11 @@ dependencies {
     compile "com.microsoft.sqlserver:mssql-jdbc:6.1.0.jre7"
     compile "mysql:mysql-connector-java:8.0.21"
     compile "org.postgresql:postgresql:42.2.5"
+    compile "com.h2database:h2:1.4.200"
+    compile "org.hsqldb:hsqldb:2.5.1"
+    compile "org.apache.derby:derby:10.15.2.0"
+    compile "com.oracle.database.jdbc:ojdbc8:19.9.0.0"
+    compile "com.ibm.db2.jcc:db2jcc:db2jcc4"
     compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.14.0'
     compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.14.0'
 }
