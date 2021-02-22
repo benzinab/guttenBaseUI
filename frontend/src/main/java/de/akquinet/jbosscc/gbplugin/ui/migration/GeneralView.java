@@ -96,11 +96,14 @@ public class GeneralView extends AbstractView {
         });
     }
 
+    /**
+     * Validates, creates a connector repository and switches the current view.
+     */
     public void next() {
-        //check input
         if (!isValidInput()) {
             return;
         }
+        //check selected databases.
         Optional<DbDataSource> currentDB = dataSources.stream()
                 .filter(source -> source.getName().equals(sourceDatabaseBox.getSelectedItem()))
                 .findAny();
@@ -111,6 +114,7 @@ public class GeneralView extends AbstractView {
             Messages.showErrorDialog("Cannot find selected database item(s)!", "Error!");
             return;
         }
+        //create connectors
         RawConnectionConfig sourceConnectionConfig = currentDB.get().getConnectionConfig();
         RawConnectionConfig targetConnectionConfig = targetDB.get().getConnectionConfig();
         assert sourceConnectionConfig != null;
@@ -122,22 +126,14 @@ public class GeneralView extends AbstractView {
                     new String(targetPasswordField.getPassword()), targetConnectionConfig.getDriverClass(), Objects.requireNonNull(targetSchema.getSelectedItem()).toString(),
                     DatabaseType.valueOf(targetType.getGbType()));
 
-        // create repo
-        final ConnectorRepository connectorRepository = new ConnectorRepositoryImpl();
-        connectorRepository.addConnectionInfo(SOURCE, sourceConnectorInfo);
-        connectorRepository.addConnectionInfo(TARGET, targetConnectorInfo);
-
-        //go to configuration
-        Migration migration = new Migration(connectorRepository);
-        OverView overView = new OverView(migration);
-        JDialog parent = (JDialog) SwingUtilities.getWindowAncestor(this.content);
-        Container contentPane = parent.getContentPane();
-        contentPane.add(overView.getContent(), "2");
-        CardLayout cl = (CardLayout) (contentPane.getLayout());
-        cl.show(contentPane, "2");
-        SwingUtilities.updateComponentTreeUI(parent);
+        final ConnectorRepository connectorRepository = createRepo(sourceConnectorInfo, targetConnectorInfo);
+        goToOverview(connectorRepository);
     }
 
+    /**
+     * Validates input fields before connecting the repository.
+     * @return {@code true} if the input fields are valid, else {@code false}.
+     */
     private boolean isValidInput() {
         if (Objects.equals(sourceDatabaseBox.getSelectedItem(), "") || Objects.equals(sourceSchema.getSelectedItem(), "")
                 || sourceUserTextField.getText().equals("") || sourcePasswordField.getPassword().length == 0
@@ -150,6 +146,37 @@ public class GeneralView extends AbstractView {
         return true;
     }
 
+    /**
+     * Creates a connector repository fro a given source and target connector.
+     * @param source The source connector.
+     * @param target The target connector.
+     * @return The resulting connector repository.
+     */
+    private ConnectorRepository createRepo(URLConnectorInfoImpl source, URLConnectorInfoImpl target) {
+        final ConnectorRepository connectorRepository = new ConnectorRepositoryImpl();
+        connectorRepository.addConnectionInfo(SOURCE, source);
+        connectorRepository.addConnectionInfo(TARGET, target);
+        return connectorRepository;
+    }
+
+    /**
+     * Switch the current UI to the next panel (overview)
+     * @param connectorRepository The connector repository.
+     */
+    private void goToOverview(ConnectorRepository connectorRepository) {
+        Migration migration = new Migration(connectorRepository);
+        OverView overView = new OverView(migration);
+        JDialog parent = (JDialog) SwingUtilities.getWindowAncestor(this.content);
+        Container contentPane = parent.getContentPane();
+        contentPane.add(overView.getContent(), "2");
+        CardLayout cl = (CardLayout) (contentPane.getLayout());
+        cl.show(contentPane, "2");
+        SwingUtilities.updateComponentTreeUI(parent);
+    }
+
+    /**
+     * custom creation of UI components.
+     */
     private void createUIComponents() {
         sourceDatabaseBox = new ComboBox<>();
         targetDatabaseBox = new ComboBox<>();

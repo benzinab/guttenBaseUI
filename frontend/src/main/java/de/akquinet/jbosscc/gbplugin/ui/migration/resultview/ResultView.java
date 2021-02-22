@@ -8,8 +8,8 @@ import com.intellij.ui.ToolbarDecorator;
 import com.intellij.util.ui.ColumnInfo;
 import de.akquinet.jbosscc.gbplugin.data.gbactions.GBAction;
 import de.akquinet.jbosscc.gbplugin.helper.Migration;
-import de.akquinet.jbosscc.gbplugin.ui.gbactions.GBActionsTable;
 import de.akquinet.jbosscc.gbplugin.ui.common.AbstractView;
+import de.akquinet.jbosscc.gbplugin.ui.gbactions.GBActionsTable;
 import de.akquinet.jbosscc.gbplugin.ui.migration.ProgressView;
 import org.jetbrains.annotations.Nullable;
 
@@ -44,13 +44,17 @@ public class ResultView extends AbstractView {
         submitButton.addActionListener(this::submit);
     }
 
+    /**
+     * Shows the next view (progress view), and initializes the text field for logging and executes the migration in a new thread.
+     * @param e The action executed by the submit button.
+     */
     public void submit(ActionEvent e) {
-        //text area
+        //create text area for logging
         JTextArea textArea = new JTextArea(5, 20);
         DefaultCaret caret = (DefaultCaret)textArea.getCaret();
         caret.setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);
 
-        //UI
+        //switch current UI
         ProgressView progressView = new ProgressView(textArea);
         JDialog parent = (JDialog) SwingUtilities.getWindowAncestor(this.content);
         Container contentPane = parent.getContentPane();
@@ -64,7 +68,6 @@ public class ResultView extends AbstractView {
         Thread migrate = new Thread(migration);
         migrate.setDaemon(true);
         new Migration(migration).start();
-
     }
 
     public ColumnInfo[] createInfoColumns() {

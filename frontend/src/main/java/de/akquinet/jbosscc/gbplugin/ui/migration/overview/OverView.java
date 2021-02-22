@@ -1,5 +1,6 @@
 package de.akquinet.jbosscc.gbplugin.ui.migration.overview;
 
+import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.ui.DumbAwareActionButton;
@@ -24,8 +25,6 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -43,7 +42,9 @@ public class OverView extends AbstractView {
     private JButton backButton;
     private JPanel tableContainer;
     private JButton plusButton;
+    private JButton refreshButton;
     private OverviewTreeTable overviewTreeTable;
+    private ToolbarDecorator decorator;
 
     private Migration migration;
     private List<GBAction> myGBActions;
@@ -69,11 +70,16 @@ public class OverView extends AbstractView {
             backTo(content, "1");
         });
 
-        plusButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                new OpenGBActionsAction().actionPerformed(null);
-            }
+        plusButton.addActionListener(e -> new OpenGBActionsAction().actionPerformed(null));
+        refreshButton.addActionListener(actionEvent -> {
+            OverView overView = new OverView(migration);
+            JDialog parent = (JDialog) SwingUtilities.getWindowAncestor(this.content);
+            Container contentPane = parent.getContentPane();
+            contentPane.add(overView.getContent(), "2");
+            CardLayout cl = (CardLayout) (contentPane.getLayout());
+            cl.show(contentPane, "2");
+            SwingUtilities.updateComponentTreeUI(parent);
+
         });
     }
 
@@ -116,7 +122,11 @@ public class OverView extends AbstractView {
         OverviewTreeTableModel treeTableModel = new OverviewTreeTableModel(root, createInfoColumns());
         overviewTreeTable = new OverviewTreeTable(treeTableModel);
 
-        ToolbarDecorator decorator = ToolbarDecorator.createDecorator(overviewTreeTable);
+        setupTableContainer();
+    }
+
+    private void setupTableContainer() {
+        decorator = ToolbarDecorator.createDecorator(overviewTreeTable);
         createActions(decorator);
 
         JPanel myRoot = new JPanel(new BorderLayout());
@@ -170,6 +180,8 @@ public class OverView extends AbstractView {
 
     private void createUIComponents() {
         fillData();
+        refreshButton = new JButton();
+        refreshButton.setIcon(AllIcons.Actions.Refresh);
     }
 
     public JPanel getContent() {

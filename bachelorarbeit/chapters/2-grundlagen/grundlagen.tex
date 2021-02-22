@@ -1,5 +1,19 @@
 \chapter{Grundlagen}
-Datenbank Migration wir immer mehr von Unternehmen bzw. Organisationen gebraucht. 
+Dieses Kapitel liefert einen allgemeinen Einblick in die Datenbank Migration und die GuttenBase Bibliothek. Außerdem werden verwandte Arbeiten vorgestellt. 
+\section{Datenbank Migration}
+
+%- Was allgemeines (1 Satzt)
+%- Was ist Datenbank Migration
+%- Wieso wird Datenbank Migration benötigt?
+%- Welche Arten von Datenbank Migrationen gibt es?
+
+
+
+Datenbank Migration wird immer mehr von Unternehmen bzw. Organisationen gebraucht. 
+
+Die Migration von Datenbanken dient zum Verschieben der Daten von der Quell-DB zur Ziel-DB einschließlich die Schemaübersetzung und Datentransformation.
+
+
 Mögliche Gründe für eine Dantenbank Migration sind:
 \begin{itemize}
 	\item Upgrade auf eine neue Software oder Hardware
@@ -7,6 +21,46 @@ Mögliche Gründe für eine Dantenbank Migration sind:
 	\item Investition in IT-Diienstleistungen
 	\item Integration von Datenquelle in ein System
 	\item Zusammenführen mehrerer Datenbanken in einer Datenbank für eine einheitliche Datenansicht.
+	\item Wartung des existierenden Systems ist schwer oder nicht möglich.
 \end{itemize}
 
+- Es gibt unterschiedliche Strategien bzw. Techniken für Datenbank Migration. Diese können in drei Kategorien unterteilt:
+
+\begin{itemize}
+	\item Migration durch OO/XML Schnittstellen
+	\item Datenbank Integration: Source DB mit Target DB verbinden
+	\item Schema und alle Daten komplett verschieben (copy pasten).
+\end{itemize}
+
+
 \section{Verwandte Arbeiten}
+In diesem Abschnitt werden unterschiedliche Tools für Datenbank Migration vorgestellt. Diese werden anschließend miteinander verglichen.
+\subsection{Tool 1}
+Was ist Tool 1
+\subsection{Tool 2}
+Was ist Tool 2
+\subsection{Tool 3}
+Was ist Tool 3
+\subsection{Tool 4}
+Was ist Tool 4
+\section{GuttenBase}
+Viele Software Unternehmen haben sich dafür entschieden, ein eigenes Tool für Datenbankmigration zu entwickeln. Dies ist der Fall bei der Firma Akquinet AG, wo die Open Source Bibliothek "GuttenBase" in 2012 entwickelt wurde. Da GuttenBase open source ist, wurde sie in weiteren Schritten weiterentwickelt und um zusätzliche Funktionen erweitert.\\
+Anderes als die oben genannten Tools, bietet die GuttenBase Bibliothek eine gewisse Flexibilität bei der Migration. Diese kann durch das Programmieren und Überschreiben der Mapping Klassen spezifiziert werden, damit die Migration passend zu dem aktuellen Stand der Daten läuft.\\
+Dieser Ansatz erlaubt Entwicklern, eine volle Kontrolle über den Migrationsprozess zu haben.\\
+Für die Migration einer Datenbank ist häufig eine benutzerdefinierte Lösung erforderlich. Beispilsweise z. B. das Unbenennen von Tabellen bzw. Spalten in der Zieldatenbank, das Umwandeln von Spaltentypen, das Ausschließen von bestimmten Tabellen bzw. Spalten.
+In diesem Fall können Konfigurationshinweise vor der Migration hinzugefügt werden. Standardmäßig wird eine Standardimplementierung der Hinweise nach dem Verbinden der Datenbanken hinzugefügt. Dise können jedoch von dem Nutzer überschrieben werden. \\
+Folgendes ist eine Übersicht über die aktuelle Hinweise von GuttenBase: \\
+%TODO Tabelle hinzufügen!
+
+%- Allgemeiner Satz
+%- Was ist GuttenBase
+%- Wann wurde sie eingeführt?
+%- Von wem ist sie entwickelt?
+%- Warum soll man GuttenBase benutzten
+%- Wie kann man GuttenBase benutzen?
+%- [Was kann man in GuttenBase optimieren?]
+
+\subsection{Zusammenfassung}
+Um einen Überblick über alle bisher genannten Tools bzw. Frameworks zu behalten, werden die Vor- und Nachteile in folgender Tabelle erläutert: \\
+%TODO: Tabelle hinzufügen!
+%- 

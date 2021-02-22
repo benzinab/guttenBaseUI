@@ -101,6 +101,7 @@ public class UIScriptExecutorProgressIndicator implements ScriptExecutorProgress
         _timingDelegate.finalizeIndicator();
         progressView.getStatus().setText("Done!");
         progressView.getStatus().setForeground(JBColor.GREEN);
+        progressView.getHint().setText("Please refresh the database view to see the migrated data!");
     }
 
     @Override

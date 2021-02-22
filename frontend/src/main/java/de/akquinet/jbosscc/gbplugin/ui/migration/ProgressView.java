@@ -21,6 +21,7 @@ public class ProgressView  extends AbstractView {
     private JLabel statementTimeElapsed;
     private JLabel totalTimeElapsed;
     private JLabel status;
+    private JLabel hint;
     private JTextArea appenderArea;
     private boolean isBackEnabled;
 
@@ -68,5 +69,13 @@ public class ProgressView  extends AbstractView {
 
     public JLabel getStatus() {
         return status;
+    }
+
+    public JLabel getHint() {
+        return hint;
+    }
+
+    public void setHint(JLabel hint) {
+        this.hint = hint;
     }
 }

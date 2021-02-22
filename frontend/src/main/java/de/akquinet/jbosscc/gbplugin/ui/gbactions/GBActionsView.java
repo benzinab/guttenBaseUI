@@ -20,8 +20,10 @@ import de.akquinet.jbosscc.gbplugin.helper.GsonHelper;
 import de.akquinet.jbosscc.gbplugin.ui.common.AbstractView;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -41,7 +43,7 @@ public class GBActionsView extends AbstractView {
     private ToolbarDecorator decorator;
 
     public GBActionsView() {
-        saveButton.addActionListener(e -> save());
+        saveButton.addActionListener(e -> save(e));
         cancelButton.addActionListener(e -> close(content));
     }
 
@@ -148,13 +150,13 @@ public class GBActionsView extends AbstractView {
                 && !gbActions.get(myGBActionsTable.getSelectedRow()).getGBActionType().equals(GBActionType.EXCLUDE_TABLE);
     }
 
-    public void save() {
+    public void save(ActionEvent e) {
         String path;
         try {
             path = GsonHelper.exportJSON(gbActions, "actions.json");
-        } catch (IOException e) {
-            e.printStackTrace();
-            Messages.showErrorDialog(e.getMessage(), "Error While Saving Actions!");
+        } catch (IOException exception) {
+            exception.printStackTrace();
+            Messages.showErrorDialog(exception.getMessage(), "Error While Saving Actions!");
             return;
         }
         close(content);
