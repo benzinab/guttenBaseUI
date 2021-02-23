@@ -1,14 +1,12 @@
 <idea-plugin>
     <id>de.akquinet.jboscc.guttenBasePlugin</id>
     <name>GuttenBase</name>
-    <vendor email="benzinab@akquinet.com" url="http://www.akquinet.com">Akquinet</vendor>
+    <vendor email="benzinab@akquinet.de" url="http://www.akquinet.com">Akquinet AG</vendor>
 
     <description>
-        An IntelliJ Plugin for the database migration library "GuttenBase".
+        IntelliJ Plugin for database migration based on GuttenBase library.
     </description>
 
-    <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
-         on how to target different products -->
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.database</depends>
 
