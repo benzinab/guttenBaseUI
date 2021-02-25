@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2021.1.10)  21 FEB 2021 21:04
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2021.1.10)  25 FEB 2021 01:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1741,6 +1741,16 @@ and I'll forget about whatever was undefined.
 ]
 (./chapters/index.tex (./chapters/1-introduction/intro.tex
 Kapitel 1.
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--13
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
+
+ []
+
 [1
 
 
@@ -1749,12 +1759,12 @@ Kapitel 2.
 [3
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 47--54
+Underfull \hbox (badness 10000) in paragraph at lines 57--64
 
  []
 
 [4]) (./chapters/3-umsetzung/umsetzung.tex
-Underfull \hbox (badness 10000) in paragraph at lines 64--1
+Underfull \hbox (badness 10000) in paragraph at lines 74--1
 
  []
 
@@ -1793,7 +1803,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 61.
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 61.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 61.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: E1523CD05E5A249F60265F6F54440F91;1232.
+(rerunfilecheck)             Checksum: B58CC2F635A4547CF68CC0EB9F593912;1404.
 Package logreq Info: Writing requests to 'thesis.run.xml'.
 \openout1 = `thesis.run.xml'.
 
@@ -1801,7 +1811,7 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 Here is how much of TeX's memory you used:
  46350 strings out of 479819
  902936 string characters out of 5895846
- 1705574 words of memory out of 5000000
+ 1705573 words of memory out of 5000000
  62633 multiletter control sequences out of 15000+600000
  534589 words of font info for 57 fonts, out of 8000000 for 9000
  1350 hyphenation exceptions out of 8191
