@@ -3,10 +3,23 @@ Dieses Kapitel liefert einen allgemeinen Einblick in die Datenbank Migration und
 \section{Datenbanken}
 %- allgemeine Def
 %- Arten von Datenabnken
+%https://books.google.de/books?hl=de&lr=&id=_3XVAwAAQBAJ&oi=fnd&pg=PA14&dq=Datenbank+Grundlagen+&ots=ntu4qhQNQD&sig=LpAgd_s5f04ulLTfOYe6lEt1_Zc#v=onepage&q=Datenbank%20Grundlagen&f=false
+In dieser Arbeit werden Datenbanken oft erwähnt. Diese sind ein zentrales Element der Datenbank Migration. Deswegen ist es wichtig, kurz auf die Bedeutung von Datenbank einzugehen.\\
+Datenbanken spielen seit der Neuerung des IT-Zeitalter eine wichtige Rolle in dem elektronischen Datenmanagement.\\
+Folgendes sind zwei Definitionen, die die Datenbank verdeutlichen:
+\begin{itemize}
+	\item 
+	Eine Datenbank ist ein verteiltes, integriertes Computersystem, das Nutzdaten und Metadaten enthält. Nutzdaten sind die Daten, die Beuntzer in der Datenbank anlegen und aus denen die Informationen gewonnen werden. Metadaten werden of auch als Daten über Daten bezeichnet und helfen, die Nutzdaten der Datenbank zu strukturieren.
+	
+	\item
+	Eine Datenbank ist eine geordnete, selstbeschreibende Sammlung von Daten, die miteinander in Beziehung stehen.
+\end{itemize}
+
 
 \section{Datenbank Management System (DBMS)}
 %- Def
 %- Beispiele
+Damit Datenbanken auf einem Computer verwaltet werden können, werden Datenbankmanagement Systeme (DBMS) benötigt.
 
 \section{Datenbank Migration}
 
@@ -40,19 +53,6 @@ Mögliche Gründe für eine Dantenbank Migration sind:
 	\item Schema und alle Daten komplett verschieben (copy pasten).
 \end{itemize}
 
-
-\section{Verwandte Arbeiten}
-In diesem Abschnitt werden unterschiedliche Tools für Datenbank Migration vorgestellt. Diese werden anschließend miteinander verglichen.
-\subsection{Tool 1}
-Was ist Tool 1
-\subsection{Tool 2}
-Was ist Tool 2
-\subsection{Tool 3}
-Was ist Tool 3
-\subsection{Tool 4}
-Was ist Tool 4
-
-
 \section{GuttenBase}
 Viele Software Unternehmen haben sich dafür entschieden, ein eigenes Tool für Datenbankmigration zu entwickeln. Dies ist der Fall bei der Firma Akquinet AG, wo die Open Source Bibliothek "GuttenBase" in 2012 entwickelt wurde. Da GuttenBase open source ist, wurde sie in weiteren Schritten weiterentwickelt und um zusätzliche Funktionen erweitert.\\
 Anderes als die oben genannten Tools, bietet die GuttenBase Bibliothek eine gewisse Flexibilität bei der Migration. Diese kann durch das Programmieren und Überschreiben der Mapping Klassen spezifiziert werden, damit die Migration passend zu dem aktuellen Stand der Daten läuft.\\
@@ -69,6 +69,20 @@ Folgendes ist eine Übersicht über die aktuelle Hinweise von GuttenBase: \\
 %- Warum soll man GuttenBase benutzten
 %- Wie kann man GuttenBase benutzen?
 %- [Was kann man in GuttenBase optimieren?]
+
+
+\section{Verwandte Arbeiten}
+In diesem Abschnitt werden unterschiedliche Tools für Datenbank Migration vorgestellt. Diese werden anschließend miteinander verglichen.
+\subsection{SQuirreL DBCopy-Plugin}
+Was ist DBCopy-Plugin
+\subsection{Liquibase}
+Was ist Liquibase
+\subsection{dbCopy}
+Was ist dbCopy
+
+%TODO: Vergeich als Tabelle.
+
+
 
 \subsection{Zusammenfassung}
 Um einen Überblick über alle bisher genannten Tools bzw. Frameworks zu behalten, werden die Vor- und Nachteile in folgender Tabelle erläutert: \\
