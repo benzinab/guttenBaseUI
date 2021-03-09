@@ -69,57 +69,64 @@ Außerdem gibt es unterschiedliche Strategien für Datenbank Migration. Diese k�
 
 
 \section{Verwandte Arbeiten}
-Eines der Hauptprobleme in der Softwareindustrie besteht darin, eine hochwertige Datenverwaltung sicherzustellen. Dies ist auch der Fall bei einer Datenbank Migration, wobei die mit dem Migrationsworkflow verbundenen Aufgaben vielfältig und kompliziert sind. Das manuelle Ausführen dieser Aufgaben erfordert viel Zeit und ein sehr erfahrenes Team. Um Zeit und Kosten bei der Migration zu sparen bieten sich zahlreiche Tools bzw. Prototypen für Datenbank Migration (DBMT für Databbase Migration Tool).\\
-In der folgenden Tabelle werden einige dieser Tools dargestellt: 
-%TODO: add table and table ref
+Eines der Hauptprobleme in der Softwareindustrie besteht darin, eine hochwertige Datenverwaltung sicherzustellen. Dies ist auch der Fall bei einer Datenbank Migration, wobei die mit dem Migrationsworkflow verbundenen Aufgaben vielfältig und kompliziert sind. Das manuelle Ausführen dieser Aufgaben erfordert viel Zeit und ein sehr erfahrenes Team. Um Zeit und Kosten bei der Migration zu sparen und um wiederholende Aufgaben zu automatisieren, bieten sich zahlreiche Tools bzw. Prototypen für Datenbank Migration (DBMT für Databbase Migration Tool). \\
+Einige dieser Tools werden in der Tabelle \ref{table:tools} vorgestellt. Diese basiert sich auf den Vorschlag von Jutta Hortsmann, J.
+
+\begin{table}
 \begin{center}
-	\begin{tabular}{ |p{2cm}|p{3cm}|p{4cm}|p{4cm}| }
+	\begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{2cm}|p{3cm}| }
 		\hline
-		\textbf{Name}} & \textbf{Unterstützte DBMS} & \textbf{Vorteile} & \textbf{Nachteile} \\
+		\textbf{Name} & \textbf{Quell-DBMS} &  \textbf{Ziel-DBMS} &\textbf{Lizenz} & \textbf{Betriebssysteme} \\
 		\hline
-		 SQuirrel DBCopy Plugin & 
-		 Axion,
-		 DB2,
-		 DaffodilDB (One\$DB),
-		 Derby(Cloudscape),
-		 Firebird,
-		 Frontbase,
-		 HyperSonic(HSQLDB),
-		 H2,
-		 Ingres II,
-		 MaxDB (SAP),
-		 McKoi,
-		 MySQL,
-		 Microsoft SQL Server,
-		 Oracle,
-		 Pointbase,
-		 PostgreSQL,
-		 Progress,
-		 Sybase ASE,
-		 TimesTen  & & \\
+		 OSDM Toolkit (Apptility) & 
+		  Oracle, SyBase, Informix, DB2, MS Access, MS SQL &  PostgreSQL, MySQL & 
+		 Frei &  Windows, Linux, Unix und Mac OS \\
 		 \hline
-		 OSDM Toolkit & 
-		 Quell-DBMS: Oracle, SyBase, Informix, DB2, MS Access, MS SQL, Ziel-DBMS: PostgreSQL, MySQL & 
-		 Alle  Betriebssysteme werden unterstützt, Open Source &  \\
+		 DB Migration (Akcess) &  Oracle und MS SQL &  PostgreSQL und MYSQL  & Kommerziell & Windows\\
 		 \hline
-		 & & & \\
+		 Mssql2 Pgsql (OS Project) &   MS SQL&   PostgreSQL  & Frei & Windows \\
 		 \hline
-		 & & &  \\
-		 \hline
-		 & & &  \\
+		 MySQL
+		 Migration
+		 Toolkit (MySql AB)&  MS Access und Oracle &  MySQL & Frei & Windows  \\
+		\hline
+		Open DBcopy (Puzzle ITC) & Alle RDBMS& Alle RDMS & Frei & Betriebssystem- unabhängig \\
+		\hline
+		Progression DB (Versora) &  MS SQL &  PostgreSQL, MySQL und	Ingres & Frei & Linux und Windows \\
+		\hline
+		Shift2Ingres (OS Project)& Oracle und DB2 & Ingres & Frei &  Betriebssystem- unabhängig \\
+		\hline
+		SQLPorter (Real Soft Studio)& Oracle, MS SQL, DB2 und Sybase & MySQL & Kommerziell & Linux, Mac OS und Windows \\
+		\hline
+		SQLWays (Ispirer) & Alle RDMBS & PostgreSQL und MySQL & Kommerziell & Windows \\
+		\hline
+		SwisSQL Data Migration Tool (AdventNet)& Oracle, DB2, MS SQL, Sybase und MaxDB & MySQL & Kommerziell & Windows \\
+		\hline
+		SwisSQL SQLOne Console (AdventNet)& Oracle, MSSQL, DB2, Informix und Sybase & PostgreSQL und MySQL  & Kommerziell & Windows \\
+		\hline
+		MapForce (Altova) & SQL Server, DB2, MS Access, MySQL und PostgreSQL & SQL Server, DB2, MS Access und Oracle & Kommerziell & Windows, Linux und Mac OS \\
+		\hline
+		Centerprise Data Integrator (Astera) & SQL Server, DB2, MS Access, MySQL und PostgreSQL& SQL Server, DB2, MS Access, MySQL und PostgreSQL& 
+		Kommerziell & Windows\\
+		\hline
+		DBConvert (DB Convert) & Oracle, DB2, SQLite, MySQL, PostgreSQL, MS Access und Foxpro & Oracle, DB2, SQLite, MySQL, PostgreSQL, MS Access und Foxpro & Kommerziell & Windows \\
+		\hline
+		SQuirrel DBCopy Plugin (Sourceforge) & Alle RDBMS  & Alle RDBMS & Frei & Alle Betriebssysteme\\
 		\hline
 	\end{tabular}
 \end{center}
+\caption{Database Migration Tools}
+\label{table:tools}
+\end{table}
+%http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.94.3883&rep=rep1&type=pdf (juttaa)
 
-%TODO: Vergeich als Tabelle.
 
 \section{GuttenBase}
 Viele Software Unternehmen haben sich dafür entschieden, ein eigenes Tool für Datenbankmigration zu entwickeln. Dies ist der Fall bei der Firma Akquinet AG, wo die Open Source Bibliothek "GuttenBase" in 2012 entwickelt wurde. Da GuttenBase open source ist, wurde sie in weiteren Schritten weiterentwickelt und um zusätzliche Funktionen erweitert.\\
-Anderes als die oben genannten Tools, bietet die GuttenBase Bibliothek eine gewisse Flexibilität bei der Migration. Diese kann durch das Programmieren und Überschreiben der Mapping Klassen spezifiziert werden, damit die Migration passend zu dem aktuellen Stand der Daten läuft.\\
+Anderes als die in der Tabelle \ref{table:tools} vorgestellten Tools, bietet die GuttenBase Bibliothek eine gewisse Flexibilität bei der Migration. Migrationsschritte können durch das Überschreiben der Mapping Klassen spezifiziert werden, damit die Migration passend zu dem aktuellen Stand der Daten ausgeführt wird.\\
 Dieser Ansatz erlaubt Entwicklern, eine volle Kontrolle über den Migrationsprozess zu haben.\\
-Für die Migration einer Datenbank ist häufig eine benutzerdefinierte Lösung erforderlich. Beispilsweise z. B. das Unbenennen von Tabellen bzw. Spalten in der Zieldatenbank, das Umwandeln von Spaltentypen, das Ausschließen von bestimmten Tabellen bzw. Spalten.
-In diesem Fall können Konfigurationshinweise vor der Migration hinzugefügt werden. Standardmäßig wird eine Standardimplementierung der Hinweise nach dem Verbinden der Datenbanken hinzugefügt. Dise können jedoch von dem Nutzer überschrieben werden. \\
-Folgendes ist eine Übersicht über die aktuelle Hinweise von GuttenBase: \\
+Für die Migration einer Datenbank ist häufig eine benutzerdefinierte Lösung erforderlich. Beispilsweise z. B. das Unbenennen von Tabellen bzw. Spalten in der Zieldatenbank, das Umwandeln von Spaltentypen, das Ausschließen von bestimmten Tabellen bzw. Spalten usw..
+In diesem Fall können Konfigurationshinweise vor der Migration hinzugefügt werden. Standardmäßig wird eine Standardimplementierung der Hinweise nach dem Verbinden der Datenbanken hinzugefügt. Dise können jedoch von dem Nutzer überschrieben werden. 
 %TODO Tabelle hinzufügen!
 
 %- Allgemeiner Satz

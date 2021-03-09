@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2021.1.10)  9 MAR 2021 01:40
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2021.1.10)  9 MAR 2021 05:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1723,21 +1723,18 @@ and I'll forget about whatever was undefined.
 
 ] (./chapters/declarations.tex) [3
 
-] (./chapters/acknowledgements.tex)
-[4
+] (./chapters/abstract.tex) [4
 
-] (./chapters/abstract.tex) [5
+]
+(./thesis.toc [1
 
-] [6
-
-] (./thesis.toc [1
 
 ])
 \tf@toc=\write9
 \openout9 = `thesis.toc'.
 
- [2]
-(./chapters/index.tex (./chapters/1-introduction/intro.tex
+ [2] (./chapters/index.tex
+(./chapters/1-introduction/intro.tex
 Kapitel 1.
 [1
 
@@ -1748,151 +1745,207 @@ Kapitel 1.
 ]
 Kapitel 2.
 [5] [6]
-! Extra }, or forgotten \endgroup.
-<recently read> }
-                 
-l.78 ^^I^^I\textbf{Name}}
-                          & \textbf{Unterstützte DBMS} & \textbf{Vorteile} &...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 78--78
-[]|\TU/lmr/bx/n/10 Unterstützte
+Underfull \hbox (badness 10000) in paragraph at lines 81--81
+[]|\TU/lmr/m/n/10 OSDM Toolkit
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 80--80
-[]|\TU/lmr/m/n/10 SQuirrel
+Underfull \hbox (badness 2961) in paragraph at lines 82--82
+\TU/lmr/m/n/10 formix, DB2, MS
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 80--80
-\TU/lmr/m/n/10 DBCopy
+Underfull \hbox (badness 1005) in paragraph at lines 82--82
+[]|\TU/lmr/m/n/10 PostgreSQL, MyS-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 81--99
-[]|\TU/lmr/m/n/10 Axion, DB2,
+Underfull \hbox (badness 10000) in paragraph at lines 83--84
+[]|\TU/lmr/m/n/10 Windows, Linux,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 81--99
-\TU/lmr/m/n/10 DaffodilDB
+Underfull \hbox (badness 10000) in paragraph at lines 85--85
+[]|\TU/lmr/m/n/10 Oracle und MS
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 81--99
-\TU/lmr/m/n/10 (One$DB), Der-
+Underfull \hbox (badness 10000) in paragraph at lines 85--85
+[]|\TU/lmr/m/n/10 PostgreSQL und
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 81--99
-\TU/lmr/m/n/10 by(Cloudscape),
+Underfull \hbox (badness 1163) in paragraph at lines 87--87
+[]|\TU/lmr/m/n/10 Mssql2 Pgsql (OS
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 81--99
-\TU/lmr/m/n/10 Firebird, Front-
+Underfull \hbox (badness 2529) in paragraph at lines 89--91
+[]|\TU/lmr/m/n/10 MySQL Migration
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 81--99
-\TU/lmr/m/n/10 base, HyperSo-
+Underfull \hbox (badness 10000) in paragraph at lines 89--91
+\TU/lmr/m/n/10 Toolkit (MySql
  []
 
 
-Underfull \hbox (badness 1270) in paragraph at lines 81--99
-\TU/lmr/m/n/10 Ingres II, MaxDB
+Underfull \hbox (badness 10000) in paragraph at lines 91--91
+[]|\TU/lmr/m/n/10 MS Access und
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 81--99
-\TU/lmr/m/n/10 (SAP), McKoi,
+Underfull \hbox (badness 10000) in paragraph at lines 93--93
+[]|\TU/lmr/m/n/10 Open DBcopy
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 81--99
-\TU/lmr/m/n/10 MySQL, Micro-
+Underfull \hbox (badness 10000) in paragraph at lines 93--94
+[]|\TU/lmr/m/n/10 Betriebssystem-
  []
 
 
-Underfull \hbox (badness 6173) in paragraph at lines 81--99
-\TU/lmr/m/n/10 soft SQL Server,
+Underfull \hbox (badness 10000) in paragraph at lines 95--95
+[]|\TU/lmr/m/n/10 Progression DB
  []
 
 
-Underfull \hbox (badness 3965) in paragraph at lines 81--99
-\TU/lmr/m/n/10 Oracle, Pointbase,
+Underfull \hbox (badness 1005) in paragraph at lines 95--95
+[]|\TU/lmr/m/n/10 PostgreSQL, MyS-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 81--99
-\TU/lmr/m/n/10 PostgreSQL, Pro-
+Underfull \hbox (badness 10000) in paragraph at lines 95--96
+[]|\TU/lmr/m/n/10 Linux und Win-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--102
-[]|\TU/lmr/m/n/10 Quell-DBMS:
+Underfull \hbox (badness 10000) in paragraph at lines 97--97
+[]|\TU/lmr/m/n/10 Shift2Ingres (OS
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--102
-\TU/lmr/m/n/10 Oracle, SyBase,
+Underfull \hbox (badness 10000) in paragraph at lines 97--98
+[]|\TU/lmr/m/n/10 Betriebssystem-
  []
 
 
-Underfull \hbox (badness 3039) in paragraph at lines 102--102
-\TU/lmr/m/n/10 Access, MS SQL,
+Underfull \hbox (badness 10000) in paragraph at lines 99--99
+[]|\TU/lmr/m/n/10 SQLPorter (Real
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--102
-\TU/lmr/m/n/10 Ziel-DBMS: Post-
+Underfull \hbox (badness 3088) in paragraph at lines 99--99
+[]|\TU/lmr/m/n/10 Oracle, MS SQL,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 103--103
-[]|\TU/lmr/m/n/10 Alle Betriebssysteme
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
+[]|\TU/lmr/m/n/10 PostgreSQL und
  []
 
 
-Overfull \hbox (1.6321pt too wide) in paragraph at lines 76--112
+Underfull \hbox (badness 1436) in paragraph at lines 103--103
+\TU/lmr/m/n/10 gration Tool (Ad-
+ []
+
+
+Underfull \hbox (badness 2970) in paragraph at lines 103--103
+[]|\TU/lmr/m/n/10 Oracle, DB2, MS
+ []
+
+
+Underfull \hbox (badness 2600) in paragraph at lines 103--103
+\TU/lmr/m/n/10 SQL, Sybase und
+ []
+
+
+Underfull \hbox (badness 3746) in paragraph at lines 105--105
+[]|\TU/lmr/m/n/10 SwisSQL SQLOne
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 105--105
+\TU/lmr/m/n/10 Console (Advent-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 105--105
+[]|\TU/lmr/m/n/10 Oracle, MSSQL,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 105--105
+[]|\TU/lmr/m/n/10 PostgreSQL und
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--107
+\TU/lmr/m/n/10 MS Access und
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--108
+[]|\TU/lmr/m/n/10 Windows, Linux
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 109--109
+[]|\TU/lmr/m/n/10 Centerprise Data
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--112
+[]|\TU/lmr/m/n/10 DBConvert (DB
+ []
+
+
+Underfull \hbox (badness 1424) in paragraph at lines 112--112
+\TU/lmr/m/n/10 te, MySQL, Post-
+ []
+
+
+Underfull \hbox (badness 1424) in paragraph at lines 112--112
+\TU/lmr/m/n/10 te, MySQL, Post-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 114--114
+[]|\TU/lmr/m/n/10 SQuirrel DBCopy
+ []
+
+
+Underfull \hbox (badness 3439) in paragraph at lines 114--114
+\TU/lmr/m/n/10 Plugin (Sourcefor-
+ []
+
+
+Underfull \hbox (badness 1057) in paragraph at lines 114--115
+[]|\TU/lmr/m/n/10 Alle Betriebssyste-
+ []
+
+
+Overfull \hbox (42.48483pt too wide) in paragraph at lines 77--117
  [] 
  []
 
-[7]
-Underfull \hbox (badness 10000) in paragraph at lines 117--124
 
- []
+LaTeX Warning: Float too large for page by 13.2697pt on input line 120.
 
-[8]) (./chapters/3-umsetzung/umsetzung.tex [9] [10
-
-]
+) (./chapters/3-umsetzung/umsetzung.tex [7] [8]
 Kapitel 3.
 
 Underfull \hbox (badness 10000) in paragraph at lines 4--5
 
  []
 
+[9
 
-Underfull \hbox (badness 10000) in paragraph at lines 10--15
-
- []
-
-[11]
-Underfull \hbox (badness 10000) in paragraph at lines 21--24
-
- []
-
-) (./chapters/4-evaluation/evaluation.tex [12]
+]) (./chapters/4-evaluation/evaluation.tex [10]
 Kapitel 4.
-) (./chapters/5-fazit/fazit.tex [13
+) (./chapters/5-fazit/fazit.tex [11
 
-] [14
+] [12
 
 ]
 Kapitel 5.
@@ -1900,7 +1953,7 @@ Kapitel 5.
 
 LaTeX Warning: Empty bibliography on input line 9.
 
-(./appendices/index.tex [15] [16
+(./appendices/index.tex [13] [14
 
 ]
 Anhang A.
@@ -1916,7 +1969,7 @@ Anhang A.
 
 LaTeX Warning: Empty bibliography on input line 3.
 
-(./thesis.acr) (./thesis.gls))) [17]
+(./thesis.acr) (./thesis.gls))) [15]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 61.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 61.
  (./thesis.aux)
@@ -1929,12 +1982,12 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 46363 strings out of 479819
- 903189 string characters out of 5895846
- 1709572 words of memory out of 5000000
- 62644 multiletter control sequences out of 15000+600000
+ 46365 strings out of 479819
+ 903187 string characters out of 5895846
+ 1719622 words of memory out of 5000000
+ 62649 multiletter control sequences out of 15000+600000
  534589 words of font info for 57 fonts, out of 8000000 for 9000
  1350 hyphenation exceptions out of 8191
  68i,12n,100p,1195b,4147s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.pdf (25 pages).
+Output written on thesis.pdf (21 pages).
