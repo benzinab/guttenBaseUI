@@ -1,26 +1,36 @@
 \chapter{Grundlagen}
-Dieses Kapitel liefert einen allgemeinen Einblick in die Datenbank Migration und die GuttenBase Bibliothek. Außerdem werden verwandte Arbeiten vorgestellt. 
+Dieses Kapitel liefert einen allgemeinen Einblick einige Grundaspekte der Datenbank Migration sowie der GuttenBase Bibliothek. Außerdem werden verwandte Arbeiten vorgestellt. 
 \section{Datenbanken}
 %- allgemeine Def
 %- Arten von Datenabnken
 %https://books.google.de/books?hl=de&lr=&id=_3XVAwAAQBAJ&oi=fnd&pg=PA14&dq=Datenbank+Grundlagen+&ots=ntu4qhQNQD&sig=LpAgd_s5f04ulLTfOYe6lEt1_Zc#v=onepage&q=Datenbank%20Grundlagen&f=false
-In dieser Arbeit werden Datenbanken oft erwähnt. Diese sind ein zentrales Element der Datenbank Migration. Deswegen ist es wichtig, kurz auf die Bedeutung von Datenbank einzugehen.\\
 Datenbanken spielen seit der Neuerung des IT-Zeitalter eine wichtige Rolle in dem elektronischen Datenmanagement.\\
-Folgendes sind zwei Definitionen, die die Datenbank verdeutlichen:
-\begin{itemize}
-	\item 
-	Eine Datenbank ist ein verteiltes, integriertes Computersystem, das Nutzdaten und Metadaten enthält. Nutzdaten sind die Daten, die Beuntzer in der Datenbank anlegen und aus denen die Informationen gewonnen werden. Metadaten werden of auch als Daten über Daten bezeichnet und helfen, die Nutzdaten der Datenbank zu strukturieren.
+Eine Datenbank ist eine geordnete, selstbeschreibende Sammlung von Daten, die miteinander in Beziehung stehen.
+Vielmehr ist eine Datenbank ein verteiltes, integriertes Computersystem, das Nutzdaten und Metadaten enthält. Nutzdaten sind dabei die Daten, die Benutzer in der Datenbank anlegen und aus denen die Informationen gewonnen werden. Metadaten werden of auch als Daten über Daten bezeichnet und helfen, die Nutzdaten der Datenbank zu strukturieren. 
 	
-	\item
-	Eine Datenbank ist eine geordnete, selstbeschreibende Sammlung von Daten, die miteinander in Beziehung stehen.
-\end{itemize}
-
-
-\section{Datenbank Management System (DBMS)}
+	
+	
+%\section{Datenbank Management System (DBMS)}
 %- Def
 %- Beispiele
-Damit Datenbanken auf einem Computer verwaltet werden können, werden Datenbankmanagement Systeme (DBMS) benötigt.
-
+Damit Datenbanken auf einem Computer verwaltet werden können, werden Datenbankmanagement Systeme (DBMS) benötigt. Diese sind leistungsfähige Programme für die flexible Speicherung und Abfrage strukturierter Daten. \\
+Außerdem hilft ein DBMS bei der Organisation und Integrität von Daten und regelt den Zugruff auf Datengruppen. \\
+Ein DBMS kann aus einem einzelenen Programm bestehen. Dies ist z. B. bei einem Desktop-DBMS zu sehen. Es kann jedoch aus verschiedenen Programmen bestehen, die zusammenarbeiten und die Funktion des DBMS bereitstellen. Dies ist z. B. bei den servergestützen Datenbanksystemen der Fall.\\
+Um eine Datenbank Anwendung zu implementieren, sollte auf das Datenbankmodell geachtet werden. Dies stellt die Daten einer Datenbank und deren Beziehungen abstrakt dar. Meistens wird ein relationales Datenbankmodell eingesetzt. Dies hat, im Gegensatz zu den anderen Datenbankmodellen, keine strukturelle Abhängigkeit und versteckt die physikalische Komplexität der Datenbank komplett vor den Anwendern.\\
+Es stehen zahlreiche Datenbankmanagementsysteme zur Verfügung. Folgendes befinden sich einige der gängigsten DBMS:
+\begin{itemize}
+	\item Microsoft SQL Server
+	\item MS-Access
+	\item MySQL
+	\item PostgreSQL
+	\item HSQLDB
+	\item H2 Derby
+	\item Oracle
+	\item DB2
+	\item Sybase
+\end{itemize}
+Um ein geeignetes DBMS auszuwählen, gibt es viele Kriterien wie die Ausführungszeit, CPU- und Speicher Nutzung. Der Artikel von Youssif Bassil, A Comparative Study on the Performance of the Top DBMS Systems, im Jahr 2011 vergleicht einige Datenbankmanagementsysteme anhand der genannten Kriterien.
+%https://arxiv.org/pdf/1205.2889.pdf
 \section{Datenbank Migration}
 
 %- Was allgemeines (1 Satzt)
@@ -32,7 +42,7 @@ Damit Datenbanken auf einem Computer verwaltet werden können, werden Datenbankm
 
 Datenbank Migration wird immer mehr von Unternehmen bzw. Organisationen gebraucht. 
 
-Die Migration von Datenbanken dient zum Verschieben der Daten von der Quell-DB zur Ziel-DB einschließlich die Schemaübersetzung und Datentransformation.
+Die Migration von Datenbanken dient zum Verschieben der Daten von der Quell-Datenbank zur Ziel-Datenbank einschließlich die Schemaübersetzung und Datentransformation.
 
 
 Mögliche Gründe für eine Dantenbank Migration sind:
@@ -45,13 +55,63 @@ Mögliche Gründe für eine Dantenbank Migration sind:
 	\item Wartung des existierenden Systems ist schwer oder nicht möglich.
 \end{itemize}
 
-- Es gibt unterschiedliche Strategien bzw. Techniken für Datenbank Migration. Diese können in drei Kategorien unterteilt:
+Außerdem gibt es unterschiedliche Strategien für Datenbank Migration. Diese können in drei Kategorien unterteilt werden:
 
-\begin{itemize}
-	\item Migration durch OO/XML Schnittstellen
-	\item Datenbank Integration: Source DB mit Target DB verbinden
-	\item Schema und alle Daten komplett verschieben (copy pasten).
-\end{itemize}
+\begin{enumerate}
+	\item Migration durch objekt orientierte Schnittstellen: \\
+	Bei dieser Strategie werden Daten in form von Objekten bzw. XML Dateien verarbeitet. Dafür wird ein bidirektionales Mapping benötigt, ojektbasierte Schemas in Datenbank Schemas zu übersetzten.
+	\item Datenbank Integration: \\
+	Hier wird die Quell-Datenbank mit der Ziel-Datenbank verbunden, wodurch der Eindruck entsteht, als ob alle Daten in einer einzigen Datenbank gespeichert sind.	
+	\item Datenbank Migration: \\
+	Die Quell-Datenbank wird in die Ziel-Datenbank kopiert. Dabei werden Schemas in ein Zielschema semantisch übersetzt werden. Darauf basierend werden die enthaltenen Daten konvertiert.
+\end{enumerate}
+
+
+
+\section{Verwandte Arbeiten}
+Eines der Hauptprobleme in der Softwareindustrie besteht darin, eine hochwertige Datenverwaltung sicherzustellen. Dies ist auch der Fall bei einer Datenbank Migration, wobei die mit dem Migrationsworkflow verbundenen Aufgaben vielfältig und kompliziert sind. Das manuelle Ausführen dieser Aufgaben erfordert viel Zeit und ein sehr erfahrenes Team. Um Zeit und Kosten bei der Migration zu sparen bieten sich zahlreiche Tools bzw. Prototypen für Datenbank Migration (DBMT für Databbase Migration Tool).\\
+In der folgenden Tabelle werden einige dieser Tools dargestellt: 
+%TODO: add table and table ref
+\begin{center}
+	\begin{tabular}{ |p{2cm}|p{3cm}|p{4cm}|p{4cm}| }
+		\hline
+		\textbf{Name}} & \textbf{Unterstützte DBMS} & \textbf{Vorteile} & \textbf{Nachteile} \\
+		\hline
+		 SQuirrel DBCopy Plugin & 
+		 Axion,
+		 DB2,
+		 DaffodilDB (One\$DB),
+		 Derby(Cloudscape),
+		 Firebird,
+		 Frontbase,
+		 HyperSonic(HSQLDB),
+		 H2,
+		 Ingres II,
+		 MaxDB (SAP),
+		 McKoi,
+		 MySQL,
+		 Microsoft SQL Server,
+		 Oracle,
+		 Pointbase,
+		 PostgreSQL,
+		 Progress,
+		 Sybase ASE,
+		 TimesTen  & & \\
+		 \hline
+		 OSDM Toolkit & 
+		 Quell-DBMS: Oracle, SyBase, Informix, DB2, MS Access, MS SQL, Ziel-DBMS: PostgreSQL, MySQL & 
+		 Alle  Betriebssysteme werden unterstützt, Open Source &  \\
+		 \hline
+		 & & & \\
+		 \hline
+		 & & &  \\
+		 \hline
+		 & & &  \\
+		\hline
+	\end{tabular}
+\end{center}
+
+%TODO: Vergeich als Tabelle.
 
 \section{GuttenBase}
 Viele Software Unternehmen haben sich dafür entschieden, ein eigenes Tool für Datenbankmigration zu entwickeln. Dies ist der Fall bei der Firma Akquinet AG, wo die Open Source Bibliothek "GuttenBase" in 2012 entwickelt wurde. Da GuttenBase open source ist, wurde sie in weiteren Schritten weiterentwickelt und um zusätzliche Funktionen erweitert.\\
@@ -71,20 +131,3 @@ Folgendes ist eine Übersicht über die aktuelle Hinweise von GuttenBase: \\
 %- [Was kann man in GuttenBase optimieren?]
 
 
-\section{Verwandte Arbeiten}
-In diesem Abschnitt werden unterschiedliche Tools für Datenbank Migration vorgestellt. Diese werden anschließend miteinander verglichen.
-\subsection{SQuirreL DBCopy-Plugin}
-Was ist DBCopy-Plugin
-\subsection{Liquibase}
-Was ist Liquibase
-\subsection{dbCopy}
-Was ist dbCopy
-
-%TODO: Vergeich als Tabelle.
-
-
-
-\subsection{Zusammenfassung}
-Um einen Überblick über alle bisher genannten Tools bzw. Frameworks zu behalten, werden die Vor- und Nachteile in folgender Tabelle erläutert: \\
-%TODO: Tabelle hinzufügen!
-%- 
