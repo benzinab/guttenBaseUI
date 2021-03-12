@@ -13,25 +13,22 @@
 \BOOKMARK [2][-]{subsection.3.1.1}{Umsetzungsform}{section.3.1}% 13
 \BOOKMARK [2][-]{subsection.3.1.2}{Allgemeine\040Beschreibung\040der\040Anforderungen}{section.3.1}% 14
 \BOOKMARK [2][-]{subsection.3.1.3}{detaillierte\040Beschreibung\040der\040Anforderungen}{section.3.1}% 15
-\BOOKMARK [3][-]{subsubsection.3.1.3.1}{Konfigurationsschritt Unbenennen hinzufügen}{subsection.3.1.3}% 16
-\BOOKMARK [3][-]{subsubsection.3.1.3.2}{Konfigurationsschritt Excludieren hinzufügen}{subsection.3.1.3}% 17
-\BOOKMARK [3][-]{subsubsection.3.1.3.3}{Konfigurationsschritt Spaltentypen Ändern hinzufügen}{subsection.3.1.3}% 18
-\BOOKMARK [3][-]{subsubsection.3.1.3.4}{Konfigurationsschritte\040verwalten}{subsection.3.1.3}% 19
-\BOOKMARK [3][-]{subsubsection.3.1.3.5}{Datenbank Migration durchführen}{subsection.3.1.3}% 20
-\BOOKMARK [2][-]{subsection.3.1.4}{Prototypen}{section.3.1}% 21
-\BOOKMARK [1][-]{section.3.2}{Konzeption}{chapter.3}% 22
-\BOOKMARK [2][-]{subsection.3.2.1}{Anwendungsfälle}{section.3.2}% 23
-\BOOKMARK [2][-]{subsection.3.2.2}{Konzeptionelle\040Sicht}{section.3.2}% 24
-\BOOKMARK [2][-]{subsection.3.2.3}{Modulsicht}{section.3.2}% 25
-\BOOKMARK [2][-]{subsection.3.2.4}{Datensicht}{section.3.2}% 26
-\BOOKMARK [1][-]{section.3.3}{Implementierung}{chapter.3}% 27
-\BOOKMARK [2][-]{subsection.3.3.1}{verwendete\040Technologien}{section.3.3}% 28
-\BOOKMARK [3][-]{subsubsection.3.3.1.1}{IntelliJ\040Plugin\040Entwicklung}{subsection.3.3.1}% 29
-\BOOKMARK [2][-]{subsection.3.3.2}{Features}{section.3.3}% 30
-\BOOKMARK [0][-]{chapter.4}{Evaluation}{}% 31
-\BOOKMARK [1][-]{section.4.1}{Expert\040Interview}{chapter.4}% 32
-\BOOKMARK [1][-]{section.4.2}{user\040test}{chapter.4}% 33
-\BOOKMARK [0][-]{chapter.5}{Fazit\040und\040Ausblick}{}% 34
-\BOOKMARK [0][-]{appendix.A}{Appendix}{}% 35
-\BOOKMARK [1][-]{section.A.1}{Abbildungsverzeichnis}{appendix.A}% 36
-\BOOKMARK [1][-]{section.A.2}{Tabellenverzeichnis}{appendix.A}% 37
+\BOOKMARK [3][-]{subsubsection.3.1.3.1}{Konfigurationsschritt\040Unbenennen\040erstellen}{subsection.3.1.3}% 16
+\BOOKMARK [3][-]{subsubsection.3.1.3.2}{Konfigurationsschritt Datentyp Ändern erstellen}{subsection.3.1.3}% 17
+\BOOKMARK [3][-]{subsubsection.3.1.3.3}{Konfigurationsschritte\040verwalten}{subsection.3.1.3}% 18
+\BOOKMARK [3][-]{subsubsection.3.1.3.4}{Datenbank Migration durchführen}{subsection.3.1.3}% 19
+\BOOKMARK [2][-]{subsection.3.1.4}{Datensicht}{section.3.1}% 20
+\BOOKMARK [1][-]{section.3.2}{Konzeption}{chapter.3}% 21
+\BOOKMARK [2][-]{subsection.3.2.1}{Konzeptionelle\040Sicht}{section.3.2}% 22
+\BOOKMARK [2][-]{subsection.3.2.2}{Modulsicht}{section.3.2}% 23
+\BOOKMARK [1][-]{section.3.3}{Implementierung}{chapter.3}% 24
+\BOOKMARK [2][-]{subsection.3.3.1}{verwendete\040Technologien}{section.3.3}% 25
+\BOOKMARK [3][-]{subsubsection.3.3.1.1}{IntelliJ\040Plugin\040Entwicklung}{subsection.3.3.1}% 26
+\BOOKMARK [2][-]{subsection.3.3.2}{Features}{section.3.3}% 27
+\BOOKMARK [0][-]{chapter.4}{Evaluation}{}% 28
+\BOOKMARK [1][-]{section.4.1}{Expert\040Interview}{chapter.4}% 29
+\BOOKMARK [1][-]{section.4.2}{user\040test}{chapter.4}% 30
+\BOOKMARK [0][-]{chapter.5}{Fazit\040und\040Ausblick}{}% 31
+\BOOKMARK [0][-]{appendix.A}{Appendix}{}% 32
+\BOOKMARK [1][-]{section.A.1}{Abbildungsverzeichnis}{appendix.A}% 33
+\BOOKMARK [1][-]{section.A.2}{Tabellenverzeichnis}{appendix.A}% 34

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2021.1.10)  11 MAR 2021 06:14
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2021.1.10)  12 MAR 2021 08:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1493,17 +1493,25 @@ Package: blindtext 2012/01/06 V2.0 blindtext-Package
 \c@blind@pangramcount=\count519
 \c@blind@pangrammax=\count520
 )
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count521
+\float@exts=\toks58
+\float@box=\box140
+\@float@everytoks=\toks59
+\@floatcapt=\box141
+)
 \glswrite=\write5
 \glo@main@file=\write6
 \openout6 = `thesis.glo'.
 
-Package glossaries Info: Writing glossary file thesis.glo on input line 8.
+Package glossaries Info: Writing glossary file thesis.glo on input line 9.
 \glo@acronym@file=\write7
 \openout7 = `thesis.acn'.
 
-Package glossaries Info: Writing glossary file thesis.acn on input line 8.
-
-(./glossary.tex) (./acronyms.tex) (./settings.tex)
+Package glossaries Info: Writing glossary file thesis.acn on input line 9.
+ (./glossary.tex)
+(./acronyms.tex) (./settings.tex)
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
@@ -1511,96 +1519,96 @@ Package csquotes Info: Redefining alias 'default' -> 'ngerman'.
  (./thesis.aux)
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 17.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 18.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 1
-7.
+8.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 17.
-LaTeX Font Info:    Trying to load font information for T3+cmr on input line 17
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 18.
+LaTeX Font Info:    Trying to load font information for T3+cmr on input line 18
 .
 
 (/usr/share/texmf/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
 
 Package fontspec Info: Adjusting the maths setup (use [no-math] to avoid
 (fontspec)             this).
 
 \symlegacymaths=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 17.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 17.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 17.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 17.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 17.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 17.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 17.
-LaTeX Font Info:    Redeclaring math accent \check on input line 17.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 17.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 17.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 17.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 17.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 17.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 17.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 17.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 17.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 17.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 17.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 17.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 17.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 17.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 17.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 17.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 17.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 18.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 18.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 18.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 18.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 18.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 18.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 18.
+LaTeX Font Info:    Redeclaring math accent \check on input line 18.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 18.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 18.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 18.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 18.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 18.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 18.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 18.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 18.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 18.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 18.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 18.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 18.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 18.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 18.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 18.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 18.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 17.
+(Font)              `operators' in the math version `normal' on input line 18.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 17.
+(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 18.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 17.
+(Font)              `operators' in the math version `bold' on input line 18.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/m/n on input line 17.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/m/n on input line 18.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  TU/lmr/m/n --> TU/lmr/m/n on input line 17.
+(Font)                  TU/lmr/m/n --> TU/lmr/m/n on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 17.
+(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/b/n on input line 17.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/b/n on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 17.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 17.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 18.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  TU/lmr/m/n --> TU/lmr/b/n on input line 17.
+(Font)                  TU/lmr/m/n --> TU/lmr/b/n on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> TU/lmr/b/it on input line 17.
+(Font)                  OT1/cmr/bx/it --> TU/lmr/b/it on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 17.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 18.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 17.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 18.
 
 ABD: EveryShipout initializing macros
 *geometry* driver: auto-detecting
@@ -1663,10 +1671,10 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'thesis.bbl' found.
 
 (./thesis.bbl)
-Package biblatex Info: Reference section=0 on input line 17.
-Package biblatex Info: Reference segment=0 on input line 17.
-\AtBeginShipoutBox=\box140
-Package hyperref Info: Link coloring ON on input line 17.
+Package biblatex Info: Reference section=0 on input line 18.
+Package biblatex Info: Reference segment=0 on input line 18.
+\AtBeginShipoutBox=\box142
+Package hyperref Info: Link coloring ON on input line 18.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 
@@ -1676,29 +1684,30 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count521
+\c@section@level=\count522
 )
-LaTeX Info: Redefining \ref on input line 17.
-LaTeX Info: Redefining \pageref on input line 17.
-LaTeX Info: Redefining \nameref on input line 17.
+LaTeX Info: Redefining \ref on input line 18.
+LaTeX Info: Redefining \pageref on input line 18.
+LaTeX Info: Redefining \nameref on input line 18.
 
 (./thesis.out) (./thesis.out)
 \@outlinefile=\write8
 \openout8 = `thesis.out'.
 
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count522
+\c@lstlisting=\count523
 File: images/institute-logo.pdf Graphic file (type pdf)
 <use images/institute-logo.pdf>
-LaTeX Font Info:    Trying to load font information for U+msa on input line 20.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 21.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 20.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 21.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -1707,7 +1716,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ! Undefined control sequence.
 <recently read> \advisorname 
                              
-l.20 \maketitle
+l.21 \maketitle
                
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1964,11 +1973,68 @@ Underfull \hbox (badness 10000) in paragraph at lines 61--65
 ] [10]
 File: images/ide-index.png Graphic file (type bmp)
 <images/ide-index.png>
- [11] [12]) (./chapters/4-evaluation/evaluation.tex [13] [14
+ [11] [12]
+File: images/af/af-umbenennen.png Graphic file (type bmp)
+<images/af/af-umbenennen.png>
+File: images/actions-overview.jpg Graphic file (type bmp)
+<images/actions-overview.jpg>
+
+Underfull \hbox (badness 10000) in paragraph at lines 128--134
+
+ []
+
+[13]
+File: images/add-rename-action.jpg Graphic file (type bmp)
+<images/add-rename-action.jpg>
+ [14]
+File: images/af/af-datentyp-ändern.png Graphic file (type bmp)
+<images/af/af-datentyp-ändern.png>
+ [15]
+Overfull \hbox (13.05637pt too wide) in paragraph at lines 190--220
+\TU/lmr/m/n/10 Nach dem Auslösen des Anwendungsfalls soll der Benutzer die Opti
+on „Datentyp Ändern“auswählen.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 190--220
+
+ []
+
+[16]
+File: images/af/af-ks-verwalten.png Graphic file (type bmp)
+<images/af/af-ks-verwalten.png>
+ [17] [18]
+File: images/af/af-db-verbinden.png Graphic file (type bmp)
+<images/af/af-db-verbinden.png>
+File: images/generalview.jpg Graphic file (type bmp)
+<images/generalview.jpg>
+ [19] [20]
+File: images/af/af-mg-cfg.png Graphic file (type bmp)
+<images/af/af-mg-cfg.png>
+ [21]
+File: images/overview.jpg Graphic file (type bmp)
+<images/overview.jpg>
+ [22]
+Underfull \hbox (badness 1057) in paragraph at lines 355--356
+[]\TU/lmr/m/n/10 Die zu konfigurierende Datenbank Elemente
+ []
+
+[23]
+File: images/af/af-ks-löschen.png Graphic file (type bmp)
+<images/af/af-ks-löschen.png>
+File: images/result-view.jpg Graphic file (type bmp)
+<images/result-view.jpg>
+ [24]
+File: images/af/af-mg-starten.png Graphic file (type bmp)
+<images/af/af-mg-starten.png>
+ [25]
+File: images/progressview.jpg Graphic file (type bmp)
+<images/progressview.jpg>
+ [26]) (./chapters/4-evaluation/evaluation.tex [27] [28
 
 ]
 Kapitel 4.
-) (./chapters/5-fazit/fazit.tex [15] [16
+) (./chapters/5-fazit/fazit.tex [29] [30
 
 ]
 Kapitel 5.
@@ -1976,7 +2042,7 @@ Kapitel 5.
 
 LaTeX Warning: Empty bibliography on input line 9.
 
-(./appendices/index.tex [17] [18
+(./appendices/index.tex [31] [32
 
 ]
 Anhang A.
@@ -1984,7 +2050,7 @@ Anhang A.
 \tf@lof=\write10
 \openout10 = `thesis.lof'.
 
- (./thesis.lot)
+ (./thesis.lot [33])
 \tf@lot=\write11
 \openout11 = `thesis.lot'.
 
@@ -1992,25 +2058,25 @@ Anhang A.
 
 LaTeX Warning: Empty bibliography on input line 3.
 
-(./thesis.acr) (./thesis.gls))) [19]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 61.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 61.
+(./thesis.acr) (./thesis.gls))) [34]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 62.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 62.
  (./thesis.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 61.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 61.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 62.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 62.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 005AFA172E540A4FD8E157F32E8953CF;2617.
+(rerunfilecheck)             Checksum: 94ED1FDB976F6DF6C5AAB76CFCD09937;2372.
 Package logreq Info: Writing requests to 'thesis.run.xml'.
 \openout1 = `thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 46378 strings out of 479819
- 903413 string characters out of 5895846
- 1719713 words of memory out of 5000000
- 62657 multiletter control sequences out of 15000+600000
+ 46607 strings out of 479819
+ 908425 string characters out of 5895846
+ 1722400 words of memory out of 5000000
+ 62865 multiletter control sequences out of 15000+600000
  534589 words of font info for 57 fonts, out of 8000000 for 9000
  1350 hyphenation exceptions out of 8191
- 68i,13n,100p,1195b,4157s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,13n,100p,1195b,4155s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.pdf (25 pages).
+Output written on thesis.pdf (40 pages).
