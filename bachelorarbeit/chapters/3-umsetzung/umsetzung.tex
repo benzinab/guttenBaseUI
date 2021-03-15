@@ -1,9 +1,7 @@
 \chapter{Umsetzung}
 Dieses Kapitel erläutert alle Schritte der Umsetzung des GuttenBase Plugins beginnend mit der Analyse bis zu zur Architektur und Implementierung.
-\section{Analyse}
-Am Anfang dieses Abschnitts wird die Umsetzungsform des GuttenBase Plugins festgelegt, da diese einen Einfluss auf die Architektur sowie die zu verwendenen Technologien hat. Außerdem werden die Anforderungen an das System definiert.\\
-Um den Soll-Zustand genauer zu definieren werden Prototypen eingesetzt.
-\subsection{Umsetzungsform}
+
+\section{Umsetzungsform}
 Um eine optimale Nutzung des GuttenBase Plugins zu erzielen, soll auf die Umsetzungsform geachtet werden.\\
 Das zu entwickelnde Tool kann z. B. als eine Desktop Applikation, Web Applikation oder als Plugin einer anderen Anwendung realisiert werden.\\
 In der Tabelle \ref{table:tool-options} werden einige Vor- und Nachteie jeder Alternative erläutert. \\
@@ -59,7 +57,7 @@ Alle drei Alternativen haben Pros und Contras allerdings ist die schnellere Erre
 \end{table}
 
 Zunächst soll für eine konkrete IDE entschieden werden. Um diese auszuwählen, muss auf die Anzahl der Nutzer, die Verfügbarkeit der Dokumentation für Plugin Entwicklung sowie die Unterstützung von Datenbanken geachtet werden.\\
-Einer der bekanntesten Methoden, um die Beliebtheit einer Programmiersprache bzw. eine IDE herauszufinden, ist der PYPL-Index. Er basiert sich auf Rohdaten aus Google Trends. PYPL enthält den TOP-IDE-Index, welches alanysiert, wie oft IDEs bei Google durchgesucht werden. Die Suchanfragen spiegeln zwar nicht unbedingt die Beliebtheit der IDEs. Allerdings hilft einen solchen Index enorm bei der Wahl einer Entwicklungsumgebung.
+Einer der bekanntesten Methoden, um die genaue Beliebtheit einer Programmiersprache bzw. eine IDE herauszufinden, ist der PYPL-Index. Er basiert sich auf Rohdaten aus Google Trends. PYPL enthält den TOP-IDE-Index, welches alanysiert, wie oft IDEs bei Google durchgesucht werden. Die Suchanfragen spiegeln zwar nicht unbedingt die Beliebtheit der IDEs. Allerdings hilft einen solchen Index enorm bei der Wahl einer Entwicklungsumgebung.
 Bei dieser Analyse sind die drei bekanntesten und für unseren Fall relevanten Entwicklungsumgebungen Visual Studio (erster Platz), Ecllipse (zweiter Platz) und IntelliJ (sechster Platz). Außerdem hat sich der Index von IntelliJ IDE am stärksten erhöht (siehe Abbildung \ref{img:ide-index})\\
 Bei eine anderen Umfrage (Jaxenter), mit welcher Entwicklungsumgebung am liebsten in Java programmiert wird, war IntelliJ sogar im ersten Platz mit 1660 Stimmen von 2934. \\
 
@@ -73,7 +71,8 @@ Aus den oben erläuterten Daten und aufgrund der guten Dokumentation für Plugin
 
 
 
-
+\section{Analyse}
+Um die die Anforderungen an das System und den Soll-Zustand zu definieren, wird in diesem Abschnitt eine Anforderungsanalyse durchgeführt. 
 
 
 \subsection{Allgemeine Beschreibung der Anforderungen}
@@ -630,12 +629,12 @@ Auf der anderen Seite stellt die ResultViewController Klasse Methoden für das L
 
 \section{Implementierung}
 \subsection{verwendete Technologien}
-- Swing \\
-- UI Form \\
-- Java\\
-- Gutenbase
+%- Swing \\
+%- UI Form \\
+%- Java\\
+%- Gutenbase
 %TODO TEST
-\subsubsection{IntelliJ Plugin Entwicklung}
+%\subsubsection{IntelliJ Plugin Entwicklung}
 
 
 
@@ -645,6 +644,6 @@ Auf der anderen Seite stellt die ResultViewController Klasse Methoden für das L
 %- save gb act\\
 %- migrate db \\
 %- + screenshots usw.
-\subsubsection{Benutzeroberfläche}
+\subsection{Benutzeroberfläche}
 
 
