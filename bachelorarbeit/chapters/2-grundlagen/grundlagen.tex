@@ -66,6 +66,15 @@ Außerdem gibt es unterschiedliche Strategien für Datenbank Migration. Diese k�
 	Die Quell-Datenbank wird in die Ziel-Datenbank kopiert. Dabei werden Schemas in ein Zielschema semantisch übersetzt werden. Darauf basierend werden die enthaltenen Daten konvertiert.
 \end{enumerate}
 
+\section{IntelliJ Plugin Entwicklung}
+%- IntelliJ, IntelliJ IDEA, allgemeine Infos
+%- Plugin Entwicklung
+%- Erweiterungspunkte
+%- Action System
+%- DB Plugin
+Die von der Firma JetBrains und in Java entwickelte Entwicklungsumgebung (IDE), IntelliJ IDEA, ist ein Teil einer Reihe von ähnlich JetBains Entwicklungsumgebungen wie Clion, PyCharm, PhpStrom, DataGrip usw. Diese basieren sich auf den gleichen Kern, nämlich den IntelliJ SDK.\\
+IntelliJ IDEA ist mit der Implementierung in Java, Kotlin, Groovy und Scala geeignet. Sie enthält unterschiedliche Funktionen
+
 
 
 \section{Verwandte Arbeiten}
@@ -122,6 +131,7 @@ Einige dieser Tools werden in der Tabelle \ref{table:tools} vorgestellt. Diese b
 
 
 \section{GuttenBase}
+\label{section:grundlagen:gb}
 Viele Software Unternehmen haben sich dafür entschieden, ein eigenes Tool für Datenbankmigration zu entwickeln. Dies ist der Fall bei der Firma Akquinet AG, wo die Open Source Bibliothek GuttenBase in 2012 entwickelt wurde. Da GuttenBase open source ist, wurde sie in weiteren Schritten weiterentwickelt und um zusätzliche Funktionen erweitert.\\
 Anderes als die in der Tabelle \ref{table:tools} vorgestellten Tools, bietet die GuttenBase Bibliothek eine gewisse Flexibilität bei der Migration. Migrationsschritte können durch das Überschreiben der Mapping Klassen spezifiziert werden, damit die Migration passend zu dem aktuellen Stand der Daten ausgeführt wird.\\
 Dieser Ansatz erlaubt Entwicklern, eine volle Kontrolle über den Migrationsprozess zu haben.\\

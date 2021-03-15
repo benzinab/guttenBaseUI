@@ -17,54 +17,74 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.2}Datenbank Migration}{6}{section.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}Verwandte Arbeiten}{7}{section.2.3}%
+\contentsline {section}{\numberline {2.3}IntelliJ Plugin Entwicklung}{7}{section.2.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.4}GuttenBase}{7}{section.2.4}%
+\contentsline {section}{\numberline {2.4}Verwandte Arbeiten}{7}{section.2.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Umsetzung}{9}{chapter.3}%
+\contentsline {section}{\numberline {2.5}GuttenBase}{7}{section.2.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Analyse}{9}{section.3.1}%
+\contentsline {chapter}{\numberline {3}Umsetzung}{11}{chapter.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.1}Umsetzungsform}{9}{subsection.3.1.1}%
+\contentsline {section}{\numberline {3.1}Analyse}{11}{section.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.2}Allgemeine Beschreibung der Anforderungen}{11}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.1}Umsetzungsform}{11}{subsection.3.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.3}detaillierte Beschreibung der Anforderungen}{12}{subsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.1.2}Allgemeine Beschreibung der Anforderungen}{13}{subsection.3.1.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.1.3.1}Konfigurationsschritt \textbf {Unbenennen} erstellen}{13}{subsubsection.3.1.3.1}%
+\contentsline {subsection}{\numberline {3.1.3}Vereinfachtes Datenmodell}{14}{subsection.3.1.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.1.3.2}Konfigurationsschritt \textbf {Datentyp Ändern} erstellen}{16}{subsubsection.3.1.3.2}%
+\contentsline {subsection}{\numberline {3.1.4}detaillierte Beschreibung der Anforderungen}{16}{subsection.3.1.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.1.3.3}Konfigurationsschritte verwalten}{18}{subsubsection.3.1.3.3}%
+\contentsline {subsubsection}{\numberline {3.1.4.1}Konfigurationsschritt \textbf {Unbenennen} erstellen}{16}{subsubsection.3.1.4.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.1.3.4}Datenbank Migration durchführen}{19}{subsubsection.3.1.3.4}%
+\contentsline {subsubsection}{\numberline {3.1.4.2}Konfigurationsschritt \textbf {Datentyp Ändern} erstellen}{19}{subsubsection.3.1.4.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.4}Datensicht}{27}{subsection.3.1.4}%
+\contentsline {subsubsection}{\numberline {3.1.4.3}Konfigurationsschritte verwalten}{21}{subsubsection.3.1.4.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Konzeption}{27}{section.3.2}%
+\contentsline {subsubsection}{\numberline {3.1.4.4}Datenbank Migration durchführen}{22}{subsubsection.3.1.4.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.1}Konzeptionelle Sicht}{27}{subsection.3.2.1}%
+\contentsline {section}{\numberline {3.2}Architektur}{30}{section.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.2}Modulsicht}{27}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.1}Konzeptionelle Sicht}{30}{subsection.3.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Implementierung}{27}{section.3.3}%
+\contentsline {subsubsection}{\numberline {3.2.1.1}GuttenBase Plugin}{31}{subsubsection.3.2.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.1}verwendete Technologien}{27}{subsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.2.1.2}IntelliJ Plattform}{31}{subsubsection.3.2.1.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.1.1}IntelliJ Plugin Entwicklung}{27}{subsubsection.3.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.2.1.3}GuttenBase}{32}{subsubsection.3.2.1.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.2}Features}{27}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.2.2}Modulsicht}{32}{subsection.3.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Evaluation}{29}{chapter.4}%
+\contentsline {subsubsection}{\numberline {3.2.2.1}Modulsicht der Übersicht der Konfogurationsschritte}{32}{subsubsection.3.2.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Expert Interview}{29}{section.4.1}%
+\contentsline {subsubsection}{\numberline {3.2.2.2}Modulsicht der allgemeinen Übersicht}{34}{subsubsection.3.2.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}user test}{29}{section.4.2}%
+\contentsline {subsubsection}{\numberline {3.2.2.3}Modulsicht der Konfigurationsübersicht}{35}{subsubsection.3.2.2.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Fazit und Ausblick}{31}{chapter.5}%
+\contentsline {subsubsection}{\numberline {3.2.2.4}Modulsicht der Ergebnisübersicht}{37}{subsubsection.3.2.2.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Appendix}{33}{appendix.A}%
+\contentsline {subsection}{\numberline {3.2.3}Zusammenhänge zwischen Anwendungsfällen und Architektur}{38}{subsection.3.2.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.1}Abbildungsverzeichnis}{33}{section.A.1}%
+\contentsline {section}{\numberline {3.3}Implementierung}{38}{section.3.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.2}Tabellenverzeichnis}{33}{section.A.2}%
+\contentsline {subsection}{\numberline {3.3.1}verwendete Technologien}{38}{subsection.3.3.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {3.3.1.1}IntelliJ Plugin Entwicklung}{38}{subsubsection.3.3.1.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.3.2}Features}{38}{subsection.3.3.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {3.3.2.1}Benutzeroberfläche}{38}{subsubsection.3.3.2.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {4}Evaluation}{39}{chapter.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}Expert Interview}{39}{section.4.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.2}user test}{39}{section.4.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}Fazit und Ausblick}{41}{chapter.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {A}Appendix}{43}{appendix.A}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A.1}Abbildungsverzeichnis}{43}{section.A.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A.2}Tabellenverzeichnis}{44}{section.A.2}%

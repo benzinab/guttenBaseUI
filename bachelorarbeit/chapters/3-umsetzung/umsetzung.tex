@@ -111,14 +111,44 @@ Konfigurationsschritte beziehen sich hauptsächlich auf die Hinweise der GuttenB
 
 
 
+
+\subsection{Vereinfachtes Datenmodell}
+In diesem Abschnitt wird ein vereinfachtes Datenmodell erstellt. Dies zeigt, welche Einheiten des Systems relevant sind und welche Beziehungen zwischen diesen Einheiten gelten. Es handelt sich hierbei noch nicht um ein Datenbankschema oder eine Spezifikation von Klassen für die Implementierung, sondern um
+die Modellierung der realen Welt. Das Datenmodell ist leitend für die Architektur des Tools. Aus diesem Grund wird auf unnötige Details bzw. Attribute verzichtet.
+Das Datenmodell wird als UML-Klassendiagramm in der Abbildung \ref{img:abstract-datenmodell} angegeben. Dabei werden hauptsächlich die Konfigurationsschritte und deren Beziehungen dargestellt. \\
+Die Abstrakte Klasse \glqq GBAction\grqq definiert alle möglichen Konfigurationsschritte. Diese wird durch folgende Unterklassen erweitert:
+\begin{itemize}
+	\item Rename: \\
+	Hierbei wird das Umbenennen eines Datenbankelementes modelliert. Jede Rename Klasse hat einen Typ (RenameType). Dieser definiert, wie Das Umbenennen des Datenbankelementes erfolgen soll und entspricht den Im Abschnitt \ref{section:umbenennen} vorgestellten Optionen für das Umbenennen. Außerdem wird das Umbenennen für Spalten bzw. Tabellen in zwei weiteren Unterklassen spezifiziert.
+	\item ChangeColumnType: \\
+	Diese Klasse entspricht dem Konfigurationsschritt \glqq Spalten-Datentyp Ändern\grqq.  
+	\item Exclude: \\
+	Die Exclude Klasse modelliert den Konfigurationsschritt für das Ausschließen einer Spalte bzw. einer Tabelle.
+	\end{itemize}
+Außerdem enthält die Klasse Migration alle Konfigurationsschritte die beim Migrationssprozess angewendet werden.
+\begin{figure}[H]
+	\caption{Vereinfachtes Datenmodell}
+	\centering
+	\includegraphics[width=\textwidth]{images/sichten/abstract-datenmodell}
+	\label{img:abstract-datenmodell}
+\end{figure}
+
+
+
+
+
+
 \subsection{detaillierte Beschreibung der Anforderungen}
-Dieser Abschnitt beschäftigt sich mit den zu implementierenden Anforderungen. Diese decken den wichtigsten Funktionsumfang des Systems.\\
+Dieser Abschnitt beschäftigt sich mit den zu implementierenden Anforderungen. Diese decken den wichtigsten Funktionsumfang des Systems ab.\\
 Neben der textuellen Beschreibung werden auch Anwendungsfalldiagramme erstellt. Dabei wird nur ein Akteur identifiziert. Dieser ist der Benutzer, der die Datenbank Migration durchführt. \\
 Um die Benutzungsführung in den Anwendungsfällen zu illustrieren und die konkrete Benutzeroberfläche, die es zu implementieren gilt, zu spezifizieren, wurden Papierprototypen für die wichtigsten Teile des Systems erzeugt. Diese basieren sich auf die Norm DIN EN ISO 9241-210.
 %todo check norm
 
 
+
+
 \subsubsection{Konfigurationsschritt \textbf{Unbenennen} erstellen}
+\label{section:umbenennen}
 	\begin{figure}[H]
 		\caption{Konfigurationsschritt \glqq Unbenennen \grqq erstellen}
 		\centering
@@ -445,11 +475,15 @@ Das Durchführen der Datenbank Migraion deckt die Hauptfunktionalität des Gutte
 		\label{table:migration-starten}
 	\end{table}
 
-\subsection{Datensicht}
 %\subsection{Probleme und Strategien}
 %- Umsetzungsform\\
 %- ...
-\section{Konzeption}
+
+
+
+
+
+\section{Architektur}
 %- DatenModell: GBActions, DB Elemente\\
 %- Abstrakte Mapping \\
 %- Multiple Select \\
@@ -462,10 +496,136 @@ Das Durchführen der Datenbank Migraion deckt die Hauptfunktionalität des Gutte
 %- Was ist IntelliJ \\
 %- was ist IntelliJ Plugin Entwicklung \\
 %- wie lässt sich ein Plugin mit IntelliJ entwickeln?\\
+In diesem Kapitel werden grundlegende Aspekte der Softwarearchitektur vom GuttenBase Plugin vorgestellt. Diese werden basierend auf der Empfehlung im IEEE-Standard IEEE STD 1471-2000.\\
+Die Architektur wird aus mehreren Sichten (Views) betrachtet. Eine Sicht repräsentiert dabei das Softwaresystem aus der Perspektivve einer verwandten Menge von Aspekten. Jede Sicht stellt spezifische Informationen bereit.\\
+Es is außerdem zu beachten, dass sich die Architektur auf die Ergebnisse der funktionalen Anforderungsanalyse sowie auf die Architektur der Zielplattform (IntelliJ Plattform) bezieht.
+Im Folgenden werden die einzelnen Sichten vorgestellt.
+%TODO zitieren
+
+
+
 
 \subsection{Konzeptionelle Sicht}
-\subsection{Modulsicht}
+Im Folgenden wird die Konzeptionelle Sicht des Systems vorgestellt. Hier wird das System noch unabhängig von den Implementierungsentscheidungen betrachtet. \\
+Die konzeptionelle Sicht wird als Komponentendiagramm in der Abbildung \ref{img:component-diagram} dargestellt. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{images/sichten/component-diagram}
+	\caption{Komponentendiagramm für die konzeptionelle Sicht}
+	\label{img:component-diagram}
+\end{figure}
+Das Komponentendiagramm besteht aus der GuttenBase Plugin Komponente, welche das zu entwickelnde System darstellt, der IntelliJ Plattform Komponente und der GutteBase Komponente. Es werden nur Komponenten veranschaulicht, die von unserem System benötigt sind. Diese werden im Folgenden genauer beschrieben.
 
+
+\subsubsection{GuttenBase Plugin}
+Das GuttenBase Plugin wird nach dem MVC-Arcchitekturstil konzipiert und besteht aus folgenden Komponenten:
+
+\paragraph*{Model}
+Das Modell enthällt Daten, die von der View Komponente dargestellt werden. Hier liegt außerdem die Geschäftslogik(\textbf{BusinessLogik}), welche für die Änderung der Daten zuständig ist.
+
+\paragraph*{View}
+	Die View Komponente ist für die Darstellung der Daten für den Benutzer verantwortlich. Hier werden alle UI-abhängigen Aspekte wie Layout, Schriftart usw. behandelt.\\
+	
+\paragraph*{Controller}
+	Die Controlle Komponente ist für die Interaktion mit dem Benutzer verantwortlich. Sie wird von der View Komponente über Benutzerinteraktionen informiert und wertet sie aus. Anschließend können Änderungen an den Daten der Model Komponente sowie Anpassungen an der View Komponente angonommen werden.
+
+\subsubsection{IntelliJ Plattform}
+Wie in der Abbildung \ref{img:component-diagram} zu sehen ist, interagiert das GuttenBase Plugin mit mehreren Komponenten der IntelliJ Plattform. 
+Es wurden dabei nur die verwendeten Komponenten dargestellt. Diese sind in zwei Komponenten beinhaltet:
+
+\paragraph*{Open API}
+Die IntelliJ Open API beinhaltet viele Komponenten, die auch von der IntelliJ IDEA Community Edition verwendet werden und für Plugin-Entwickler zur Verfügung stehen. Es können z. B. UI-Komponenten aus der Komponente \textbf{UI} für die Implementierung des Plugins benutzt werden. Außerdem wird \textbf{ActionSystem} Komponente benötigt, um bestimmte Aktionen, wie das Starten des Plugins, auszulösen.
+\paragraph*{Database Plugin}
+Da das GuttenBase Plugin viel mit den Datenbanken umgeht, die in IntelliJ konfiguriert wurden, ist eine Interaktion mit dem Database Plugin sehr sinnvoll. Dazu bieten sich viele Komponenten für unterschiedliche Zwecke. Die für das GuttenBase Plugin benötigten Komponenten sind die \textbf{Model} Komponente (um evt. eine Datenbank Konfiguration zu bekommen), die \textbf{PSI} Komponente (um die Elemente der Datenbank zu bekommen), die \textbf{Util} Komponente (um ein Datenbank-Schema zu bekommen) und die \textbf{View} Komponente (um aus der Übersicht des Database  Plugins Datenbank-Inhalte zu bekommen).
+
+
+\subsubsection{GuttenBase}
+
+
+
+
+\subsection{Modulsicht}
+Die Modulsicht zeigt die Struktur des GutenBase Plugins in Form von Modulen und deren Beziehungen zueinander. Hierbei werden die Komponenten und Konnektoren der konzeptionellen Sicht auf Module, Schichten und Subsysteme abgebildet. Diese werden in Paket- und Klassendiagramme verfeinert.
+Zur Wahrung der Übersichtlichkeit wird die Modulsicht nach den unterschiedlichen Übersichten unterteilt. Es gibt insgesamt vier Übersichten, die das gesammte System abdecken. Pro Übersicht werden nur Klassen bzw. Methoden beschrieben, die entsprechenden Anwendungsfälle realisieren.
+
+\subsubsection{Modulsicht der Übersicht der Konfogurationsschritte}
+Die Modulsicht der Abbildung \ref{img:modulsicht-gbactions} beschreibt alle beteiligten Klassen, die beim Erstellt und Verwalten der Konfigurationsschritte eingesetzt sind. Diese werden entsprechend der Konzeptionellen Sicht aufgeteilt, nämlich in den View, Model und Controller Paketen.\\
+%-View Klassen sind für die UI - Swing KOmponenten.
+%- Controlle hat folgende Aufgaben: 
+%- UI Komponenten erstellen, 
+%- Aktionen erstellen: die GBActionView informiert controller über Benutzer Eingabe -> jenachdem welchen ActionTyp selektiert wurde, wird die entsprechende DumbAwareAction ausgeführt, damit die entsprechende Dialoge für das Erstellen der Action angezeigt wird (renameView + changeType))
+%- editieren und speichern: nach dem Klick auf Save wird die Save Methode des Controller aufgerufen, sodass alle hinzugefügten Konfigurationsschritte mithilfe der GsonHelper konvertiert und gespeichert werden.
+%- actionen darstellen, 
+%- Übersicht schließen: Nach dem Klick auf cancel wird die Übersicht geschlossen.
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{images/sichten/modulsicht-gbactions}
+\caption{Modulsicht der Übersicht der Konfogurationsschritte}
+\label{img:modulsicht-gbactions}
+\end{figure}
+In dem View Paket werden alle Klassen dargestellt, die für die Darstellung der Konfigurationsschritte zuständig sind. Diese basieren sich auf unterschiedliche Swing Komponenten. Die Klasse GBActionsView repräsentiert dabei die Hauptübersicht der Konfigurationsschritte und beeinhaltet die GBActionsTable Klasse, welche die Auflistung der Konfigurationsschritte übernimmt. Außerdem wird die ToolbarDecorator Klasse für die Darstellung der möglichen Aktionen benötigt. \\
+Das Controller Paket enthält hierbei die GBActionsController Klasse. Diese hat folgende Aufgaben:
+\begin{itemize}
+	\item UI-Komponenten vor dem Anzeigen vorbereiten, indem Daten aus dem Paket Model erzeugt bzw. geladen werden.
+	\item Konfigurationsschritte erstellen. Dies passiert nach der Benuzter einen bestimmten Konfigurationsschritt hinzufügen möchte und diesen in der GBActionsView übersicht selektiert. Zunächst wird die entsprechende DumbAwareAction Klasse aufgerufen, um die entsprechende Aktion durchzuführen. Die DumbAwareAction Klasse ist im Paket BusinessLogic zu finden und könnte z. B. für das Anzeigen der Übersicht für das Erstellen des Umbenennen- oder Datentyp-Ändern-Konfigurationsschritt verwendet werden. Diese werden durch die RenameView und ChangeTypeView Klassen realisiert. Analog dazu erfolg das Editieren der Konfigurationsschritte.
+	\item Konfigurationsschritte speichern, indem die hinzugefügte Konfigurationsschritte in JSON konvertiert und dann exportiert werden. Dafür ist die GsonHelper Klasse des BusinessLogic Pakets zuständig.
+\end{itemize}
+
+
+
+\subsubsection{Modulsicht der allgemeinen Übersicht}
+Diese Modulsicht zeigt die beteiligten Klassen, die beim Verbinden der zu migrierenden Datenbanken genutzt werden. Diese wird in der Abblidung \ref{img:modulsicht-general} dargestellt. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{images/sichten/modulsicht-general}
+	\caption{Modulsicht der allgemeinen Übersicht}
+	\label{img:modulsicht-general}
+\end{figure}
+Die GeneralView Klasse ist für die Interaktion mit dem Benutzer verantwortlich und enthält alle Eingabefelder und Texte. Die GeneralViewController Klasse ist für das Laden der Datenbankelemente zuständig. Klickt der Benutzer auf das \glq Next\grqq Button, werden alle Eingaben über die MigrationHelper Klasse des Pakets BusinessLogic übergeben. Diese Informationen werden dann in der Migration Klasse des Model Pakets gespeichert.
+
+
+\subsubsection{Modulsicht der Konfigurationsübersicht}
+Die Modulsicht in der Abbildung \ref{img:modulsicht-overview} zeigt die für die Konfigurationsübersicht relevanten Klassen.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{images/sichten/modulsicht-overview}
+	\caption{Modulsicht der Konfigurationsübersicht}
+	\label{img:modulsicht-overview}
+\end{figure}
+In der Konfigurationsübersicht (Overview) enthält die OverviewTreeTable Klasse, welche alle Quell-Datenbankelemente auflistet und die ToolbarDecorator Klasse, die gespeicherten Konfigurationsschritte anzeigt. Außerdem stehen einige Buttons für die Benutzerinteraktion zur Verfügung. \\
+Wie bei den vorherigen Modulsichten, stellt die OverviewController Klasse Methoden für folgende Zwecke bereit:
+\begin{itemize}
+	\item Das Laden der Datenbankelemente: Hierbei werden die gespeicherten Konfigurationsschritte mithilfe der GsonHelper Klasse importiert und die Datenbankelement (DBElementNode) aus der Quell-Datenbank erstellt.
+	\item das Anzeigen der Konfigurationsschritte: Konfigurationsschritte werden nach Kompatibiltät mit den selektierten Datenbankelementen behandelt. Ist ein Konfigurationsschritt mit einem Datenbankelent geeignet, wird dieser klickbar angezeigt, außerdem wird stattdessen ein ausgegrautes Button dargestellt.
+	\item Hinzufügen von Konfigurationsschritten: Wenn der Benutzer ein Datenbankelement selektiert und dann einen entsprechenden Konfigurationsschritt hinzufügt, wird die OverviewAddAction Aktion von dem BusinessLogic Paket ausgelöst. Dabei wird der entsprechende Konfigurationsschritt durch die MigrationHelper Klasse zur Migration hinzugefügt.
+\end{itemize}
+
+
+
+\subsubsection{Modulsicht der Ergebnisübersicht}
+Die Modulsicht der Abbildung \ref{img:modulsicht-resul} stellt die für die Ergebnisübersicht (ResultView) zuständigen Klassen. Außerdem wird die Fortschritt Übersicht (ProgressView) miteingebunden, da diese vom selben Controller verwaltet wird.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{images/sichten/modulsicht-result}
+	\caption{Modulsicht der Ergebnisübersicht}
+	\label{img:modulsicht-resul}
+\end{figure}
+Ähnlich wie bei den anderen Übersichten, enthältt die ResultView Klasse eine Tabelle (ResultGBActionsTable), die alle hinzugefügten Konfigurationsschritte enthält und ein ToolbarDecorator, wo die Aktionen zum Löschen und Hinzufügen angezeigt werden. \\
+Auf der anderen Seite stellt die ResultViewController Klasse Methoden für das Löschen und das Hinzufügen von Konfigurationsschritte sowie für das Starten des Migrationsprozesses bereit. Diese werden im Folgenden genauer erklärt:
+\begin{itemize}
+	\item Hinzufügen: Wenn der Benutzer noch mehr Konfigurationsschritte zur Migration hinzufügen möchte, wird die aktuelle Übersicht zur Übersicht der Konfigurationsschritte (Overview) umgeleitet.
+	\item Löschen: Wie das Hinzufügen, erfolgt das Löschen von Konfigurationsschritte (die schon zur Migration hinzugefügt wurden) durch die Entfernung von dem ausgewählten Konfigurationsschritt (GBAction) aus der Migration Klasse. 
+	\item Migration starten: Nach dem Klick auf das \glqq Migrate\grqq Button, wird der Migrationsprozess gestartet. Dieser erfolgt durch die MigrationHelper Klasse. Dabei wird das Connector Repository der GuttenBase Bibliothek entsprechend der Konfigurationsschritte konfiguriert (siehe \ref{section:grundlagen:gb}) und anschließend das Kopieren durch das DefaultTableCopyTool gestartet. \\
+	Parallel dazu wird die Fortschritt Übersicht (ProgressView) angezeigt, um Informationen über den laufenden Prozess zu sehen. Dies ist durch die UIScriptExecutorProgressIndicator Klasse ermöglicht.
+	
+%	- add connectors, cfg abgeschlossen -> Copy 
+%	- parallel dazu: Fortschritt übersicht anzeigen: Logginging: Logging Hin.
+\end{itemize}
+
+%
+%\subsection{Datensicht}
+%\subsection{Ausführungssicht}
+\subsection{Zusammenhänge zwischen Anwendungsfällen und Architektur}
 
 
 \section{Implementierung}
@@ -474,12 +634,17 @@ Das Durchführen der Datenbank Migraion deckt die Hauptfunktionalität des Gutte
 - UI Form \\
 - Java\\
 - Gutenbase
+%TODO TEST
 \subsubsection{IntelliJ Plugin Entwicklung}
+
+
+
 
 \subsection{Features}
 %- add gbact\\
 %- save gb act\\
 %- migrate db \\
 %- + screenshots usw.
+\subsubsection{Benutzeroberfläche}
 
 
