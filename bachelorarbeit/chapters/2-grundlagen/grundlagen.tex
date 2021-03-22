@@ -1,23 +1,23 @@
 \chapter{Grundlagen}
 Dieses Kapitel liefert einen allgemeinen Einblick über einige Grundaspekte der Datenbank Migration sowie der GuttenBase Bibliothek. Zusätzlich gibt es eine kleine Einfüuhrung in die IntelliJ Plugin Entwicklung.\\
-Anschließend werden verwandte Arbeiten vorgestellt. 
-\section{Datenbanken}
+Außerdem werden verwandte Arbeiten vorgestellt. 
+\section{Datenbankmanagement Systeme (DBMS)}
 %- allgemeine Def
 %- Arten von Datenabnken
 %https://books.google.de/books?hl=de&lr=&id=_3XVAwAAQBAJ&oi=fnd&pg=PA14&dq=Datenbank+Grundlagen+&ots=ntu4qhQNQD&sig=LpAgd_s5f04ulLTfOYe6lEt1_Zc#v=onepage&q=Datenbank%20Grundlagen&f=false
-Datenbanken spielen seit der Neuerung des IT-Zeitalter eine wichtige Rolle in dem elektronischen Datenmanagement.\\
-Eine Datenbank ist eine geordnete, selstbeschreibende Sammlung von Daten, die miteinander in Beziehung stehen.
-Vielmehr ist eine Datenbank ein verteiltes, integriertes Computersystem, das Nutzdaten und Metadaten enthält. Nutzdaten sind dabei die Daten, die Benutzer in der Datenbank anlegen und aus denen die Informationen gewonnen werden. Metadaten werden of auch als Daten über Daten bezeichnet und helfen, die Nutzdaten der Datenbank zu strukturieren. 
-	
+%Datenbanken spielen seit der Neuerung des IT-Zeitalter eine wichtige Rolle in dem elektronischen Datenmanagement.\\
+%Eine Datenbank ist eine geordnete, selstbeschreibende Sammlung von Daten, die miteinander in Beziehung stehen.
+%Vielmehr ist eine Datenbank ein verteiltes, integriertes Computersystem, das Nutzdaten und Metadaten enthält. Nutzdaten sind dabei die Daten, die Benutzer in der Datenbank anlegen und aus denen die Informationen gewonnen werden. Metadaten werden of auch als Daten über Daten bezeichnet und helfen, die Nutzdaten der Datenbank zu strukturieren. 
+%	
 	
 	
 %\section{Datenbank Management System (DBMS)}
 %- Def
 %- Beispiele
-Damit Datenbanken auf einem Computer verwaltet werden können, werden Datenbankmanagement Systeme (DBMS) benötigt. Diese sind leistungsfähige Programme für die flexible Speicherung und Abfrage strukturierter Daten. \\
-Außerdem hilft ein DBMS bei der Organisation und Integrität von Daten und regelt den Zugruff auf Datengruppen. \\
+Damit Daten auf einem Computer verwaltet werden können, werden Datenbankmanagement Systeme (DBMS) benötigt. Diese sind leistungsfähige Programme für die flexible Speicherung und Abfrage strukturierter Daten. \\
+Außerdem hilft ein DBMS bei der Organisation und Integrität von Daten und regelt den Zugruff auf Datengruppen \cite{geisler2014datenbanken}. \\
 Ein DBMS kann aus einem einzelenen Programm bestehen. Dies ist z. B. bei einem Desktop-DBMS zu sehen. Es kann jedoch aus verschiedenen Programmen bestehen, die zusammenarbeiten und die Funktion des DBMS bereitstellen. Dies ist z. B. bei den servergestützen Datenbanksystemen der Fall.\\
-Um eine Datenbank Anwendung zu implementieren, sollte auf das Datenbankmodell geachtet werden. Dies stellt die Daten einer Datenbank und deren Beziehungen abstrakt dar. Meistens wird ein relationales Datenbankmodell eingesetzt. Dies hat, im Gegensatz zu den anderen Datenbankmodellen, keine strukturelle Abhängigkeit und versteckt die physikalische Komplexität der Datenbank komplett vor den Anwendern.\\
+Um eine Datenbank Anwendung zu implementieren, muss auf das Datenbankmodell geachtet werden. Dies stellt die Daten einer Datenbank und deren Beziehungen abstrakt dar. Meistens wird ein relationales Datenbankmodell eingesetzt. Dies hat, im Gegensatz zu den anderen Datenbankmodellen, keine strukturelle Abhängigkeit und versteckt die physikalische Komplexität der Datenbank komplett vor den Anwendern.\\
 Es stehen zahlreiche Datenbankmanagementsysteme zur Verfügung. Folgendes sind einige der gängigsten DBMS:
 \begin{itemize}
 	\item Microsoft SQL Server
@@ -73,12 +73,12 @@ Außerdem gibt es unterschiedliche Strategien für Datenbank Migration. Diese k�
 %- Erweiterungspunkte
 %- Action System
 %- DB Plugin
-Die von der Firma JetBrains und in Java entwickelte Entwicklungsumgebung (IDE), IntelliJ IDEA, ist ein Teil einer Reihe von ähnlich JetBains Entwicklungsumgebungen wie Clion, PyCharm, PhpStrom, DataGrip usw. Diese basieren sich auf den gleichen Kern, nämlich den IntelliJ Plattform SDK, welcher eine freie Lizenz hat und kann von Dritten zum Erstellen von IDEs verwendet werden.\\ \\
+Die von der Firma JetBrains und in Java entwickelte Entwicklungsumgebung (IDE), IntelliJ IDEA, ist ein Teil einer Reihe von ähnlich JetBains Entwicklungsumgebungen wie Clion, PyCharm, PhpStrom, DataGrip usw. Diese basieren  auf den gleichen Kern, nämlich den IntelliJ Plattform SDK, welcher eine freie Lizenz hat und kann von Dritten zum Erstellen von IDEs verwendet werden.\\ \\
 IntelliJ IDEA ist mit der Implementierung in Java, Kotlin, Groovy und Scala geeignet. Sie hat außerdem unterschiedliche Funktionalitäten. Dazu gehört ein GUI-Editor, ein Build-Management Tool (z. B. Gradle) und andere Frameworks z. B. für Versionskontrolle, Refactoring, und Test.\\
-Der Funktionsumfang dieser IDE kann mittels Plugins erweitert werden. Diese werden sowohl von Jetbrains (z. B. das Database Plugin) oder von beliebigen Entwicklern erstellt werden. \\ \\
-Für die erfolgreiche IntelliJ Plugin Entwicklung soll auf mehrere Aspekte geachtet werden wie die Projektstruktur und die häufig verwendete Komponenten.\\
-Die Plugin Entwicklung erfolgt in der IntelliJ IDE selbst. Deswegen soll das Plugin entweder in Java, Kotlin, Groovy oder Scala geschrieben werden.\\
-Der von Jetbrains empfohlene Weg für das Erstellen eines neuen Plugins ist das Gradle Projekt. Dabei soll die Option IntelliJ Platform Plugin ausgewählt werden, damit die Plugin Abhängigkeiten sowie die Basis-IDE automatisch konfiguriert werden. Zusätzlich soll die Datei plugin.xml entsprechend des zu entwickelnden Plugins angepasst werden. Diese enthält wichtige Informationen, die in den folgenden Tags (Auszeichnungen) erklärt werden:
+Der Funktionsumfang dieser IDE kann mittels Plugins erweitert werden. \\
+Für die erfolgreiche IntelliJ Plugin Entwicklung muss auf mehrere Aspekte geachtet werden wie die Projektstruktur und die häufig verwendete Komponenten.\\
+Die Plugin Entwicklung erfolgt in der IntelliJ IDE selbst. Deswegen kann das Plugin entweder in Java, Kotlin, Groovy oder Scala geschrieben werden.\\
+Der von Jetbrains empfohlene Weg für das Erstellen eines neuen Plugins ist das Gradle Projekt. Dabei muss die Option IntelliJ Platform Plugin ausgewählt werden, damit die Plugin Abhängigkeiten sowie die Basis-IDE automatisch konfiguriert werden. Zusätzlich muss die Datei plugin.xml entsprechend des zu entwickelnden Plugins angepasst werden. Diese enthält wichtige Informationen, die in den folgenden Tags (Auszeichnungen) erklärt werden:
 \begin{itemize}
 	\item \textbf{<name>} \\
 	Der Name des Plugins. Er soll kurz und beschreibend sein.
@@ -105,12 +105,13 @@ Der von Jetbrains empfohlene Weg für das Erstellen eines neuen Plugins ist das 
 \end{itemize}
 \subsection{Action-System}
 Die am häufigsten verwendete Methode, um die Plugin Funktionalität aufzurufen, ist die Nutzung der sogenannten Actions vom Action-System der IntelliJ-Platform.\\ \\
-Eine Aktion kann über ein Menüpunkt (menu item) oder einen Eintrag in der Symbolleiste ausgelöst werden. Dazu soll ein Eintrag in dem actions Tag der plugin.xml Datei erfolgen. Dabei solle jede Action mindestens eine Id, eine Klasse und einen beschreibenden Text haben. Außerdem soll der Tag \textbf{<add-to-group>} verwendet werden, um zu bestimmen, zu welcher Gruppe die Action hinzugefügt werden soll.\\ \\
-Die Action Klasse soll von der AnAction Klasse abgeleitet werden und die actionPerformed() Methode überschreiben. Diese wird nach dem Klick auf das entsprechende Menupunk bzw. Symbolleiste aufgerufen.
+Eine Aktion kann über ein Menüpunkt (menu item) oder einen Eintrag in der Symbolleiste ausgelöst werden. Dazu muss ein Eintrag in dem actions Tag der plugin.xml Datei erfolgen. Dabei muss jede Action mindestens eine Id, eine Klasse und einen beschreibenden Text haben. Außerdem kann der Tag \textbf{<add-to-group>} verwendet werden, um zu bestimmen, zu welcher Gruppe die Action hinzugefügt werden soll.\\ \\
+Die Action Klasse muss von der AnAction Klasse abgeleitet werden und die actionPerformed() Methode überschreiben. Diese wird nach dem Klick auf das entsprechende Menupunk bzw. Symbolleiste aufgerufen.
 
 \section{Verwandte Arbeiten}
+\label{verwandte}
 Eines der Hauptprobleme in der Softwareindustrie besteht darin, eine hochwertige Datenverwaltung sicherzustellen. Dies ist auch der Fall bei einer Datenbank Migration, wobei die mit dem Migrationsworkflow verbundenen Aufgaben vielfältig und kompliziert sind. Das manuelle Ausführen dieser Aufgaben erfordert viel Zeit und ein sehr erfahrenes Team. Um Zeit und Kosten bei der Migration zu sparen und um wiederholende Aufgaben zu automatisieren, bieten sich zahlreiche Tools bzw. Prototypen für Datenbank Migration (DBMT für Databbase Migration Tool). \\
-Einige dieser Tools werden in der Tabelle \ref{table:tools} vorgestellt. Diese basiert sich auf den Vorschlag von Jutta Hortsmann, J.
+Einige dieser Tools werden in der Tabelle \ref{table:tools} vorgestellt. Diese basiert auf den Vorschlag von Jutta Hortsmann, J.
 
 \begin{table}[h]
 \begin{center}

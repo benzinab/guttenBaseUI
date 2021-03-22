@@ -4,7 +4,7 @@
 \BOOKMARK [1][-]{section.1.2}{Zielsetzung}{chapter.1}% 4
 \BOOKMARK [1][-]{section.1.3}{Aufbau\040der\040Arbeit}{chapter.1}% 5
 \BOOKMARK [0][-]{chapter.2}{Grundlagen}{}% 6
-\BOOKMARK [1][-]{section.2.1}{Datenbanken}{chapter.2}% 7
+\BOOKMARK [1][-]{section.2.1}{Datenbankmanagement\040Systeme\040\(DBMS\)}{chapter.2}% 7
 \BOOKMARK [1][-]{section.2.2}{Datenbank\040Migration}{chapter.2}% 8
 \BOOKMARK [1][-]{section.2.3}{IntelliJ\040Plugin\040Entwicklung}{chapter.2}% 9
 \BOOKMARK [2][-]{subsection.2.3.1}{Action-System}{section.2.3}% 10
@@ -24,21 +24,20 @@
 \BOOKMARK [2][-]{subsection.3.3.1}{Konzeptionelle\040Sicht}{section.3.3}% 24
 \BOOKMARK [3][-]{subsubsection.3.3.1.1}{GuttenBase\040Plugin}{subsection.3.3.1}% 25
 \BOOKMARK [3][-]{subsubsection.3.3.1.2}{IntelliJ\040Plattform}{subsection.3.3.1}% 26
-\BOOKMARK [3][-]{subsubsection.3.3.1.3}{GuttenBase}{subsection.3.3.1}% 27
-\BOOKMARK [2][-]{subsection.3.3.2}{Modulsicht}{section.3.3}% 28
-\BOOKMARK [3][-]{subsubsection.3.3.2.1}{Modulsicht der Übersicht der Konfogurationsschritte}{subsection.3.3.2}% 29
-\BOOKMARK [3][-]{subsubsection.3.3.2.2}{Modulsicht der allgemeinen Übersicht}{subsection.3.3.2}% 30
-\BOOKMARK [3][-]{subsubsection.3.3.2.3}{Modulsicht der Konfigurationsübersicht}{subsection.3.3.2}% 31
-\BOOKMARK [3][-]{subsubsection.3.3.2.4}{Modulsicht der Ergebnisübersicht}{subsection.3.3.2}% 32
-\BOOKMARK [2][-]{subsection.3.3.3}{Zusammenhänge zwischen Anwendungsfällen und Architektur}{section.3.3}% 33
-\BOOKMARK [1][-]{section.3.4}{Implementierung}{chapter.3}% 34
-\BOOKMARK [2][-]{subsection.3.4.1}{verwendete\040Technologien}{section.3.4}% 35
-\BOOKMARK [2][-]{subsection.3.4.2}{Features}{section.3.4}% 36
-\BOOKMARK [2][-]{subsection.3.4.3}{Benutzeroberfläche}{section.3.4}% 37
-\BOOKMARK [0][-]{chapter.4}{Evaluation}{}% 38
-\BOOKMARK [1][-]{section.4.1}{Experten\040Interview}{chapter.4}% 39
-\BOOKMARK [0][-]{chapter.5}{Fazit\040und\040Ausblick}{}% 40
-\BOOKMARK [0][-]{appendix.A}{Anhang}{}% 41
-\BOOKMARK [1][-]{section.A.1}{Abbildungsverzeichnis}{appendix.A}% 42
-\BOOKMARK [1][-]{section.A.2}{Tabellenverzeichnis}{appendix.A}% 43
-\BOOKMARK [0][-]{Item.49}{Literatur}{}% 44
+\BOOKMARK [2][-]{subsection.3.3.2}{Modulsicht}{section.3.3}% 27
+\BOOKMARK [3][-]{subsubsection.3.3.2.1}{Modulsicht der Übersicht der Konfogurationsschritte}{subsection.3.3.2}% 28
+\BOOKMARK [3][-]{subsubsection.3.3.2.2}{Modulsicht der allgemeinen Übersicht}{subsection.3.3.2}% 29
+\BOOKMARK [3][-]{subsubsection.3.3.2.3}{Modulsicht der Konfigurationsübersicht}{subsection.3.3.2}% 30
+\BOOKMARK [3][-]{subsubsection.3.3.2.4}{Modulsicht der Ergebnisübersicht}{subsection.3.3.2}% 31
+\BOOKMARK [2][-]{subsection.3.3.3}{Zusammenhänge zwischen Anwendungsfällen und Architektur}{section.3.3}% 32
+\BOOKMARK [1][-]{section.3.4}{Implementierung}{chapter.3}% 33
+\BOOKMARK [2][-]{subsection.3.4.1}{verwendete\040Technologien}{section.3.4}% 34
+\BOOKMARK [2][-]{subsection.3.4.2}{Features}{section.3.4}% 35
+\BOOKMARK [2][-]{subsection.3.4.3}{Benutzeroberfläche}{section.3.4}% 36
+\BOOKMARK [0][-]{chapter.4}{Evaluation}{}% 37
+\BOOKMARK [1][-]{section.4.1}{Experten\040Interview}{chapter.4}% 38
+\BOOKMARK [0][-]{chapter.5}{Fazit\040und\040Ausblick}{}% 39
+\BOOKMARK [0][-]{appendix.A}{Anhang}{}% 40
+\BOOKMARK [1][-]{section.A.1}{Abbildungsverzeichnis}{appendix.A}% 41
+\BOOKMARK [1][-]{section.A.2}{Tabellenverzeichnis}{appendix.A}% 42
+\BOOKMARK [1][-]{section.A.3}{Literatur}{appendix.A}% 43

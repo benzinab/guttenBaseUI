@@ -81,7 +81,7 @@
       <file>thesis.bcf</file>
     </requires>
     <requires type="editable">
-      <file>bibliography.bib</file>
+      <file>bib.bib</file>
     </requires>
   </external>
 </requests>

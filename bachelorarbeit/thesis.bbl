@@ -1,0 +1,107 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{anyt/global//global/global}
+    \entry{Ali2008}{article}{}
+      \name{author}{1}{}{%
+        {{hash=8dcf9067a99c3a7d6b0f195af50262a0}{%
+           family={Abdelsalam\bibnamedelima Maatuk},
+           familyi={A\bibinitperiod\bibinitdelim M\bibinitperiod},
+           given={und\bibnamedelimb Nick\bibnamedelima Rossiter},
+           giveni={u\bibinitperiod\bibinitdelim N\bibinitperiod\bibinitdelim R\bibinitperiod},
+           suffix={Akhtar\bibnamedelima Ali},
+           suffixi={A\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{8dcf9067a99c3a7d6b0f195af50262a0}
+      \strng{fullhash}{8dcf9067a99c3a7d6b0f195af50262a0}
+      \strng{bibnamehash}{8dcf9067a99c3a7d6b0f195af50262a0}
+      \strng{authorbibnamehash}{8dcf9067a99c3a7d6b0f195af50262a0}
+      \strng{authornamehash}{8dcf9067a99c3a7d6b0f195af50262a0}
+      \strng{authorfullhash}{8dcf9067a99c3a7d6b0f195af50262a0}
+      \field{labelalpha}{Abd08}
+      \field{sortinit}{A}
+      \field{sortinithash}{a3dcedd53b04d1adfd5ac303ecd5e6fa}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{School of Computing, Engineering \$ Information Sciences Northumbria University, Newcastle upon Tyne, UK}
+      \field{title}{An Integrated Approach to Relational Database Migration}
+      \field{year}{2008}
+    \endentry
+    \entry{geisler2014datenbanken}{book}{}
+      \name{author}{1}{}{%
+        {{hash=80d9f4b00eee9b74adb781ba417b84a8}{%
+           family={Geisler},
+           familyi={G\bibinitperiod},
+           given={Frank},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {mitp Verlags GmbH \& Co. KG}%
+      }
+      \strng{namehash}{80d9f4b00eee9b74adb781ba417b84a8}
+      \strng{fullhash}{80d9f4b00eee9b74adb781ba417b84a8}
+      \strng{bibnamehash}{80d9f4b00eee9b74adb781ba417b84a8}
+      \strng{authorbibnamehash}{80d9f4b00eee9b74adb781ba417b84a8}
+      \strng{authornamehash}{80d9f4b00eee9b74adb781ba417b84a8}
+      \strng{authorfullhash}{80d9f4b00eee9b74adb781ba417b84a8}
+      \field{labelalpha}{Gei14}
+      \field{sortinit}{G}
+      \field{sortinithash}{62eb2aa29549e4fdbd3cb154ec5711cb}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Datenbanken: grundlagen und design}
+      \field{year}{2014}
+    \endentry
+    \entry{wachter2015systemkonsolidierung}{book}{}
+      \name{author}{2}{}{%
+        {{hash=8708c4166e0eb80f4274a51dfa18eca2}{%
+           family={Wachter},
+           familyi={W\bibinitperiod},
+           given={Sabine},
+           giveni={S\bibinitperiod}}}%
+        {{hash=69fc9657a36ff33c3d7c750869c07089}{%
+           family={Zaelke},
+           familyi={Z\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer-Verlag}%
+      }
+      \strng{namehash}{80dcc74d12f66474f1254cafb465fa81}
+      \strng{fullhash}{80dcc74d12f66474f1254cafb465fa81}
+      \strng{bibnamehash}{80dcc74d12f66474f1254cafb465fa81}
+      \strng{authorbibnamehash}{80dcc74d12f66474f1254cafb465fa81}
+      \strng{authornamehash}{80dcc74d12f66474f1254cafb465fa81}
+      \strng{authorfullhash}{80dcc74d12f66474f1254cafb465fa81}
+      \field{labelalpha}{WZ15}
+      \field{sortinit}{W}
+      \field{sortinithash}{1af34bd8c148ffb32de1494636b49713}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Systemkonsolidierung und Datenmigration als Erfolgsfaktoren: HMD Best Paper Award 2014}
+      \field{year}{2015}
+    \endentry
+  \enddatalist
+  \missing{2}
+  \missing{3}
+\endrefsection
+\endinput
+

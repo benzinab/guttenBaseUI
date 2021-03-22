@@ -8,18 +8,18 @@
 %Wie lässt sich die GB Bibliothek optimieren?
 
 %\section{Problemstellung }
-Datenbank Migration ist seit Anbeginn des Informationszeitalter ein wichtiger Bestandteil der Informationsverarbeitung. Wie die Harware, Betriebssysteme und Programme, werden Datenbanken auch häufig migriert. Der Auslöser könnte z. B. eine Umstrukturierung im Unternehmen sein. \\ \\
-Trotz der Relevanz der Datenbank Migration, ist die Entwicklung und die Forschung in diesem Bereich in den letzten Jahren sehr gering. Aus diesem Grunde stellt sich die Frage, wie sich die Datenbank Migration optimieren lässt.\\
-
+IT-Migration ist seit Anbeginn des Informationszeitalter ein wichtiger Bestandteil der Informationsverarbeitung \cite{wachter2015systemkonsolidierung}. Wie die Harware, Betriebssysteme und Programme, werden Datenbanken auch häufig migriert. Der Grund dafür könnte z. B. eine Änderung der Unternehmensrichtlinien sein. \\ 
+Bei einer Datenbank Migration werden Daten von einer Quell-Datenbank zu einer Ziel-Datenbank verschoben. \\
+%Trotz der Relevanz der Datenbank Migration, ist die Entwicklung und die Forschung in diesem Bereich in den letzten Jahren sehr gering. Aus diesem Grunde stellt sich die Frage, wie sich die Datenbank Migration optimieren lässt.\\
 %\section{Motivation }
-Es gibt viele Tools zum Visualisieren oder Analysieren von  Datenbanken. Ebenfalls könnte man einige Programme für Datenbank Migration finden. Diese sind allerdings nicht flexibel genug bzw. decken nicht alle Anforderungen ab. Deswegen bietet sich die open Source Bibliothek GuttenBase von der Firma Akquinet AG an, die eine gewisse Flexibilität während des Migrationsprozesses anbietet. GuttenBase lässt sich jedoch optimieren, um eine eine schnellere, anpassbare und flexible Migration durchführen zu können. 
+Es gibt viele Tools zum Visualisieren oder Analysieren von  Datenbanken. Ebenfalls gibt es einige Programme für Datenbank Migration. Dazu gehört die GuttenBase Bibliothek. Diese bietet durch das Hinzufügen von Migrationsoperationen eine gewisse Flexibilität während des Migrationsprozesses an. Um diese Migrationsoperationen am effizientesten auszunutzen und eine schnellere und anpassbare Migration durchzuführen, lässt sich GuttenBase stark optimieren. \\Diese Arbeit beschäftigt sich mit der Frage, wie sich die von der Firma Akquinet AG entwickelte Bibliothek optimieren lässt.
 %In Guttenbase muss man bei jeder Migration das ganze Mapping selber implementieren (überschreiben). \\
 %Außerdem fehlt die Möglichkeit, eine Übersicht der Datenbank zu haben und Konfigurationsschritte hinzuzufügen, während man migriert.
 %Aus diesen Gründen lässt sich die Nutzung der GuttenBase Bibliothek einschränken. Deswegen bietet sich die Möglichkeit, ein Tool zu realisieren, um die Nutzung der GuttenBase Bibliothek zu optimieren und eine flexible, einfache und konfigurierbare Datenbank Migration zu ermöglichen.
 \section{Zielsetzung}
 Die GuttenBase Bibliothek lässt sich durch unterschiedliche Weiterentwicklungen optimieren. 
 Im Rahmend dieser Arbeit sollte  eine eigene Anwendungsoberfläche (GuttenBase Plugin) für Datenbank Migration basierend auf GuttenBase konzipiert, implementiert und anschließend evaluiert werden. \\ \\
-Das GuttenBase Plugin soll die wichtigsten Features von GuttenBase unterstützen. Diese werden bei der Anforderungsanalyse genauer erläutert.\\
+Das GuttenBase Plugin soll die wichtigsten Funktionalitäten von GuttenBase unterstützen. Diese werden bei der Anforderungsanalyse genauer erläutert (siehe Abschnitt \ref{anaylse}).\\
 Um ein benutzerfreundliches System zu erzielen, ist es wichtig dass die zu entwickelnde Anwendungsoberfläche den Grundsätzen der Informationsdarstellung entsprechen. Diese wurden in der Norm DIN EN ISO 9241-112 vorgestellt und beinhalten folgende Grundsätze:
 \begin{itemize}
 	\item Entdeckbarkeit: 

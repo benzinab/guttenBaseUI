@@ -6,22 +6,22 @@
 \usepackage{float}
 
 \usepackage{glossaries}
+\usepackage{biblatex}
 
 %\setStyleFile{glossary}
 \makeglossaries
 \input{glossary.tex}
 \input{acronyms.tex}
-
-\bibliography{bibliography}
-
+\bibliography{bib.bib}
 \input{settings.tex}
 \setcounter{secnumdepth}{4}
 
 \begin{document}
-
 % Titel
-\maketitle
-
+%\maketitle
+\cite{Ali2008}
+\cite{2}
+\cite{3}
 % Impressumsseite
 \clearpage
 \thispagestyle{empty}\small
@@ -60,5 +60,4 @@
 
 \input{chapters/index.tex}
 \input{appendices/index.tex}
-
 \end{document}
