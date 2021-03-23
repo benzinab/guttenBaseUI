@@ -5,55 +5,79 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.1}{\ignorespaces ConnectionInfo konfigurieren\relax }}{10}{figure.2.1}%
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Connector Repository konfigurieren\relax }}{10}{figure.2.2}%
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.3}{\ignorespaces ColumnMapperHint hinzufügen\relax }}{10}{figure.2.3}%
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Datenbank Migration durchführen\relax }}{11}{figure.2.4}%
-\defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Top IDE Index\relax }}{15}{figure.3.1}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Top IDE Index\relax }}{13}{figure.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Vereinfachtes Datenmodell\relax }}{17}{figure.3.2}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Vereinfachtes Datenmodell\relax }}{15}{figure.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Konfigurationsschritt \glqq Unbenennen \grqq erstellen\relax }}{18}{figure.3.3}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Konfigurationsschritt \glqq Unbenennen \grqq erstellen\relax }}{16}{figure.3.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Übersicht Konfigurationsschritte\relax }}{19}{figure.3.4}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Übersicht Konfigurationsschritte\relax }}{17}{figure.3.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Konfigurationsschritt: Umbenennen\relax }}{19}{figure.3.5}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Konfigurationsschritt: Umbenennen\relax }}{17}{figure.3.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Konfigurationsschritt \glqq Datentyp Ändern \grqq erstellen\relax }}{21}{figure.3.6}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Konfigurationsschritt \glqq Datentyp Ändern \grqq erstellen\relax }}{19}{figure.3.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Konfigurationsschritte verwalten\relax }}{23}{figure.3.7}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Konfigurationsschritte verwalten\relax }}{21}{figure.3.7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Datenbanken verbinden\relax }}{24}{figure.3.8}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Datenbanken verbinden\relax }}{22}{figure.3.8}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Datenbank Migration View\relax }}{25}{figure.3.9}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Datenbank Migration View\relax }}{23}{figure.3.9}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Migrationsprozess konfigurieren\relax }}{27}{figure.3.10}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Migrationsprozess konfigurieren\relax }}{25}{figure.3.10}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Übersicht Quell-Datenbank\relax }}{28}{figure.3.11}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Übersicht Quell-Datenbank\relax }}{26}{figure.3.11}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Hinzugefügte Konfigurationsschritte löschen\relax }}{29}{figure.3.12}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Hinzugefügte Konfigurationsschritte löschen\relax }}{27}{figure.3.12}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Übersicht hinzugefügte Konfigurationsschritte\relax }}{30}{figure.3.13}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Übersicht hinzugefügte Konfigurationsschritte\relax }}{28}{figure.3.13}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.14}{\ignorespaces Migration starten\relax }}{31}{figure.3.14}%
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Migration starten\relax }}{29}{figure.3.14}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.15}{\ignorespaces Fortschritt vom Migrationsprozess\relax }}{31}{figure.3.15}%
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Fortschritt vom Migrationsprozess\relax }}{29}{figure.3.15}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.16}{\ignorespaces Komponentendiagramm für die konzeptionelle Sicht\relax }}{32}{figure.3.16}%
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Komponentendiagramm für die konzeptionelle Sicht\relax }}{30}{figure.3.16}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.17}{\ignorespaces Modulsicht der Übersicht der Konfogurationsschritte\relax }}{35}{figure.3.17}%
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Modulsicht der Übersicht der Konfogurationsschritte\relax }}{33}{figure.3.17}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.18}{\ignorespaces Modulsicht der allgemeinen Übersicht\relax }}{37}{figure.3.18}%
+\contentsline {figure}{\numberline {3.18}{\ignorespaces Modulsicht der allgemeinen Übersicht\relax }}{35}{figure.3.18}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.19}{\ignorespaces Modulsicht der Konfigurationsübersicht\relax }}{38}{figure.3.19}%
+\contentsline {figure}{\numberline {3.19}{\ignorespaces Modulsicht der Konfigurationsübersicht\relax }}{36}{figure.3.19}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.20}{\ignorespaces Modulsicht der Ergebnisübersicht\relax }}{39}{figure.3.20}%
+\contentsline {figure}{\numberline {3.20}{\ignorespaces Modulsicht der Ergebnisübersicht\relax }}{37}{figure.3.20}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.21}{\ignorespaces ConnectionInfo konfigurieren\relax }}{39}{figure.3.21}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.22}{\ignorespaces Connector Repository konfigurieren\relax }}{39}{figure.3.22}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.23}{\ignorespaces ColumnMapperHint hinzufügen\relax }}{40}{figure.3.23}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.24}{\ignorespaces Datenbank Migration durchführen\relax }}{40}{figure.3.24}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.25}{\ignorespaces Übersicht der Migrationsoperationen öffnen\relax }}{43}{figure.3.25}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.26}{\ignorespaces Übersicht der Migrationsoperationen\relax }}{43}{figure.3.26}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.27}{\ignorespaces Migrationsoperation Umbenennen erstellen\relax }}{44}{figure.3.27}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.28}{\ignorespaces Migrationsoperationen exportieren und importieren\relax }}{44}{figure.3.28}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.29}{\ignorespaces Allgemeine Übersicht der Datenbank Migration (generalView)\relax }}{45}{figure.3.29}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.30}{\ignorespaces Konfigurationsübersicht (overview)\relax }}{46}{figure.3.30}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.31}{\ignorespaces matches Methode der Migrationsoperation Umbenennen\relax }}{46}{figure.3.31}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.32}{\ignorespaces das Hinzufügen von der Migrationsoperation Umbenennen\relax }}{47}{figure.3.32}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.33}{\ignorespaces Ergebnisübersicht\relax }}{47}{figure.3.33}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.34}{\ignorespaces ConnectorHints hinzufügen\relax }}{48}{figure.3.34}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.35}{\ignorespaces Migration durchführen (MapperHelper Klasse)\relax }}{48}{figure.3.35}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.36}{\ignorespaces Fortschrittsübersicht\relax }}{49}{figure.3.36}%
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 

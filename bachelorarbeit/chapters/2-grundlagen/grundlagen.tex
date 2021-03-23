@@ -75,38 +75,7 @@ Außerdem gibt es unterschiedliche Strategien für Datenbank Migration. Diese k�
 %- DB Plugin
 Die von der Firma JetBrains und in Java entwickelte Entwicklungsumgebung (IDE), IntelliJ IDEA, ist ein Teil einer Reihe von ähnlich JetBains Entwicklungsumgebungen wie Clion, PyCharm, PhpStrom, DataGrip usw. Diese basieren  auf den gleichen Kern, nämlich den IntelliJ Plattform SDK, welcher eine freie Lizenz hat und kann von Dritten zum Erstellen von IDEs verwendet werden.\\ \\
 IntelliJ IDEA ist mit der Implementierung in Java, Kotlin, Groovy und Scala geeignet. Sie hat außerdem unterschiedliche Funktionalitäten. Dazu gehört ein GUI-Editor, ein Build-Management Tool (z. B. Gradle) und andere Frameworks z. B. für Versionskontrolle, Refactoring, und Test.\\
-Der Funktionsumfang dieser IDE kann mittels Plugins erweitert werden. \\
-Für die erfolgreiche IntelliJ Plugin Entwicklung muss auf mehrere Aspekte geachtet werden wie die Projektstruktur und die häufig verwendete Komponenten.\\
-Die Plugin Entwicklung erfolgt in der IntelliJ IDE selbst. Deswegen kann das Plugin entweder in Java, Kotlin, Groovy oder Scala geschrieben werden.\\
-Der von Jetbrains empfohlene Weg für das Erstellen eines neuen Plugins ist das Gradle Projekt. Dabei muss die Option IntelliJ Platform Plugin ausgewählt werden, damit die Plugin Abhängigkeiten sowie die Basis-IDE automatisch konfiguriert werden. Zusätzlich muss die Datei plugin.xml entsprechend des zu entwickelnden Plugins angepasst werden. Diese enthält wichtige Informationen, die in den folgenden Tags (Auszeichnungen) erklärt werden:
-\begin{itemize}
-	\item \textbf{<name>} \\
-	Der Name des Plugins. Er soll kurz und beschreibend sein.
-	\item \textbf{<id>} \\
-	Eine eindeutige Bezeichnung des Plugins. Diese kann nicht während der Entwicklung geändert werden.
-	\item \textbf{<description>} \\
-	Eine Kurze Beschreibung des Plugins.
-	\item \textbf{<change-notes>} \\
-	Eine Beschrei Beschreibung der Änderungen in der neusten Version des Plugins.
-	\item \textbf{<version>} \\
-	Die aktuelle Plugin Version.
-	\item \textbf{<vendor>} \\
-	Der Anbieter des Plugins. Hier kann zusätzlich eine Email Adresse angegeben werden.
-	\item \textbf{<depends>} \\
-	Abhängigkeiten zu Plugins oder Modulen.
-	\item \textbf{<idea-version>} \\
-	Die minimale und maximale Version der IDE, mit der das Plugin kompatibel ist.
-	\item \textbf{<actions>} \\
-	Definiert wie die Funktionalität des Plugins aufgerufen wird. Dies wird im folgenden Abschnitt behandelt.
-	\item \textbf{<extensionPoints>} \\
-	Die vom Plugin definierte Erweiterungspunkte. Diese können erlauben anderen Plugin-Entwicklern, auf bestimmte Daten zuzugreifen. 
-	\item \textbf{<extensions>} \\
-	Erweiterungspunkte, die von IntelliJ-Platform bzw. von anderen Plugins definiert sind und von dem zu entwickelnden Plugin verwendet werden.
-\end{itemize}
-\subsection{Action-System}
-Die am häufigsten verwendete Methode, um die Plugin Funktionalität aufzurufen, ist die Nutzung der sogenannten Actions vom Action-System der IntelliJ-Platform.\\ \\
-Eine Aktion kann über ein Menüpunkt (menu item) oder einen Eintrag in der Symbolleiste ausgelöst werden. Dazu muss ein Eintrag in dem actions Tag der plugin.xml Datei erfolgen. Dabei muss jede Action mindestens eine Id, eine Klasse und einen beschreibenden Text haben. Außerdem kann der Tag \textbf{<add-to-group>} verwendet werden, um zu bestimmen, zu welcher Gruppe die Action hinzugefügt werden soll.\\ \\
-Die Action Klasse muss von der AnAction Klasse abgeleitet werden und die actionPerformed() Methode überschreiben. Diese wird nach dem Klick auf das entsprechende Menupunk bzw. Symbolleiste aufgerufen.
+Der Funktionsumfang dieser IDE kann mittels Plugins erweitert werden. 
 
 \section{Verwandte Arbeiten}
 \label{verwandte}
@@ -169,64 +138,8 @@ Anderes als die in der Tabelle \ref{table:tools} vorgestellten Tools, bietet Gut
 .
 Für die Migration einer Datenbank ist häufig eine benutzerdefinierte Lösung erforderlich Z. B. durch das Unbenennen von Tabellen bzw. Spalten in der Zieldatenbank, das Umwandeln von Spaltentypen, das Ausschließen von bestimmten Tabellen bzw. Spalten usw. \\
 
-Dazu können die sogenannten Konfigurationshinweise hinzugefügt werden. Diese können durch das Überschreiben der Mapping Klassen spezifiziert werden. Standardmäßig wird eine Standardimplementierung die Hinweise nach dem Verbinden der Datenbanken hinzugefügt. Diese können jedoch von dem Nutzer überschrieben werden. \\ \\
-Zunächst wird die Nutzung der GuttenBase Bibliothek in drei Schritten erklärt.
-%\subsection{Schritt 1: Abhängigkeiten}
-%Um GuttenBase verwenden zu können, soll werden folgende Informationen benötigt:
-%\begin{itemize}
-%	\item groupId: de.akquinet.jbosscc.guttenbase
-%	\item artifactId: GuttenBase
-%	\item version: 2.0.0
-%\end{itemize}
-%Außerdem 
-\subsubsection*{Schritt 1: Datenbankverbindung erstellen}
-Als erstes sollen Abhängigkeiten zu dem laufenden Projekt hinzugefügt werden. Die für GuttenBase benötigte Informationen sind:
-\begin{itemize}
-	\item groupId: de.akquinet.jbosscc.guttenbase
-	\item artifactId: GuttenBase
-	\item version: 2.0.0
-\end{itemize}
-Zusätzlich sollen die Treiber-Klassen der Quell- und Ziel-DBMS hinzugefügt werden.\\
-Zunächst sollen die ConnectionInfo Klassen fürerstellt werden. Diese beschreiben die Quell- und Ziel-Datenbanken und enthalten die für eine JDBC (Java Database Connectivity) Verbindung erforderlichen Attribute.\\
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.8\textwidth]{images/gb/conInfo}
-	\caption{ConnectionInfo konfigurieren}
-	\label{img:gb/conInfo}
-\end{figure}
+Dazu können die sogenannten Konfigurationshinweise hinzugefügt werden. Diese können durch das Überschreiben der Mapping Klassen spezifiziert werden. Standardmäßig wird eine Standardimplementierung die Hinweise nach dem Verbinden der Datenbanken hinzugefügt. Diese können jedoch von dem Nutzer überschrieben werden. 
 
-Im nachhinein kann das Connector Repository konfiguriert werden. Dies enthält alle Konnektoren, die in der Datenbank Migration beteiligt sind. \\
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.8\textwidth]{images/gb/repo}
-	\caption{Connector Repository konfigurieren}
-	\label{img:gb/repo}
-\end{figure}
-
-\subsubsection*{Schritt 2: Hinweise hinzufügen}
-Meistens werden Konfigurationshinweise (hints) benötigt, um die Migration zu individualisieren. In der Dokumentation von GuttenBase\footnote{Getting Started with GuttenBase (2018, 04.01) \\ \url{https://github.com/akquinet/GuttenBase/blob/master/Getting\%20Started\%20with\%20GuttenBase.pdf}} befindet sich eine Liste aller unterstützen Konfigurationshinweise. \\
-Als Beispiel wird der Konfigurationshinweis ColumnMapperHint in der Abbildung dargestellt.
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.8\textwidth]{images/gb/rename}
-	\caption{ColumnMapperHint hinzufügen}
-	\label{img:gb/rename}
-\end{figure}
-
-
-\subsubsection*{Schritt 3: Datenbank Migration durchführen}
-Anschließend kann die Migration mit den eventuell hinzugefügten Hinweisen durchgeführt werden. Dies passiert wie folgt:
-\begin{itemize}
-	\item Das Datenbank Schema wird von der Quell-Datenbank in die Ziel-Datenbank kopiert. Dabei werden möglichst viele Unterschiede in Datentypdarstellung standardmäßig berücksichtigt.
-	\item Die Kompatibilität von den Schemata wird geprüft. Hierbei wird nach gleichen Tabellen bzw Spalten gesucht.
-	\item Falls es keine Fehler beim Prüfen gibt, werden die Daten dann kopiert.
-\end{itemize}
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.8\textwidth]{images/gb/copy}
-	\caption{Datenbank Migration durchführen}
-	\label{img:gb/copy}
-\end{figure}
 
 %- Allgemeiner Satz
 %- Was ist GuttenBase

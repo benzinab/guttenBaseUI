@@ -19,70 +19,82 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.3}IntelliJ Plugin Entwicklung}{7}{section.2.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.1}Action-System}{8}{subsection.2.3.1}%
+\contentsline {section}{\numberline {2.4}Verwandte Arbeiten}{7}{section.2.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.4}Verwandte Arbeiten}{8}{section.2.4}%
+\contentsline {section}{\numberline {2.5}GuttenBase}{7}{section.2.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.5}GuttenBase}{9}{section.2.5}%
+\contentsline {chapter}{\numberline {3}Umsetzung}{11}{chapter.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Umsetzung}{13}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Umsetzungsform}{11}{section.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Umsetzungsform}{13}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Analyse}{13}{section.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Analyse}{15}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Allgemeine Beschreibung der Anforderungen}{13}{subsection.3.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.1}Allgemeine Beschreibung der Anforderungen}{15}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Vereinfachtes Datenmodell}{14}{subsection.3.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.2}Vereinfachtes Datenmodell}{16}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}detaillierte Beschreibung der Anforderungen}{16}{subsection.3.2.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.3}detaillierte Beschreibung der Anforderungen}{18}{subsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.3.1}Konfigurationsschritt \textbf {Unbenennen} erstellen}{16}{subsubsection.3.2.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.2.3.1}Konfigurationsschritt \textbf {Unbenennen} erstellen}{18}{subsubsection.3.2.3.1}%
+\contentsline {subsubsection}{\numberline {3.2.3.2}Konfigurationsschritt \textbf {Datentyp Ändern} erstellen}{19}{subsubsection.3.2.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.2.3.2}Konfigurationsschritt \textbf {Datentyp Ändern} erstellen}{21}{subsubsection.3.2.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.3.3}Konfigurationsschritte verwalten}{21}{subsubsection.3.2.3.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.2.3.3}Konfigurationsschritte verwalten}{23}{subsubsection.3.2.3.3}%
+\contentsline {subsubsection}{\numberline {3.2.3.4}Datenbank Migration durchführen}{22}{subsubsection.3.2.3.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.2.3.4}Datenbank Migration durchführen}{24}{subsubsection.3.2.3.4}%
+\contentsline {section}{\numberline {3.3}Architektur}{30}{section.3.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Architektur}{32}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Konzeptionelle Sicht}{30}{subsection.3.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.1}Konzeptionelle Sicht}{32}{subsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.1.1}GuttenBase Plugin}{31}{subsubsection.3.3.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.1.1}GuttenBase Plugin}{33}{subsubsection.3.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.3.1.2}IntelliJ Plattform}{31}{subsubsection.3.3.1.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.1.2}IntelliJ Plattform}{33}{subsubsection.3.3.1.2}%
+\contentsline {subsection}{\numberline {3.3.2}Modulsicht}{32}{subsection.3.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.2}Modulsicht}{34}{subsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.2.1}Modulsicht der Übersicht der Konfogurationsschritte}{32}{subsubsection.3.3.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.2.1}Modulsicht der Übersicht der Konfogurationsschritte}{34}{subsubsection.3.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.3.2.2}Modulsicht der allgemeinen Übersicht}{34}{subsubsection.3.3.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.2.2}Modulsicht der allgemeinen Übersicht}{36}{subsubsection.3.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.3.2.3}Modulsicht der Konfigurationsübersicht}{35}{subsubsection.3.3.2.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.2.3}Modulsicht der Konfigurationsübersicht}{37}{subsubsection.3.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.3.2.4}Modulsicht der Ergebnisübersicht}{37}{subsubsection.3.3.2.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.2.4}Modulsicht der Ergebnisübersicht}{39}{subsubsection.3.3.2.4}%
+\contentsline {section}{\numberline {3.4}Implementierung}{38}{section.3.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.3}Zusammenhänge zwischen Anwendungsfällen und Architektur}{40}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.4.1}verwendete Technologien}{38}{subsection.3.4.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Implementierung}{40}{section.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1.1}GuttenBase}{38}{subsubsection.3.4.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4.1}verwendete Technologien}{40}{subsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.1.2}IntelliJ Platform}{40}{subsubsection.3.4.1.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4.2}Features}{40}{subsection.3.4.2}%
+\contentsline {paragraph}{\numberline {3.4.1.2.1}Action-System}{41}{paragraph.3.4.1.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4.3}Benutzeroberfläche}{40}{subsection.3.4.3}%
+\contentsline {subsubsection}{\numberline {3.4.1.3}Swing}{42}{subsubsection.3.4.1.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Evaluation}{41}{chapter.4}%
+\contentsline {subsection}{\numberline {3.4.2}GuttenBase Plugin}{42}{subsection.3.4.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Experten Interview}{41}{section.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2.1}Übersicht aller Migrationsopertionen öffnen}{42}{subsubsection.3.4.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Fazit und Ausblick}{43}{chapter.5}%
+\contentsline {subsubsection}{\numberline {3.4.2.2}Migrationsoperation Umbenennen erstellen und speichern}{43}{subsubsection.3.4.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Anhang}{45}{appendix.A}%
+\contentsline {subsubsection}{\numberline {3.4.2.3}Migrationsübersicht öffnen und Datenbanken verbinden}{45}{subsubsection.3.4.2.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.1}Abbildungsverzeichnis}{45}{section.A.1}%
+\contentsline {subsubsection}{\numberline {3.4.2.4}Migrationsoperationen zum Migrationsprozess hinzufügen}{45}{subsubsection.3.4.2.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.2}Tabellenverzeichnis}{46}{section.A.2}%
+\contentsline {subsubsection}{\numberline {3.4.2.5}Migrationsprozess starten und den Fortschrit der Migration ansehen}{47}{subsubsection.3.4.2.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.3}Literatur}{47}{section.A.3}%
+\contentsline {chapter}{\numberline {4}Evaluation}{51}{chapter.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}Experten Interview}{51}{section.4.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}Fazit und Ausblick}{53}{chapter.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {A}Anhang}{55}{appendix.A}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A.1}Abbildungsverzeichnis}{55}{section.A.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A.2}Tabellenverzeichnis}{56}{section.A.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A.3}Literatur}{57}{section.A.3}%
