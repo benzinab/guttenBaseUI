@@ -19,31 +19,6 @@
 
 \refsection{0}
   \datalist[entry]{anyt/global//global/global}
-    \entry{Ali2008}{article}{}
-      \name{author}{1}{}{%
-        {{hash=8dcf9067a99c3a7d6b0f195af50262a0}{%
-           family={Abdelsalam\bibnamedelima Maatuk},
-           familyi={A\bibinitperiod\bibinitdelim M\bibinitperiod},
-           given={und\bibnamedelimb Nick\bibnamedelima Rossiter},
-           giveni={u\bibinitperiod\bibinitdelim N\bibinitperiod\bibinitdelim R\bibinitperiod},
-           suffix={Akhtar\bibnamedelima Ali},
-           suffixi={A\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
-      }
-      \strng{namehash}{8dcf9067a99c3a7d6b0f195af50262a0}
-      \strng{fullhash}{8dcf9067a99c3a7d6b0f195af50262a0}
-      \strng{bibnamehash}{8dcf9067a99c3a7d6b0f195af50262a0}
-      \strng{authorbibnamehash}{8dcf9067a99c3a7d6b0f195af50262a0}
-      \strng{authornamehash}{8dcf9067a99c3a7d6b0f195af50262a0}
-      \strng{authorfullhash}{8dcf9067a99c3a7d6b0f195af50262a0}
-      \field{labelalpha}{Abd08}
-      \field{sortinit}{A}
-      \field{sortinithash}{a3dcedd53b04d1adfd5ac303ecd5e6fa}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{School of Computing, Engineering \$ Information Sciences Northumbria University, Newcastle upon Tyne, UK}
-      \field{title}{An Integrated Approach to Relational Database Migration}
-      \field{year}{2008}
-    \endentry
     \entry{geisler2014datenbanken}{book}{}
       \name{author}{1}{}{%
         {{hash=80d9f4b00eee9b74adb781ba417b84a8}{%
@@ -100,8 +75,6 @@
       \field{year}{2015}
     \endentry
   \enddatalist
-  \missing{2}
-  \missing{3}
 \endrefsection
 \endinput
 

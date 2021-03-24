@@ -1,9 +1,19 @@
 \chapter{Grundlagen}
-
 Dieses Kapitel liefert einen allgemeinen Einblick über einige Grundaspekte der Datenbank Migration sowie der GuttenBase Bibliothek. Zusätzlich gibt es eine kleine Einfüuhrung in die IntelliJ Plugin Entwicklung.\\
 Außerdem werden verwandte Arbeiten vorgestellt. 
-
 \section{Datenbankmanagementsysteme}
+%- allgemeine Def
+%- Arten von Datenabnken
+%https://books.google.de/books?hl=de&lr=&id=_3XVAwAAQBAJ&oi=fnd&pg=PA14&dq=Datenbank+Grundlagen+&ots=ntu4qhQNQD&sig=LpAgd_s5f04ulLTfOYe6lEt1_Zc#v=onepage&q=Datenbank%20Grundlagen&f=false
+%Datenbanken spielen seit der Neuerung des IT-Zeitalter eine wichtige Rolle in dem elektronischen Datenmanagement.\\
+%Eine Datenbank ist eine geordnete, selstbeschreibende Sammlung von Daten, die miteinander in Beziehung stehen.
+%Vielmehr ist eine Datenbank ein verteiltes, integriertes Computersystem, das Nutzdaten und Metadaten enthält. Nutzdaten sind dabei die Daten, die Benutzer in der Datenbank anlegen und aus denen die Informationen gewonnen werden. Metadaten werden of auch als Daten über Daten bezeichnet und helfen, die Nutzdaten der Datenbank zu strukturieren. 
+%	
+	
+	
+%\section{Datenbank Management System (DBMS)}
+%- Def
+%- Beispiele
 Damit Daten auf einem Computer verwaltet werden können, werden Datenbankmanagement Systeme (DBMS) benötigt. Diese sind leistungsfähige Programme für die flexible Speicherung und Abfrage strukturierter Daten. \\
 Außerdem hilft ein DBMS bei der Organisation und Integrität von Daten und regelt den Zugruff auf Datengruppen \cite{geisler2014datenbanken}. \\
 Ein DBMS kann aus einem einzelenen Programm bestehen. Dies ist z. B. bei einem Desktop-DBMS zu sehen. Es kann jedoch aus verschiedenen Programmen bestehen, die zusammenarbeiten und die Funktion des DBMS bereitstellen. Dies ist z. B. bei den servergestützen Datenbanksystemen der Fall.\\
@@ -21,8 +31,14 @@ Es stehen zahlreiche Datenbankmanagementsysteme zur Verfügung. Folgendes sind e
 	\item Sybase
 \end{itemize}
 Um ein geeignetes DBMS auszuwählen, gibt es viele Kriterien wie die Ausführungszeit, CPU- und Speicher Nutzung. Der Artikel von Youssif Bassil, A Comparative Study on the Performance of the Top DBMS Systems, im Jahr 2011 vergleicht einige Datenbankmanagementsysteme anhand der genannten Kriterien.
+%https://arxiv.org/pdf/1205.2889.pdf
+\section{Datenbank Migration}
 
-\section{Datenbankmigration}
+%- Was allgemeines (1 Satzt)
+%- Was ist Datenbank Migration
+%- Wieso wird Datenbank Migration benötigt?
+%- Welche Arten von Datenbank Migrationen gibt es?
+
 
 
 Datenbank Migration wird immer mehr von Unternehmen bzw. Organisationen gebraucht. 
@@ -50,63 +66,72 @@ Außerdem gibt es unterschiedliche Strategien für Datenbank Migration. Diese k�
 	\item Datenbank Migration: \\
 	Die Quell-Datenbank wird in die Ziel-Datenbank kopiert. Dabei werden Schemas in ein Zielschema semantisch übersetzt werden. Darauf basierend werden die enthaltenen Daten konvertiert.
 \end{enumerate}
-\section{Stand der Dinge}
 
+\section{IntelliJ Plugin Entwicklung}
+%- IntelliJ, IntelliJ IDEA, allgemeine Infos
+%- Plugin Entwicklung
+%- Erweiterungspunkte
+%- Action System
+%- DB Plugin
+Die von der Firma JetBrains und in Java entwickelte Entwicklungsumgebung (IDE), IntelliJ IDEA, ist ein Teil einer Reihe von ähnlich JetBains Entwicklungsumgebungen wie Clion, PyCharm, PhpStrom, DataGrip usw. Diese basieren  auf den gleichen Kern, nämlich den IntelliJ Plattform SDK, welcher eine freie Lizenz hat und kann von Dritten zum Erstellen von IDEs verwendet werden.\\ \\
+IntelliJ IDEA ist mit der Implementierung in Java, Kotlin, Groovy und Scala geeignet. Sie hat außerdem unterschiedliche Funktionalitäten. Dazu gehört ein GUI-Editor, ein Build-Management Tool (z. B. Gradle) und andere Frameworks z. B. für Versionskontrolle, Refactoring, und Test.\\
+Der Funktionsumfang dieser IDE kann mittels Plugins erweitert werden. 
+
+\section{Verwandte Arbeiten}
 \label{verwandte}
 Eines der Hauptprobleme in der Softwareindustrie besteht darin, eine hochwertige Datenverwaltung sicherzustellen. Dies ist auch der Fall bei einer Datenbank Migration, wobei die mit dem Migrationsworkflow verbundenen Aufgaben vielfältig und kompliziert sind. Das manuelle Ausführen dieser Aufgaben erfordert viel Zeit und ein sehr erfahrenes Team. Um Zeit und Kosten bei der Migration zu sparen und um wiederholende Aufgaben zu automatisieren, bieten sich zahlreiche Tools bzw. Prototypen für Datenbank Migration (DBMT für Databbase Migration Tool). \\
 Einige dieser Tools werden in der Tabelle \ref{table:tools} vorgestellt. Diese basiert auf den Vorschlag von Jutta Hortsmann, J.
 
 \begin{table}[h]
-	\begin{center}
-		\begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{2cm}|p{3cm}| }
-			\hline
-			\textbf{Name} & \textbf{Quell-DBMS} &  \textbf{Ziel-DBMS} &\textbf{Lizenz} & \textbf{Betriebssysteme} \\
-			\hline
-			OSDM Toolkit (Apptility) & 
-			Oracle, SyBase, Informix, DB2, MS Access, MS SQL &  PostgreSQL, MySQL & 
-			Frei &  Windows, Linux, Unix und Mac OS \\
-			\hline
-			DB Migration (Akcess) &  Oracle und MS SQL &  PostgreSQL und MYSQL  & Kommerziell & Windows\\
-			\hline
-			Mssql2 Pgsql (OS Project) &   MS SQL&   PostgreSQL  & Frei & Windows \\
-			\hline
-			MySQL
-			Migration
-			Toolkit (MySql AB)&  MS Access und Oracle &  MySQL & Frei & Windows  \\
-			\hline
-			Open DBcopy (Puzzle ITC) & Alle RDBMS& Alle RDMS & Frei & Betriebssystem- unabhängig \\
-			\hline
-			Progression DB (Versora) &  MS SQL &  PostgreSQL, MySQL und	Ingres & Frei & Linux und Windows \\
-			\hline
-			Shift2Ingres (OS Project)& Oracle und DB2 & Ingres & Frei &  Betriebssystem- unabhängig \\
-			\hline
-			SQLPorter (Real Soft Studio)& Oracle, MS SQL, DB2 und Sybase & MySQL & Kommerziell & Linux, Mac OS und Windows \\
-			\hline
-			SQLWays (Ispirer) & Alle RDMBS & PostgreSQL und MySQL & Kommerziell & Windows \\
-			\hline
-			SwisSQL Data Migration Tool (AdventNet)& Oracle, DB2, MS SQL, Sybase und MaxDB & MySQL & Kommerziell & Windows \\
-			\hline
-			SwisSQL SQLOne Console (AdventNet)& Oracle, MSSQL, DB2, Informix und Sybase & PostgreSQL und MySQL  & Kommerziell & Windows \\
-			\hline
-			MapForce (Altova) & SQL Server, DB2, MS Access, MySQL und PostgreSQL & SQL Server, DB2, MS Access und Oracle & Kommerziell & Windows, Linux und Mac OS \\
-			\hline
-			Centerprise Data Integrator (Astera) & SQL Server, DB2, MS Access, MySQL und PostgreSQL& SQL Server, DB2, MS Access, MySQL und PostgreSQL& 
-			Kommerziell & Windows\\
-			\hline
-			DBConvert (DB Convert) & Oracle, DB2, SQLite, MySQL, PostgreSQL, MS Access und Foxpro & Oracle, DB2, SQLite, MySQL, PostgreSQL, MS Access und Foxpro & Kommerziell & Windows \\
-			\hline
-			SQuirrel DBCopy Plugin (Sourceforge) & Alle RDBMS  & Alle RDBMS & Frei & Alle Betriebssysteme\\
-			\hline
-		\end{tabular}
-	\end{center}
-	\caption{Database Migration Tools}
-	\label{table:tools}
+\begin{center}
+	\begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{2cm}|p{3cm}| }
+		\hline
+		\textbf{Name} & \textbf{Quell-DBMS} &  \textbf{Ziel-DBMS} &\textbf{Lizenz} & \textbf{Betriebssysteme} \\
+		\hline
+		 OSDM Toolkit (Apptility) & 
+		  Oracle, SyBase, Informix, DB2, MS Access, MS SQL &  PostgreSQL, MySQL & 
+		 Frei &  Windows, Linux, Unix und Mac OS \\
+		 \hline
+		 DB Migration (Akcess) &  Oracle und MS SQL &  PostgreSQL und MYSQL  & Kommerziell & Windows\\
+		 \hline
+		 Mssql2 Pgsql (OS Project) &   MS SQL&   PostgreSQL  & Frei & Windows \\
+		 \hline
+		 MySQL
+		 Migration
+		 Toolkit (MySql AB)&  MS Access und Oracle &  MySQL & Frei & Windows  \\
+		\hline
+		Open DBcopy (Puzzle ITC) & Alle RDBMS& Alle RDMS & Frei & Betriebssystem- unabhängig \\
+		\hline
+		Progression DB (Versora) &  MS SQL &  PostgreSQL, MySQL und	Ingres & Frei & Linux und Windows \\
+		\hline
+		Shift2Ingres (OS Project)& Oracle und DB2 & Ingres & Frei &  Betriebssystem- unabhängig \\
+		\hline
+		SQLPorter (Real Soft Studio)& Oracle, MS SQL, DB2 und Sybase & MySQL & Kommerziell & Linux, Mac OS und Windows \\
+		\hline
+		SQLWays (Ispirer) & Alle RDMBS & PostgreSQL und MySQL & Kommerziell & Windows \\
+		\hline
+		SwisSQL Data Migration Tool (AdventNet)& Oracle, DB2, MS SQL, Sybase und MaxDB & MySQL & Kommerziell & Windows \\
+		\hline
+		SwisSQL SQLOne Console (AdventNet)& Oracle, MSSQL, DB2, Informix und Sybase & PostgreSQL und MySQL  & Kommerziell & Windows \\
+		\hline
+		MapForce (Altova) & SQL Server, DB2, MS Access, MySQL und PostgreSQL & SQL Server, DB2, MS Access und Oracle & Kommerziell & Windows, Linux und Mac OS \\
+		\hline
+		Centerprise Data Integrator (Astera) & SQL Server, DB2, MS Access, MySQL und PostgreSQL& SQL Server, DB2, MS Access, MySQL und PostgreSQL& 
+		Kommerziell & Windows\\
+		\hline
+		DBConvert (DB Convert) & Oracle, DB2, SQLite, MySQL, PostgreSQL, MS Access und Foxpro & Oracle, DB2, SQLite, MySQL, PostgreSQL, MS Access und Foxpro & Kommerziell & Windows \\
+		\hline
+		SQuirrel DBCopy Plugin (Sourceforge) & Alle RDBMS  & Alle RDBMS & Frei & Alle Betriebssysteme\\
+		\hline
+	\end{tabular}
+\end{center}
+\caption{Database Migration Tools}
+\label{table:tools}
 \end{table}
 %http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.94.3883&rep=rep1&type=pdf (juttaa)
 
 
-\subsection{GutenBase}
-
+\section{GuttenBase}
 \label{section:grundlagen:gb}
 Viele Software Unternehmen haben sich dafür entschieden, ein eigenes Tool für Datenbankmigration zu entwickeln. Dies ist der Fall bei der Firma Akquinet AG, wo die Open Source Bibliothek GuttenBase in 2012 entwickelt wurde. Da GuttenBase open source ist, wurde sie in weiteren Schritten weiterentwickelt und um zusätzliche Funktionen erweitert.\\ \\
 Anderes als die in der Tabelle \ref{table:tools} vorgestellten Tools, bietet GuttenBase eine gewisse Flexibilität bei der Migration
@@ -115,12 +140,13 @@ Für die Migration einer Datenbank ist häufig eine benutzerdefinierte Lösung e
 
 Dazu können die sogenannten Konfigurationshinweise hinzugefügt werden. Diese können durch das Überschreiben der Mapping Klassen spezifiziert werden. Standardmäßig wird eine Standardimplementierung die Hinweise nach dem Verbinden der Datenbanken hinzugefügt. Diese können jedoch von dem Nutzer überschrieben werden. 
 
-\subsection{IntelliJ}
 
-Die von der Firma JetBrains und in Java entwickelte Entwicklungsumgebung (IDE), IntelliJ IDEA, ist ein Teil einer Reihe von ähnlich JetBains Entwicklungsumgebungen wie Clion, PyCharm, PhpStrom, DataGrip usw. Diese basieren  auf den gleichen Kern, nämlich den IntelliJ Plattform SDK, welcher eine freie Lizenz hat und kann von Dritten zum Erstellen von IDEs verwendet werden.\\ \\
-IntelliJ IDEA ist mit der Implementierung in Java, Kotlin, Groovy und Scala geeignet. Sie hat außerdem unterschiedliche Funktionalitäten. Dazu gehört ein GUI-Editor, ein Build-Management Tool (z. B. Gradle) und andere Frameworks z. B. für Versionskontrolle, Refactoring, und Test.\\
-Der Funktionsumfang dieser IDE kann mittels Plugins erweitert werden. 
-
-
+%- Allgemeiner Satz
+%- Was ist GuttenBase
+%- Wann wurde sie eingeführt?
+%- Von wem ist sie entwickelt?
+%- Warum soll man GuttenBase benutzten
+%- Wie kann man GuttenBase benutzen?
+%- [Was kann man in GuttenBase optimieren?]
 
 

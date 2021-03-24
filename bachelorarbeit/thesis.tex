@@ -1,6 +1,22 @@
 %!TEX TS-program = xelatex
 %!TEX encoding = UTF-8 Unicode
-\documentclass[ngerman]{thesis}
+\documentclass[
+%12pt, % Schriftgröße
+%DIV10, % Änderung der Größe des Satzspiegels (bedruckbarer Bereich einer Seite), nur in Verbindung mit koma-script verwendbar
+ngerman, % für Umlaute, Silbentrennung etc.
+%a4paper, % Papierformat
+%oneside, % einseitiges Dokument
+%titlepage, % es wird eine Titelseite verwendet
+%parskip=half, % Abstand zwischen Absätzen (halbe Zeile)
+%headings=normal, % Größe der Überschriften verkleinern
+%listof=totoc, % Verzeichnisse im Inhaltsverzeichnis aufführen
+%bibliography=totoc, % Literaturverzeichnis im Inhaltsverzeichnis aufführen
+%index=totoc, % Index im Inhaltsverzeichnis aufführen
+%captions=tableheading, % Beschriftung von Tabellen unterhalb ausgeben
+%final
+]{thesis}
+
+\usepackage[chapter]{tocbibind}
 
 \usepackage{blindtext}
 \usepackage{float}
@@ -46,8 +62,17 @@
 
 \frontmatter
 \phantomsection
-\addcontentsline{toc}{section}{\contentsname}
+%\addcontentsline{toc}{section}{\contentsname}
 \tableofcontents
+
+
+
+
+\cleardoublepage
+\listoffigures
+
+\cleardoublepage
+\listoftables
 
 %\clearpage
 %\listoftodos
@@ -56,5 +81,8 @@
 \mainmatter
 
 \input{chapters/index.tex}
-\input{appendices/index.tex}
+
+\printbibliography[heading=bibintoc,title={Literatur}]
+%\printglossary[style=thesisacr,type=acronym,title=\abbreviationsname]
+%\printglossary[style=thesis,type=main,title=\glossaryname]
 \end{document}

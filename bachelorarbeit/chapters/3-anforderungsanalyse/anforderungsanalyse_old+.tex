@@ -1,0 +1,796 @@
+\chapter{Anforderungsmanagement}
+\section{Anforderungsermittlung}
+\subsection{Funktionale Anforderungen}
+\subsection{Systemnaforderungen}
+\section{Anforderungsanalyse}
+\section{Anforderungsbeschreibung}
+
+Um die die Anforderungen an das System und den Soll-Zustand zu definieren, wird in diesem Abschnitt eine Anforderungsanalyse durchgeführt. 
+
+\section{Migrationsoperationenn}
+Konfigurationsschritte beziehen sich hauptsächlich auf die Hinweise der GuttenBase Bibliothek. Um den Umfang dieser Arbeit in Grenzen zu halten, wurden folgende wichtige Konfigurationsschritte für die Umsetzung ausgewählt:
+
+\begin{itemize}
+	\item Spalten  umbenennen.
+	\item Tabellen umbenennen.
+	\item Filteroptionen für Spalten hinzufügen.
+	\item Filteroptionen für Tabellen hinzufügen.
+	\item Datentypen von Spalten ändern.
+\end{itemize}
+
+\section{Festlegung der Anforderungen}
+\label{anaylse}
+Zur Anforderungsanalyse sind mehrere Kundengespräche stattgefunden. Diese ergaben folgende Punkte, die von dem GuttenBase Plugin erfüllt werden sollen:
+\begin{itemize}
+	\item \textbf{A1: Konfigurationsschritte verwalten}\\
+	Um den Migrationsprozess zu individualisieren, soll der Benutzer die Möglichkeit haben, neue Konfigurationsschritte zu erstellen, zu editieren und zu löschen.
+	\item \textbf{A2: Konfigurationsschritte speichern} \\
+	hinugefügte Konfigurationsschritte sollen nach Bestätigung vom Benutzer gespeichert werden können. Diese sollen auch nach einem Neustart der Anwendung zur Verfügen stehen.
+	\item \textbf{A3: Überblick über alle Konsfigurationsschritte}
+	Der Benutzer soll über eine tabellarische Auflistung aller erstellten Konfigurationsschritte haben.\\
+	\item \textbf{A4: Datenbanken Verbiden} \\
+	Um eine erfolgreiche Migration durchzuführen, soll der Benutzer in der Lage sein, eine Verbindung zwischen der Quell- und Ziel-Datenbank herzustellen. Die zu migrierende Datenbank sowie die Ziel-Datenbank sollen aus den existierenden Datenbanken ausgewählt werden können.
+	\item \textbf{A5: Überblick über enthaltene Datenbankelemente}\\
+	Während des Migrationsprozess, soll der Benutzer einen Überblick über alle in der Quell-Datenbank enthaltenen Tabellen bzw. Spalten verfügen.
+	\item \textbf{A6: Existierende Konfigurationsschritte zur Migration hinzufügen}\\
+	Gespeicherte Konfigurationsschritte sollen bei der Übersicht der Datenbank Elementen zur Verfügung stehen. Diese können auf die entsprechenden Datenbank Elementen angewendet werden.
+	\item \textbf{A7: Hinzugefügte Konfigurationsschritte löschen}\\	
+	Der Benutzer soll die Möglichkeit haben, hinzugefügte Konfigurationsschritte zu löschen, nachdem sie zur Migration hinzugefügt wurden.
+	\item \textbf{A8: Migrationssprozess starten} \\
+	Im letzten Schritt der Migration kann der Benutzer den Migrationsprozess mit den hinzugefügten Konfigurationsschritten starten.	
+	\item \textbf{A9: Überblick über den Fortschritt der Migrationsprozess}\\
+	Damit der Benutzer den Migrationsprozess verfolgen kann, soll einen Überblick über den Fortschritt zur verfügung stehen. 
+\end{itemize}
+
+
+
+\section{Datenmodell}
+In diesem Abschnitt wird ein vereinfachtes Datenmodell erstellt. Dies zeigt, welche Einheiten des Systems relevant sind und welche Beziehungen zwischen diesen Einheiten gelten. Es handelt sich hierbei noch nicht um eine Spezifikation von Klassen für die Implementierung, sondern um
+die Modellierung der realen Welt. Das Datenmodell ist leitend für die Architektur des Tools. Aus diesem Grund wird auf unnötige Details bzw. Attribute verzichtet.
+Das Datenmodell wird als UML-Klassendiagramm in der Abbildung \ref{img:abstract-datenmodell} angegeben. Dabei werden hauptsächlich die Konfigurationsschritte und deren Beziehungen dargestellt. \\
+Die Abstrakte Klasse \glqq GBAction\grqq definiert alle möglichen Konfigurationsschritte. Diese wird durch folgende Unterklassen erweitert:
+\begin{itemize}
+	\item Rename: \\
+	Hierbei wird das Umbenennen eines Datenbankelementes modelliert. Jede Rename Klasse hat einen Typ (RenameType). Dieser definiert, wie Das Umbenennen des Datenbankelementes erfolgen soll und entspricht den Im Abschnitt \ref{section:umbenennen} vorgestellten Optionen für das Umbenennen. Außerdem wird das Umbenennen für Spalten bzw. Tabellen in zwei weiteren Unterklassen spezifiziert.
+	\item ChangeColumnType: \\
+	Diese Klasse entspricht dem Konfigurationsschritt \glqq Spalten-Datentyp Ändern\grqq.  
+	\item Exclude: \\
+	Die Exclude Klasse modelliert den Konfigurationsschritt für das Ausschließen einer Spalte bzw. einer Tabelle.
+	\end{itemize}
+Außerdem enthält die Klasse Migration alle Konfigurationsschritte die beim Migrationssprozess angewendet werden.
+\begin{figure}[H]
+	\caption{Vereinfachtes Datenmodell}
+	\centering
+	\includegraphics[width=\textwidth]{images/sichten/abstract-datenmodell}
+	\label{img:abstract-datenmodell}
+\end{figure}
+
+
+\section{Detaillierte Beschreibung der Anforderungen}
+\label{sec:af}
+Dieser Abschnitt beschäftigt sich mit den zu implementierenden Anforderungen. Diese decken den wichtigsten Funktionsumfang des Systems ab.\\
+Neben der textuellen Beschreibung werden auch Anwendungsfalldiagramme erstellt. Dabei wird nur ein Akteur identifiziert. Dieser ist der Benutzer, der die Datenbank Migration durchführt. \\
+Um die Benutzungsführung in den Anwendungsfällen zu illustrieren und die konkrete Benutzeroberfläche, die es zu implementieren gilt, zu spezifizieren, wurden Papierprototypen für die wichtigsten Teile des Systems erzeugt. Diese basieren  auf die Norm DIN EN ISO 9241-210.
+%todo check norm
+
+
+
+
+\subsubsection{Konfigurationsschritt \textbf{Unbenennen} erstellen}
+\label{section:umbenennen}
+	\begin{figure}[H]
+		\caption{Konfigurationsschritt \glqq Unbenennen \grqq erstellen}
+		\centering
+		\includegraphics[width=0.7\textwidth]{images/af/af-umbenennen}
+		\label{img:af-umbenennen}
+	\end{figure}
+Dieser Anwendungsfall bildet den Vorgang ab, wenn ein Benutzer einen neuen Konfigurationsschritt für das Umbenennen von Spalten bzw. Tabellen in der Ziel-Datenbank. Es wird vorausgesetzt, dass der Benutzer schon die Übersicht aller Konfigurationsschritte geöffnet hat (siehe Abbildung \ref{img:actions-overview}). \\
+\begin{figure}[H]
+	\caption{Übersicht Konfigurationsschritte}
+	\centering
+	\includegraphics[width=0.5\textwidth]{images/actions-overview}
+	\label{img:actions-overview}
+\end{figure}
+Am Anfang Soll der Benutzer den zu erstellenden Konfigurationsschritt benennen (z. B. Rename id to identifier). Das Quell-Datenbankelement (Spalte oder Tabelle) soll durch einen regulären Ausdruck definiert werden (siehe Abbildung \ref{img:add-rename-action}). Dieser wird in dem Konfigurationsschritt gespeichert, damit es später auf das Datenbank Element angewendet werden kann, das diesen Ausdruck erfüllt.
+Anschließend wird der Zielname des Datenbank Elementes festgelegt. Dieser wird von dem Benutzer als eine Zeichenkette angegeben. Dabei stehen drei Optionen zur Verfügung:
+\begin{itemize}
+	\item \textbf{Ersetzten:} Der ganze Name des entsprechenden Datenbank Element wird durch die übergebene Zeichenkette ersetzt.
+	\item \textbf{Suffix hinzufügen:} Die übergebene Zeichenkette wird als Suffix zu dem Ursprünglichen Namen hinzugefügt.
+	\item \textbf{Präfix hinzufügen:} Die übergebene Zeichenkette wird als Präfix zu dem Ursprünglichen Namen hinzugefügt.
+\end{itemize}
+\begin{figure}[H]
+	\caption{Konfigurationsschritt: Umbenennen}
+	\centering
+	\includegraphics[width=0.5\textwidth]{images/add-rename-action}
+	\label{img:add-rename-action}
+\end{figure}
+Nachdem Bestätigen der Eingaben wird der neu erstellten Konfigurationsschritt zu der Liste aller Konfigurationsschritten hinzugefügt.
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{ |p{4cm}|p{8cm}| }
+		\hline
+		\textbf{Name} &  Konfigurationsschritt Unbenennen erstellen \\
+		\hline
+		\textbf{Akteure} & Benutzer \\
+		\hline
+		\textbf{Auslöser} & Der Nutzer ist bei der übersicht der Konfigurationsschritte und hat auf das \glqq $+$\grqq Button geklickt. \\
+		\hline
+		\textbf{Vorbedingung} & Der Nutzer besitzt eine List von Konfigurationsschritten.  \\
+		\hline
+		\textbf{Nachbedingung} & Ein Konfigurationsschritt vom Typ Umbenennen wird zur Liste aller Konfigurationsschritte hinzugefügt.  \\
+		\hline
+		\textbf{Ablauf} & 
+		\begin{enumerate}
+			\item Die Option \glqq Umbenennen\grqq auswählen.
+			\item Einen Namen für den zu erstellenden Konfigurationsschritt eingeben.
+			\item Den Namen des Quell-Datenbankelement durch einen regulären Ausdruck definieren.
+			\item Zwischen Ersetzen, Suffix und Präfix auswählen.
+			\item Den resultierenden Namen des Ziel- Datenbankelement entsprechend der ausgewählten Option eingeben.
+			\item Bestätigen.
+		\end{enumerate}  \\
+		\hline
+		
+	\end{tabular}
+	\caption{Anwendungsfall Konfigurationsschritt \textbf{Unbenennen} erstellen}
+	\label{table:umbenennen}
+\end{table}
+
+
+
+
+\subsubsection{Konfigurationsschritt \textbf{Datentyp Ändern} erstellen}
+\begin{figure}[H]
+	\caption{Konfigurationsschritt \glqq Datentyp Ändern \grqq erstellen}
+	\centering
+	\includegraphics[width=0.7\textwidth]{images/af/af-datentyp-ändern}
+	\label{img:af-datentyp-ändern}
+\end{figure}
+Dieser Anwendungsfall zeigt, wie der Benutzer den Konfigurationsschritt \textbf{Datentyp Ändern} erstellt. Wie der vorherige Anwendungsfall soll der Benutzer bei der Übersicht aller Konfigurationsschritte sein, um in den Anwendungsfall einzutreten (siehe Abbildung \ref{img:actions-overview}).\\
+Nach dem Auslösen des Anwendungsfalls soll der Benutzer die Option \glqq Datentyp Ändern\grqq auswählen. Danach hat der Benutzer die Mööglichkeit, den Konfigurationsschritt zu benennen, den Datentyp der Quell-Datenbank bzw. der Ziel-Datenbank als Zeichenkette einzugeben und anschließend die Eingaben bestätigen. Nachdem dieser Anwendungsfall beendet ist, wird ein neuer Konfigurationsschritt hinzugefügt.\\ \\
+Das Erstellen vom Konfigurationsschritt \glqq Excludieren \grqq läuft im Grunde ähnlich ab, wie die zwei vorherigen Anwendungsfälle und wird daher nicht behandelt.
+\begin{table}[H]
+	\centering
+	\begin{tabular}{ |p{4cm}|p{8cm}| }
+		\hline
+		\textbf{Name} &  Konfigurationsschritt Datentyp Ändern erstellen \\
+		\hline
+		\textbf{Akteure} & Benutzer  \\
+		\hline
+		\textbf{Auslöser} & Der Nutzer ist bei der übersicht der Konfigurationsschritte und hat auf das \glqq $+$\grqq Button geklickt.  \\
+		\hline
+		\textbf{Vorbedingung} & Der Nutzer besitzt eine List von Konfigurationsschritten.  \\
+		\hline
+		\textbf{Nachbedingung} & Ein Konfigurationsschritt vom Typ Datentyp Ändern wird zur Liste aller Konfigurationsschritte hinzugefügt.  \\
+		\hline
+		\textbf{Ablauf} & 
+		\begin{enumerate}
+			\item Die Option \glqq Datentyp Ändern\grqq auswählen.
+			\item Einen Namen für den zu erstellenden Konfigurationsschritt eingeben.
+			\item Den Datentyp des Quell-Spalte festlegen.
+			\item Den Datentyp des Ziel-Spalte eingeben.
+			\item Bestätigen.
+		\end{enumerate}   \\
+		\hline
+		
+	\end{tabular}
+	\caption{Anwendungsfall Konfigurationsschritt \textbf{Datentyp Ändern} erstellen}
+	\label{table:datentyp-ändern}
+\end{table}
+
+
+
+
+\subsubsection{Konfigurationsschritte verwalten}
+\begin{figure}[H]
+	\caption{Konfigurationsschritte verwalten}
+	\centering
+	\includegraphics[width=0.7\textwidth]{images/af/af-ks-verwalten}
+	\label{img:af-ks-verwalten}
+\end{figure}
+Dieser Anwendungsfall stellt die Verwaltung der Konfigurationsschritte dar. Als erstes soll der Benutzer die Übersicht der Konfigurationsschritte öffnen (siehe Abbildung \ref{img:actions-overview}). Dabei werden alle gespeicherten Konfigurationsschritte geladen. Diese werden aus einer JSON Datei erzeugt. \\
+Bei der Übersicht kann der Benutzer einzelne oder mehrere Konfigurationsschritte auf einmal löschen. Außerdem kann der Benutzer Konfigurationsschritte erstellen (Diese wurde in den vorherigen Anwendungsfällen beschrieben). Das Editieren der Konfigurationsschritte erfolgt genauso wie das Erstellen.\\
+Anschließend können Konfigurationsschritte, nach Bestätigung vom Benutzer, als JSON gespeichert werden.
+\begin{table}[H]
+	\centering
+	\begin{tabular}{ |p{4cm}|p{8cm}| }
+		\hline
+		\textbf{Name} & Konfigurationsschritte verwalten  \\
+		\hline
+		\textbf{Akteure} &  Benutzer \\
+		\hline
+		\textbf{Auslöser} &  Der Benutzer klickt auf ein Button, um die Übersicht aller Konfigurationsschritte zu sehen. \\
+		\hline
+		\textbf{Vorbedingung} & Der Benutzer hat eine initiale List von Konfigurationsschritten.  \\
+		\hline
+		\textbf{Nachbedingung} & Änderungen sind vorgenommen und gespeichert.  \\
+		\hline
+		\textbf{Ablauf} & 
+		\begin{enumerate}
+			\item Übersicht aller Konfigurationsschritte öffnen.
+			\item eventuell Konfgurationsschritte auswählen.
+			\item eventuell Konfgurationsschritte löschen.
+			\item eventuell einen Konfgurationsschritt editieren.
+			\item eventuell einen Konfgurationsschritt esrtellen.
+			\item Konfigurationsschritte speichern.
+		\end{enumerate}   \\
+		\hline
+		
+	\end{tabular}
+	\caption{Anwendungsfall Konfigurationsschritte verwalten}
+	\label{table:ks-speichern}
+\end{table}
+
+
+
+\subsubsection{Datenbank Migration durchführen}
+Das Durchführen der Datenbank Migraion deckt die Hauptfunktionalität des GuttenBase Plugins ab. Dies wird in folgenden Anwendungsfällen unterteilt: 
+	\subsubsection*{Datenbanken verbinden}
+	\begin{figure}[H]
+		\caption{Datenbanken verbinden}
+		\centering
+		\includegraphics[width=0.7\textwidth]{images/af/af-db-verbinden}
+		\label{img:af-db-verbinden}
+	\end{figure}
+	Für das Eintreten dieses Anwendungsfalls is vorausgesetzt, dass der Benutzer über mindestens eine Datenbank verfügen. Am Anfang soll der Benutzer das Migrationsfenster öffnen um die Eingabefelder zu sehen. Zunächst soll der Benutzer die Datenbank, das Schema, die Zugangsdaten für das Quell- und Ziel-DBMS (siehe Abbildung \ref{img:generalview}).
+	Wenn die Eingaben stimmen, kann der Benutzer eine Verbingung zwischen den beiden Datenbanken herstellen. Ansonsten soll eine Entsprechende Meldung angezeigt werden. Bei diesem Schritt wird der Connector Repository der GuttenBase Bibliothek erstellt und konfiguriert. Somit ist die Datenbank Migration bereit für die Konfiguration.
+	\begin{figure}[H]
+		\caption{Datenbank Migration View}
+		\centering
+		\includegraphics[width=0.5\textwidth]{images/generalview}
+		\label{img:generalview}
+	\end{figure}
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{ |p{4cm}|p{8cm}| }
+			\hline
+			\textbf{Name} & Datenbanken verbinden  \\
+			\hline
+			\textbf{Akteure} & Benutzer  \\
+			\hline
+			\textbf{Auslöser} & Der Benutzer klickt auf ein Button um die Übersicht der Datenbankverbindung zu öffnen. \\
+			\hline
+			\textbf{Vorbedingung} &  Quell- und Ziel-Datenbanken sind nicht mit dem GuttenBase Tool verbunden.\\
+			\hline
+			\textbf{Nachbedingung} & Quell- und Ziel-Datenbanken sind verbunden.  \\
+			\hline
+			\textbf{Ablauf} &  
+			\begin{enumerate}
+				\item Quell-Datenbank auswählen.
+				\item Quell-Schema auswählen.
+				\item Benutzername der Quell-Datenbank eingeben.
+				\item Passwort der Quell-Datenbank eingeben.
+				\item Ziel-Datenbank auswählen.
+				\item Ziel-Schema auswählen.
+				\item Benutzername der Ziel-Datenbank eingeben.
+				\item Passwort der Ziel-Datenbank eingeben.
+				\item Datenbanken verbinden
+			\end{enumerate}  \\
+			\hline
+			
+		\end{tabular}
+		\caption{Anwendungsfall Datenbanken verbinden}
+		\label{table:db-verbinden}
+	\end{table}
+		
+		
+	\subsubsection*{Migrationsprozess konfigurieren}
+	\begin{figure}[H]
+		\caption{Migrationsprozess konfigurieren}
+		\centering
+		\includegraphics[width=0.9\textwidth]{images/af/af-mg-cfg}
+		\label{img:af-mg-cfg}
+	\end{figure}
+	Dieser Anwendungsfall bildet den Vorgang ab, wie der Benutzer Konfigurationsschritte zum Migrationsprozess hinzufügt.\\
+	Es wird vorausgesetzt, dass die Quell- und Ziel-Datenbanken verbuden sind. (siehe Anwendungsfall \ref{table:db-verbinden})\\
+	Wenn der Nutzer auf das \glqq Next\grqq geklickt hat, soll eine Übersicht für alle in der Quell-Datenbank enthaltenen Elemente angezeigt werden (Siehe Abbildung \ref{img:overview}).
+	\begin{figure}[H]
+		\caption{Übersicht Quell-Datenbank}
+		\centering
+		\includegraphics[width=0.5\textwidth]{images/overview}
+		\label{img:overview}
+	\end{figure}
+	Der Benutzer kann zunächst Spalten bzw. Tabellen auswählen, um denen Konfigurationsschritte zuzuweisen.\\
+	Jenachdem wie die Auswahl der Datenbankelemente aussieht, stehen nur die passenden Konfigurationsschritte zur Verfügung. Um eine Tabelle bzw. eine Spalte zu exkludieren, reicht es wenn das selektierte Datenbankelement eine Tabelle bzw. eine Spalte ist. \\
+	Auf der anderen Seite wird beim Hinzufügen des Konfigurationsschritts \glqq DatenTyp ändern \grqq geprüft, ob die ausgewählten Datenbankelemente Spalten sind und ob deren Datentypen dem Datentyp des Konfigurationsschrittes entsprechen. \\
+	Außerdem wird beim Umbenennen der ausgewählten Tabellen bzw Spalten geprüft, ob die Namen mit dem im Konfigurationsschritt gespeicherten regulären Ausdruck übereinstimmen.\\
+	Nachdem der Benutzer alle gewünschte Konfigurationsschritte hinzugefügt hat, werden diese gemerkt und zu dem Migrationsprozess hinzugefügt.
+		\begin{table}[H]
+		\centering
+		\begin{tabular}{ |p{4cm}|p{8cm}| }
+			\hline
+			\textbf{Name} &  Migrationsprozess konfigurieren. \\
+			\hline
+			\textbf{Akteure} & Benutzer  \\
+			\hline
+			\textbf{Auslöser} & Der Benutzer klickt auf das \glqq Next\grqq Button.  \\
+			\hline
+			\textbf{Vorbedingung} &  Die Migration ist nicht konfiguriert. \\
+			\hline
+			\textbf{Nachbedingung} &  Die Migration ist nach den Wünschen des Benutzers konfiguriert. \\
+			\hline
+			\textbf{Ablauf} & 
+			\begin{enumerate}
+				\item Die zu konfigurierende Datenbank Elemente auswählen.
+				\item Konfigurationsschritt hinzufügen (Dieser Schritt kann mehrmals durchgeführt werden).
+			\end{enumerate}   \\
+			\hline
+			
+		\end{tabular}
+		\caption{Anwendungsfall Migrationsprozess konfigurieren}
+		\label{table:migration-cfg}
+	\end{table}
+
+
+
+	\subsubsection*{Hinzugefügte Konfigurationsschritte löschen}	
+	\begin{figure}[H]
+		\caption{Hinzugefügte Konfigurationsschritte löschen}
+		\centering
+		\includegraphics[width=0.7\textwidth]{images/af/af-ks-löschen}
+		\label{img:af-ks-löschen}
+	\end{figure}
+	Das Löschen eines hinzugefügten Konfigurationsschritt ist erst möglich, wenn der Benutzer in der entsprechenden Übersicht ist (siehe Abbildung \ref{img:result-view}). Dabei werden alle hinzugefügten Konfigurationsschritte aufgelistet.Diese können ausgewählt und anschlißend gelöscht werden.
+	\begin{figure}[H]
+		\caption{Übersicht hinzugefügte Konfigurationsschritte}
+		\centering
+		\includegraphics[width=0.6\textwidth]{images/result-view}
+		\label{img:result-view}
+	\end{figure}
+		\begin{table}[H]
+		\centering
+		\begin{tabular}{ |p{4cm}|p{8cm}| }
+			\hline
+			\textbf{Name} &  Hinzugefügte Konfigurationsschritte löschen. \\
+			\hline
+			\textbf{Akteure} &  Benutzer. \\
+			\hline
+			\textbf{Auslöser} & Der Benutzer klickt auf das \glqq Next\grqq Button.  \\
+			\hline
+			\textbf{Vorbedingung} & Hinzugefügte Konfigurationsschritte sind nicht gelöscht.  \\
+			\hline
+			\textbf{Nachbedingung} &  Hinzugefügte Konfigurationsschritte sinn gelöscht. \\
+			\hline
+			\textbf{Ablauf} &  
+			\begin{enumerate}
+				\item Die zu löschende Konfigurationsschritte auswählen.
+				\item Ausgewählte Konfigurationsschritt löschen.
+			\end{enumerate}  \\
+			\hline
+			
+		\end{tabular}
+		\caption{Anwendungsfall Hinzugefügte Konfigurationsschritte löschen}
+		\label{table:migration-ks-löschen}
+	\end{table}
+
+
+
+	\subsubsection*{Migration starten}
+	\begin{figure}[H]
+		\caption{Migration starten}
+		\centering
+		\includegraphics[width=0.7\textwidth]{images/af/af-mg-starten}
+		\label{img:af-mg-starten}
+	\end{figure}
+	Nachdem der Benutzer alle die Datenbanken verbunden und den Migrationsprozess konfiguriert hat, kann er die Migration der Datenbank durch eine einfache Bestätigung starten. Danach sollen die Daten entsprechend der Konfiguration migriert werden. Währenddessen soll der Benutzer über den Migrationsstand informiert werden (siehe Abbildung \ref{img:progressview}).
+	\begin{figure}[H]
+		\caption{Fortschritt vom Migrationsprozess}
+		\centering
+		\includegraphics[width=0.4\textwidth]{images/progressview}
+		\label{img:progressview}
+	\end{figure}
+			\begin{table}[H]
+		\centering
+		\begin{tabular}{ |p{4cm}|p{8cm}| }
+			\hline
+			\textbf{Name} & Migration starten  \\
+			\hline
+			\textbf{Akteure} & Benutzer  \\
+			\hline
+			\textbf{Auslöser} & Der Benutzer klickt auf das \glqq Migrieren\grqq Button.  \\
+			\hline
+			\textbf{Vorbedingung} & Quell-Datenbank ist noch nicht migriert.  \\
+			\hline
+			\textbf{Nachbedingung} & Quell-Datenbank ist migriert.  \\
+			\hline
+			\textbf{Ablauf} &  
+			\begin{enumerate}
+				\item Migration starten.
+			\end{enumerate}  \\
+			\hline
+			
+		\end{tabular}
+		\caption{Anwendungsfall Migration starten}
+		\label{table:migration-starten}
+	\end{table}
+
+%\subsection{Probleme und Strategien}
+%- Umsetzungsform\\
+%- ...
+
+
+
+
+
+\section{Architektur}
+%- DatenModell: GBActions, DB Elemente\\
+%- Abstrakte Mapping \\
+%- Multiple Select \\
+%- Aktionen speichern \\
+%- Protoypen \\
+%- allgemeines: warum muss erst die Umsetzungsform entschieden werden (vor der Konzeption). \\
+%- welche Alternativen gibt es um ein solches Plugin entwickeln zu können?\\
+%- Vorteile und Nachteile jeder Alternative.\\
+%- Argumente für IntelliJ Plugin.
+%- Was ist IntelliJ \\
+%- was ist IntelliJ Plugin Entwicklung \\
+%- wie lässt sich ein Plugin mit IntelliJ entwickeln?\\
+In diesem Abschnitt werden grundlegende Aspekte der Softwarearchitektur vom GuttenBase Plugin vorgestellt. Diese werden basierend auf der Empfehlung im IEEE-Standard IEEE STD 1471-2000 erstellt.\\
+Die Architektur wird aus zwei Sichten Sichten (Views) betrachtet. Eine Sicht repräsentiert dabei das Softwaresystem aus der Perspektive einer verwandten Menge von Aspekten. Jede Sicht stellt spezifische Informationen bereit.\\
+Es is außerdem zu beachten, dass sich die Architektur auf die Ergebnisse der funktionalen Anforderungsanalyse sowie auf die Architektur der Zielplattform (IntelliJ Plattform) bezieht.
+Im Folgenden werden die einzelnen Sichten genauer vorgestellt.
+%TODO zitieren
+
+
+
+
+\subsection{Konzeptionelle Sicht}
+Im Folgenden wird die Konzeptionelle Sicht des Systems vorgestellt. Hier wird das System noch unabhängig von den Implementierungsentscheidungen betrachtet. \\
+Die konzeptionelle Sicht wird als Komponentendiagramm in der Abbildung \ref{img:component-diagram} dargestellt. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{images/sichten/component-diagram}
+	\caption{Komponentendiagramm für die konzeptionelle Sicht}
+	\label{img:component-diagram}
+\end{figure}
+Das Komponentendiagramm besteht aus der GuttenBase Plugin Komponente, welche das zu entwickelnde System darstellt, der IntelliJ Plattform Komponente und der GutteBase Komponente. Es werden nur Komponenten veranschaulicht, die von unserem System benötigt sind. Diese werden im Folgenden genauer beschrieben.
+
+
+\subsubsection{GuttenBase Plugin}
+Das GuttenBase Plugin wird nach dem MVC-Arcchitekturstil konzipiert und besteht aus folgenden Komponenten:
+
+\paragraph*{Model}
+Das Modell enthällt Daten, die von der View Komponente dargestellt werden. Hier liegt außerdem die Geschäftslogik(\textbf{BusinessLogik}), welche für die Änderung der Daten zuständig ist.
+
+\paragraph*{View}
+	Die View Komponente ist für die Darstellung der Daten für den Benutzer verantwortlich. Hier werden alle UI-abhängigen Aspekte wie Layout, Schriftart usw. behandelt.\\
+	
+\paragraph*{Controller}
+	Die Controlle Komponente ist für die Interaktion mit dem Benutzer verantwortlich. Sie wird von der View Komponente über Benutzerinteraktionen informiert und wertet sie aus. Anschließend können Änderungen an den Daten der Model Komponente sowie Anpassungen an der View Komponente angonommen werden.
+
+\subsubsection{IntelliJ Plattform}
+Wie in der Abbildung \ref{img:component-diagram} zu sehen ist, interagiert das GuttenBase Plugin mit mehreren Komponenten der IntelliJ Plattform. 
+Es wurden dabei nur die verwendeten Komponenten dargestellt. Diese sind in zwei Komponenten beinhaltet:
+
+\paragraph*{Open API}
+Die IntelliJ Open API beinhaltet viele Komponenten, die auch von der IntelliJ IDEA Community Edition verwendet werden und für Plugin-Entwickler zur Verfügung stehen. Es können z. B. UI-Komponenten aus der Komponente \textbf{UI} für die Implementierung des Plugins benutzt werden. Außerdem wird \textbf{ActionSystem} Komponente benötigt, um bestimmte Aktionen, wie das Starten des Plugins, auszulösen.
+\paragraph*{Database Plugin}
+Da das GuttenBase Plugin viel mit den Datenbanken umgeht, die in IntelliJ konfiguriert wurden, ist eine Interaktion mit dem Database Plugin sehr sinnvoll. Dazu bieten sich viele Komponenten für unterschiedliche Zwecke. Die für das GuttenBase Plugin benötigten Komponenten sind die \textbf{Model} Komponente (um evt. eine Datenbank Konfiguration zu bekommen), die \textbf{PSI} Komponente (um die Elemente der Datenbank zu bekommen), die \textbf{Util} Komponente (um ein Datenbank-Schema zu bekommen) und die \textbf{View} Komponente (um aus der Übersicht des Database  Plugins Datenbank-Inhalte zu bekommen).
+
+
+%\subsubsection{GuttenBase} 
+%TODO
+
+
+
+
+\subsection{Modulsicht}
+Die Modulsicht zeigt die Struktur des GutenBase Plugins in Form von Modulen und deren Beziehungen zueinander. Hierbei werden die Komponenten und Konnektoren der konzeptionellen Sicht auf Module, Schichten und Subsysteme abgebildet. Diese werden in Paket- und Klassendiagramme verfeinert.
+Zur Wahrung der Übersichtlichkeit wird die Modulsicht nach den unterschiedlichen Übersichten unterteilt. Es gibt insgesamt vier Übersichten, die das gesammte System abdecken. Pro Übersicht werden nur Klassen bzw. Methoden beschrieben, die entsprechenden Anwendungsfälle realisieren.
+
+\subsubsection{Modulsicht der Übersicht der Konfogurationsschritte}
+Die Modulsicht der Abbildung \ref{img:modulsicht-gbactions} beschreibt alle beteiligten Klassen, die beim Erstellt und Verwalten der Konfigurationsschritte eingesetzt sind. Diese werden entsprechend der Konzeptionellen Sicht aufgeteilt, nämlich in den View, Model und Controller Paketen.\\
+%-View Klassen sind für die UI - Swing KOmponenten.
+%- Controlle hat folgende Aufgaben: 
+%- UI Komponenten erstellen, 
+%- Aktionen erstellen: die GBActionView informiert controller über Benutzer Eingabe -> jenachdem welchen ActionTyp selektiert wurde, wird die entsprechende DumbAwareAction ausgeführt, damit die entsprechende Dialoge für das Erstellen der Action angezeigt wird (renameView + changeType))
+%- editieren und speichern: nach dem Klick auf Save wird die Save Methode des Controller aufgerufen, sodass alle hinzugefügten Konfigurationsschritte mithilfe der GsonHelper konvertiert und gespeichert werden.
+%- actionen darstellen, 
+%- Übersicht schließen: Nach dem Klick auf cancel wird die Übersicht geschlossen.
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{images/sichten/modulsicht-gbactions}
+\caption{Modulsicht der Übersicht der Konfogurationsschritte}
+\label{img:modulsicht-gbactions}
+\end{figure}
+In dem View Paket werden alle Klassen dargestellt, die für die Darstellung der Konfigurationsschritte zuständig sind. Diese basieren auf unterschiedliche Swing Komponenten. Die Klasse GBActionsView repräsentiert dabei die Hauptübersicht der Konfigurationsschritte und beeinhaltet die GBActionsTable Klasse, welche die Auflistung der Konfigurationsschritte übernimmt. Außerdem wird die ToolbarDecorator Klasse für die Darstellung der möglichen Aktionen benötigt. \\
+Das Controller Paket enthält hierbei die GBActionsController Klasse. Diese hat folgende Aufgaben:
+\begin{itemize}
+	\item UI-Komponenten vor dem Anzeigen vorbereiten, indem Daten aus dem Paket Model erzeugt bzw. geladen werden.
+	\item Konfigurationsschritte erstellen. Dies passiert nach der Benuzter einen bestimmten Konfigurationsschritt hinzufügen möchte und diesen in der GBActionsView übersicht selektiert. Zunächst wird die entsprechende DumbAwareAction Klasse aufgerufen, um die entsprechende Aktion durchzuführen. Die DumbAwareAction Klasse ist im Paket BusinessLogic zu finden und könnte z. B. für das Anzeigen der Übersicht für das Erstellen des Umbenennen- oder Datentyp-Ändern-Konfigurationsschritt verwendet werden. Diese werden durch die RenameView und ChangeTypeView Klassen realisiert. Analog dazu erfolg das Editieren der Konfigurationsschritte.
+	\item Konfigurationsschritte speichern, indem die hinzugefügte Konfigurationsschritte in JSON konvertiert und dann exportiert werden. Dafür ist die GsonHelper Klasse des BusinessLogic Pakets zuständig.
+\end{itemize}
+
+
+
+\subsubsection{Modulsicht der allgemeinen Übersicht}
+Diese Modulsicht zeigt die beteiligten Klassen, die beim Verbinden der zu migrierenden Datenbanken genutzt werden. Diese wird in der Abblidung \ref{img:modulsicht-general} dargestellt. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{images/sichten/modulsicht-general}
+	\caption{Modulsicht der allgemeinen Übersicht}
+	\label{img:modulsicht-general}
+\end{figure}
+Die GeneralView Klasse ist für die Interaktion mit dem Benutzer verantwortlich und enthält alle Eingabefelder und Texte. Die GeneralViewController Klasse ist für das Laden der Datenbankelemente zuständig. Klickt der Benutzer auf das \glq Next\grqq Button, werden alle Eingaben über die MigrationHelper Klasse des Pakets BusinessLogic übergeben. Diese Informationen werden dann in der Migration Klasse des Model Pakets gespeichert.
+
+
+\subsubsection{Modulsicht der Konfigurationsübersicht}
+Die Modulsicht in der Abbildung \ref{img:modulsicht-overview} zeigt die für die Konfigurationsübersicht relevanten Klassen.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{images/sichten/modulsicht-overview}
+	\caption{Modulsicht der Konfigurationsübersicht}
+	\label{img:modulsicht-overview}
+\end{figure}
+In der Konfigurationsübersicht (Overview) enthält die OverviewTreeTable Klasse, welche alle Quell-Datenbankelemente auflistet und die ToolbarDecorator Klasse, die gespeicherten Konfigurationsschritte anzeigt. Außerdem stehen einige Buttons für die Benutzerinteraktion zur Verfügung. \\
+Wie bei den vorherigen Modulsichten, stellt die OverviewController Klasse Methoden für folgende Zwecke bereit:
+\begin{itemize}
+	\item Das Laden der Datenbankelemente: Hierbei werden die gespeicherten Konfigurationsschritte mithilfe der GsonHelper Klasse importiert und die Datenbankelement (DBElementNode) aus der Quell-Datenbank erstellt.
+	\item das Anzeigen der Konfigurationsschritte: Konfigurationsschritte werden nach Kompatibiltät mit den selektierten Datenbankelementen behandelt. Ist ein Konfigurationsschritt mit einem Datenbankelent geeignet, wird dieser klickbar angezeigt, außerdem wird stattdessen ein ausgegrautes Button dargestellt.
+	\item Hinzufügen von Konfigurationsschritten: Wenn der Benutzer ein Datenbankelement selektiert und dann einen entsprechenden Konfigurationsschritt hinzufügt, wird die OverviewAddAction Aktion von dem BusinessLogic Paket ausgelöst. Dabei wird der entsprechende Konfigurationsschritt durch die MigrationHelper Klasse zur Migration hinzugefügt.
+\end{itemize}
+
+
+
+\subsubsection{Modulsicht der Ergebnisübersicht}
+Die Modulsicht der Abbildung \ref{img:modulsicht-resul} stellt die für die Ergebnisübersicht (ResultView) zuständigen Klassen. Außerdem wird die Fortschritt Übersicht (ProgressView) miteingebunden, da diese vom selben Controller verwaltet wird.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{images/sichten/modulsicht-result}
+	\caption{Modulsicht der Ergebnisübersicht}
+	\label{img:modulsicht-resul}
+\end{figure}
+Ähnlich wie bei den anderen Übersichten, enthältt die ResultView Klasse eine Tabelle (ResultGBActionsTable), die alle hinzugefügten Konfigurationsschritte enthält und ein ToolbarDecorator, wo die Aktionen zum Löschen und Hinzufügen angezeigt werden. \\
+Auf der anderen Seite stellt die ResultViewController Klasse Methoden für das Löschen und das Hinzufügen von Konfigurationsschritte sowie für das Starten des Migrationsprozesses bereit. Diese werden im Folgenden genauer erklärt:
+\begin{itemize}
+	\item Hinzufügen: Wenn der Benutzer noch mehr Konfigurationsschritte zur Migration hinzufügen möchte, wird die aktuelle Übersicht zur Übersicht der Konfigurationsschritte (Overview) umgeleitet.
+	\item Löschen: Wie das Hinzufügen, erfolgt das Löschen von Konfigurationsschritte (die schon zur Migration hinzugefügt wurden) durch die Entfernung von dem ausgewählten Konfigurationsschritt (GBAction) aus der Migration Klasse. 
+	\item Migration starten: Nach dem Klick auf das \glqq Migrate\grqq Button, wird der Migrationsprozess gestartet. Dieser erfolgt durch die MigrationHelper Klasse. Dabei wird das Connector Repository der GuttenBase Bibliothek entsprechend der Konfigurationsschritte konfiguriert (siehe \ref{section:grundlagen:gb}) und anschließend das Kopieren durch das DefaultTableCopyTool gestartet. \\
+	Parallel dazu wird die Fortschritt Übersicht (ProgressView) angezeigt, um Informationen über den laufenden Prozess zu sehen. Dies ist durch die UIScriptExecutorProgressIndicator Klasse ermöglicht.
+	
+%	- add connectors, cfg abgeschlossen -> Copy 
+%	- parallel dazu: Fortschritt übersicht anzeigen: Logginging: Logging Hin.
+\end{itemize}
+
+%
+%\subsection{Datensicht}
+%\subsection{Ausführungssicht}
+%\subsection{Zusammenhänge zwischen Anwendungsfällen und Architektur}
+
+
+\section{Implementierung}
+Dieser Abschnitt beschäftigt sich mit der Implementierung des GuttenBase Plugins. Hier werden die verwendeten Technologien erläutert, die Anforderungen aus dem Abschnitt \ref{anaylse} umgesetzt sowie die resultierende Anwendungsoberfläche dargestellt.
+%Es werden einige 
+\subsection{verwendete Technologien}
+\subsubsection{GuttenBase}
+\label{sec:imp:gb}
+Die Nutzung der GuttenBase Bibliothek wird in folgenden Schritten erklärt.
+%\subsection{Schritt 1: Abhängigkeiten}
+%Um GuttenBase verwenden zu können, soll werden folgende Informationen benötigt:
+%\begin{itemize}
+%	\item groupId: de.akquinet.jbosscc.guttenbase
+%	\item artifactId: GuttenBase
+%	\item version: 2.0.0
+%\end{itemize}
+%Außerdem 
+\paragraph*{Schritt 1: Datenbankverbindung erstellen}
+Als erstes sollen Abhängigkeiten zu dem laufenden Projekt hinzugefügt werden. Die für GuttenBase benötigte Informationen sind:
+\begin{itemize}
+	\item groupId: de.akquinet.jbosscc.guttenbase
+	\item artifactId: GuttenBase
+	\item version: 2.0.0
+\end{itemize}
+Zusätzlich sollen die Treiber-Klassen der Quell- und Ziel-DBMS hinzugefügt werden.\\
+Zunächst sollen die ConnectionInfo Klassen fürerstellt werden. Diese beschreiben die Quell- und Ziel-Datenbanken und enthalten die für eine JDBC (Java Database Connectivity) Verbindung erforderlichen Attribute.\\
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{images/gb/conInfo}
+	\caption{ConnectionInfo konfigurieren}
+	\label{img:gb/conInfo}
+\end{figure}
+
+Im nachhinein wird das Connector Repository konfiguriert werden. Dies enthält alle Konnektoren, die in der Datenbank Migration beteiligt sind. \\
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{images/gb/repo}
+	\caption{Connector Repository konfigurieren}
+	\label{img:gb/repo}
+\end{figure}
+
+\paragraph*{Schritt 2: Hinweise hinzufügen}
+Meistens werden Konfigurationshinweise (hints) benötigt, um die Migration zu individualisieren. In der Dokumentation von GuttenBase\footnote{Getting Started with GuttenBase (2018, 04.01) \\ \url{https://github.com/akquinet/GuttenBase/blob/master/Getting\%20Started\%20with\%20GuttenBase.pdf}} befindet sich eine Liste aller unterstützen Konfigurationshinweise. \\
+Als Beispiel wird der Konfigurationshinweis ColumnMapperHint in der Abbildung dargestellt.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{images/gb/rename}
+	\caption{ColumnMapperHint hinzufügen}
+	\label{img:gb/rename}
+\end{figure}
+
+
+\paragraph*{Schritt 3: Datenbank Migration durchführen}
+Anschließend kann die Migration mit den eventuell hinzugefügten Hinweisen durchgeführt werden. Dies passiert wie folgt:
+\begin{itemize}
+	\item Das Datenbank Schema wird von der Quell-Datenbank in die Ziel-Datenbank kopiert. Dabei werden möglichst viele Unterschiede in Datentypdarstellung standardmäßig berücksichtigt.
+	\item Die Kompatibilität von den Schemata wird geprüft. Hierbei wird nach gleichen Tabellen bzw Spalten gesucht.
+	\item Falls es keine Fehler beim Prüfen gibt, werden die Daten dann kopiert.
+\end{itemize}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{images/gb/copy}
+	\caption{Datenbank Migration durchführen}
+	\label{img:gb/copy}
+\end{figure}
+
+
+
+\subsubsection{IntelliJ Platform}
+Für die erfolgreiche IntelliJ Plugin Entwicklung muss auf mehrere Aspekte geachtet werden wie die Projektstruktur und die häufig verwendeten Komponenten.\\
+Die Plugin Entwicklung erfolgt in der IntelliJ IDE selbst. Deswegen kann das Plugin entweder in Java, Kotlin, Groovy oder Scala geschrieben werden.\\
+Der von Jetbrains empfohlene Weg für das Erstellen eines neuen Plugins ist das Gradle Projekt. Dabei muss die Option IntelliJ Platform Plugin ausgewählt werden, damit die Plugin Abhängigkeiten sowie die Basis-IDE automatisch konfiguriert werden. Zusätzlich muss die Datei plugin.xml entsprechend des zu entwickelnden Plugins angepasst werden. Diese enthält wichtige Informationen, die in den folgenden Tags (Auszeichnungen) erklärt werden:
+\begin{itemize}
+	\item \textbf{<name>} \\
+	Der Name des Plugins. Er soll kurz und beschreibend sein.
+	\item \textbf{<id>} \\
+	Eine eindeutige Bezeichnung des Plugins. Diese kann nicht während der Entwicklung geändert werden.
+	\item \textbf{<description>} \\
+	Eine Kurze Beschreibung des Plugins.
+	\item \textbf{<change-notes>} \\
+	Eine Beschrei Beschreibung der Änderungen in der neusten Version des Plugins.
+	\item \textbf{<version>} \\
+	Die aktuelle Plugin Version.
+	\item \textbf{<vendor>} \\
+	Der Anbieter des Plugins. Hier kann zusätzlich eine Email Adresse angegeben werden.
+	\item \textbf{<depends>} \\
+	Abhängigkeiten zu Plugins oder Modulen.
+	\item \textbf{<idea-version>} \\
+	Die minimale und maximale Version der IDE, mit der das Plugin kompatibel ist.
+	\item \textbf{<actions>} \\
+	Definiert wie die Funktionalität des Plugins aufgerufen wird. Dies wird im folgenden Abschnitt behandelt.
+	\item \textbf{<extensionPoints>} \\
+	Die vom Plugin definierte Erweiterungspunkte. Diese können erlauben anderen Plugin-Entwicklern, auf bestimmte Daten zuzugreifen. 
+	\item \textbf{<extensions>} \\
+	Erweiterungspunkte, die von IntelliJ-Platform bzw. von anderen Plugins definiert sind und von dem zu entwickelnden Plugin verwendet werden.
+\end{itemize}
+\paragraph{Action-System}
+Die am häufigsten verwendete Methode, um die Plugin Funktionalität aufzurufen, ist die Nutzung der sogenannten Actions vom Action-System der IntelliJ-Platform.\\ \\
+Eine Aktion kann über ein Menüpunkt (menu item) oder einen Eintrag in der Symbolleiste ausgelöst werden. Dazu muss ein Eintrag in dem Actions Tag der plugin.xml Datei erfolgen. Dabei muss jede Action mindestens eine Id, eine Klasse und einen beschreibenden Text haben. I.d.R werden Menüpunkte nach Funktionaliät gruppiert. Um die Implementierte Action zu einer bestimmten Gruppe hinzufügen zu können, muss der Tag \textbf{<add-to-group>} verwendet werden.\\ \\
+Die Action Klasse muss von der AnAction Klasse abgeleitet werden und die actionPerformed() Methode überschreiben. Diese wird nach dem Klick auf das entsprechende Menupunk bzw. Symbolleiste aufgerufen.
+%\subsubsection{Swing}
+%TODO TEST
+%\subsubsection{IntelliJ Plugin Entwicklung}
+
+
+
+
+%\subsection{Funktionalitäten}
+%- add gbact\\
+%- save gb act\\
+%- migrate db \\
+%- + screenshots code usw.
+\subsection{GuttenBase Plugin}
+Die resultierende Anwendungsoberfläche wird anhand des folgenden Szenarios veranschaulicht:
+\begin{itemize}
+	\item Übersicht aller Migrationsopertionen öffnen.
+	\item Migrationsoperation (Umbenennen) erstellen und speichern.
+	\item Migrationsübersicht öffnen und Datenbanken verbinden.
+	\item Migrationsoperationen (Umbenennen und Ausschließen) zum Migrationsprozess hinzufügen.
+	\item Migrationsprozess starten und den Fortschrit der Migration ansehen.
+\end{itemize}
+Bei diesem Szenario werden die wichtigsten Anwendungsfälle abgedeckt, die im Abschnitt \ref{sec:af} definiert wurden.\\
+Voraussetzung für dieses Szenario ist, dass IntelliJ gestartet ist und die Quell- sowie Ziel-Datenbank mithilfe des IntelliJ Database Plugins eingerichtet sind.
+%TODO define src target db etc
+\subsubsection{Übersicht aller Migrationsopertionen öffnen}
+Um die Funktionalität des GuttenBase Plugins einfach und intuitiv für IntelliJ Nutzer zur Verfügung zu stellen, wurden Menüpunkte zum Database Plugin hinzugefügt. Diese wurden gemäß dem Grundsatz der Unterscheidbarkeit plaziert. Somit kann die Übersicht der Migrationsoperationen nach dem Klick auf \glqq Show Migration Actions\grqq geöffnet werden. Dies wird in der Abbildung \ref{img:creategbaction} dargestellt. Diese enthält standardmäßig nur zwei Migrationsoperationen (Tabellen bzw. Spalten Ausschließen).\\ 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{images/ui/dbactions}
+	\caption{Übersicht der Migrationsoperationen öffnen}
+	\label{img:dbactions}
+\end{figure}
+%\begin{figure}[h]
+%	\centering
+%	\includegraphics[width=0.5\textwidth]{images/ui/gbactions}
+%	\caption{Übersicht der Migrationsoperationen}
+%	\label{img:gbactions}
+%\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{images/ui/creategbaction}
+	\caption{Übersicht der Migrationsoperationen}
+	\label{img:creategbaction}
+\end{figure}
+
+\subsubsection{Migrationsoperation Umbenennen erstellen und speichern}
+Bei der Übersicht in der Abbildung \ref{img:creategbaction} kann der Benutzer verschiedene Migrationsoperationen erstellen, wenn diese nicht bereits existieren. In diesem Szenario wird nur das Hinzufügen von der Migrationsoperation Umbenennen (Rename Action) dargestellt.\\
+Nach dem Klick auf das entsprechende Button wird ein Dialog angezeigt, um die erforderliche Informationen einzugeben. Dabei wird der Name der Migrationsoperation festgelegt. Außerdem der Quell-Name durch einen regulären Ausdruck definiert. Anschließend  wird die der Zeil-Name festgelegt. \\
+Die in der Abbildung \ref{img:createRename} angezeigte Migrationsoperation gilt für alle Datenbankelemente, deren Name die Zeichenkette \glqq table\grqq enthält. Wenn diese an einem entsprechenden Datenbankelement angewendet wird, wird das Suffix \glqq \_Test\grqq \, hinten hinzugefügt.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{images/ui/createRename}
+	\caption{Migrationsoperation Umbenennen erstellen}
+	\label{img:createRename}
+\end{figure}
+%Der reguläre Ausdruck \textbf{.*table.*} bedeutet im dargestellten Beispiel, dass die erstellte 
+Anschließend lässt sich die neu hinzugefügte Migrationsoperation durch das Klick auf das \glqq Save\grqq \, Button speichern (siehe Abbildung \ref{img:creategbaction}). Dabei werden alle Migrationsoperationen nach JSON konvertiert und in einer externen Datei gespeichert. Dafür ist die Klasse GsonHelper verantwortlich (siehe Abbildung \ref{img:gson}).
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.9\textwidth]{images/ui/gson}
+	\caption{Migrationsoperationen exportieren und importieren}
+	\label{img:gson}
+\end{figure}
+
+
+
+\subsubsection{Migrationsübersicht öffnen und Datenbanken verbinden}	
+Wenn die Quell- und Ziel-Datenbank im Database Plugin eingerichtet sind, kann das Aktionsmenü nach Rechtsklick auf die Quell-Datenbank aktiviert werden. Wie in der Abbildung \ref{img:dbactions} angezeigt, kann der Benutzer auf das Button \glqq Migrate Database\grqq \, klicken um die Übersicht der Datenbank Migration zu öffnen (siehe Abbildung \ref{img:ui:generalView}). Dabei wird die Quell-Datenbank anhand der selektierten Datenbank automatisch selektiert. Außerdem muss das zu migrierende Schema der Quell-Datenbank sowie das Ziel-Schema ausgewählt werden. Zusätzlich müssen die Zugangsdaten jeder Datenbank angegeben werden, um die Datenbanken zu verbinden.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{images/ui/generalView}
+	\caption{Allgemeine Übersicht der Datenbank Migration (generalView)}
+	\label{img:ui:generalView}
+\end{figure}
+Nach dem Klick auf das \glqq Next\grqq \, Button, werden die Angaben erst geprüft. Wenn diese fehlerhaft sind, dann wird eine entsprechende Fehlermeldung ausgegeben. Ansonsten wird das ConnectorRepository (siehe \ref{sec:imp:gb}) anhand der angegebenen Informationen erstellt und anschließend die nächste Übersicht (overview) angezeigt.
+
+
+%\subsubsection{Quell- und Ziel-Datenbanken verbinden und Schemata auswählen}
+\subsubsection{Migrationsoperationen zum Migrationsprozess hinzufügen}
+Bei der Konfigurationsüberischt (siehe Abbildung \ref{img:ui:overviewSingleAdd}) werden alle Elemente der Quell-Datenank anzgezeigt. Hierbei wird Einzel- sowie Mehrfachauswahl ermöglicht. \\
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{images/ui/overviewSingleAdd}
+	\caption{Konfigurationsübersicht (overview)}
+	\label{img:ui:overviewSingleAdd}
+\end{figure}
+Außerdem werden alle Migrationsoperationen mithilfe der \textbf{GsonHelper} Klasse geladen werden. Diese werden abhängig von den selektierten Elementen unterschiedlich dargestellt. Wenn eine Migrationsoperation (GBAction) zu den ausgewählten Elementen passt, wird diese klickbar angezeigt, ansonsten wird diese deaktiviert und ausgegraut dargestellt. Dabei spielt die \textbf{matches} Methode der \textbf{GBAction} Klasse eine entscheidende Rolle. Diese wird entsprechend des Typen der Migrationsoperation. Für das Umbenennen wird z. B. geprüft, ob der gespeicherte reguläre Ausdruck zum Namen der selektierten Elemente passt (siehe Abbildung \ref{img:ui:matches}).
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{images/ui/matches}
+	\caption{matches Methode der Migrationsoperation Umbenennen}
+	\label{img:ui:matches}
+\end{figure}
+Bei jedem Hinzufügen wird die entsprechende Migrationsoperation zu der Liste aller Operationen hinzugefügt. Dabei wird eine neue Instanz erzeugt, die die benötigten Informationen des entsprechenden Datenbankelementes enthält (siehe Abbildung \ref{img:ui:overviewAddRenameSrc}).
+%overviewAddRenameSrc
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{images/ui/overviewAddRenameSrc}
+	\caption{das Hinzufügen von der Migrationsoperation Umbenennen}
+	\label{img:ui:overviewAddRenameSrc}
+\end{figure}
+\subsubsection{Migrationsprozess starten und den Fortschrit der Migration ansehen}
+Nach dem Klick auf das \glqq Next\grqq \, Button, erhält der Benutzer eine Übersicht von allen hinzugefügten Migrationsoperationen (siehe Abbildung \ref{img:ui:resultView}). Diese können nach Bedarf gelöscht werden.\\
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{images/ui/resultView}
+	\caption{Ergebnisübersicht}
+	\label{img:ui:resultView}
+\end{figure}
+Nach dem Klick auf das \glqq Migrate\, Button, wird die Fortschrittsübersicht angezeigt (siehe Abbildung \ref{img:ui:progressView}). Diese veranschaulicht den Migrationsprozess, welcher in einem neuen Thread ausgeführt wird. Bei der Migration werden die Mapper Klassen sowie die GuttenBase Connectors (siehe Abschnitt \ref{sec:imp:gb}) entsprechend der hinzugefügten Migrationsoperationen zum ConnectorRepository hinzugefügt. Danach werden die Daten von der Quell-Datenbank zur Zie-Datenbank kopiert (siehe Abbildung \ref{img:ui:connectors} bzw. Abbildung \ref{img:ui:run}). \\
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{images/ui/connectors}
+	\caption{ConnectorHints hinzufügen}
+	\label{img:ui:connectors}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{images/ui/run}
+	\caption{Migration durchführen (MapperHelper Klasse)}
+	\label{img:ui:run}
+\end{figure}
+
+Falls ein Fehler bei der Migration auftritt, wird eine entsprechende Fehlermeldung angezeigt und das \glqq Back\grqq \, aktiviert, um Änderungen durchzuführen und die Migration nochmal zu starten. Der Benutzer bekommt außerdem einen Hinweis, Falls die Migration erfolgreich abgeschlossen ist.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{images/ui/progressView}
+	\caption{Fortschrittsübersicht}
+	\label{img:ui:progressView}
+\end{figure}
+%\subsubsection{Übersicht der Migrationsoperationen (GB Actions View)}
+%\subsubsection{Allgemeine Übersicht (General View)}
+%\subsubsection{Konfigurationsübersicht (Overview)}
+%\subsubsection{Ergebnisübersicht (result View)}
+%\subsubsection{Fortschrittsübersicht (Progress View)}
+
+

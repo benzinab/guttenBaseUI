@@ -1,4 +1,4 @@
-\chapter{Umsetzung}
+\chapter{Konzeption und Implementierung}
 Dieses Kapitel erläutert alle Schritte der Umsetzung des GuttenBase Plugins beginnend mit der Analyse bis zur Architektur und Implementierung.
 
 \section{Umsetzungsform}
@@ -410,15 +410,15 @@ Das Durchführen der Datenbank Migraion deckt die Hauptfunktionalität des Gutte
 		\centering
 		\begin{tabular}{ |p{4cm}|p{8cm}| }
 			\hline
-			\textbf{Name} &  Hinzugefügte Konfigurationsschritte löschen \\
+			\textbf{Name} &  Hinzugefügte Konfigurationsschritte löschen. \\
 			\hline
-			\textbf{Akteure} &  Benutzer \\
+			\textbf{Akteure} &  Benutzer. \\
 			\hline
 			\textbf{Auslöser} & Der Benutzer klickt auf das \glqq Next\grqq Button.  \\
 			\hline
-			\textbf{Vorbedingung} &   \\
+			\textbf{Vorbedingung} & Hinzugefügte Konfigurationsschritte sind nicht gelöscht.  \\
 			\hline
-			\textbf{Nachbedingung} &   \\
+			\textbf{Nachbedingung} &  Hinzugefügte Konfigurationsschritte sinn gelöscht. \\
 			\hline
 			\textbf{Ablauf} &  
 			\begin{enumerate}
@@ -628,7 +628,7 @@ Auf der anderen Seite stellt die ResultViewController Klasse Methoden für das L
 
 
 \section{Implementierung}
-Dieser Abschnitt beschäftigt sich mit der Implementierung des GuttenBase Plugins. Es werden die verwendeten Technologien erläutert, die Anforderungen aus dem Abschnitt \ref{anaylse} umgesetzt und die resultierende Anwendungsoberfläche dargestellt.
+Dieser Abschnitt beschäftigt sich mit der Implementierung des GuttenBase Plugins. Hier werden die verwendeten Technologien erläutert, die Anforderungen aus dem Abschnitt \ref{anaylse} umgesetzt sowie die resultierende Anwendungsoberfläche dargestellt.
 %Es werden einige 
 \subsection{verwendete Technologien}
 \subsubsection{GuttenBase}
@@ -694,7 +694,7 @@ Anschließend kann die Migration mit den eventuell hinzugefügten Hinweisen durc
 
 
 \subsubsection{IntelliJ Platform}
-Für die erfolgreiche IntelliJ Plugin Entwicklung muss auf mehrere Aspekte geachtet werden wie die Projektstruktur und die häufig verwendete Komponenten.\\
+Für die erfolgreiche IntelliJ Plugin Entwicklung muss auf mehrere Aspekte geachtet werden wie die Projektstruktur und die häufig verwendeten Komponenten.\\
 Die Plugin Entwicklung erfolgt in der IntelliJ IDE selbst. Deswegen kann das Plugin entweder in Java, Kotlin, Groovy oder Scala geschrieben werden.\\
 Der von Jetbrains empfohlene Weg für das Erstellen eines neuen Plugins ist das Gradle Projekt. Dabei muss die Option IntelliJ Platform Plugin ausgewählt werden, damit die Plugin Abhängigkeiten sowie die Basis-IDE automatisch konfiguriert werden. Zusätzlich muss die Datei plugin.xml entsprechend des zu entwickelnden Plugins angepasst werden. Diese enthält wichtige Informationen, die in den folgenden Tags (Auszeichnungen) erklärt werden:
 \begin{itemize}
@@ -725,7 +725,7 @@ Der von Jetbrains empfohlene Weg für das Erstellen eines neuen Plugins ist das 
 Die am häufigsten verwendete Methode, um die Plugin Funktionalität aufzurufen, ist die Nutzung der sogenannten Actions vom Action-System der IntelliJ-Platform.\\ \\
 Eine Aktion kann über ein Menüpunkt (menu item) oder einen Eintrag in der Symbolleiste ausgelöst werden. Dazu muss ein Eintrag in dem Actions Tag der plugin.xml Datei erfolgen. Dabei muss jede Action mindestens eine Id, eine Klasse und einen beschreibenden Text haben. I.d.R werden Menüpunkte nach Funktionaliät gruppiert. Um die Implementierte Action zu einer bestimmten Gruppe hinzufügen zu können, muss der Tag \textbf{<add-to-group>} verwendet werden.\\ \\
 Die Action Klasse muss von der AnAction Klasse abgeleitet werden und die actionPerformed() Methode überschreiben. Diese wird nach dem Klick auf das entsprechende Menupunk bzw. Symbolleiste aufgerufen.
-\subsubsection{Swing}
+%\subsubsection{Swing}
 %TODO TEST
 %\subsubsection{IntelliJ Plugin Entwicklung}
 
