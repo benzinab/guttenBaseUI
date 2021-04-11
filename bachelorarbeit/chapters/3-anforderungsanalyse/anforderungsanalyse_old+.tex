@@ -7,8 +7,41 @@
 
 Um die die Anforderungen an das System und den Soll-Zustand zu definieren, wird in diesem Abschnitt eine Anforderungsanalyse durchgeführt. 
 
-\section{Migrationsoperationenn}
-Konfigurationsschritte beziehen sich hauptsächlich auf die Hinweise der GuttenBase Bibliothek. Um den Umfang dieser Arbeit in Grenzen zu halten, wurden folgende wichtige Konfigurationsschritte für die Umsetzung ausgewählt:
+%\section{Migrationsoperationenn}
+%Mogrationsoperationen beziehen sich hauptsächlich auf die Hinweise der GuttenBase Bibliothek. Um den Umfang dieser Arbeit in Grenzen zu halten, wurden folgende wichtige Mogrationsoperationen für die Umsetzung ausgewählt:
+%
+%\begin{itemize}
+%	\item Spalten  umbenennen.
+%	\item Tabellen umbenennen.
+%	\item Filteroptionen für Spalten hinzufügen.
+%	\item Filteroptionen für Tabellen hinzufügen.
+%	\item Datentypen von Spalten ändern.
+%\end{itemize}
+
+\section{Festlegung der Anforderungen}
+%\label{anaylse}
+Zur Anforderungsanalyse sind mehrere Kundengespräche stattgefunden. Diese ergaben folgende Punkte, die von dem GuttenBase Plugin erfüllt werden sollen:
+\begin{itemize}
+	\item \textbf{A1: Mogrationsoperationen verwalten}\\
+	Um den Migrationsprozess zu individualisieren, soll der Benutzer die Möglichkeit haben, neue Mogrationsoperationen zu erstellen, zu editieren und zu löschen.
+	\item \textbf{A2: Mogrationsoperationen speichern} \\
+	hinugefügte Mogrationsoperationen sollen nach Bestätigung vom Benutzer gespeichert werden können. Diese sollen auch nach einem Neustart der Anwendung zur Verfügen stehen.
+	\item \textbf{A3: Überblick über alle Konsfigurationsschritte}
+	Der Benutzer soll über eine tabellarische Auflistung aller erstellten Mogrationsoperationen haben.\\
+	\item \textbf{A4: Datenbanken Verbiden} \\
+	Um eine erfolgreiche Migration durchzuführen, soll der Benutzer in der Lage sein, eine Verbindung zwischen der Quell- und Ziel-Datenbank herzustellen. Die zu migrierende Datenbank sowie die Ziel-Datenbank sollen aus den existierenden Datenbanken ausgewählt werden können.
+	\item \textbf{A5: Überblick über enthaltene Datenbankelemente}\\
+	Während des Migrationsprozess, soll der Benutzer einen Überblick über alle in der Quell-Datenbank enthaltenen Tabellen bzw. Spalten verfügen.
+	\item \textbf{A6: Existierende Mogrationsoperationen zur Migration hinzufügen}\\
+	Gespeicherte Mogrationsoperationen sollen bei der Übersicht der Datenbank Elementen zur Verfügung stehen. Diese können auf die entsprechenden Datenbank Elementen angewendet werden.
+	\item \textbf{A7: Hinzugefügte Mogrationsoperationen löschen}\\	
+	Der Benutzer soll die Möglichkeit haben, hinzugefügte Mogrationsoperationen zu löschen, nachdem sie zur Migration hinzugefügt wurden.
+	\item \textbf{A8: Migrationssprozess starten} \\
+	Im letzten Schritt der Migration kann der Benutzer den Migrationsprozess mit den hinzugefügten Mogrationsoperationen starten.	
+	\item \textbf{A9: Überblick über den Fortschritt der Migrationsprozess}\\
+	Damit der Benutzer den Migrationsprozess verfolgen kann, soll einen Überblick über den Fortschritt zur verfügung stehen. 
+\end{itemize}
+Um den Umfang dieser Arbeit in Grenzen zu halten, wurden folgende wichtige Mogrationsoperationen für die Umsetzung ausgewählt:
 
 \begin{itemize}
 	\item Spalten  umbenennen.
@@ -18,46 +51,22 @@ Konfigurationsschritte beziehen sich hauptsächlich auf die Hinweise der GuttenB
 	\item Datentypen von Spalten ändern.
 \end{itemize}
 
-\section{Festlegung der Anforderungen}
-\label{anaylse}
-Zur Anforderungsanalyse sind mehrere Kundengespräche stattgefunden. Diese ergaben folgende Punkte, die von dem GuttenBase Plugin erfüllt werden sollen:
-\begin{itemize}
-	\item \textbf{A1: Konfigurationsschritte verwalten}\\
-	Um den Migrationsprozess zu individualisieren, soll der Benutzer die Möglichkeit haben, neue Konfigurationsschritte zu erstellen, zu editieren und zu löschen.
-	\item \textbf{A2: Konfigurationsschritte speichern} \\
-	hinugefügte Konfigurationsschritte sollen nach Bestätigung vom Benutzer gespeichert werden können. Diese sollen auch nach einem Neustart der Anwendung zur Verfügen stehen.
-	\item \textbf{A3: Überblick über alle Konsfigurationsschritte}
-	Der Benutzer soll über eine tabellarische Auflistung aller erstellten Konfigurationsschritte haben.\\
-	\item \textbf{A4: Datenbanken Verbiden} \\
-	Um eine erfolgreiche Migration durchzuführen, soll der Benutzer in der Lage sein, eine Verbindung zwischen der Quell- und Ziel-Datenbank herzustellen. Die zu migrierende Datenbank sowie die Ziel-Datenbank sollen aus den existierenden Datenbanken ausgewählt werden können.
-	\item \textbf{A5: Überblick über enthaltene Datenbankelemente}\\
-	Während des Migrationsprozess, soll der Benutzer einen Überblick über alle in der Quell-Datenbank enthaltenen Tabellen bzw. Spalten verfügen.
-	\item \textbf{A6: Existierende Konfigurationsschritte zur Migration hinzufügen}\\
-	Gespeicherte Konfigurationsschritte sollen bei der Übersicht der Datenbank Elementen zur Verfügung stehen. Diese können auf die entsprechenden Datenbank Elementen angewendet werden.
-	\item \textbf{A7: Hinzugefügte Konfigurationsschritte löschen}\\	
-	Der Benutzer soll die Möglichkeit haben, hinzugefügte Konfigurationsschritte zu löschen, nachdem sie zur Migration hinzugefügt wurden.
-	\item \textbf{A8: Migrationssprozess starten} \\
-	Im letzten Schritt der Migration kann der Benutzer den Migrationsprozess mit den hinzugefügten Konfigurationsschritten starten.	
-	\item \textbf{A9: Überblick über den Fortschritt der Migrationsprozess}\\
-	Damit der Benutzer den Migrationsprozess verfolgen kann, soll einen Überblick über den Fortschritt zur verfügung stehen. 
-\end{itemize}
 
 
-
-\section{Datenmodell}
+\section{Vereinfachtes Datenmodell}
 In diesem Abschnitt wird ein vereinfachtes Datenmodell erstellt. Dies zeigt, welche Einheiten des Systems relevant sind und welche Beziehungen zwischen diesen Einheiten gelten. Es handelt sich hierbei noch nicht um eine Spezifikation von Klassen für die Implementierung, sondern um
-die Modellierung der realen Welt. Das Datenmodell ist leitend für die Architektur des Tools. Aus diesem Grund wird auf unnötige Details bzw. Attribute verzichtet.
-Das Datenmodell wird als UML-Klassendiagramm in der Abbildung \ref{img:abstract-datenmodell} angegeben. Dabei werden hauptsächlich die Konfigurationsschritte und deren Beziehungen dargestellt. \\
-Die Abstrakte Klasse \glqq GBAction\grqq definiert alle möglichen Konfigurationsschritte. Diese wird durch folgende Unterklassen erweitert:
+die Modellierung der realen Welt. Das Datenmodell ist leitend für die Architektur des Plugins. Aus diesem Grund wird auf unnötige Details bzw. Attribute verzichtet.
+Das Datenmodell wird als UML-Klassendiagramm in der Abbildung \ref{img:abstract-datenmodell} angegeben. Dabei werden hauptsächlich die Mogrationsoperationen und deren Beziehungen dargestellt. \\
+Die Abstrakte Klasse \glqq GBAction\grqq definiert alle möglichen Mogrationsoperationen. Diese wird durch folgende Unterklassen erweitert:
 \begin{itemize}
 	\item Rename: \\
 	Hierbei wird das Umbenennen eines Datenbankelementes modelliert. Jede Rename Klasse hat einen Typ (RenameType). Dieser definiert, wie Das Umbenennen des Datenbankelementes erfolgen soll und entspricht den Im Abschnitt \ref{section:umbenennen} vorgestellten Optionen für das Umbenennen. Außerdem wird das Umbenennen für Spalten bzw. Tabellen in zwei weiteren Unterklassen spezifiziert.
 	\item ChangeColumnType: \\
-	Diese Klasse entspricht dem Konfigurationsschritt \glqq Spalten-Datentyp Ändern\grqq.  
+	Diese Klasse entspricht der Mogrationsoperation \glqq Spalten-Datentyp Ändern\grqq.  
 	\item Exclude: \\
-	Die Exclude Klasse modelliert den Konfigurationsschritt für das Ausschließen einer Spalte bzw. einer Tabelle.
+	Die Exclude Klasse modelliert die Mogrationsoperation für das Ausschließen einer Spalte bzw. einer Tabelle.
 	\end{itemize}
-Außerdem enthält die Klasse Migration alle Konfigurationsschritte die beim Migrationssprozess angewendet werden.
+Außerdem enthält die Klasse Migration alle Mogrationsoperationen die beim Migrationssprozess angewendet werden.
 \begin{figure}[H]
 	\caption{Vereinfachtes Datenmodell}
 	\centering

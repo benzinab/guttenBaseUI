@@ -1,11 +1,119 @@
-\chapter{Test und Evaluation}
+\chapter{Evaluation}
 %- Allgemeines: Usability, Kriterien,... 
-\section{Testplan}
-\subsection{Experten Interview}
-%- Interview mit Nicole
-%\section{user test}
-%- Umfrage 
-\subsection{Unit-Tests}
-\subsection{Integrationstest}
-\section{Evaluation}
+\label{sec:evaluation}
+
+
+
+Die folgenden Abschnitte beschäftigen sich mit der Bewertung des erstellten Plugins. Zuerst wird die Evaluationsmethodik sowie der Ablauf der Evaluation beschrieben und anschließend werden die Ergebnisse vorgestellt.
+\section{Evaluationsmethodik}
+Um einen Gesamteindruck über die Gebrauchstauglichkeit (Usability) zu haben und Anpassungsmöglichkeiten zu identifizieren, wurde das entwickelte Tool in Form eines qualitativen Experteninterviews evaluiert. 
+
+Es werden in der Regel mindestens fünf Testpersonen benötigt um die meisten auftretenden Probleme (85\%) in einem System zu identifizieren\cite{nielsen1993mathematical}. Allerdings wurde im rahmen dieser Bachelorarbeit  aufgrund beschränkter zeitlicher Ressourcen nur ein Experteninterview durchgeführt. 
+
+die wichtigste Voraussetzung bei der Auswahl der Expertin war lediglig die Erfahrung mit Benutzerschnittstellen und User Experience. Außerdem waren Kenntnisse in der Datenbankverwaltung bzw. Datenbankmigration von Vorteil. 
+
+\section{Durchführung}
+Üblicherweise wird das Experteninterviews Leitfadeninterview durchgeführt \cite{mayring1994qualitative}. Dies ermöglicht die Erhebung von einzelnen, bestimmbaren Informationen sowie die Verfolgung von bestimmten Informationszielen. Deswegen wurde diese Befragungsart für die Evaluation gewählt. Bei dieser Befragungsmethode werden oft offene Fragen gestellt, um mehr Freiraum für Antworten und möglichst viele Informationen aus dem Interview zu gewinnen.
+
+Das Experteninterview hat online über Teams\footnote{https://teams.microsoft.com/} stattgefunden. Der Hauptgrund dafür war die aktuelle Corona Pandemie. Außerdem bieten Online Interviews eine flexible Vereinbarung gegenüber den physischen Interviews.
+
+Während des Experteninterviews wurde das GuttenBase Plugin über ein Share-Screen gezeigt. Dabei wurden die wichtigsten Funktionalitäten vorgestellt. 
+Zunächst wurden Fragen aus dem Leitfaden gestellt, welches vorab erstellt wurde. Das Leitfaden beinhaltet hauptsächlich Fragen über die Grundsätze der Informationsdarstellung und Benutzer-System-Interaktion, welche im Abschnitt \ref{sec:ziel} erläutert wurden. Außerdem wurden Fragen hinsichtlich der Verbesserungsmöglichkeiten gestellt.
+
+
+
+
+%
+%Struktur:
+%- was : expert interview
+%- Warum: Gesamteindruck + Verbesserungsvorschläge -> schnelle Anpassungen
+%- nur 1 expert intervieww (keine zeit)
+%
+%
+%
+%
+%
+%\cite{franziska18interview}
+%- : experteninterview (nur 1, da keine Zeit), auchh wenn 5 mindestens benötigt werden \cite{nielsen1993mathematical}
+%- Ziel: Machbarkeit + schnelle Anpassungen 
+%%- Wie: Proof of Concept??
+%- Befragungsmethode: Leitfadeninterview (ziel: Informationsziel verfolgen) - Semistrukturiertes Interview - offene Fragen
+%- Auswahl Expertin: Erfahrung in UX/UI + Kenntnisse in DBMS.
+%- Inhalt:
+%	- Ersteindruck
+%	- Usability Grundsätze
+%	- Vrbesserungsvorschläge
+%- Ablauf: Online Meetin + Screensharing + Zugriff auf Screen
+%- Interview Durchführung
+
+\section{Ergebnisse}
+Um das Interview auswerten zu können, wurden die Gespräche nach der Durchführung transkribiert. Zunächst wurde das transkribierte Interview  gemäß der qualitativen Inhaltsanalyse kodiert \cite{mayring1994qualitative}. Dabei wurde das Transkript genau durchgelesen und den Textfragmenten wurden bestimmte Kodes zugeordnet.
+Nach der Transkription erfolgte die Kategorienbildung. Dabei wurden folgende Kategorien identifiziert, die relevante Kodes zusammenfassen:
+\begin{itemize}
+	\item Eindruck
+	\item Usability
+	\item Verbesserungsvorschläge
+\end{itemize}
+
+Im Folgenden werden die Ergebnisse des Interviews entsprechend der genannten Kategorien zusammen gefasst.
+
+\subsection*{\textbf{Eindruck}}
+Der Gesamteindruck der Anwendungsoberfläche bezeichnet die Expertin als zufriedenstellend und positiv. Die Benutzeroberfläche wirkte insgesamt intuitiv und einheitlich mit der IntelliJ Entwicklungsumgebung. Außerdem findet die Expertin die Datenbankmigration in mehreren Schritten relativ einfach. 
+\subsection*{\textbf{Usability}}
+Es wurden mehrere Aspekte der Gebrauchstauglichkeit von den Teilnehmerin bewertet. Beispielsweise bewertet sie die \textbf{Fehlertoleranz} positiv. Sie gibt an, dass an fast allen Stellen wird eine Fehlermeldung angezeigt, die die Ursache des Fehlers erklärt. Dies ist der Fall bei der Datenbankverbindung zu sehen, wenn die Zugangsdaten nicht stimmen. Dabei wird die Fehlermeldung allerdings relativ spät angezeigt (erst nach dem Klick auf das Next Button), was die Expertin als verbesserungswürdig bezeichnet.
+
+Die \textbf{Selbstbeschreibfähigkeit} bezeichnet die Teilnehmerin als verbesserungsfähig. Dies liegt haupsächlich an der Platzierung des Plus Button bei der Konfigurationsübersicht des Plugins. Die Teilnehmerin findet konnte nicht herausfinden, was die Funktion des Buttons ist. Außerdem gibt sie an, dass die Bezeichnungen von den Menüpunkten für das Öffnen der Benutzeröberfläche nicht selbstbeschreibend sind.
+
+Die Teilnehmerin bewertet die \textbf{Aufgabenangemessenheit} generell positiv. Allerdings findet sie das Hinzufügen von Migrationsoperationen während der Migration wichtig. Dies wird aktuell allerdings nicht unterstützt.
+
+Die \textbf{Konsistenz} äußert sich die Expertin insgesamt positiv. Sie findet das Trennen von den Quell- und Zieldatenbanken bei der Datenbankverbindung gut. Allerdings ist ihr aufgefallen, dass die Schriftgröße von den \glqq Source\grqq\, und \glqq Target\grqq\, Überschriften zu klein. Sie findet außerdem Die Gruppierung von den Menüpunkten beim Öffnen der Benutzeröberfläche verbesserungswürdig. 
+
+Die Teilnehmerin bezeichnet die \textbf{Erwartungskonformität} als relativ gut. Sie gibt an, dass das System sich erwartungsgemäß. Auf der anderen Seite findet sie es schlecht, dass die Datenbanken nach dem Abschluß der Migration nicht automatisch aktualisiert werden.
+
+
+\subsection*{\textbf{Verbesserungsvorschläge}}
+\label{sec:verbesserung}
+Während des Interviews hat die Expertin vie Ideen vorgeschlagen, um das GuttenBase zu verbessern. Diese werden im Folgenden zusammengefasst:
+\begin{itemize}
+	\item \textbf{V1:} Menüpunkt \glqq Show Actions\grqq\, zu \glqq Show Migration Action\grqq\, umbenennen.
+	\item \textbf{V2:} Menüpunkte \glqq Migrate Database\grqq\, und \glqq Show Migration Action\grqq\, gruppieren und unter dem Menüpunkt \glqq Database Tools\grqq\, bewegen. 
+	\item \textbf{V3:} Schriftgröße von \glqq Source\grqq\, und \glqq Target\grqq\, bei der Datenbankverbindung vergrößern. 
+	\item \textbf{V4:} Echtzeit Überprüfung von den Benutzereingaben während der Datenbankverbindung.
+	\item \textbf{V5:} \glqq +\grqq\, Button bei der Konfigurationsübersicht umbenennen oder neben den Migrationsoperationen platzieren.
+	\item \textbf{V6:} Ein automatisches Aktualisieren der Zieldatenbank ermöglichen oder einen entsprechenden Hinweis am Ende der Migration in der Fortschrittsübersict anzeigen, damit der Benutzer informiert wird.
+\end{itemize}
+
+
+%- Interview transkribieren
+%- Kodierungsprozess: Kategorien erstellen
+%- qualitative Inhaltsanalyse: strukturierende Inhaltsanalyse - \cite{ramsenthaler2013qualitative}
+%- Kategorien: 
+%	- Usability: 
+%		- Fehlertoleranz
+%		- Aufgabenangemessenheit
+%		- Selbsbeschreibfähigkeit
+%		- Zufriedenheit 
+%	- Verbesserungsvorschläge
+%	- Usability: 
+%		- Erwartungskonformität: Hinweis Refresh hinzufügen oder refresh machen
+%		- Selbstbeschreibungsfähigkeit: show migration actions umbenennen, plus button umbenennen / bewegen.
+%		- Aufgabenangemessenheit: add actions button hinzufügen
+%		- Fehlertoleranz: real time check general db verbindung 
+%		- Konsistenz: Actions gruppieren, font ändern von src target, 
+%	
+%	- Gesamteindruck
+%		- positives Feedback: Zufrieden
+%		- Negatives Feedback: zusammenfassung aller - 
+%		
+%	- Verbesserungsvorschläge: Zusammenfassung vorschläge
+
 \section{Anpassungen}
+Nach der Evaluation wurden Anpassung vorgenomm, die schnell einsetzbar sind. diese werden im Folgenden aufgelisten:
+\begin{itemize}
+	\item \textbf{V1:} Menüpunkt \glqq Show Actions\grqq\, zu \glqq Show Migration Action\grqq\, umbenennen.
+	\item \textbf{V2:} Menüpunkte \glqq Migrate Database\grqq\, und \glqq Show Migration Action\grqq\, gruppieren und unter dem Menüpunkt \glqq Database Tools\grqq\, bewegen. 
+	\item \textbf{V3:} Schriftgröße von \glqq Source\grqq\, und \glqq Target\grqq\, bei der Datenbankverbindung vergrößern. 
+	\item \textbf{V5:} \glqq +\grqq\, Button bei der Konfigurationsübersicht neben den Migrationsoperationen platzieren.
+	\item \textbf{V6:} Hinweis am Ende der Migration in der Fortschrittsübersict anzeigen, damit der Benutzer informiert wird.
+\end{itemize}
+Es ist zu beachten, dass der Abschnitt \ref{sec:imp} entsprechend der neuen Anpassungen aktualisiert wurde.

@@ -144,8 +144,6 @@
 \def\supervisor#1{\gdef\@supervisor{#1}}
 \def\@supervisor{~}
 
-\def\advisor#1{\gdef\@advisor{#1}}
-\def\@advisor{~}
 
 
 % adjust some lengths
@@ -579,7 +577,6 @@
     \begin{tabular}{rl}
       \textbf{\examinername:} & \@examiner \\
       \textbf{\supervisorname:} & \@supervisor \\
-      \textbf{\advisorname:} & \@advisor
     \end{tabular}
   \end{center}
   \def\and{, }

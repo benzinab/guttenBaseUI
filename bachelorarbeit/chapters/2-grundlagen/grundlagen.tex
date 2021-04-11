@@ -1,14 +1,14 @@
 \chapter{Grundlagen}
-
-Dieses Kapitel liefert einen allgemeinen Einblick über einige Grundaspekte der Datenbank Migration sowie der GuttenBase Bibliothek. Zusätzlich gibt es eine kleine Einfüuhrung in die IntelliJ Plugin Entwicklung.\\
-Außerdem werden verwandte Arbeiten vorgestellt. 
+\label{sect:grundlagen}
+In diesem Kapitel wird einen allgemeinen Einblick in einige Grundaspekte der Datenbankmigration gegeben. 
+Außerdem werden vorhandene Arbeiten vorgestellt und einige Tools für die Datenbankmigration untersucht. Anschließend folgt eine Einführung in GuttenBase sowie die IntelliJ-Plugin-Entwicklung.
 
 \section{Datenbankmanagementsysteme}
-Damit Daten auf einem Computer verwaltet werden können, werden Datenbankmanagement Systeme (DBMS) benötigt. Diese sind leistungsfähige Programme für die flexible Speicherung und Abfrage strukturierter Daten. \\
+Damit Daten auf einem Computer verwaltet werden können, werden Datenbankmanagementsysteme (DBMS) benötigt. Diese sind leistungsfähige Programme für die flexible Speicherung und Abfrage strukturierter Daten. \\
 Außerdem hilft ein DBMS bei der Organisation und Integrität von Daten und regelt den Zugruff auf Datengruppen \cite{geisler2014datenbanken}. \\
-Ein DBMS kann aus einem einzelenen Programm bestehen. Dies ist z. B. bei einem Desktop-DBMS zu sehen. Es kann jedoch aus verschiedenen Programmen bestehen, die zusammenarbeiten und die Funktion des DBMS bereitstellen. Dies ist z. B. bei den servergestützen Datenbanksystemen der Fall.\\
-Um eine Datenbank Anwendung zu implementieren, muss auf das Datenbankmodell geachtet werden. Dies stellt die Daten einer Datenbank und deren Beziehungen abstrakt dar. Meistens wird ein relationales Datenbankmodell eingesetzt. Dies hat, im Gegensatz zu den anderen Datenbankmodellen, keine strukturelle Abhängigkeit und versteckt die physikalische Komplexität der Datenbank komplett vor den Anwendern.\\
-Es stehen zahlreiche Datenbankmanagementsysteme zur Verfügung. Folgendes sind einige der gängigsten DBMS:
+Ein DBMS kann aus einem einzelnen Programm bestehen. Dies ist z. B. bei einem Desktop-DBMS der Fall. Es kann jedoch auch aus verschiedenen Programmen bestehen, die interagieren und die Funktion des DBMS bereitstellen. Dies ist z. B. bei servergestützten Datenbanksystemen der Fall.\\
+Um eine Datenbankanwendung zu implementieren, muss auf das Datenbankmodell geachtet werden. Dieses stellt die Daten einer Datenbank und deren Beziehungen abstrakt dar. Meist wird ein relationales Datenbankmodell eingesetzt \cite{niedereichholz1992relationales}. Dieses weist im Gegensatz zu anderen Datenbankmodellen keine strukturelle Abhängigkeit auf und versteckt die physikalische Komplexität der Datenbank vollständig vor den Anwendern.\\
+Es stehen zahlreiche Datenbankmanagementsysteme zur Verfügung. Die folgenden sind einige der gängigsten DBMS:
 \begin{itemize}
 	\item Microsoft SQL Server
 	\item MS-Access
@@ -20,106 +20,263 @@ Es stehen zahlreiche Datenbankmanagementsysteme zur Verfügung. Folgendes sind e
 	\item DB2
 	\item Sybase
 \end{itemize}
-Um ein geeignetes DBMS auszuwählen, gibt es viele Kriterien wie die Ausführungszeit, CPU- und Speicher Nutzung. Der Artikel von Youssif Bassil, A Comparative Study on the Performance of the Top DBMS Systems, im Jahr 2011 vergleicht einige Datenbankmanagementsysteme anhand der genannten Kriterien.
+Um ein geeignetes DBMS auszuwählen, sind zahlreiche Kriterien wie die Ausführungszeit sowie die CPU- und Speicher Nutzung zu beachten. Im Artikel von Bassil, A Comparative Study on the Performance of the Top DBMS Systems, aus dem Jahr 2011 werden einige Datenbankmanagementsysteme anhand der genannten Kriterien überprüft \cite{bassil2012comparative}.
 
 \section{Datenbankmigration}
-
-
-Datenbank Migration wird immer mehr von Unternehmen bzw. Organisationen gebraucht. 
-
-Die Migration von Datenbanken dient zum Verschieben der Daten von der Quell-Datenbank zur Ziel-Datenbank einschließlich die Schemaübersetzung und Datentransformation.
-
-
-Mögliche Gründe für eine Dantenbank Migration sind:
+\label{sect:dbmigration}
+Die Migration von Datenbanken dient zum Verschieben von Daten von der Quelldatenbank zur Zieldatenbank einschließlich der Schemaübersetzung und der Datentransformation. Das Quellschema wird dabei semantisch in ein Zielschema übersetzt. Darauf basierend werden die enthaltenen Daten entsprechend den Datenbanktypen konvertiert \cite{elamparithi2015review}. \\
+Gründe für eine Datenbankmigration sind:
 \begin{itemize}
-	\item Upgrade auf eine neue Software oder Hardware
-	\item Änderung der Unternehmensrichtlinien
-	\item Investition in IT-Diienstleistungen
-	\item Integration von Datenquelle in ein System
-	\item Zusammenführen mehrerer Datenbanken in einer Datenbank für eine einheitliche Datenansicht.
-	\item Wartung des existierenden Systems ist schwer oder nicht möglich.
+	\item Upgrade auf eine neue Software oder Hardware,
+	\item Änderung der Unternehmensrichtlinien,
+	\item Investition in IT-Dienstleistungen,
+	\item Zusammenführen mehrerer Datenbanken in eine Datenbank für eine einheitliche Datenansicht;
+	\item dieWartung des existierenden Systems ist schwierig oder nicht möglich.
+	
+\end{itemize}
+	
+
+Wie jede Migration, erfolgt eine Datenbankmigration i. d. R. in mehreren Schritten. Diese beinhalten die Planung, den Entwurf, das Laden sowie die Überprüfung der Daten \cite{kowalczyk2018digital}. \\
+Bei einer Datenbankmigration ergeben sich stets Herausforderungen. Dies liegt meist daran, dass Datenbankmanagementsysteme unterschiedliche Formate zum Speichern der Daten aufweisen. Zu den Herausforderungen einer Datenbankmigration gehören ein Datenverlust, ungeeignete Migrationstools, Fehler beim Validieren bzw. Testen des Migrationsprozesses und unzureichende Kenntnisse bezüglich der Verwendung von Migrationstools \cite{kasonde2018seamless}. \\
+Während des Migrationsprozesses ist häufig eine benutzerdefinierte Lösung erforderlich, um die Daten entsprechend dem Zielsystem konvertieren zu können. Dies kann durch das Definieren von Migrationsoperationen erreicht werden. Im Folgenden werden einige bedeutende Migrationsoperationen erläutert, die während einer Datenbankmigration benötigt werden:
+\begin{itemize}
+	\item \textbf{M1: Schemaauswahl} \\
+	Der Benutzer kann ein bestimmtes Schema für die Migration auswählen.
+	\item \textbf{M2: Tabellenauswahl} \\
+	Der Benutzer kann mehrere Tabellen für die Migration auswählen. Alternativ dazu können Tabellen ausgeschlossen werden.
+	\item \textbf{M3: Spaltenauswahl} \\
+	Der Benutzer kann mehrere Spalten für die Migration auswählen. Alternativ dazu können Spalten ausgeschlossen werden.
+	\item \textbf{M4: Tabellenumbenennung} \\
+	Die Tabellen lassen sich in der Zieldatenbank umbenennen.
+	\item \textbf{M5: Spaltenumbenennung} \\
+	Die Spalten lassen sich in der Zieldatenbank umbenennen.
+	\item \textbf{M6: Benutzerdefinierte SQL-Klausel} \\
+	Damit lassen sich die SELECT Anweisungen konfigurieren, die für das Lesen der Daten aus der Quelldatenbank verwendet werden.
+	\item \textbf{M7: Migrationsfortschritt} \\
+	Der Fortschritt der Migration wird angezeigt. Eventuell wird ein Protokoll des Migrationsprozesses ausgegeben.
+	\item \textbf{M8: Zielschemaerstellung} \\
+	Meist verfügt die Zieldatenbank nicht über ein geeignetes Schema für die Migration. Mit dieser Migrationsoperation kann ein Zielschema vor der Migration erstellt werden.
+	%	\item M7: Benutzerdefinierte Reihenfolge von Tabellen.
+	%	\item M8: Benutzerdefinierte Reihenfolge von Spalten.
+	%	\item M9: Schema Export.
+	%	\item M10: create target schema
+	%	\item M5: Limits %TODO Das Definieren von limits for n. o. columns/tables/clause/... 
 \end{itemize}
 
-Außerdem gibt es unterschiedliche Strategien für Datenbank Migration. Diese können in drei Kategorien unterteilt werden:
 
-\begin{enumerate}
-	\item Migration durch objekt orientierte Schnittstellen: \\
-	Bei dieser Strategie werden Daten in form von Objekten bzw. XML Dateien verarbeitet. Dafür wird ein bidirektionales Mapping benötigt, ojektbasierte Schemas in Datenbank Schemas zu übersetzten.
-	\item Datenbank Integration: \\
-	Hier wird die Quell-Datenbank mit der Ziel-Datenbank verbunden, wodurch der Eindruck entsteht, als ob alle Daten in einer einzigen Datenbank gespeichert sind.	
-	\item Datenbank Migration: \\
-	Die Quell-Datenbank wird in die Ziel-Datenbank kopiert. Dabei werden Schemas in ein Zielschema semantisch übersetzt werden. Darauf basierend werden die enthaltenen Daten konvertiert.
-\end{enumerate}
-\section{Stand der Dinge}
+	
 
+
+\section{Aktueller Stand}
 \label{verwandte}
-Eines der Hauptprobleme in der Softwareindustrie besteht darin, eine hochwertige Datenverwaltung sicherzustellen. Dies ist auch der Fall bei einer Datenbank Migration, wobei die mit dem Migrationsworkflow verbundenen Aufgaben vielfältig und kompliziert sind. Das manuelle Ausführen dieser Aufgaben erfordert viel Zeit und ein sehr erfahrenes Team. Um Zeit und Kosten bei der Migration zu sparen und um wiederholende Aufgaben zu automatisieren, bieten sich zahlreiche Tools bzw. Prototypen für Datenbank Migration (DBMT für Databbase Migration Tool). \\
-Einige dieser Tools werden in der Tabelle \ref{table:tools} vorgestellt. Diese basiert auf den Vorschlag von Jutta Hortsmann, J.
+Die mit dem Migrationsworkflow verbundenen Aufgaben, etwa das Schreiben von Skripten und das Mapping der Datenbankelementen, sind vielfältig und z. T. komplex. Das manuelle Ausführen dieser Aufgaben erfordert häufig viel Zeit und ein erfahrenes Team. Um Zeit und Kosten bei der Migration zu sparen und um wiederholende Aufgaben zu automatisieren, bieten sich zahlreiche Tools bzw. Prototypen für die Datenbankmigration (DBMT für das Databbase-Migration-Tool). \\
+Einige dieser Tools werden in Tabelle \ref{table:tools1} vorgestellt \cite{horstmann2005migration}. Dabei werden sowohl Open-Source als auch kommerzielle Tools betrachtet. Die Tabelle liefert außerdem einen Einblick in die unterstützte Quell- und Zieldatenbank sowie die Plattformabhängigkeit. Die Einträge wurden nach dem Datum des letzten Release sortiert.
+ 
 
+\renewcommand{\thefootnote}{\roman{footnote}}
 \begin{table}[h]
 	\begin{center}
-		\begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{2cm}|p{3cm}| }
+		\begin{tabular}{ |p{2.5cm}|p{3cm}|p{3cm}|p{2cm}|p{2cm}|p{1.5cm}| }
 			\hline
-			\textbf{Name} & \textbf{Quell-DBMS} &  \textbf{Ziel-DBMS} &\textbf{Lizenz} & \textbf{Betriebssysteme} \\
+			\textbf{Name} & \textbf{Quell-DBMS} &  \textbf{Ziel-DBMS} &\textbf{Lizenz} & \textbf{Betriebs- systeme} & Datum des neusten Release\\
 			\hline
-			OSDM Toolkit (Apptility) & 
-			Oracle, SyBase, Informix, DB2, MS Access, MS SQL &  PostgreSQL, MySQL & 
-			Frei &  Windows, Linux, Unix und Mac OS \\
+			MapForce (Altova)\footnotemark[1]& SQL Server, DB2, MS Access, MySQL und PostgreSQL  & SQL Server, DB2, MS Access und Oracle & Kommerziell & Windows, Linux und Mac OS & 2021 \\
 			\hline
-			DB Migration (Akcess) &  Oracle und MS SQL &  PostgreSQL und MYSQL  & Kommerziell & Windows\\
+			SQLWays (Ispirer)\footnotemark[2] & Alle RDMBS & PostgreSQL und MySQL & Kommerziell & Windows &2020 \\
 			\hline
-			Mssql2 Pgsql (OS Project) &   MS SQL&   PostgreSQL  & Frei & Windows \\
+			DBConvert (DB Convert)\footnotemark[3] & Oracle, DB2, SQLite, MySQL, PostgreSQL, MS Access und Foxpro & Oracle, DB2, SQLite, MySQL, PostgreSQL, MS Access und Foxpro & Kommerziell & Windows & 15.12.2020 \\
 			\hline
-			MySQL
-			Migration
-			Toolkit (MySql AB)&  MS Access und Oracle &  MySQL & Frei & Windows  \\
+			MySQL Workbench Migration Wizard (MySql AB) \footnotemark[4] &  MS Access und Oracle &  MySQL & Frei & Windows & 07.12.2020  \\
 			\hline
-			Open DBcopy (Puzzle ITC) & Alle RDBMS& Alle RDMS & Frei & Betriebssystem- unabhängig \\
+			Open DBcopy (Puzzle ITC) \footnotemark[5] & Alle RDBMS& Alle RDBMS & Frei & Alle Betriebssysteme & 27.07.2020 \\
 			\hline
-			Progression DB (Versora) &  MS SQL &  PostgreSQL, MySQL und	Ingres & Frei & Linux und Windows \\
+			SQuirrel DBCopy-Plugin (Sourceforge)\footnotemark[6] & Alle RDBMS  & Alle RDBMS & Frei & Alle Betriebssysteme & 30.04.2020\\
 			\hline
-			Shift2Ingres (OS Project)& Oracle und DB2 & Ingres & Frei &  Betriebssystem- unabhängig \\
+			Centerprise Data Integrator (Astera)\footnotemark[7] & SQL Server, DB2, MS Access, MySQL und PostgreSQL& SQL Server, DB2, MS Access, MySQL und PostgreSQL& 
+			Kommerziell & Windows & 02.2020 \\
 			\hline
-			SQLPorter (Real Soft Studio)& Oracle, MS SQL, DB2 und Sybase & MySQL & Kommerziell & Linux, Mac OS und Windows \\
+			Progression DB (Versora)\footnotemark[8] &  MS SQL &  PostgreSQL, MySQL und	Ingres & Frei & Linux und Windows & 01.05.2015 \\ %TODO not used currently
 			\hline
-			SQLWays (Ispirer) & Alle RDMBS & PostgreSQL und MySQL & Kommerziell & Windows \\
+			Mssql2Pgsql (OS Project)\footnotemark[9] &   MS SQL&   PostgreSQL  & Frei & Windows & 17.06.2005 \\ %TODO not used currently
 			\hline
-			SwisSQL Data Migration Tool (AdventNet)& Oracle, DB2, MS SQL, Sybase und MaxDB & MySQL & Kommerziell & Windows \\
+			Shift2Ingres (OS Project)\footnotemark[10] & Oracle und DB2 & Ingres & Frei &  Alle Betriebssysteme & 20.05.2005 \\ %TODO not used currently
 			\hline
-			SwisSQL SQLOne Console (AdventNet)& Oracle, MSSQL, DB2, Informix und Sybase & PostgreSQL und MySQL  & Kommerziell & Windows \\
+%			SwisSQL Data Migration Tool (AdventNet)\footnotemark[11] & Oracle, DB2, MS SQL, Sybase und MaxDB & MySQL & Kommerziell & Windows & 12.10.2004 \\ %TODO not used currently
+%			\hline
+%			SwisSQL SQLOne Console (AdventNet)\footnotemark[12] & Oracle, MSSQL, DB2, Informix und Sybase & PostgreSQL und MySQL  & Kommerziell & Windows & 12.06.2004 \\ %TODO not used currently
+%			\hline
+%			SQLPorter (Real Soft Studio)& Oracle, MS SQL, DB2 und Sybase & MySQL & Kommerziell & Linux, Mac OS und Windows & 2004 \\
+%			\hline
+%			OSDM Toolkit (Apptility) & 
+%			Oracle, SyBase, Informix, DB2, MS Access, MS SQL &  PostgreSQL, MySQL & %TODO not available 
+%			Frei &  Windows, Linux, Unix und Mac OS & \\
+%			\hline
+%			DB Migration (Akcess) &  Oracle und MS SQL &  PostgreSQL und MYSQL  & Kommerziell & Windows\\ %TODO not available
+%			\hline
+		\end{tabular}
+	\end{center}
+	\caption{Tools für die Datenbankmigration}
+	\label{table:tools1}
+\end{table}
+%http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.94.3883&rep=rep1&type=pdf (juttaa)
+%http://opendbcopy.sourceforge.net/ Open DBcopy
+\footnotetext[1] {\url{https://www.altova.com/} [25.03.2021]}
+\footnotetext[2] {\url{https://www.ispirer.com/products/why-sqlways} [25.03.2021]}
+\footnotetext[3] {\url{https://dbconvert.com/} [25.03.2021]}
+\footnotetext[4] {\url{https://www.mysql.com/products/workbench/migrate} [25.03.2021]}
+\footnotetext[5] {\url{http://opendbcopy.sourceforge.net/} [25.03.2021]}
+\footnotetext[6] {\url{http://dbcopyplugin.sourceforge.net/} [25.03.2021]}
+\footnotetext[7] {\url{https://www.astera.com/de/products/centerprise-data/} [25.03.2021]}
+\footnotetext[8] {\url{https://sourceforge.net/projects/progressiondb/} [25.03.2021]}
+\footnotetext[9] {\url{https://sourceforge.net/projects/mssql2pgsql/} [25.03.2021]}
+\footnotetext[10] {\url{http://shift2ingres.sourceforge.net/} [25.03.2021]}
+
+\renewcommand{\thefootnote}{\arabic{footnote}}
+
+Um einen Überblick zu erlangen, wurden die jene Tools untersucht, für die eine freie Lizenz angeboten wird (MySQL Workbench Migration Wizard, Open-DBcopy und Squirrel-DBCopy-Plugin). Tabelle \ref{table:tools2} zeigt die unterstützten Migrationsoperationen (siehe Abschnitt \ref{sect:dbmigration}) sowie einige Vor- und Nachteile für jedes der genannten Tools. 
+Das MySQL-Workbench-Migrationstool ist ein Teil der MySQL Workbench, die von Oracle\footnote{\url{https://www.oracle.com/} [26.03.2021]} entwickelt wurde. Es verfügt über eine benutzerfreundliche Anwendungsoberfläche, wobei die Migration in mehreren Schritten erfolgt. Während der Migration hat der Benutzer eine Übersicht über die Quell- und Zieldatenbanken. Außerdem gibt es die Möglichkeit, die SQL-Anfragen für jedes Datenbankelement zu editieren. Die ermöglicht eine angemessene Konfiguration des Migrationsprozesses. \\
+Das Open-DBCopy-Tool, das von Puzzle ITC entwickelt wurde \footnotemark[5], wird als eigenständiges Programm bereitgestellt. Bemerkenswert ist dabei die Unterstützung von zahlreichen Migrationsoperationen inklusive der Tabellen- und Spaltenumbenennung. Diese sind allerdings nicht vollständig vom Tool automatisiert, sondern müssen vom Nutzer übernommen werden, indem die Hibernate\footnote{\url{http://hibernate.org/} [26.03.2021} Mapping Dateien überschrieben werden. Das Open-DBCopy-Tool verfügt zwar über eine umfangreiche Benutzeroberfläche, diese ist allerdings nicht benutzerfreundlich und modern genug\footnote{\url{http://opendbcopy.sourceforge.net/user-manual.pdf}, S30 [26.03.2021]}, um eine angemessene Konfiguration des Migrationsprozesses durchzuführen. \\
+Das DBCopy-Plugin\footnotemark[6] ist ein Teil des SQuirrel-SQL-Client\footnote{\url{http://www.squirrelsql.org/} [26.03.2021]}, der ein  grafisches Werkzeug für die Verbindung zu Datenbanken darstellt. Dieses Migrationstool bietet eine minimale Datenbankmigration, welche nach dem Klick auf die zu migrierende Tabelle erfolgt. Dabei hat der Nutzer ein einfaches und intuitives Benutzererlebnis, allerdings ist der Funktionsumfang eingeschränkt.\\
+Zusammenfassend lässt sich sagen, dass keines der erwähnten Tools eine vollständige Liste von Migrationsoperationen beinhaltet. Außerdem ist auffallend, dass die Tabellen- bzw. Spaltenumbenennung lediglich von einem Tool teilweise unterstützt wird.
+%Benutzererlebnis
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{ |p{4.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}| }
 			\hline
-			MapForce (Altova) & SQL Server, DB2, MS Access, MySQL und PostgreSQL & SQL Server, DB2, MS Access und Oracle & Kommerziell & Windows, Linux und Mac OS \\
+			\textbf{Migrationsoperationen} & \textbf{MySQL Workbench Migration Wizard} & \textbf{Open DBcopy} & \textbf{SQuirrel DBCopy Plugin}  \\
 			\hline
-			Centerprise Data Integrator (Astera) & SQL Server, DB2, MS Access, MySQL und PostgreSQL& SQL Server, DB2, MS Access, MySQL und PostgreSQL& 
-			Kommerziell & Windows\\
+			Schemaauswahl (M1) &  & $\checkmark$& \\
 			\hline
-			DBConvert (DB Convert) & Oracle, DB2, SQLite, MySQL, PostgreSQL, MS Access und Foxpro & Oracle, DB2, SQLite, MySQL, PostgreSQL, MS Access und Foxpro & Kommerziell & Windows \\
+			Tabellenauswahl (M2) & $\checkmark$ & $\checkmark$& $\checkmark$ \\
 			\hline
-			SQuirrel DBCopy Plugin (Sourceforge) & Alle RDBMS  & Alle RDBMS & Frei & Alle Betriebssysteme\\
+			Spaltenauswahl (M3) & $\checkmark$& $\checkmark$& \\
+			\hline
+			Tabellenumbenennung (M4)& &$\checkmark$ & \\
+			\hline
+			Spaltenumbenennung (M5)& & $\checkmark$& \\
+			\hline
+			Benutzerdefinierte SQL-Klausel (M6)& $\checkmark$& & \\
+			\hline
+			Migrationsfortschritt (M7)& $\checkmark$& $\checkmark$& $\checkmark$ \\
+			\hline
+			Zielschemaerstellung (M8)&$\checkmark$ & & \\
 			\hline
 		\end{tabular}
 	\end{center}
-	\caption{Database Migration Tools}
-	\label{table:tools}
+	\caption{Vergleich freier Migrationstools}
+	\label{table:tools2}
 \end{table}
-%http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.94.3883&rep=rep1&type=pdf (juttaa)
+%
+%\item M1: Schemaasuwahl
+%\item M2: Tabellenauswahl.
+%\item M3: Spaltenauswahl.
+%\item M4: Tabellenumbenennung.
+%\item M5: Spaltenumbenennung.
+%\item M6: Benutzerdefinierte WHERE-Klausel.
+%\item M7: Migrationsfortschritt.
+%Zielschema Erstellung
+%
+%old:
+%
+%\item M1: Tabellenumbenennung.
+%\item M2: Spaltenumbenennung.
+%\item M3: Tabellenauswahl.
+%\item M4: Spaltenauswahl.
+%\item M5: Limits %TODO Das Definieren von limits for n. o. columns/tables/clause/... 
+%\item M6: Benutzerdefinierte WHERE-Klausel. %Das Hinzufügen von WHERE clauses zu den SELECT statements. (Filter table / filter columns with content).
+%\item M7: Benutzerdefinierte Reihenfolge von Tabellen.
+%\item M8: Benutzerdefinierte Reihenfolge von Spalten.
+%\item M9: Schema Export.
+%\item M10: create target schema
+%\item M11: Migrationsfortschritt
+%\item M0: Schemaasuwahl
 
 
-\subsection{GutenBase}
+%\begin{table}[h]
+%	\begin{center}
+%		\begin{tabular}{ |p{2cm}|p{4cm}|p{4cm}|p{4cm}| }
+%			\hline
+%			\textbf{Name} & \textbf{Verfügbare Migrationsoperationen} & Vorteile & Nachteile  \\
+%			\hline
+%			MySQL Workbench Migration Wizard  & 
+%			M2, M3, M6, M8, M7 new  
+%			\begin{itemize}
+%				\item Tabellenauswahl (M3).
+%				\item Spaltenauswahl (M4).
+%				\item Benutzerdefinierte WHERE-Klausel (M6).
+%				\item Schemaerstellung.
+%				\item 
+%			\end{itemize} & 
+%			  
+%			\begin{itemize}
+%				\item
+%			\end{itemize} &   
+%			
+%			\begin{itemize}
+%				\item
+%			\end{itemize}\\
+%			\hline
+%			
+%			Open DBcopy  &
+%			 M1, M2, M3, M4, M5, M7  
+%			 \begin{itemize}
+%			 	\item
+%			 	\item
+%			 	\item
+%			 	\item
+%			 	\item
+%			 	\item
+%			 \end{itemize} &
+%		    
+%			 \begin{itemize}
+%				 \item
+%			 \end{itemize} & 
+%		 
+%			 \begin{itemize}
+%				 \item
+%			 \end{itemize} \\ %not user friendly for rename (http://opendbcopy.sourceforge.net/user-manual.pdf p31)
+%			\hline
+%			
+%			SQuirrel DBCopy Plugin  & 
+%			M2, M7 new 
+%			
+%			\begin{itemize}
+%				\item
+%				\item
+%			\end{itemize} & 
+%			
+%			\begin{itemize}
+%				\item
+%			\end{itemize}& 
+%			
+%			\begin{itemize}
+%				\item
+%			\end{itemize}\\ 
+%			\hline
+%		\end{tabular}
+%	\end{center}
+%	\caption{Vorteile und Nachteile einiger freien Database Migration Tools}
+%	\label{table:tools2}
+%\end{table}
+
+\subsection{GuttenBase}
 
 \label{section:grundlagen:gb}
-Viele Software Unternehmen haben sich dafür entschieden, ein eigenes Tool für Datenbankmigration zu entwickeln. Dies ist der Fall bei der Firma Akquinet AG, wo die Open Source Bibliothek GuttenBase in 2012 entwickelt wurde. Da GuttenBase open source ist, wurde sie in weiteren Schritten weiterentwickelt und um zusätzliche Funktionen erweitert.\\ \\
-Anderes als die in der Tabelle \ref{table:tools} vorgestellten Tools, bietet GuttenBase eine gewisse Flexibilität bei der Migration
-.
-Für die Migration einer Datenbank ist häufig eine benutzerdefinierte Lösung erforderlich Z. B. durch das Unbenennen von Tabellen bzw. Spalten in der Zieldatenbank, das Umwandeln von Spaltentypen, das Ausschließen von bestimmten Tabellen bzw. Spalten usw. \\
-
-Dazu können die sogenannten Konfigurationshinweise hinzugefügt werden. Diese können durch das Überschreiben der Mapping Klassen spezifiziert werden. Standardmäßig wird eine Standardimplementierung die Hinweise nach dem Verbinden der Datenbanken hinzugefügt. Diese können jedoch von dem Nutzer überschrieben werden. 
+Zahlreiche Softwareunternehmen haben sich dafür entschieden, ein eigenes Tool für Datenbankmigration zu entwickeln. Dies ist der Fall in der Firma Akquinet AG, in der die Open-Source-Bibliothek GuttenBase im Jahr 2012 entwickelt wurde.\\
+GuttenBase verfügt zwar über keine Benutzeroberfläche, beinhaltet aber zahlreiche Funktionalitäten für die Datenbankmigration. Es werden mehrere Migrationsoperationen angeboten. Bis auf die Schemaerstellung (M8), werden alle Migrationsoperationen unterstützt, die in Abschnitt \ref{sect:dbmigration} definiert wurden. Zusätzlich beinhaltet GuttenBase weitere Migrationsoperationen, mit denen die Datenbankmigration zusätzlich  individualisiert werden kann.\\
+GuttenBase kann aktuell in jedes Java-Projekt (z. B. Gradle oder Maven) importiert und darin genutzt werden. Die Nutzung von GuttenBase wird in Abschnitt \ref{sec:imp:gb} detailliert erläutert.
+%
+%Anderes als die in der Tabelle \ref{table:tools1} vorgestellten Tools, bietet GuttenBase eine gewisse Flexibilität bei der Migration
+%.
+%Für die Migration einer Datenbank ist häufig eine benutzerdefinierte Lösung erforderlich Z. B. durch das Unbenennen von Tabellen bzw. Spalten in der Zieldatenbank, das Umwandeln von Spaltentypen, das Ausschließen von bestimmten Tabellen bzw. Spalten usw. 
+%
+%Dazu können die sogenannten Konfigurationshinweise hinzugefügt werden. Diese können durch das Überschreiben der Mapping Klassen spezifiziert werden. Standardmäßig wird eine Standardimplementierung die Hinweise nach dem Verbinden der Datenbanken hinzugefügt. Diese können jedoch von dem Nutzer überschrieben werden. welche
 
 \subsection{IntelliJ}
 
-Die von der Firma JetBrains und in Java entwickelte Entwicklungsumgebung (IDE), IntelliJ IDEA, ist ein Teil einer Reihe von ähnlich JetBains Entwicklungsumgebungen wie Clion, PyCharm, PhpStrom, DataGrip usw. Diese basieren  auf den gleichen Kern, nämlich den IntelliJ Plattform SDK, welcher eine freie Lizenz hat und kann von Dritten zum Erstellen von IDEs verwendet werden.\\ \\
-IntelliJ IDEA ist mit der Implementierung in Java, Kotlin, Groovy und Scala geeignet. Sie hat außerdem unterschiedliche Funktionalitäten. Dazu gehört ein GUI-Editor, ein Build-Management Tool (z. B. Gradle) und andere Frameworks z. B. für Versionskontrolle, Refactoring, und Test.\\
-Der Funktionsumfang dieser IDE kann mittels Plugins erweitert werden. 
+Die von der Firma JetBrains und in Java entwickelte Entwicklungsumgebung (IDE), IntelliJ IDEA, ist ein Teil einer Reihe von ähnlich JetBains Entwicklungsumgebungen wie Clion, PyCharm, PhpStrom, DataGrip usw. Diese basieren  auf dem gleichen Kern, nämlich dem IntelliJ-Plattform-SDK, der eine freie Lizenz aufweist und von Dritten zum Erstellen von IDEs verwendet werden kann.\\ \\
+IntelliJ IDEA eignet sich für die Implementierung in Java, Kotlin, Groovy und Scala. Die Umgebung hat außerdem unterschiedliche Funktionalitäten. Dazu gehören ein GUI-Editor, ein Build-Management-Tool (z. B. Gradle) und andere Frameworks etwa für die Versionskontrolle, das Refactoring, und einen Test.\\
+Der Funktionsumfang dieser IDE kann mittels Plugins erweitert werden. Ein Beispiel davon ist das Database-Tool and SQL-Plugin, die zur Datenbankverwaltung dienen. Damit können Datenbanken erstellt, verwaltet und gelöscht werden. Außerdem werden die meisten Datenbankmanagementsysteme unterstützt.
 
 
 

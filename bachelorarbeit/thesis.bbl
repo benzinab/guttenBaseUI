@@ -19,6 +19,120 @@
 
 \refsection{0}
   \datalist[entry]{anyt/global//global/global}
+    \entry{bassil2012comparative}{article}{}
+      \name{author}{1}{}{%
+        {{hash=af2768b9d2143f069f52c4b98255ac20}{%
+           family={Bassil},
+           familyi={B\bibinitperiod},
+           given={Youssef},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{af2768b9d2143f069f52c4b98255ac20}
+      \strng{fullhash}{af2768b9d2143f069f52c4b98255ac20}
+      \strng{bibnamehash}{af2768b9d2143f069f52c4b98255ac20}
+      \strng{authorbibnamehash}{af2768b9d2143f069f52c4b98255ac20}
+      \strng{authornamehash}{af2768b9d2143f069f52c4b98255ac20}
+      \strng{authorfullhash}{af2768b9d2143f069f52c4b98255ac20}
+      \field{labelalpha}{Bas12}
+      \field{sortinit}{B}
+      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1205.2889}
+      \field{title}{A comparative study on the performance of the Top DBMS systems}
+      \field{year}{2012}
+    \endentry
+    \entry{duttaroy2016sap}{collection}{}
+      \name{author}{1}{}{%
+        {{hash=8746f0abe6443aeb6125d6061d51ab5c}{%
+           family={DuttaRoy},
+           familyi={D\bibinitperiod},
+           given={Sudipa},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{8746f0abe6443aeb6125d6061d51ab5c}
+      \strng{fullhash}{8746f0abe6443aeb6125d6061d51ab5c}
+      \strng{bibnamehash}{8746f0abe6443aeb6125d6061d51ab5c}
+      \strng{authorbibnamehash}{8746f0abe6443aeb6125d6061d51ab5c}
+      \strng{authornamehash}{8746f0abe6443aeb6125d6061d51ab5c}
+      \strng{authorfullhash}{8746f0abe6443aeb6125d6061d51ab5c}
+      \field{labelalpha}{Dut16}
+      \field{sortinit}{D}
+      \field{sortinithash}{c438b3d5d027251ba63f5ed538d98af5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{SAP Business Analytics}
+      \field{title}{SAP analytics products}
+      \field{year}{2016}
+      \field{pages}{71\bibrangedash 85}
+      \range{pages}{15}
+    \endentry
+    \entry{datig2018telling}{article}{}
+      \name{author}{2}{}{%
+        {{hash=f4bb90ec504791f286507f69c610d173}{%
+           family={Datig},
+           familyi={D\bibinitperiod},
+           given={Ilka},
+           giveni={I\bibinitperiod}}}%
+        {{hash=dffee933a6d7dde2e1d1613bc6c5a77f}{%
+           family={Whiting},
+           familyi={W\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Emerald Publishing Limited}%
+      }
+      \strng{namehash}{5d7610cb816e6f7c17d4355238e5e87f}
+      \strng{fullhash}{5d7610cb816e6f7c17d4355238e5e87f}
+      \strng{bibnamehash}{5d7610cb816e6f7c17d4355238e5e87f}
+      \strng{authorbibnamehash}{5d7610cb816e6f7c17d4355238e5e87f}
+      \strng{authornamehash}{5d7610cb816e6f7c17d4355238e5e87f}
+      \strng{authorfullhash}{5d7610cb816e6f7c17d4355238e5e87f}
+      \field{labelalpha}{DW18}
+      \field{sortinit}{D}
+      \field{sortinithash}{c438b3d5d027251ba63f5ed538d98af5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Library Hi Tech News}
+      \field{title}{Telling your library story: tableau public for data visualization}
+      \field{year}{2018}
+    \endentry
+    \entry{elamparithi2015review}{article}{}
+      \name{author}{2}{}{%
+        {{hash=0da549b2a8dd209949d5ddcb7d2ace04}{%
+           family={Elamparithi},
+           familyi={E\bibinitperiod},
+           given={M},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d208683f71b4b06d72b02fb1dfdc4764}{%
+           family={Anuratha},
+           familyi={A\bibinitperiod},
+           given={V},
+           giveni={V\bibinitperiod}}}%
+      }
+      \strng{namehash}{694c2eb8707dac88de5e8234326b1372}
+      \strng{fullhash}{694c2eb8707dac88de5e8234326b1372}
+      \strng{bibnamehash}{694c2eb8707dac88de5e8234326b1372}
+      \strng{authorbibnamehash}{694c2eb8707dac88de5e8234326b1372}
+      \strng{authornamehash}{694c2eb8707dac88de5e8234326b1372}
+      \strng{authorfullhash}{694c2eb8707dac88de5e8234326b1372}
+      \field{labelalpha}{EA15}
+      \field{sortinit}{E}
+      \field{sortinithash}{c554bd1a0b76ea92b9f105fe36d9c7b0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{World Journal of Computer Application and Technology}
+      \field{number}{3}
+      \field{title}{A Review on Database Migration Strategies, Techniques and Tools}
+      \field{volume}{3}
+      \field{year}{2015}
+      \field{pages}{41\bibrangedash 48}
+      \range{pages}{8}
+    \endentry
     \entry{geisler2014datenbanken}{book}{}
       \name{author}{1}{}{%
         {{hash=80d9f4b00eee9b74adb781ba417b84a8}{%
@@ -43,6 +157,243 @@
       \field{labeltitlesource}{title}
       \field{title}{Datenbanken: grundlagen und design}
       \field{year}{2014}
+    \endentry
+    \entry{housel1974architecture}{proceedings}{}
+      \name{author}{3}{}{%
+        {{hash=b581da45e1575acdce000a7fff0574dc}{%
+           family={Housel},
+           familyi={H\bibinitperiod},
+           given={Barron\bibnamedelima C},
+           giveni={B\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=e42fa64112b3ad7a51e8b16e069162dd}{%
+           family={Lum},
+           familyi={L\bibinitperiod},
+           given={Vincent\bibnamedelima Y},
+           giveni={V\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
+        {{hash=23f5c3b2d8613b8e53f02a62f264edc4}{%
+           family={Shu},
+           familyi={S\bibinitperiod},
+           given={Nan},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{5ecf4c63768f62477ff3fcb75b658c4a}
+      \strng{fullhash}{5ecf4c63768f62477ff3fcb75b658c4a}
+      \strng{bibnamehash}{5ecf4c63768f62477ff3fcb75b658c4a}
+      \strng{authorbibnamehash}{5ecf4c63768f62477ff3fcb75b658c4a}
+      \strng{authornamehash}{5ecf4c63768f62477ff3fcb75b658c4a}
+      \strng{authorfullhash}{5ecf4c63768f62477ff3fcb75b658c4a}
+      \field{labelalpha}{HLS74}
+      \field{sortinit}{H}
+      \field{sortinithash}{6db6145dae8dc9e1271a8d556090b50a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 1974 ACM SIGFIDET (now SIGMOD) workshop on Data description, access and control}
+      \field{title}{Architecture to an interactive migration system (AIMS)}
+      \field{year}{1974}
+      \field{pages}{157\bibrangedash 169}
+      \range{pages}{13}
+    \endentry
+    \entry{horstmann2005migration}{article}{}
+      \name{author}{1}{}{%
+        {{hash=e3dcf927e3a8ba303829bdd28d7ae074}{%
+           family={Horstmann},
+           familyi={H\bibinitperiod},
+           given={Jutta},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Citeseer}%
+      }
+      \strng{namehash}{e3dcf927e3a8ba303829bdd28d7ae074}
+      \strng{fullhash}{e3dcf927e3a8ba303829bdd28d7ae074}
+      \strng{bibnamehash}{e3dcf927e3a8ba303829bdd28d7ae074}
+      \strng{authorbibnamehash}{e3dcf927e3a8ba303829bdd28d7ae074}
+      \strng{authornamehash}{e3dcf927e3a8ba303829bdd28d7ae074}
+      \strng{authorfullhash}{e3dcf927e3a8ba303829bdd28d7ae074}
+      \field{labelalpha}{Hor05}
+      \field{sortinit}{H}
+      \field{sortinithash}{6db6145dae8dc9e1271a8d556090b50a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Computation and Information Structures (CIS)}
+      \field{title}{Migration to open source databases}
+      \field{year}{2005}
+      \field{pages}{12\bibrangedash 13}
+      \range{pages}{2}
+    \endentry
+    \entry{kowalczyk2018digital}{book}{}
+      \name{author}{1}{}{%
+        {{hash=3ce570a614ecf3897fadc878c1a34dad}{%
+           family={Kowalczyk},
+           familyi={K\bibinitperiod},
+           given={Stacy\bibnamedelima T},
+           giveni={S\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {ABC-CLIO}%
+      }
+      \strng{namehash}{3ce570a614ecf3897fadc878c1a34dad}
+      \strng{fullhash}{3ce570a614ecf3897fadc878c1a34dad}
+      \strng{bibnamehash}{3ce570a614ecf3897fadc878c1a34dad}
+      \strng{authorbibnamehash}{3ce570a614ecf3897fadc878c1a34dad}
+      \strng{authornamehash}{3ce570a614ecf3897fadc878c1a34dad}
+      \strng{authorfullhash}{3ce570a614ecf3897fadc878c1a34dad}
+      \field{labelalpha}{Kow18}
+      \field{sortinit}{K}
+      \field{sortinithash}{d3edc18d54b9438a72c24c925bfb38f4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Digital Curation for Libraries and Archives}
+      \field{year}{2018}
+    \endentry
+    \entry{kasonde2018seamless}{article}{}
+      \name{author}{2}{}{%
+        {{hash=0b853520e0863110596f0c1fca84160c}{%
+           family={Kasonde},
+           familyi={K\bibinitperiod},
+           given={Mutale},
+           giveni={M\bibinitperiod}}}%
+        {{hash=81fbd11b07c3cd131e0da7bcc94fd7d1}{%
+           family={Tembo},
+           familyi={T\bibinitperiod},
+           given={Simon},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{aa645c447710229e8bb927db64b6f571}
+      \strng{fullhash}{aa645c447710229e8bb927db64b6f571}
+      \strng{bibnamehash}{aa645c447710229e8bb927db64b6f571}
+      \strng{authorbibnamehash}{aa645c447710229e8bb927db64b6f571}
+      \strng{authornamehash}{aa645c447710229e8bb927db64b6f571}
+      \strng{authorfullhash}{aa645c447710229e8bb927db64b6f571}
+      \field{labelalpha}{KT18}
+      \field{sortinit}{K}
+      \field{sortinithash}{d3edc18d54b9438a72c24c925bfb38f4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Advanced Computer Science and Applications}
+      \field{number}{1}
+      \field{title}{A Seamless Network Database Migration Tool for Insititutions in Zambia}
+      \field{volume}{9}
+      \field{year}{2018}
+      \field{pages}{191\bibrangedash 199}
+      \range{pages}{9}
+    \endentry
+    \entry{mayring1994qualitative}{book}{}
+      \name{author}{1}{}{%
+        {{hash=354e18c4014b84fb9bd1af1fc4d7371e}{%
+           family={Mayring},
+           familyi={M\bibinitperiod},
+           given={Philipp},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {UVK Univ.-Verl. Konstanz}%
+      }
+      \strng{namehash}{354e18c4014b84fb9bd1af1fc4d7371e}
+      \strng{fullhash}{354e18c4014b84fb9bd1af1fc4d7371e}
+      \strng{bibnamehash}{354e18c4014b84fb9bd1af1fc4d7371e}
+      \strng{authorbibnamehash}{354e18c4014b84fb9bd1af1fc4d7371e}
+      \strng{authornamehash}{354e18c4014b84fb9bd1af1fc4d7371e}
+      \strng{authorfullhash}{354e18c4014b84fb9bd1af1fc4d7371e}
+      \field{labelalpha}{May94}
+      \field{sortinit}{M}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Qualitative inhaltsanalyse}
+      \field{volume}{14}
+      \field{year}{1994}
+    \endentry
+    \entry{niedereichholz1992relationales}{collection}{}
+      \name{author}{2}{}{%
+        {{hash=e8d004a93094dad9490498d4affd51a3}{%
+           family={Niedereichholz},
+           familyi={N\bibinitperiod},
+           given={Joachim},
+           giveni={J\bibinitperiod}}}%
+        {{hash=09f9391be01c9bcb8f65fcf7449ab237}{%
+           family={Kaucky},
+           familyi={K\bibinitperiod},
+           given={Gerhard},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{9a74f682ee896546be4b24628598ad94}
+      \strng{fullhash}{9a74f682ee896546be4b24628598ad94}
+      \strng{bibnamehash}{9a74f682ee896546be4b24628598ad94}
+      \strng{authorbibnamehash}{9a74f682ee896546be4b24628598ad94}
+      \strng{authornamehash}{9a74f682ee896546be4b24628598ad94}
+      \strng{authorfullhash}{9a74f682ee896546be4b24628598ad94}
+      \field{labelalpha}{NK92}
+      \field{sortinit}{N}
+      \field{sortinithash}{98cf339a479c0454fe09153a08675a15}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Datenbanksysteme}
+      \field{title}{Relationales Datenbankmodell (REL)}
+      \field{year}{1992}
+      \field{pages}{15\bibrangedash 49}
+      \range{pages}{35}
+    \endentry
+    \entry{nielsen1993mathematical}{proceedings}{}
+      \name{author}{2}{}{%
+        {{hash=753054f71283d85f82cda8e35daf6bac}{%
+           family={Nielsen},
+           familyi={N\bibinitperiod},
+           given={Jakob},
+           giveni={J\bibinitperiod}}}%
+        {{hash=f5e0d418f5c3737f54ae9933b0cfc7fe}{%
+           family={Landauer},
+           familyi={L\bibinitperiod},
+           given={Thomas\bibnamedelima K},
+           giveni={T\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \strng{namehash}{f2a5683ee7c93ce6cb8b96e419ed5e5a}
+      \strng{fullhash}{f2a5683ee7c93ce6cb8b96e419ed5e5a}
+      \strng{bibnamehash}{f2a5683ee7c93ce6cb8b96e419ed5e5a}
+      \strng{authorbibnamehash}{f2a5683ee7c93ce6cb8b96e419ed5e5a}
+      \strng{authornamehash}{f2a5683ee7c93ce6cb8b96e419ed5e5a}
+      \strng{authorfullhash}{f2a5683ee7c93ce6cb8b96e419ed5e5a}
+      \field{labelalpha}{NL93}
+      \field{sortinit}{N}
+      \field{sortinithash}{98cf339a479c0454fe09153a08675a15}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the INTERACT'93 and CHI'93 conference on Human factors in computing systems}
+      \field{title}{A mathematical model of the finding of usability problems}
+      \field{year}{1993}
+      \field{pages}{206\bibrangedash 213}
+      \range{pages}{8}
+    \endentry
+    \entry{ramsenthaler2013qualitative}{collection}{}
+      \name{author}{1}{}{%
+        {{hash=7af5817cd04d2f5634f30e1fa472a1df}{%
+           family={Ramsenthaler},
+           familyi={R\bibinitperiod},
+           given={Christina},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{7af5817cd04d2f5634f30e1fa472a1df}
+      \strng{fullhash}{7af5817cd04d2f5634f30e1fa472a1df}
+      \strng{bibnamehash}{7af5817cd04d2f5634f30e1fa472a1df}
+      \strng{authorbibnamehash}{7af5817cd04d2f5634f30e1fa472a1df}
+      \strng{authornamehash}{7af5817cd04d2f5634f30e1fa472a1df}
+      \strng{authorfullhash}{7af5817cd04d2f5634f30e1fa472a1df}
+      \field{labelalpha}{Ram13}
+      \field{sortinit}{R}
+      \field{sortinithash}{b9c68a358aea118dfa887b6e902414a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Der Patient am Lebensende}
+      \field{title}{Was ist „Qualitative Inhaltsanalyse?“}
+      \field{year}{2013}
+      \field{pages}{23\bibrangedash 42}
+      \range{pages}{20}
     \endentry
     \entry{wachter2015systemkonsolidierung}{book}{}
       \name{author}{2}{}{%

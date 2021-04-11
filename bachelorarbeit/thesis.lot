@@ -5,13 +5,29 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {2.1}{\ignorespaces Database Migration Tools\relax }}{9}{table.2.1}%
+\contentsline {table}{\numberline {2.1}{\ignorespaces Tools für die Datenbankmigration\relax }}{10}{table.2.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {2.2}{\ignorespaces Vergleich freier Migrationstools\relax }}{11}{table.2.2}%
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {3.1}{\ignorespaces Anwendungsfall: Migrationsoperation Umbenennen erstellen\relax }}{18}{table.3.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {3.2}{\ignorespaces Anwendungsfall: Migrationsoperation ,Datentyp ändern‘ erstellen\relax }}{20}{table.3.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {3.3}{\ignorespaces Anwendungsfall Migrationsoperationen verwalten\relax }}{22}{table.3.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {3.4}{\ignorespaces Anwendungsfall Datenbanken verbinden\relax }}{24}{table.3.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {3.5}{\ignorespaces Anwendungsfall Migrationsprozess konfigurieren\relax }}{27}{table.3.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {3.6}{\ignorespaces Anwendungsfall Anwendungsfall ,hinzugefügte Migrationsoperationen löschen‘\relax }}{28}{table.3.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {3.7}{\ignorespaces Anwendungsfall Migration starten\relax }}{29}{table.3.7}%
+\defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {4.1}{\ignorespaces Umsetzungsmöglichkeiten\relax }}{23}{table.4.1}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Umsetzungsmöglichkeiten\relax }}{42}{table.4.1}%
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 

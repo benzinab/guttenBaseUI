@@ -2183,7 +2183,20 @@
   </bcf:bibdata>
   <bcf:section number="0">
     <bcf:citekey order="1">wachter2015systemkonsolidierung</bcf:citekey>
-    <bcf:citekey order="2">geisler2014datenbanken</bcf:citekey>
+    <bcf:citekey order="2">housel1974architecture</bcf:citekey>
+    <bcf:citekey order="3">datig2018telling</bcf:citekey>
+    <bcf:citekey order="4">duttaroy2016sap</bcf:citekey>
+    <bcf:citekey order="5">horstmann2005migration</bcf:citekey>
+    <bcf:citekey order="6">geisler2014datenbanken</bcf:citekey>
+    <bcf:citekey order="7">niedereichholz1992relationales</bcf:citekey>
+    <bcf:citekey order="8">bassil2012comparative</bcf:citekey>
+    <bcf:citekey order="9">elamparithi2015review</bcf:citekey>
+    <bcf:citekey order="10">kowalczyk2018digital</bcf:citekey>
+    <bcf:citekey order="11">kasonde2018seamless</bcf:citekey>
+    <bcf:citekey order="12">horstmann2005migration</bcf:citekey>
+    <bcf:citekey order="13">nielsen1993mathematical</bcf:citekey>
+    <bcf:citekey order="14">mayring1994qualitative</bcf:citekey>
+    <bcf:citekey order="15">mayring1994qualitative</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="anyt">

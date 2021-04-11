@@ -1,18 +1,18 @@
 \chapter{Konzeption und Implementierung}
-\section{Anwendungsfunktionalität}
-%TODO
+\label{sec:kzimp}
+In diesem Kapitel werden die Konzeptentwicklung sowie die Technologieauswahl und die Implementierung des GuttenBase-Plugins erläutert.
 \section{Konzeptentwicklung}
-	In diesem Abschnitt werden grundlegende Aspekte der Softwarearchitektur vom GuttenBase Plugin vorgestellt. Diese werden basierend auf der Empfehlung im IEEE-Standard IEEE STD 1471-2000 erstellt.\\
-	Die Architektur wird aus zwei Sichten Sichten (Views) betrachtet. Eine Sicht repräsentiert dabei das Softwaresystem aus der Perspektive einer verwandten Menge von Aspekten. Jede Sicht stellt spezifische Informationen bereit.\\
-	Es is außerdem zu beachten, dass sich die Architektur auf die Ergebnisse der funktionalen Anforderungsanalyse sowie auf die Architektur der Zielplattform (IntelliJ Plattform) bezieht.
-	Im Folgenden werden die einzelnen Sichten genauer vorgestellt.
-	%TODO zitieren
+	
+	In diesem Kapitel werden die grundlegenden Aspekte der Softwarearchitektur des GuttenBase-Plugins vorgestellt. Diese wurden basierend auf der Empfehlung im IEEE-Standard IEEE STD 1471-2000 erstellt.\\
+	Die Architektur wird aus zwei Sichten (Views) betrachtet. Jede Sicht stellt dabei spezifische Informationen bereit.\\
+	Es ist außerdem zu beachten, dass sich die Architektur auf die Ergebnisse der funktionalen Anforderungsanalyse sowie auf die Architektur der Zielplattform (IntelliJ-Plattform) bezieht.\\
+	Im Folgenden werden die Sichten vorgestellt.
 
 
 
 
 	\subsection{Konzeptionelle Sicht}
-	Im Folgenden wird die Konzeptionelle Sicht des Systems vorgestellt. Hier wird das System noch unabhängig von den Implementierungsentscheidungen betrachtet. \\
+	In diesem Abschnitt wird die Konzeptionelle Sicht des Systems vorgestellt. Hier wird das System noch unabhängig von den Implementierungsentscheidungen betrachtet. \\
 	Die konzeptionelle Sicht wird als Komponentendiagramm in der Abbildung \ref{img:component-diagram} dargestellt. 
 	\begin{figure}[H]
 		\centering
@@ -33,7 +33,7 @@
 	Die View Komponente ist für die Darstellung der Daten für den Benutzer verantwortlich. Hier werden alle UI-abhängigen Aspekte wie Layout, Schriftart usw. behandelt.\\
 	
 	\paragraph*{Controller}
-	Die Controlle Komponente ist für die Interaktion mit dem Benutzer verantwortlich. Sie wird von der View Komponente über Benutzerinteraktionen informiert und wertet sie aus. Anschließend können Änderungen an den Daten der Model Komponente sowie Anpassungen an der View Komponente angonommen werden.
+	Die Controller Komponente ist für die Interaktion mit dem Benutzer verantwortlich. Sie wird von der View Komponente über Benutzerinteraktionen informiert und wertet sie aus. Anschließend können Änderungen an den Daten der Model Komponente sowie Anpassungen an der View Komponente angonommen werden.
 	
 	\subsubsection{IntelliJ Plattform}
 	Wie in der Abbildung \ref{img:component-diagram} zu sehen ist, interagiert das GuttenBase Plugin mit mehreren Komponenten der IntelliJ Plattform. 
@@ -45,7 +45,19 @@
 	Da das GuttenBase Plugin viel mit den Datenbanken umgeht, die in IntelliJ konfiguriert wurden, ist eine Interaktion mit dem Database Plugin sehr sinnvoll. Dazu bieten sich viele Komponenten für unterschiedliche Zwecke. Die für das GuttenBase Plugin benötigten Komponenten sind die \textbf{Model} Komponente (um evt. eine Datenbank Konfiguration zu bekommen), die \textbf{PSI} Komponente (um die Elemente der Datenbank zu bekommen), die \textbf{Util} Komponente (um ein Datenbank-Schema zu bekommen) und die \textbf{View} Komponente (um aus der Übersicht des Database  Plugins Datenbank-Inhalte zu bekommen).
 	
 	
-	%\subsubsection{GuttenBase} 
+	\subsubsection{GuttenBase} 
+	\paragraph*{Repository}
+	Unter der Repository Komponente befindet sich das ConnectorRepository, welches Informationen über die Quell- und Ziel-Datenbank enthält sowie die konfigurierten Migrationsoperationen enthält. Das ConnectorRepository wird während der ganzen Migration vom GuttenBase Plugin verwendet.
+	\paragraph*{Meta}
+	Hier sind Klassen enthalten, die die Datenbankelemente (Schema, Tabellen und Spalten) darstellen.
+	\paragraph*{Hints}
+	Die Hints Komponente enthält die Standardimplementierung von den Migrationsoperationen (z. B. Tabellenumbenennung). Diese können während der Migration überschrieben werden.
+	\paragraph*{Mapping}
+	Hier befinden sich alle Mapper Klassen. Diese können beim Konfigurieren der Migrationsoperationen benutzt werden.
+	\paragraph*{Tools}
+	Die Tools Komponente übernimmt das ausführen von bestimmten Aufgaben, wie das Kopieren von den Tabellen während der Migration.
+	\paragraph*{Utils}
+	Unter Utils liegen Klassen, die für das Logging des Migrationsprozesses benötigt sind. Z. B. kann die LoggingScriptExecutorProgressIndicator Klasse  benutzt werden , um wichtige Informationen über den Migrationsprozess (z. B. die verstrichene Zeit oder die aktuelle SQL-Anfrage) zu haben. Diese können für das Darstellen des Migrationsfortschrittes benutzt werden.
 	%TODO
 	
 	
@@ -56,12 +68,12 @@
 	Zur Wahrung der Übersichtlichkeit wird die Modulsicht nach den unterschiedlichen Übersichten unterteilt. Es gibt insgesamt vier Übersichten, die das gesammte System abdecken. Pro Übersicht werden nur Klassen bzw. Methoden beschrieben, die entsprechenden Anwendungsfälle realisieren.
 	
 	\subsubsection{Modulsicht der Übersicht der Konfogurationsschritte}
-	Die Modulsicht der Abbildung \ref{img:modulsicht-gbactions} beschreibt alle beteiligten Klassen, die beim Erstellt und Verwalten der Konfigurationsschritte eingesetzt sind. Diese werden entsprechend der Konzeptionellen Sicht aufgeteilt, nämlich in den View, Model und Controller Paketen.\\
+	Die Modulsicht der Abbildung \ref{img:modulsicht-gbactions} beschreibt alle beteiligten Klassen, die beim Erstellt und Verwalten der Migrationsoperationen eingesetzt sind. Diese werden entsprechend der Konzeptionellen Sicht aufgeteilt, nämlich in den View, Model und Controller Paketen.\\
 	%-View Klassen sind für die UI - Swing KOmponenten.
 	%- Controlle hat folgende Aufgaben: 
 	%- UI Komponenten erstellen, 
 	%- Aktionen erstellen: die GBActionView informiert controller über Benutzer Eingabe -> jenachdem welchen ActionTyp selektiert wurde, wird die entsprechende DumbAwareAction ausgeführt, damit die entsprechende Dialoge für das Erstellen der Action angezeigt wird (renameView + changeType))
-	%- editieren und speichern: nach dem Klick auf Save wird die Save Methode des Controller aufgerufen, sodass alle hinzugefügten Konfigurationsschritte mithilfe der GsonHelper konvertiert und gespeichert werden.
+	%- editieren und speichern: nach dem Klick auf Save wird die Save Methode des Controller aufgerufen, sodass alle hinzugefügten Migrationsoperationen mithilfe der GsonHelper konvertiert und gespeichert werden.
 	%- actionen darstellen, 
 	%- Übersicht schließen: Nach dem Klick auf cancel wird die Übersicht geschlossen.
 	\begin{figure}[H]
@@ -70,12 +82,12 @@
 		\caption{Modulsicht der Übersicht der Konfogurationsschritte}
 		\label{img:modulsicht-gbactions}
 	\end{figure}
-	In dem View Paket werden alle Klassen dargestellt, die für die Darstellung der Konfigurationsschritte zuständig sind. Diese basieren auf unterschiedliche Swing Komponenten. Die Klasse GBActionsView repräsentiert dabei die Hauptübersicht der Konfigurationsschritte und beeinhaltet die GBActionsTable Klasse, welche die Auflistung der Konfigurationsschritte übernimmt. Außerdem wird die ToolbarDecorator Klasse für die Darstellung der möglichen Aktionen benötigt. \\
+	In dem View Paket werden alle Klassen dargestellt, die für die Darstellung der Migrationsoperationen zuständig sind. Diese basieren auf unterschiedliche Swing Komponenten. Die Klasse GBActionsView repräsentiert dabei die Hauptübersicht der Migrationsoperationen und beeinhaltet die GBActionsTable Klasse, welche die Auflistung der Migrationsoperationen übernimmt. Außerdem wird die ToolbarDecorator Klasse für die Darstellung der möglichen Aktionen benötigt. \\
 	Das Controller Paket enthält hierbei die GBActionsController Klasse. Diese hat folgende Aufgaben:
 	\begin{itemize}
 		\item UI-Komponenten vor dem Anzeigen vorbereiten, indem Daten aus dem Paket Model erzeugt bzw. geladen werden.
-		\item Konfigurationsschritte erstellen. Dies passiert nach der Benuzter einen bestimmten Konfigurationsschritt hinzufügen möchte und diesen in der GBActionsView übersicht selektiert. Zunächst wird die entsprechende DumbAwareAction Klasse aufgerufen, um die entsprechende Aktion durchzuführen. Die DumbAwareAction Klasse ist im Paket BusinessLogic zu finden und könnte z. B. für das Anzeigen der Übersicht für das Erstellen des Umbenennen- oder Datentyp-Ändern-Konfigurationsschritt verwendet werden. Diese werden durch die RenameView und ChangeTypeView Klassen realisiert. Analog dazu erfolg das Editieren der Konfigurationsschritte.
-		\item Konfigurationsschritte speichern, indem die hinzugefügte Konfigurationsschritte in JSON konvertiert und dann exportiert werden. Dafür ist die GsonHelper Klasse des BusinessLogic Pakets zuständig.
+		\item Migrationsoperationen erstellen. Dies passiert, wenn der Benuzter eine bestimmte Migrationsoperation hinzufügen möchte und diese in der GBActionsView übersicht selektiert. Zunächst wird die entsprechende DumbAwareAction Klasse aufgerufen, um die entsprechende Aktion durchzuführen. Die DumbAwareAction Klasse ist im Paket BusinessLogic zu finden und könnte für das Erstellen einer Migrationsoperation verwendet werden. Diese werden durch die RenameView und ChangeTypeView Klassen realisiert. Analog dazu erfolg das Editieren der Migrationsoperationen.
+		\item Migrationsoperationen speichern, indem die hinzugefügte Migrationsoperationen in JSON konvertiert und dann exportiert werden. Dafür ist die GsonHelper Klasse des BusinessLogic Pakets zuständig.
 	\end{itemize}
 	
 	
@@ -99,12 +111,12 @@
 		\caption{Modulsicht der Konfigurationsübersicht}
 		\label{img:modulsicht-overview}
 	\end{figure}
-	In der Konfigurationsübersicht (Overview) enthält die OverviewTreeTable Klasse, welche alle Quell-Datenbankelemente auflistet und die ToolbarDecorator Klasse, die gespeicherten Konfigurationsschritte anzeigt. Außerdem stehen einige Buttons für die Benutzerinteraktion zur Verfügung. \\
+	In der Konfigurationsübersicht (Overview) enthält die OverviewTreeTable Klasse, welche alle Quell-Datenbankelemente auflistet und die ToolbarDecorator Klasse, die gespeicherten Migrationsoperationen anzeigt. Außerdem stehen einige Buttons für die Benutzerinteraktion zur Verfügung. \\
 	Wie bei den vorherigen Modulsichten, stellt die OverviewController Klasse Methoden für folgende Zwecke bereit:
 	\begin{itemize}
-		\item Das Laden der Datenbankelemente: Hierbei werden die gespeicherten Konfigurationsschritte mithilfe der GsonHelper Klasse importiert und die Datenbankelement (DBElementNode) aus der Quell-Datenbank erstellt.
-		\item das Anzeigen der Konfigurationsschritte: Konfigurationsschritte werden nach Kompatibiltät mit den selektierten Datenbankelementen behandelt. Ist ein Konfigurationsschritt mit einem Datenbankelent geeignet, wird dieser klickbar angezeigt, außerdem wird stattdessen ein ausgegrautes Button dargestellt.
-		\item Hinzufügen von Konfigurationsschritten: Wenn der Benutzer ein Datenbankelement selektiert und dann einen entsprechenden Konfigurationsschritt hinzufügt, wird die OverviewAddAction Aktion von dem BusinessLogic Paket ausgelöst. Dabei wird der entsprechende Konfigurationsschritt durch die MigrationHelper Klasse zur Migration hinzugefügt.
+		\item Das Laden der Datenbankelemente: Hierbei werden die gespeicherten Migrationsoperationen mithilfe der GsonHelper Klasse importiert und die Datenbankelement (DBElementNode) aus der Quell-Datenbank erstellt.
+		\item das Anzeigen der Migrationsoperationen: Migrationsoperationen werden nach Kompatibiltät mit den selektierten Datenbankelementen behandelt. Ist eine Migrationsoperation mit einem Datenbankelent geeignet, wird diese klickbar angezeigt, außerdem wird stattdessen ein ausgegrautes Button dargestellt.
+		\item Hinzufügen von Migrationsoperationen: Wenn der Benutzer ein Datenbankelement selektiert und dann eine entsprechende Migrationsoperation hinzufügt, wird die OverviewAddAction Aktion von dem BusinessLogic Paket ausgelöst. Dabei wird die entsprechende Migrationsoperation durch die MigrationHelper Klasse zur Migration hinzugefügt.
 	\end{itemize}
 	
 	
@@ -117,12 +129,12 @@
 		\caption{Modulsicht der Ergebnisübersicht}
 		\label{img:modulsicht-resul}
 	\end{figure}
-	Ähnlich wie bei den anderen Übersichten, enthältt die ResultView Klasse eine Tabelle (ResultGBActionsTable), die alle hinzugefügten Konfigurationsschritte enthält und ein ToolbarDecorator, wo die Aktionen zum Löschen und Hinzufügen angezeigt werden. \\
-	Auf der anderen Seite stellt die ResultViewController Klasse Methoden für das Löschen und das Hinzufügen von Konfigurationsschritte sowie für das Starten des Migrationsprozesses bereit. Diese werden im Folgenden genauer erklärt:
+	Ähnlich wie bei den anderen Übersichten, enthältt die ResultView Klasse eine Tabelle (ResultGBActionsTable), die alle hinzugefügten Migrationsoperationen enthält und ein ToolbarDecorator, wo die Aktionen zum Löschen und Hinzufügen angezeigt werden. \\
+	Auf der anderen Seite stellt die ResultViewController Klasse Methoden für das Löschen und das Hinzufügen von Migrationsoperationen sowie für das Starten des Migrationsprozesses bereit. Diese werden im Folgenden genauer erklärt:
 	\begin{itemize}
-		\item Hinzufügen: Wenn der Benutzer noch mehr Konfigurationsschritte zur Migration hinzufügen möchte, wird die aktuelle Übersicht zur Übersicht der Konfigurationsschritte (Overview) umgeleitet.
-		\item Löschen: Wie das Hinzufügen, erfolgt das Löschen von Konfigurationsschritte (die schon zur Migration hinzugefügt wurden) durch die Entfernung von dem ausgewählten Konfigurationsschritt (GBAction) aus der Migration Klasse. 
-		\item Migration starten: Nach dem Klick auf das \glqq Migrate\grqq Button, wird der Migrationsprozess gestartet. Dieser erfolgt durch die MigrationHelper Klasse. Dabei wird das Connector Repository der GuttenBase Bibliothek entsprechend der Konfigurationsschritte konfiguriert (siehe \ref{section:grundlagen:gb}) und anschließend das Kopieren durch das DefaultTableCopyTool gestartet. \\
+		\item Hinzufügen: Wenn der Benutzer noch mehr Migrationsoperationen zur Migration hinzufügen möchte, wird die aktuelle Übersicht zur Übersicht der Migrationsoperationen (Overview) umgeleitet.
+		\item Löschen: Wie das Hinzufügen, erfolgt das Löschen von Migrationsoperationen (die schon zur Migration hinzugefügt wurden) durch die Entfernung von der ausgewählten Migrationsoperation (GBAction) aus der Migration Klasse. 
+		\item Migration starten: Nach dem Klick auf das \glqq Migrate\grqq Button, wird der Migrationsprozess gestartet. Dieser erfolgt durch die MigrationHelper Klasse. Dabei wird das Connector Repository der GuttenBase Bibliothek entsprechend der Migrationsoperationen konfiguriert (siehe \ref{section:grundlagen:gb}) und anschließend das Kopieren durch das DefaultTableCopyTool gestartet. \\
 		Parallel dazu wird die Fortschritt Übersicht (ProgressView) angezeigt, um Informationen über den laufenden Prozess zu sehen. Dies ist durch die UIScriptExecutorProgressIndicator Klasse ermöglicht.
 		
 		%	- add connectors, cfg abgeschlossen -> Copy 
@@ -131,136 +143,75 @@
 
 
 \section{Technologieauswahl}
-	
-	\section{Umsetzungsform}
-	Um eine optimale Nutzung des GuttenBase Plugins zu erzielen, soll auf die Umsetzungsform geachtet werden.\\
-	Das zu entwickelnde Tool kann z. B. als eine Desktop Applikation, Web Applikation oder als Plugin einer anderen Anwendung realisiert werden.\\
-	In der Tabelle \ref{table:tool-options} werden einige Vor- und Nachteie jeder Alternative erläutert. \\
-	Alle drei Alternativen haben Pros und Contras allerdings ist die schnellere Erreichung von vielen Nutzern sowie die Einfache Installation bei der IDE Plugin Entwicklung entscheidend. 
-	\begin{table}
-		\centering
-		\begin{tabular}{ |p{3cm}|p{6cm}|p{6cm}| }
-			\hline
-			\textbf{Alternative} & \textbf{Vorteile} &  \textbf{Nachteile}  \\
-			Desktop App & 
-			\begin{itemize}
-				\item Offline immer verfügbar
-				\item Volle Kontrolle über die Anwendung und die enthaltenen Daten.
-				\item Bessere Leistung, da kein Browser als Zwischenschicht existiert.
-			\end{itemize}& 
-			\begin{itemize}
-				\item Platformabhängig
-				\item Hohe Entwicklungskosten
-				\item Installation ist notwendig
-			\end{itemize} \\
-			\hline
-			Web App &
-			
-			\begin{itemize}
-				\item Installation oder manuelle Updates sind nicht notwändig. 
-				\item geringere Entwicklung- und Wartungskosen, da die Anwendung unabhängig von lokalen Endgeräten ist.
-			\end{itemize} &
-			
-			\begin{itemize}
-				\item Offline meistens nicht verfügbar.
-				\item Geringere Leistung.
-			\end{itemize} \\
-			\hline
-			IDE Plugin Entwicklung &
-			
-			\begin{itemize}
-				\item Für IntelliJ Benutzer ist das einfach und intuitiv zu benutzen.
-				\item Manche Komponenten bzw. Funktionalitäten der zu erweiternden IDE können wiederverwwendet werden, was die Entwicklungsdauer verkürzt.
-				\item Intuitive Nutzung sowie eine einheitliche Benutzeroberfläche wie die benutzte IDE.
-			\end{itemize} &
-			
-			\begin{itemize}
-				\item Die Flexibilität beim Entwickeln ist durch die limitierte Erweiterbarkeit der IDE eingeschränkt.
-			\end{itemize} \\
-			\hline
-			
-		\end{tabular}
-		\caption{Umsetzungsmöglichkeiten}
-		\label{table:tool-options}
-	\end{table}
-	
-	Zunächst soll für eine konkrete IDE entschieden werden. Um diese auszuwählen, muss auf die Anzahl der Nutzer, die Verfügbarkeit der Dokumentation für Plugin Entwicklung sowie die Unterstützung von Datenbanken geachtet werden.\\
-	Einer der bekanntesten Methoden, um die genaue Beliebtheit einer Programmiersprache bzw. eine IDE herauszufinden, ist der PYPL-Index. Er basiert auf Rohdaten aus Google Trends. PYPL enthält den TOP-IDE-Index, welches alanysiert, wie oft IDEs bei Google durchgesucht werden. Die Suchanfragen spiegeln zwar nicht unbedingt die Beliebtheit der IDEs. Allerdings hilft einen solchen Index enorm bei der Wahl einer Entwicklungsumgebung.
-	Bei dieser Analyse sind die drei bekanntesten und für unseren Fall relevanten Entwicklungsumgebungen Visual Studio (erster Platz), Ecllipse (zweiter Platz) und IntelliJ (sechster Platz). Außerdem hat sich der Index von IntelliJ IDE am stärksten erhöht (siehe Abbildung \ref{img:ide-index})\\
-	Bei eine anderen Umfrage (Jaxenter), mit welcher Entwicklungsumgebung am liebsten in Java programmiert wird, war IntelliJ sogar im ersten Platz mit 1660 Stimmen von 2934. \\
-	
-	\begin{figure}[H]
-		\caption{Top IDE Index}
-		\centering
-		\includegraphics[width=0.8\textwidth]{images/ide-index}
-		\label{img:ide-index}
-	\end{figure}
-	Aus den oben erläuterten Daten und aufgrund der guten Dokumentation für Plugin Entwicklung wird das GuttenBase als ein Intellij Plugin umgesetzt. 
-	
-	
-	\subsection{GuttenBase}
-	\label{sec:imp:gb}
-	Die Nutzung der GuttenBase Bibliothek wird in folgenden Schritten erklärt.
-	%\subsection{Schritt 1: Abhängigkeiten}
-	%Um GuttenBase verwenden zu können, soll werden folgende Informationen benötigt:
-	%\begin{itemize}
-	%	\item groupId: de.akquinet.jbosscc.guttenbase
-	%	\item artifactId: GuttenBase
-	%	\item version: 2.0.0
-	%\end{itemize}
-	%Außerdem 
-	\paragraph*{Schritt 1: Datenbankverbindung erstellen}
-	Als erstes sollen Abhängigkeiten zu dem laufenden Projekt hinzugefügt werden. Die für GuttenBase benötigte Informationen sind:
-	\begin{itemize}
-		\item groupId: de.akquinet.jbosscc.guttenbase
-		\item artifactId: GuttenBase
-		\item version: 2.0.0
-	\end{itemize}
-	Zusätzlich sollen die Treiber-Klassen der Quell- und Ziel-DBMS hinzugefügt werden.\\
-	Zunächst sollen die ConnectionInfo Klassen fürerstellt werden. Diese beschreiben die Quell- und Ziel-Datenbanken und enthalten die für eine JDBC (Java Database Connectivity) Verbindung erforderlichen Attribute.\\
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.8\textwidth]{images/gb/conInfo}
-		\caption{ConnectionInfo konfigurieren}
-		\label{img:gb/conInfo}
-	\end{figure}
-	
-	Im nachhinein wird das Connector Repository konfiguriert werden. Dies enthält alle Konnektoren, die in der Datenbank Migration beteiligt sind. \\
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.8\textwidth]{images/gb/repo}
-		\caption{Connector Repository konfigurieren}
-		\label{img:gb/repo}
-	\end{figure}
-	
-	\paragraph*{Schritt 2: Hinweise hinzufügen}
-	Meistens werden Konfigurationshinweise (hints) benötigt, um die Migration zu individualisieren. In der Dokumentation von GuttenBase\footnote{Getting Started with GuttenBase (2018, 04.01) \\ \url{https://github.com/akquinet/GuttenBase/blob/master/Getting\%20Started\%20with\%20GuttenBase.pdf}} befindet sich eine Liste aller unterstützen Konfigurationshinweise. \\
-	Als Beispiel wird der Konfigurationshinweis ColumnMapperHint in der Abbildung dargestellt.
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.8\textwidth]{images/gb/rename}
-		\caption{ColumnMapperHint hinzufügen}
-		\label{img:gb/rename}
-	\end{figure}
-	
-	
-	\paragraph*{Schritt 3: Datenbank Migration durchführen}
-	Anschließend kann die Migration mit den eventuell hinzugefügten Hinweisen durchgeführt werden. Dies passiert wie folgt:
-	\begin{itemize}
-		\item Das Datenbank Schema wird von der Quell-Datenbank in die Ziel-Datenbank kopiert. Dabei werden möglichst viele Unterschiede in Datentypdarstellung standardmäßig berücksichtigt.
-		\item Die Kompatibilität von den Schemata wird geprüft. Hierbei wird nach gleichen Tabellen bzw Spalten gesucht.
-		\item Falls es keine Fehler beim Prüfen gibt, werden die Daten dann kopiert.
-	\end{itemize}
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.8\textwidth]{images/gb/copy}
-		\caption{Datenbank Migration durchführen}
-		\label{img:gb/copy}
-	\end{figure}
-	
-	
-	
-	\subsection{IntelliJ Platform}
+	Im Folgenden wird die Umsetzungsform des GuttenBase Plugins begründet. Außerdem wird die Nutzung der GuttenBase Bibliothek und die IntelliJ Plugin Entwicklung genauer beschrieben.
+\subsection{Umsetzungsform}
+
+Um eine optimale Nutzung des GuttenBase Plugins zu erzielen, soll auf die Umsetzungsform geachtet werden.\\
+Das zu entwickelnde Tool kann z. B. als eine Desktop Applikation, Web Applikation oder als Plugin einer anderen Anwendung realisiert werden.\\
+In der Tabelle \ref{table:tool-options} werden einige Vor- und Nachteie jeder Alternative erläutert. \\
+Alle drei Alternativen haben Pros und Contras allerdings ist die schnellere Erreichung von vielen Nutzern sowie die Einfache Installation bei der IDE Plugin Entwicklung entscheidend. 
+\begin{table}
+	\centering
+	\begin{tabular}{ |p{3cm}|p{6cm}|p{6cm}| }
+		\hline
+		\textbf{Alternative} & \textbf{Vorteile} &  \textbf{Nachteile}  \\
+		Desktop App & 
+		\begin{itemize}
+			\item Offline immer verfügbar
+			\item Volle Kontrolle über die Anwendung und die enthaltenen Daten.
+			\item Bessere Leistung, da kein Browser als Zwischenschicht existiert.
+		\end{itemize}& 
+		\begin{itemize}
+			\item Platformabhängig
+			\item Hohe Entwicklungskosten
+			\item Installation ist notwendig
+		\end{itemize} \\
+		\hline
+		Web App &
+		
+		\begin{itemize}
+			\item Installation oder manuelle Updates sind nicht notwändig. 
+			\item geringere Entwicklung- und Wartungskosen, da die Anwendung unabhängig von lokalen Endgeräten ist.
+		\end{itemize} &
+		
+		\begin{itemize}
+			\item Offline meistens nicht verfügbar.
+			\item Geringere Leistung.
+		\end{itemize} \\
+		\hline
+		IDE Plugin Entwicklung &
+		
+		\begin{itemize}
+			\item Für IntelliJ Benutzer ist das einfach und intuitiv zu benutzen.
+			\item Manche Komponenten bzw. Funktionalitäten der zu erweiternden IDE können wiederverwwendet werden, was die Entwicklungsdauer verkürzt.
+			\item Intuitive Nutzung sowie eine einheitliche Benutzeroberfläche wie die benutzte IDE.
+		\end{itemize} &
+		
+		\begin{itemize}
+			\item Die Flexibilität beim Entwickeln ist durch die limitierte Erweiterbarkeit der IDE eingeschränkt.
+		\end{itemize} \\
+		\hline
+		
+	\end{tabular}
+	\caption{Umsetzungsmöglichkeiten}
+	\label{table:tool-options}
+\end{table}
+
+Zunächst soll für eine konkrete IDE entschieden werden. Um diese auszuwählen, muss auf die Anzahl der Nutzer, die Verfügbarkeit der Dokumentation für Plugin Entwicklung sowie die Unterstützung von Datenbanken geachtet werden.\\
+Einer der bekanntesten Methoden, um die genaue Beliebtheit einer Programmiersprache bzw. eine IDE herauszufinden, ist der PYPL-Index. Er basiert auf Rohdaten aus Google Trends. PYPL enthält den TOP-IDE-Index, welches alanysiert, wie oft IDEs bei Google durchgesucht werden. Die Suchanfragen spiegeln zwar nicht unbedingt die Beliebtheit der IDEs. Allerdings hilft einen solchen Index enorm bei der Wahl einer Entwicklungsumgebung.
+Bei dieser Analyse sind die drei bekanntesten und für unseren Fall relevanten Entwicklungsumgebungen Visual Studio (erster Platz), Ecllipse (zweiter Platz) und IntelliJ (sechster Platz). Außerdem hat sich der Index von IntelliJ IDE am stärksten erhöht (siehe Abbildung \ref{img:ide-index})\\
+Bei eine anderen Umfrage (Jaxenter), mit welcher Entwicklungsumgebung am liebsten in Java programmiert wird, war IntelliJ sogar im ersten Platz mit 1660 Stimmen von 2934. \\
+
+\begin{figure}[H]
+	\caption{Top IDE Index}
+	\centering
+	\includegraphics[width=0.8\textwidth]{images/ide-index}
+	\label{img:ide-index}
+\end{figure}
+Aus den oben erläuterten Daten und aufgrund der guten Dokumentation für Plugin Entwicklung wird das GuttenBase als ein Intellij Plugin umgesetzt. 
+
+
+\subsection{IntelliJ Platform}
 	Für die erfolgreiche IntelliJ Plugin Entwicklung muss auf mehrere Aspekte geachtet werden wie die Projektstruktur und die häufig verwendeten Komponenten.\\
 	Die Plugin Entwicklung erfolgt in der IntelliJ IDE selbst. Deswegen kann das Plugin entweder in Java, Kotlin, Groovy oder Scala geschrieben werden.\\
 	Der von Jetbrains empfohlene Weg für das Erstellen eines neuen Plugins ist das Gradle Projekt. Dabei muss die Option IntelliJ Platform Plugin ausgewählt werden, damit die Plugin Abhängigkeiten sowie die Basis-IDE automatisch konfiguriert werden. Zusätzlich muss die Datei plugin.xml entsprechend des zu entwickelnden Plugins angepasst werden. Diese enthält wichtige Informationen, die in den folgenden Tags (Auszeichnungen) erklärt werden:
@@ -295,8 +246,87 @@
 	%\subsubsection{Swing}
 	%TODO TEST
 	%\subsubsection{IntelliJ Plugin Entwicklung}
-
+	
+	
+	
+	
+	
+	
+\subsection{GuttenBase}
+	\label{sec:imp:gb}
+%	Die Nutzung der GuttenBase Bibliothek wird in folgenden Schritten erklärt.
+	%\subsection{Schritt 1: Abhängigkeiten}
+	%Um GuttenBase verwenden zu können, soll werden folgende Informationen benötigt:
+	%\begin{itemize}
+	%	\item groupId: de.akquinet.jbosscc.guttenbase
+	%	\item artifactId: GuttenBase
+	%	\item version: 2.0.0
+	%\end{itemize}
+	%Außerdem 
+%	\paragraph*{Schritt 1: Datenbankverbindung erstellen}
+	Für die Nutzung der GuttenBase Bibliothek sollen als erstes Abhängigkeiten zu dem laufenden Projekt (z. B Gradle) hinzugefügt werden. Die für GuttenBase benötigten Informationen sind:
+	\begin{itemize}
+		\item groupId: de.akquinet.jbosscc.guttenbase
+		\item artifactId: GuttenBase
+		\item version: 2.0.0
+	\end{itemize}
+	Es ist außerdem zu beachten, dass die Abhängigkeiten für die Treiber-Klassen der Quell- und Ziel-DBMS auch hinzugefügt werden sollen.
+	
+	Zunächst sollen die ConnectionInfo Klassen erstellt werden. Diese beschreiben die Quell- und Ziel-Datenbanken und enthalten die für eine JDBC (Java Database Connectivity) Verbindung erforderlichen Attribute.\\
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth]{images/gb/conInfo}
+		\caption{ConnectionInfo konfigurieren}
+		\label{img:gb/conInfo}
+	\end{figure}
+	
+	Im nachhinein wird das Connector Repository konfiguriert werden. Dies enthält alle Konnektoren, die in der Datenbank Migration beteiligt sind. \\
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth]{images/gb/repo}
+		\caption{Connector Repository konfigurieren}
+		\label{img:gb/repo}
+	\end{figure}
+	
+%	\paragraph*{Schritt 2: Hinweise hinzufügen}
+	Meistens werden Konfigurationshinweise (hints) benötigt, um die Migration zu individualisieren. In der Dokumentation von GuttenBase\footnote{Getting Started with GuttenBase (2018, 04.01) \\ \url{https://github.com/akquinet/GuttenBase/blob/master/Getting\%20Started\%20with\%20GuttenBase.pdf}} befindet sich eine Liste aller unterstützen Konfigurationshinweise. \\
+	Als Beispiel wird der Konfigurationshinweis ColumnMapperHint in der Abbildung dargestellt.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth]{images/gb/rename}
+		\caption{ColumnMapperHint hinzufügen}
+		\label{img:gb/rename}
+	\end{figure}
+	
+	
+%	\paragraph*{Schritt 3: Datenbank Migration durchführen}
+	Anschließend kann die Migration mit den eventuell hinzugefügten Hinweisen durchgeführt werden. Dies passiert wie folgt:
+	\begin{itemize}
+		\item Das Datenbank Schema wird von der Quell-Datenbank in die Ziel-Datenbank kopiert. Dabei werden möglichst viele Unterschiede in Datentypdarstellung standardmäßig berücksichtigt.
+		\item Die Kompatibilität von den Schemata wird geprüft. Hierbei wird nach gleichen Tabellen bzw Spalten gesucht.
+		\item Falls es keine Fehler beim Prüfen gibt, werden die Daten dann kopiert.
+	\end{itemize}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth]{images/gb/copy}
+		\caption{Datenbank Migration durchführen}
+		\label{img:gb/copy}
+	\end{figure}
+	
+	
+	
 \section{PlugIn Implementierung}
+\label{sec:imp}
+
+Dieser Abschnitt beschäftigt sich mit der Implementierung des GuttenBase Plugins.\\
+Die resultierende Anwendungsoberfläche wird anhand den folgenden Anwendungsfunktionalitäten veranschaulicht:
+\begin{itemize}
+	\item Liste der vorhandenen Migrationsoperationen.
+	\item Hinzufügen einer neuen Migrationsoperation.
+	\item Verbindungerstellung.
+	\item Konfiguration.
+	\item Migrationsdurchführung.
+\end{itemize}
 \subsection{Funktion: Liste der vorhandenen Migrationsoperationen}
 
 	Um die Funktionalität des GuttenBase Plugins einfach und intuitiv für IntelliJ Nutzer zur Verfügung zu stellen, wurden Menüpunkte zum Database Plugin hinzugefügt. Diese wurden gemäß dem Grundsatz der Unterscheidbarkeit plaziert. Somit kann die Übersicht der Migrationsoperationen nach dem Klick auf \glqq Show Migration Actions\grqq geöffnet werden. Dies wird in der Abbildung \ref{img:creategbaction} dargestellt. Diese enthält standardmäßig nur zwei Migrationsoperationen (Tabellen bzw. Spalten Ausschließen).\\ 
@@ -405,3 +435,8 @@
 		\caption{Fortschrittsübersicht}
 		\label{img:ui:progressView}
 	\end{figure}
+%\subsection{Test}
+%Für all der erläuterten Funtionen wurde manuelle Tests durchgeführt. Die Testdurchführung sowie die erwarteten Ergebnisse sind wie obenbeschrieben. Für die Testvorbereitung muss auf folgende Punkte geachtet werden:
+%\begin{itemize}
+%	\item Intellij starten.
+%\end{itemize}
