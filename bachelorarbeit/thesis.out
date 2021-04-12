@@ -22,11 +22,11 @@
 \BOOKMARK [0][-]{chapter.4}{Konzeption\040und\040Implementierung}{}% 22
 \BOOKMARK [1][-]{section.4.1}{Konzeptentwicklung}{chapter.4}% 23
 \BOOKMARK [2][-]{subsection.4.1.1}{Konzeptionelle\040Sicht}{section.4.1}% 24
-\BOOKMARK [3][-]{subsubsection.4.1.1.1}{GuttenBase\040Plugin}{subsection.4.1.1}% 25
+\BOOKMARK [3][-]{subsubsection.4.1.1.1}{GuttenBase-Plugin}{subsection.4.1.1}% 25
 \BOOKMARK [3][-]{subsubsection.4.1.1.2}{IntelliJ\040Plattform}{subsection.4.1.1}% 26
 \BOOKMARK [3][-]{subsubsection.4.1.1.3}{GuttenBase}{subsection.4.1.1}% 27
 \BOOKMARK [2][-]{subsection.4.1.2}{Modulsicht}{section.4.1}% 28
-\BOOKMARK [3][-]{subsubsection.4.1.2.1}{Modulsicht der Übersicht der Konfogurationsschritte}{subsection.4.1.2}% 29
+\BOOKMARK [3][-]{subsubsection.4.1.2.1}{Modulsicht der Übersicht über die Migrationsoperationen}{subsection.4.1.2}% 29
 \BOOKMARK [3][-]{subsubsection.4.1.2.2}{Modulsicht der allgemeinen Übersicht}{subsection.4.1.2}% 30
 \BOOKMARK [3][-]{subsubsection.4.1.2.3}{Modulsicht der Konfigurationsübersicht}{subsection.4.1.2}% 31
 \BOOKMARK [3][-]{subsubsection.4.1.2.4}{Modulsicht der Ergebnisübersicht}{subsection.4.1.2}% 32
@@ -34,7 +34,7 @@
 \BOOKMARK [2][-]{subsection.4.2.1}{Umsetzungsform}{section.4.2}% 34
 \BOOKMARK [2][-]{subsection.4.2.2}{IntelliJ\040Platform}{section.4.2}% 35
 \BOOKMARK [2][-]{subsection.4.2.3}{GuttenBase}{section.4.2}% 36
-\BOOKMARK [1][-]{section.4.3}{PlugIn\040Implementierung}{chapter.4}% 37
+\BOOKMARK [1][-]{section.4.3}{Plugin\040Implementierung}{chapter.4}% 37
 \BOOKMARK [2][-]{subsection.4.3.1}{Funktion:\040Liste\040der\040vorhandenen\040Migrationsoperationen}{section.4.3}% 38
 \BOOKMARK [2][-]{subsection.4.3.2}{Funktion: Hinzufügen einer neuen Migrationsoperation}{section.4.3}% 39
 \BOOKMARK [2][-]{subsection.4.3.3}{Funktion:\040Verbindungerstellung}{section.4.3}% 40

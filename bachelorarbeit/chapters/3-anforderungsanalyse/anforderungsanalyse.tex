@@ -60,9 +60,9 @@ Die abstrakte Klasse ‚GBAction‘ definiert alle möglichen Migrationsoperatio
 \end{itemize}
 Außerdem enthält die Klasse Migration alle Migrationsoperationen die beim Migrationsprozess angewendet werden.
 \begin{figure}[H]
-	\caption{Vereinfachtes Datenmodell}
 	\centering
 	\includegraphics[width=\textwidth]{images/sichten/abstract-datenmodell}
+	\caption{Vereinfachtes Datenmodell}
 	\label{img:abstract-datenmodell}
 \end{figure}
 
@@ -79,16 +79,16 @@ Neben der textuellen Beschreibung werden auch Anwendungsfalldiagramme erstellt. 
 \subsubsection{Migrationsoperation: Umbenennen erstellen}
 \label{section:umbenennen}
 \begin{figure}[H]
-	\caption{Migrationsoperation \glqq Umbenennen \grqq erstellen}
 	\centering
 	\includegraphics[width=0.7\textwidth]{images/af/af-umbenennen}
+	\caption{Migrationsoperation \glqq Umbenennen \grqq erstellen}
 	\label{img:af-umbenennen}
 \end{figure}
 Dieser Anwendungsfall bildet den Vorgang ab, wenn ein Benutzer eine neue Migrationsoperation für das Umbenennen von Spalten bzw. Tabellen in der Zieldatenbank erstellt. Es wird vorausgesetzt, dass der Benutzer die Übersicht aller Migrationsoperationen bereits geöffnet hat (siehe Abbildung \ref{img:actions-overview}). \\
 \begin{figure}[H]
-	\caption{Übersicht Migrationsoperationen}
 	\centering
 	\includegraphics[width=0.5\textwidth]{images/actions-overview}
+	\caption{Übersicht Migrationsoperationen}
 	\label{img:actions-overview}
 \end{figure}
 Zu Beginn soll der Benutzer die zu erstellende Migrationsoperation benennen (z. B. ,Rename id to identifier‘). Das Quelldatenbankelement (Spalte oder Tabelle) soll durch einen regulären Ausdruck definiert werden (siehe Abbildung \ref{img:add-rename-action}). Dieser wird in der Migrationsoperation gespeichert, damit er später auf das Datenbankelement angewendet werden kann, das diesen Ausdruck erfüllt. Anschließend wird der Zielname des Datenbankelementes festgelegt. Dieser wird vom Benutzer als eine Zeichenkette angegeben. Dabei stehen drei Optionen zur Verfügung:
@@ -98,14 +98,15 @@ Zu Beginn soll der Benutzer die zu erstellende Migrationsoperation benennen (z.�
 	\item \textbf{Präfix hinzufügen:} Die übergebene Zeichenkette wird als Präfix zum ursprünglichen Namen hinzugefügt.
 \end{itemize}
 \begin{figure}[H]
-	\caption{Migrationsoperation: Umbenennen}
 	\centering
 	\includegraphics[width=0.5\textwidth]{images/add-rename-action}
+	\caption{Migrationsoperation: Umbenennen}
 	\label{img:add-rename-action}
 \end{figure}
 Nach dem Bestätigen der Eingaben wird die neu erstellte Migrationsoperation der Liste aller Migrationsoperationen hinzugefügt.
 \begin{table}[H]
 	\centering
+	\caption{Anwendungsfall: Migrationsoperation Umbenennen erstellen}
 	\begin{tabular}{ |p{4cm}|p{8cm}| }
 		\hline
 		\textbf{Name} &  Migrationsoperation Umbenennen erstellen \\
@@ -130,7 +131,6 @@ Nach dem Bestätigen der Eingaben wird die neu erstellte Migrationsoperation der
 		\hline
 		
 	\end{tabular}
-	\caption{Anwendungsfall: Migrationsoperation Umbenennen erstellen}
 	\label{table:umbenennen}
 \end{table}
 
@@ -139,9 +139,9 @@ Nach dem Bestätigen der Eingaben wird die neu erstellte Migrationsoperation der
 
 \subsubsection{Migrationsoperation erstellen: Datentyp ändern }
 \begin{figure}[H]
-	\caption{Migrationsoperation \glqq Datentyp ändern \grqq erstellen}
 	\centering
 	\includegraphics[width=0.7\textwidth]{images/af/af-datentyp-ändern}
+	\caption{Migrationsoperation \glqq Datentyp ändern \grqq erstellen}
 	\label{img:af-datentyp-ändern}
 \end{figure}
 
@@ -150,6 +150,7 @@ Nach dem Auslösen des Anwendungsfalls soll der Benutzer die Option ‚Datentyp 
 Das Erstellen der Migrationsoperation ‚Exkludieren‘ funktioniert ähnlich wie die zwei vorherigen Anwendungsfälle und wird daher nicht behandelt.
 \begin{table}[H]
 	\centering
+	\caption{Anwendungsfall: Migrationsoperation ,Datentyp ändern‘ erstellen}
 	\begin{tabular}{ |p{4cm}|p{8cm}| }
 		\hline
 		\textbf{Name} &  Migrationsoperation Datentyp ändern erstellen \\
@@ -173,15 +174,14 @@ Das Erstellen der Migrationsoperation ‚Exkludieren‘ funktioniert ähnlich wi
 		\hline
 		
 	\end{tabular}
-	\caption{Anwendungsfall: Migrationsoperation ,Datentyp ändern‘ erstellen}
 	\label{table:datentyp-ändern}
 \end{table}
 
 \subsubsection{Migrationsoperationen verwalten}
 \begin{figure}[H]
-	\caption{Migrationsoperationen verwalten}
 	\centering
 	\includegraphics[width=0.7\textwidth]{images/af/af-ks-verwalten}
+	\caption{Migrationsoperationen verwalten}
 	\label{img:af-ks-verwalten}
 \end{figure}
 
@@ -189,6 +189,7 @@ Dieser Anwendungsfall beinhaltet die Verwaltung der Migrationsoperationen. Zunä
 Anschließend können die Migrationsoperationen nach der Bestätigung durch den Benutzer als JSON gespeichert werden.
 \begin{table}[H]
 	\centering
+	\caption{Anwendungsfall Migrationsoperationen verwalten}
 	\begin{tabular}{ |p{4cm}|p{8cm}| }
 		\hline
 		\textbf{Name} & Migrationsoperationen verwalten  \\
@@ -213,7 +214,6 @@ Anschließend können die Migrationsoperationen nach der Bestätigung durch den 
 		\hline
 		
 	\end{tabular}
-	\caption{Anwendungsfall Migrationsoperationen verwalten}
 	\label{table:ks-speichern}
 \end{table}
 
@@ -223,22 +223,23 @@ Anschließend können die Migrationsoperationen nach der Bestätigung durch den 
 Die Durchführung der Datenbankmigration deckt die Hauptfunktionalität des GuttenBase-Plugins ab. Die Migration wird in die folgenden Anwendungsfälle unterteilt:
 \subsubsection*{Datenbanken verbinden}
 \begin{figure}[H]
-	\caption{Datenbanken verbinden}
 	\centering
 	\includegraphics[width=0.7\textwidth]{images/af/af-db-verbinden}
+	\caption{Datenbanken verbinden}
 	\label{img:af-db-verbinden}
 \end{figure}
 
 Für das Eintreten dieses Anwendungsfalls wird vorausgesetzt, dass der Benutzer über mindestens eine Datenbank verfügt. Zu Beginn muss er das Migrationsfenster öffnen, um die Eingabefelder zu sehen. Anschließend soll er die Datenbank, das Schema sowie die Zugangsdaten für das Quell- und Ziel-DBMS angeben (siehe Abbildung \ref{img:generalview}). 
 Wenn die Eingaben stimmen, kann der Benutzer eine Verbindung zwischen den beiden Datenbanken herstellen. Ansonsten wird eine entsprechende Meldung angezeigt. Bei diesem Schritt wird das Connector-Repository der GuttenBase-Bibliothek erstellt und konfiguriert. Somit ist die Datenbankmigration bereit für die Konfiguration.
 \begin{figure}[H]
-	\caption{Datenbankmigration View}
 	\centering
 	\includegraphics[width=0.5\textwidth]{images/generalview}
+	\caption{Datenbankmigration View}
 	\label{img:generalview}
 \end{figure}
 \begin{table}[H]
 	\centering
+	\caption{Anwendungsfall Datenbanken verbinden}
 	\begin{tabular}{ |p{4cm}|p{8cm}| }
 		\hline
 		\textbf{Name} & Datenbanken verbinden  \\
@@ -266,16 +267,15 @@ Wenn die Eingaben stimmen, kann der Benutzer eine Verbindung zwischen den beiden
 		\hline
 		
 	\end{tabular}
-	\caption{Anwendungsfall Datenbanken verbinden}
 	\label{table:db-verbinden}
 \end{table}
 
 
 \subsubsection*{Migrationsprozess konfigurieren}
 \begin{figure}[H]
-	\caption{Migrationsprozess konfigurieren}
 	\centering
 	\includegraphics[width=0.9\textwidth]{images/af/af-mg-cfg}
+	\caption{Migrationsprozess konfigurieren}
 	\label{img:af-mg-cfg}
 \end{figure}
 
@@ -283,9 +283,9 @@ Dieser Anwendungsfall zeigt den Vorgang, wie der Benutzer Migrationsoperationen 
 Es wird vorausgesetzt, dass die Quell- und Zieldatenbanken verbunden sind (siehe Anwendungsfall \ref{table:db-verbinden})\\
 Wenn der Nutzer auf ,Next‘ geklickt hat, soll eine Übersicht für alle in der Quelldatenbank enthaltenen Elemente angezeigt werden (Siehe Abbildung \ref{img:overview}).
 \begin{figure}[H]
-	\caption{Übersicht Quelldatenbank}
 	\centering
 	\includegraphics[width=0.5\textwidth]{images/overview}
+	\caption{Übersicht Quelldatenbank}
 	\label{img:overview}
 \end{figure}
 Der Benutzer kann zunächst Spalten bzw. Tabellen auswählen, um diesen Migrationsoperationen zuzuweisen.\\
@@ -296,6 +296,7 @@ Nachdem der Benutzer alle gewünschten Migrationsoperationen ausgewählt hat, we
 
 \begin{table}[H]
 	\centering
+	\caption{Anwendungsfall Migrationsprozess konfigurieren}
 	\begin{tabular}{ |p{4cm}|p{8cm}| }
 		\hline
 		\textbf{Name} &  Migrationsprozess konfigurieren. \\
@@ -316,7 +317,6 @@ Nachdem der Benutzer alle gewünschten Migrationsoperationen ausgewählt hat, we
 		\hline
 		
 	\end{tabular}
-	\caption{Anwendungsfall Migrationsprozess konfigurieren}
 	\label{table:migration-cfg}
 \end{table}
 
@@ -324,20 +324,21 @@ Nachdem der Benutzer alle gewünschten Migrationsoperationen ausgewählt hat, we
 
 \subsubsection*{Hinzugefügte Migrationsoperationen löschen}	
 \begin{figure}[H]
-	\caption{Hinzugefügte Migrationsoperationen löschen}
 	\centering
 	\includegraphics[width=0.7\textwidth]{images/af/af-ks-löschen}
+	\caption{Hinzugefügte Migrationsoperationen löschen}
 	\label{img:af-ks-löschen}
 \end{figure}
 Das Löschen einer hinzugefügten Migrationsoperation ist erst möglich, wenn sich der Benutzer in der entsprechenden Übersicht befindet (siehe Abbildung \ref{img:result-view}). Dabei werden alle hinzugefügten Migrationsoperationen aufgelistet.Diese können ausgewählt und anschließend gelöscht werden.
 \begin{figure}[H]
-	\caption{Übersicht über die hinzugefügten Migrationsoperationen}
 	\centering
 	\includegraphics[width=0.6\textwidth]{images/result-view}
+	\caption{Übersicht über die hinzugefügten Migrationsoperationen}
 	\label{img:result-view}
 \end{figure}
 \begin{table}[H]
 	\centering
+	\caption{Anwendungsfall Anwendungsfall ,hinzugefügte Migrationsoperationen löschen‘}
 	\begin{tabular}{ |p{4cm}|p{8cm}| }
 		\hline
 		\textbf{Name} &  Hinzugefügte Migrationsoperationen löschen. \\
@@ -358,7 +359,6 @@ Das Löschen einer hinzugefügten Migrationsoperation ist erst möglich, wenn si
 		\hline
 		
 	\end{tabular}
-	\caption{Anwendungsfall Anwendungsfall ,hinzugefügte Migrationsoperationen löschen‘}
 	\label{table:migration-ks-löschen}
 \end{table}
 
@@ -366,20 +366,21 @@ Das Löschen einer hinzugefügten Migrationsoperation ist erst möglich, wenn si
 
 \subsubsection*{Migration starten}
 \begin{figure}[H]
-	\caption{Migration starten}
 	\centering
 	\includegraphics[width=0.7\textwidth]{images/af/af-mg-starten}
+	\caption{Migration starten}
 	\label{img:af-mg-starten}
 \end{figure}
 Nachdem der Benutzer alle Datenbanken verbunden und den Migrationsprozess konfiguriert hat, kann er die Migration der Datenbank durch eine einfache Bestätigung starten. Danach sollen die Daten entsprechend der Konfiguration migriert werden. Währenddessen soll der Benutzer über den Migrationsstand informiert werden (siehe Abbildung \ref{img:progressview}).
 \begin{figure}[H]
-	\caption{Fortschritt des Migrationsprozesses}
 	\centering
 	\includegraphics[width=0.4\textwidth]{images/progressview}
+	\caption{Fortschritt des Migrationsprozesses}
 	\label{img:progressview}
 \end{figure}
 \begin{table}[H]
 	\centering
+	\caption{Anwendungsfall Migration starten}
 	\begin{tabular}{ |p{4cm}|p{8cm}| }
 		\hline
 		\textbf{Name} & Migration starten  \\
@@ -399,7 +400,6 @@ Nachdem der Benutzer alle Datenbanken verbunden und den Migrationsprozess konfig
 		\hline
 		
 	\end{tabular}
-	\caption{Anwendungsfall Migration starten}
 	\label{table:migration-starten}
 \end{table}
 
